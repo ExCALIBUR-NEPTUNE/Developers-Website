@@ -1,0 +1,201 @@
+%Edit 0054 ZZZ to report number nnnn 
+%Edit 3.1 YYMILE to milestone number m.m.m
+%Edit Software Requirements Specification document YYTITLE to report title - Words Start with Caps
+\documentclass[11pt,twoside,a4paper]{report}
+\usepackage{iftex}
+
+% --- LOAD FONT SELECTION AND ENCODING BEFORE LOADING LWARP ---
+
+\ifPDFTeX
+\usepackage{lmodern}            % pdflatex or dvi latex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\else
+\usepackage{fontspec}           % XeLaTeX or LuaLaTeX
+\usepackage{lwarp-cite}
+\fi
+
+% --- LWARP IS LOADED NEXT ---
+\usepackage[
+  %  HomeHTMLFilename=index,     % Filename of the homepage.
+  %  HTMLFilename={node-},       % Filename prefix of other pages.
+ %  IndexLanguage=english,      % Language for xindy index, glossary.
+    latexmk,                    % Use latexmk to compile.
+  % OSWindows,                  % Force Windows. (Usually automatic.)
+   mathjax,                    % Use MathJax to display math.
+   IndexRef=link,
+]{lwarp}
+% \boolfalse{FileSectionNames}  % If false, numbers the files.
+
+% --- LOAD PDFLATEX MATH FONTS HERE ---
+
+% --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
+\usepackage{makeidx} \makeindex
+\usepackage{xcolor}             % (Demonstration purpose
+\usepackage{amsmath}
+\usepackage{hyperref,cleveref}  % LOAD THESE LAST!
+\usepackage[british]{babel}
+\usepackage[backend=biber,sorting=none,citestyle=numeric-comp,dateabbrev=false]{biblatex}
+\usepackage{pdflscape}
+\usepackage{nameref}% references by name
+\addbibresource{./bib/new.bib}
+\addbibresource{./bib/waynes.bib}
+\addbibresource{./bib/misc.bib}
+\addbibresource{./bib/warv.bib}
+\addbibresource{./bib/neuts.bib}
+\addbibresource{./bib/reac.bib}
+\addbibresource{./bib/exc.bib}
+\addbibresource{./bib/active.bib}
+\addbibresource{./bib/dg1srt.bib}
+\addbibresource{./bib/t33rp3.bib}
+\DeclareUnicodeCharacter{0301}{\'{e}}
+\NewBibliographyString{refname}
+\NewBibliographyString{refsname}
+\DefineBibliographyStrings{english}{%
+  refname = {ref\adddot},
+  refsname = {refs\adddot}
+}
+
+\DeclareCiteCommand{\cite}
+  {%
+  \ifnum\thecitetotal=1
+    \bibstring{refname}%
+  \else%
+    \bibstring{refsname}%
+  \fi%
+  \addspace\bibopenbracket%
+  \usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}%
+   \usebibmacro{postnote}%
+   \bibclosebracket}
+
+\renewrobustcmd*{\Cite}{\bibsentence\cite}
+
+
+%%======================================================================
+%% PACKAGES:
+%%
+\usepackage{fancyhdr}       % package for headers/footers
+\usepackage{amssymb}
+\usepackage{graphicx}            % Graphics.
+%\usepackage{a4}                  % page layout to fit A4
+%\usepackage{lastpage}            % get page no of last page
+%\usepackage{ifthen}              % logical branching
+\usepackage{latexsym}
+\usepackage{longtable} % insert tables that break over pages
+\usepackage{appendix}            %insert hyper-links
+% uncomment the following to override auto page total
+%\pptotal{20}
+%%======================================================================
+\setcounter{tocdepth}{1}        % Include subsections in the \TOC.
+\setcounter{secnumdepth}{1}     % Number down to subsections.
+\setcounter{FileDepth}{1}       % Split \HTML\ files at sections
+\booltrue{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{1}    % Include subsections in the side\TOC
+\CSSFilename{sans-serif-lwarp-sagebrush.css}
+
+% ensure sans-serif font used throughout
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\culhamissueno}{1.00}%<==edit
+\newcommand{\culhamshorttitle}{CD/EXCALIBUR-FMS/0054}%<==edit
+\newcommand{\Sec}[1]{Section~\hyperref[sec:#1]{\ref*{sec:#1}}}
+\newcommand{\Fig}[1]{Figure~\hyperref[fig:#1]{\ref*{fig:#1}}}
+\newcommand{\Tab}[1]{Table~\hyperref[tab:#1]{\ref*{tab:#1}}}
+\newcommand{\Eq}[1]{Equation~\hyperref[eq:#1]{\ref*{eq:#1}}}
+\newcommand{\Eqs}[2]{Equations~(\hyperref[eq:#1]{\ref*{eq:#1}}) and (\hyperref[eq:#2]{\ref*{eq:#2}})}
+\newcommand{\Figs}[2]{Figures~(\hyperref[eq:#1]{\ref*{fig:#1}})--\hyperref[fig:#2]{\ref*{fig:#2}}}
+\newcommand\getcurrentref[1]{%
+ \ifnumequal{\value{#1}}{0}
+  {??}
+  {\the\value{#1}}%
+}    
+
+\newcommand{\newchapter}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] #1} 
+}}
+
+\newcommand{\newchapternobreak}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
+\warpHTMLonly{ \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] #1} }
+}
+
+\newcommand{\newsection}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{[\getcurrentref{chapter}.\getcurrentref{section}] #1} 
+}}
+
+\newcommand{\newsectionnobreak}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
+\warpHTMLonly{ \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{[\getcurrentref{chapter}.\getcurrentref{section}] #1} }
+}
+
+%Bold lc for script names, tt for computer code and file-names
+%\F{NEPTUNE} always in caps
+\newcommand{\F}[1]{\textsc{#1}}
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\T}[1]{{\tt #1}}
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\I}[1]{\textit{#1}}
+\input{./stdefns}
+
+%%======================================================================
+
+%% REPORT COVER PAGE Information
+
+\newcommand{\culhamtitle}{\LARGE Software Specification Website  \\[1.0\baselineskip] Release 0.0.2}%<==edit
+
+%%QA BOX information -- change following as needed
+\newcommand{\culhamboardname}{Martin O'Brien}%<==edit
+\newcommand{\culhamcontactname}{Rob Akers}%<==edit
+\newcommand{\culhamauthor}{Wayne Arter}%<==edit
+\newcommand{\culhamauthora}{Ed Threlfall}%<==edit
+\newcommand{\culhamauthorb}{Joseph Parker}%<==edit
+\newcommand{\culhamauthorc}{Will Saunders}%<==edit
+%\newcommand{\culhamcontacttel}{Telephone: 01235 466498}
+%\newcommand{\culhamcontactemail}{Email: rob.akers@ukaea.uk}
+
+\newcommand{\culhamdate}{\today}%<=edit
+\newcommand{\culhamdatea}{\today}%<=edit
+\newcommand{\culhamdateb}{\today}%<=edit
+
+% reproduce Rob's page size
+
+\setlength{\topmargin}{0.0mm}
+\setlength{\oddsidemargin}{10.0mm}
+\setlength{\evensidemargin}{\oddsidemargin}
+
+\setlength{\topsep}{0pt}
+\setlength{\itemsep}{0pt}
+
+%%======================================================================
+\begin{document}
+
+
+\vspace*{-30mm}
+\includegraphics[width=2.5cm]{./corpics/cofaplus.png} \\[2.0\baselineskip]
+{\LARGE {\textbf{\textsf{ExCALIBUR Project NEPTUNE}}}\\[2.0\baselineskip]}
+{\LARGE \culhamtitle } \\[2.0\baselineskip]
+{\textbf{\textsf{Abstract}}}\\
+Formal specification document to be used for a rational design of software.
+See the Development Plan \cite{y2d34} , minutes
+of the workshop~\cite{y3re181}, and the development document~\cite{y3re314}.
+\vfill
+%\centerline{\includegraphics[width=0.3\textwidth]{../png/neptune.png}}
+%\centerline{\includegraphics[width=0.3\textwidth]{../png/trident.png}}
+\centerline{\includegraphics[width=8cm]{./png/neptune.png}}
+\centerline{\includegraphics[width=8cm]{./png/trident.png}}
+\tableofcontents
+%\input{approboxw}
+\clearpage
+\input{mainbody}
+\clearpage
+\chapter*{Acknowledgement}\label{sec:ackn}
+\input{./metackn.tex}
+
+%\section*{References}
+%\bibliographystyle{unsrt}
+%\bibliography{./new,./waynes,./misc,./warv,./neuts,./reac,./exc,./active,./dg1srt,./t33rp3}
+\printbibliography
+\end{document}

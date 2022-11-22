@@ -1,0 +1,54 @@
+\warpprintonly { \section{Order-of-magnitude estimates for tokamak edge modelling}  \label{sec:cg} } 
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{section} \section*{Order-of-magnitude estimates for tokamak edge modelling} \label{sec:cg} \phantomsection \addcontentsline{toc}{section}{[\getcurrentref{chapter}.A] Order-of-magnitude estimates for tokamak edge modelling} 
+}
+
+Suppose plasma number density $n \approx 10^{18}$\, m$^{-3}$. Order of magnitude
+dimensions are $L\approx0.1$\,m for SOL thickness, reactor minor and major radii
+say $a=3$\,m and $R_0=10$\,m, so the volume of SOL $\approx 4 \pi^2 a R_0 L \approx 100$\,m$^3$.
+It follows that the total number of electrons $\approx 10^{20}$.
+
+The shortest timescale is inverse $e B/m_e$, the electron cyclotron frequency, where the
+ratio of charge to mass for the electron is
+$|e|/m_e = 1.76 \times 10^{11}$\,C kg$^{-1}$, and $B\approx 10$\,T, so $\tau_{Be}\approx 10^{-12}$\,s.
+Hence the number of particle-steps to evolve $1$\,s of physical time is  $10^{20+12+1}$
+(assuming of order $10\pi$~timesteps per orbit),
+which assuming $1000$\,flop per update, needs a total of~$10^{36}$\,flop.
+Thus to complete a computation in $1$\,s on Exascale machine, only one
+$1$~particle-step in $10^{18}$ is allowed.
+This implies for example only $100$~superparticles in the volume can be used supposing
+each has a weight~$10^{18}$, which
+is unlikely to be adequate because electrostatic and other effects will produce a noise level
+that swamps any physical effects. However if $3$ or $4$~months (approx.~$10^7$\,s) are allowed, then
+a calculation with~$10^9$ particles may be performed if memory-access bandwidth constraints
+can be satisfied, when the noise levels may be manageable.
+
+The situation may be shown to be a million times easier for neutrals considered
+separately, assuming neutral density~$n_0=n$, particle mass~$m_p$ and temperature~$T_0=10$\,eV, for a
+timescale of~$\tau_{0}=L_{mfp}/v_0$ where the mean free path~$L_{mfp}\approx L$ and the neutral
+speed typically is~$v_0$. For then $v_0=\sqrt{|e|T_0/m_p}
+=\sqrt{|e|/m_e} \cdot \sqrt{m_e/m_p} \sqrt{T_0}$, ie.\ 
+$v_{0}\approx 4 \times 10^5 \times (1/40) \times \sqrt{10}\approx 3 \times 10^4$. Thus
+$\tau_0\approx 10^{-6}$\,s, ie.\  a million times longer than the electron cyclotron timescale.
+
+Suppose a fluid model is employed instead, ie.\ the electron distribution is
+represented by its first~$3$ moments.
+If the electron temperature~$T_e \approx 10$\,eV, then the
+thermal speed $V_{Te}\approx 40 v_0 \approx 10^6$\,m s$^{-1}$. Supposing the SOL to be sampled at a
+uniform~$1$\,mm interval, then the
+number of sample-points~$\approx 10^{11}$, and the timestep for an explicit scheme~$\approx (10^{-3} /10^6)\approx 10^{-9}$\,s,
+so the number of sample-point updates is $10^{11+9}$. Assuming  $1000$\,flop each update, this
+means one second of physical time needs $10^{23}$\,flop or $10^5$\,s$\approx 1$\,d
+of Exascale machine time, if memory-access bandwidth constraints can be satisfied. If an implicit scheme
+is used to simulate plasma ions as a fluid on a drift type timescale$\approx L/V_{Ti}$, then
+possibly the timestep~$\tau_i\approx \tau_0\approx 10^{-6}$\,s, ie.\ a thousand times larger, and
+calculations lasting only a few minutes might suffice.
+
+Another way of looking at this is to suppose that numerical problem is $D$-dimensional, $1000$\,flop
+are needed for each sample update
+and $N_D$~samples per spatial dimension and $N_D^2$ time samples are allowed. Then to update
+such a model in $1$\,s requires
+$N_D^{D+2} \approx 10^{15}$. Thus  if $D=3$, $N_3 \approx 1\,000$, and $N_5 \approx 100$.
+It seems that accuracy controlled, unstructured, implicit fluid models should be possible,
+although for the more complex models $1000$\,flop per update may be an underestimate by
+orders of magnitude.
+

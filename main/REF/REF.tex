@@ -1,0 +1,75 @@
+% Sommerville  - Glossary
+% Smith  - Requirements  - Reference Material
+% Smith  - Requirements  - Specific System Description  - Problem Description  - Terminology and Definitions
+% Hewitt  - Infrastructure Design  - Standards and guidelines and conventions
+% Hewitt  -  Acronyms and Symbols
+\newsectionnobreak{Conventions for Report Writing}{sec:conv}
+The project has strict standards in respect of conventions even in reports
+that contain no code, ultimately to support the `write once, use many times' concept,
+so that text may be cut, edited and pasted into source code, or indeed used safely to define
+variable names, constraints on their values and physical dimensions.
+Thus, since many compilers support only ASCII characters, only ASCII is allowed
+in reports. Similarly, very long lines (typically arising from MS Windows wordprocessing)
+should be split at the ends of sentences, and preferably so that maximum line length
+is $120$~characters. A number of tools are available in \T{tex/importools}.
+Contributors may use their style of choice for both reports (and code) provided
+they follow systems that allow for automatic conversion to the conventions
+expected in the \nep \ repositories, and are prepared to help construct gitlab runners and
+github hooks to this end. However, it will be generally found easier to use \LaTeX \ and
+bibtex as indicated below.
+
+For shorter documents it is acceptable to use Markdown in the `dialect' defined by
+\F{PANDOC}, see Annex~A of~\cite{y3re314}. Resulting .md files frequently convert
+straightforwardly to \LaTeX \ format, using the md2tex.bash script from \T{tex/importools}.
+
+
+\subsection{General textual issues}\label{sec:REF_text}
+It is helpful to use \LaTeX \ newcommand for certain keywords where they have a special
+format or because the terminology is not fully established. Although some do not, most
+people do find variations in use of spelling, punctuation, capitalisation etc.\ to be irritating,
+and so the following conventions will be enforced where possible: 
+\begin{itemize}
+\item use of \LaTeX \ newcommand for , viz. \verb-\-papp \ and  \verb-\-exc \ instead of explicit
+proxyapp or mini-app and \exc \  respectively
+\item punctuation, viz.\ eg.\verb-\- rather than e.g.
+\item hyphenation, generally to be avoided because \LaTeX \ may use it to break lines, viz.\ finite element rather than finite-element (or simply FE), opensource rather than open source, major exception is abbreviation of dimensions (below).
+\item capitalisation, eg.\ Exascale rather than exascale
+\item abbreviation of dimensions, 2-D and 3-D preferred to 2D and 3D or 2d and 3d
+\item spelling, UK English preferred, and  '-ise' etc.\ preferred to '-ize'
+\item no spaces between authors' initials in bibtex files (see also \Sec{REF_citations})
+\item consistent usage of acronyms, employing the table of \Sec{acro}
+\item consistent usage of mathematical symbols, employing the table of \Sec{symbol}
+\end{itemize}
+
+\subsection{Citations}\label{sec:REF_citations}
+Regarding citations, those for unpublished reports MUST include a link to a
+website, such as arXiv, and it would be helpful if links to other open-access
+material were also given.
+Use of the following conventions for constructing the keys of citations should help avoid clashes:
+\begin{enumerate}
+\item For published papers, use where possible an $8$-character alphanumeric for published papers,
+consisting of the first two letters of the first author's name, the last two digits
+of the year in the Gregorian calendar, and the first $4$~letters of the first \emph{significant}
+word (ie.\ not `The' or~`On') of the title, preserving capitalisations.
+Thus the paper~\cite{Ba13What} by Bangerth and Heister, published in 2013 and
+entitled `What makes computational open source software libraries successful?',
+has key~`Ba13What'.
+\item Books and theses should be keyed with the full second-name(s) of the author(s) strung together
+without capitalisation, up to a limit of approx.~$30$ characters, using `etal'
+to indicate any omitted author-names. As an example, the book by Rouson, Xia
+and~Xu~\cite{rousonxiaxu} has key~`rousonxiaxu'.
+\item If there are duplicates in different files, then preface
+each key with the name of the .bib file it is in, for other duplicates within a file,
+add `2', `3' etc.\ to the end of the key.
+\end{enumerate}
+
+\subsection{Software Compatibility}\label{sec:REF_compat}
+\input{REF/conv}
+
+\clearpage
+\newsection{Acronyms}{sec:acro}
+\input{REF/acro}
+
+\clearpage
+\newsection{Symbols}{sec:symbol}
+\input{REF/symb}

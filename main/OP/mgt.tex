@@ -1,0 +1,25 @@
+%\section{Documentation Generally}\label{sec:OP_MGT}
+
+\subsection{Documentation} \label{sec:doc}
+
+Documentation refers to a particular version of the code. It should therefore be
+dynamic, under version control, and tightly coupled to the source code itself. 
+
+\begin{itemize}
+\item All new code features should be documented, and this should be checked as
+part of the peer review process.
+\item Within the code, comments should use a convention, such as that
+accepted by \F{Doxygen},
+to document the intent of functions, and any assumptions on their
+environment, input or outputs.
+\item Alongside the code \T{README} files explaining the file/directory layout 
+typically use the Markdown format due to its simplicity,
+standardising on the variant defined by \F{Pandoc} as described in \cite{y2d34}.
+\item The more formal documentation should be in a format which can
+include elements such as equations, code blocks, graphs and figures.
+It should also be easily convertible to other formats, and in
+particular online documentation. \LaTeX \ as used to produce the current document
+can be easily converted to .html as explained in ref~\cite{y2d34} provided
+the restrictions (as to accepted packages) noted in the reference are observed.
+\end{itemize}
+

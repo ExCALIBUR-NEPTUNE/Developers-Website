@@ -1,0 +1,91 @@
+\subsection{Introduction}
+\label{sec:introduction}
+
+This section is Project \nep's response to Tokamak Science and MAST Upgrade Division's
+Requirements Specification document.
+This specification was received by Wayne Arter  on 5/11/20 via Rob Akers
+and its authorship was confirmed to be Fulvio Militello and James Harrison at the \nep \  Project Board.
+It is intended that this document helps to frame expectations of the
+capabilities of \nep\ code,
+as well as highlighting challenges and areas of potential collaboration.
+Since  the main focus herein is on aspects of the physical model, the
+next \Sec{TS_sw_response} goes into more detail regarding the software engineering
+needed to deliver the code successfully.
+
+The physics requirements are summarised as:
+\begin{quote}
+``The new UKAEA Exhaust code needs to be able to capture parallel and
+perpendicular transport of charged and neutral particles in 3D, full geometry
+and in a time dependent way. Turbulence should be self-consistently modelled,
+as well as energy transfer physics between charged particles, neutrals and
+photons (radiation). While perturbations need to be 3D, a minimal requirement
+for the code is that it can simulate realistic axisymmetric equilibrium
+configurations with complex topologies and wall designs.
+The aim of the code should be to:
+\begin{enumerate}
+	\item Efficiently and reliably model exhaust in next generation
+		experiments, like eg.\  MAST-U, JT60-SA, and especially ITER
+		(the latter is a stringent requirement for the code).
+	\item Allow predictive exhaust capability for future reactor relevant
+		machines like STEP or DEMO.''
+\end{enumerate}
+\end{quote}
+More detailed specifications are given in the following sections
+either as block quotations or as bold paragraph headers.
+
+\subsubsection{\nep\ Science Plan}
+
+The Science Plan for \nep\ \cite{sciplan} is available
+online.
+The stated goal of the project is to:
+{\green 
+\begin{quote}
+	``develop new algorithms, software and related e-Infrastructure that will result in the efficient use of current Petascale and future Exascale supercomputing hardware in order to
+\begin{enumerate}
+	\item draw insights from ITER ``Big Data''
+	\item to guide and optimise the design of the UK demonstration nuclear
+		fusion power plant STEP and related fusion technology
+\end{enumerate}
+in the approach to the Exascale. The aims of the work are to deliver expertise in,
+and tools for, ``in-silico'' reactor interpretation and design.''
+\end{quote}}
+
+The Science Plan also describes the software development and theory development
+that is being and will be undertaken under \nep.
+
+\paragraph{Software development.}
+The aim of \nep\ software development is to provide a flexible framework for
+implementing different physical models in an Exascale-targeted manner.
+In particular, the project does \emph{not} envisage a ``\nep\ system of equations'' so
+much as \nep\ providing the ability to solve a class of relevant equations,
+with models described relatively simply using a Domain-Specific Language (DSL).
+This flexibility enables the hierarchy of models of varying fidelity and
+computational costs.
+It also allows engagement from different classes of user with different levels
+of physics and software expertise.
+
+\paragraph{Theory development.}
+The above framework approach notwithstanding,
+\nep\ is also supporting theory development in two of its four work packages:
+FM-WP2 Plasma Multiphysics Model and FM-WP3 Neutral Gas and Impurity Model.
+These will develop two close coupled models, with FM-WP2 seeking to include
+kinetic effects in existing and new edge plasma models, and FM-WP3 developing
+particle-based models for describing the region outside and just inside the
+plasma (neutral atoms/molecules and partially ionised impurities).
+
+Another work package, FM-WP1 Numerical Representation, is addressing related
+numerical issues, such as
+the accurate modelling of highly anisotropic dynamics,
+the accurate representation of first wall geometry,
+and the numerical preservation of conservation laws from the underlying models.
+
+As such the \nep\ plan is aligned with all the points in the summary
+requirements quoted above, though there are minor issues regarding
+the details as discussed in the following sections.
+It should be noted that the Science Plan outlines a five-year programme that
+explicitly requires user involvement for fuller development of surrogate
+models (such as turbulent friction) and to specify the detailed physics of
+ionisation and excitation reactions.
+It follows that development of many of the physics capabilities listed below will benefit
+greatly from a strong collaboration between
+Tokamak Science and Advanced Computing.

@@ -1,0 +1,52 @@
+% Hewitt  - Use Cases
+% Sommerville  - User requirements definition
+% Smith  - Problem Statement
+% Smith  - Requirements  - Introduction
+% Smith  - Requirements  - Requirements  - Functional Requirements
+% Smith  - Requirements  - General System Description  - User Characteristics
+
+The largest input to the process, representing UKAEA Tokamak Science
+Department appears under Technical Specification~\Sec{TS}, so that it may
+be accompanied by a detailed response. Instead, there is presented an appreciation
+of the properties of the plasma edge in \Sec{props}.
+
+The Departmental input, although it deals with other aspects of the specification,
+focusses more on the physical processes to be modelled and the approaches likely to
+be required. The following \Sec{RB2} records interactions with UKAEA Engineers, although
+a subsequent meeting clarified that the main demand for \nep\ at that time was that it be a
+modular, component-based design, equally suitable for integration into ANSYS OptisLang$^{TM}$
+as VECMAtk (with more detailed requirements likely to follow when the software became more developed).
+Thereafter the  next \Sec{use_case}  contains use cases, followed by \Sec{general-remarks}
+describing general requirements deducible from the use cases.
+
+\newsection{Physical properties of the edge plasma}{sec:props}
+\input{RB/edgeprop}
+
+\newsection{Engineering Requirements Baseline}{sec:RB2}
+\input{RB/engineers_requirements}
+
+\newsection{Use Cases}{sec:use_case}
+\input{RB/use_case_physicist}
+\input{RB/use_case_engineer}
+\input{RB/use_case_particle_specialist}
+\input{RB/use_case_FEM_background}
+
+\newsection{General Remarks}{sec:general-remarks}
+Particular, important general aspects of the use cases and \Sec{TS} requirements may be
+as follows.
+Calculations may need be (re)started, perhaps from databases of calculations as envisaged by the 
+IMAS development.  Someone from the experimental side might want to specify input parameters
+by duplicating those of a particular say JET 
+shot at a given time, using an database of experimental results.
+Physicists of either stamp (theoretical or experimental) will likely want compatibility with
+analysis software such as OMFIT~\cite{omfitwebsite} and tools to speed publication in
+the scientific literature of results obtained.
+An engineer may simply want to ``change surface A to another design and repeat calculation".
+
+Generally, minimising the number of new languages and systems people have to learn, especially
+in view of the need to attract people to the project and community, seems a good idea, so that
+a Domain Specific Language (DSL) should for
+example be based on one or more language(s) that are already well-known to many technical people,
+such as Julia, Python or \LaTeX.
+Equally \nep \ software cannot be allowed to ossify, so the suggestion 
+is everywhere to have a preferred option and an allowed option where this makes sense.

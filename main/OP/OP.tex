@@ -1,0 +1,22 @@
+%Everyone hates writing documentation, it gets written badly, and therefore no-one uses it. 
+%Therefore no-one funds doing it, and documentation is bad. %Smith
+%As with other overheads in software development, expects that work required will reduce over
+%time as it becomes standard practice but need to convince people to adopt it in the first place!
+
+\newsectionnobreak{Documentation Generally}{sec:OP_MGT}
+\input{OP/mgt}
+\newsection{Developer Manual}{sec:DevMan}
+\input{OP/testing}
+%\input{OP/DevMan}
+%\input{../t33/gamestruct.tex}
+\subsection{Object Identification}\label{sec:objdisc}
+Douglass~\cite[\S\,5]{douglass} has a description of object analysis which is well-suited
+project \nep. His approach is to take the use cases, which for this purpose should
+include the \papp s separately, and treat them carefully one after the other using
+the strategies indicated in \Tab{objdisc}.
+Each \papp\ should be carefully analysed and classes produced from the list of objects
+before proceeding to the next.
+\input{OP/objdisc}
+\newsection{User Manual}{sec:UMan}
+\input{OP/UMan}
+%\input{../../t51/dimred.tex}

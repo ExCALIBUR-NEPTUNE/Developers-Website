@@ -1,0 +1,55 @@
+
+How to configure git
+
+Option to add personal profile
+
+Email address for support neptune@ukaea.uk
+
+List of projects/packages
+
+Quick links
+
+Separate the subject from body with a blank line and limit the subject line to 50 characterss
+
+Importance of Slack
+
+producing FMS reports collaboratively using git and mostly LaTeX some markdown,
+markdown is not a standard, except very minimally, so I would demand compatibility with pandoc.
+
+Zenodo indexing for s/w
+
+How to Contribute
+
+Community Code of Conduct see charter.tex
+to include  Acknowledging and Citing
+
+``Write code for people, not computers".
+Literate programming. Interleaving documentation and codebase - minimises risk of code and documentation getting out of sync.
+Use of Doxygen
+
+C++ Core Guidelines (Bjarne Stroustrup, Herb Sutter)
+\url{https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md}
+Rules for high-performance or low-latency applications (otherwise Stroustrop's tour is 
+reasonably comprehensive, includes chapters on numerics and
+concurrency (parallelism)~\cite[\S\S\,14,15]{stroustroptour}
+Mainly ``Don't optimize prematurely, but design to enable later optimization when it seems
+it might be appropriate". Note that
+Communication across nodes is \exc bottleneck at the Exascale.
+
+Rouson~et~al's $12$~rules
+\begin{enumerate}
+\item Write code that comments itself.
+\item Name all constants.
+\item Make constants constant.
+\item Minimize global data.
+\item Make global data constant.
+\item Provide global type parameters, including precision specifiers.
+\item Provide global conditional debugging.
+\item Declare intent for all procedure arguments.
+\item Avoid side effects when possible, particularly in a function.
+\item Make all derived type components private.
+\item Indent loops and procedure/module executable statements.
+\item Prevent implicit typing globally.
+\end{enumerate}
+
+Notes on DPC++ in ../ts/notes\_on\_dpc++.md

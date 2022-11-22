@@ -1,0 +1,11 @@
+PN Program_Name
+BD Business_Design
+RB Requirements_Baseline
+TS Technical_Specification
+DJF Design_Justification_File
+DDF Design_Definition_File
+MGT Management_File
+MF Maintenance_File
+OP Operational_Documentation
+REF Reference_Material
+IND Index

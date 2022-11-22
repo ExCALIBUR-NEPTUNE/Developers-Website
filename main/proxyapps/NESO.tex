@@ -1,0 +1,11 @@
+\newsection{NESO}{sec:NESO}
+
+NESO is an implementation of a 1+1D solver for the Vlasov-Poisson problem in which the matter component is 
+treated using particle-in-cell (PIC).  The electric field is taken to be purely electrostatic and is calculated by 
+solving a 1D Poisson equation using a Fourier transform.This is a prototype for the particle problem to be treated by
+ more advanced NEPTUNE proxyapps and also provides a demonstration for the use of multiple repositories and workflows
+ for different code components.  
+
+The code is implemented in SYCL (DPCPP and hipSYCL).
+
+NESO is publicly available at {https://github.com/ExCALIBUR-NEPTUNE/NESO}. 

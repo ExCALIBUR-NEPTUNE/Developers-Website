@@ -1,0 +1,101 @@
+% sections 1 to 7 of Hewitt  - Business Design
+% Sommerville  - Introduction
+\begin{enumerate}
+\item  {\bf CAPABILITIES}
+
+The \nep \ package will be capable of efficiently contributing `actionable' results regarding
+the first wall to the reactor design process, specifically by speedily modelling the power deposited by the plasma
+\begin{itemize}
+\item subject to uncertainty quantification~(UQ)
+\item using a modular suite of compatible components of minimal necessary complexity 
+so as to ensure a workflow for rapid design,
+capable when needed of involving the latest high performance computers (HPC)
+\end{itemize}
+In addition, the package will facilitate  research into edge plasma physics by
+\begin{itemize}
+\item its ease of use, providing a suitable DSL for `high-level' usage in Python/Julia to enable
+intuitive additions to existing models or the incorporation of new models, whereby
+equations may be defined using \LaTeX \ as explicit PDEs or as Lagrangians, %, as Lie derivative.
+and novel initial conditions imposed and new boundary conditions applied
+\item its ease of modification and development, by
+providing a set of well-defined objects/classes for tokamak plasma physics
+\item ease of incorporation of its component software into other physics packages
+\item offering a careful automatic control of numerical error
+\end{itemize}
+
+\item  {\bf STRATEGIC FIT} % - to UKAEA mission
+
+{\bf National}: The \exc \ project is of national importance to UK government
+(represented by the BEIS dept.)  to demonstrate
+how to produce software that can exploit all the latest, most powerful hardware
+for scientific computation.  The Fusion Modelling System~(FMS) is one
+of \exc 's principal use cases, for which project \nep \ will explore efficient development of
+new software for the Exascale.
+
+%UKAEA researches fusion energy and related technologies, with the aim of positioning
+%the UK as a leader in sustainable nuclear energy.
+{\bf UKAEA}: The software will facilitate world-leading R\&D into fusion energy by UKAEA physicists and
+engineers, underpinned by external collaborators with a wide range of expertise.
+Its research contribution will be to improve detailed physical understanding
+of the often-turbulent plasma-wall interaction. Development of tokamak reactors will
+be facilitated if Exascale machines can be seamlessly integrated into the design workflow.
+\item  {\bf BUSINESS DRIVERS} % - why are we doing this?
+
+Optimal power-handling at the wall will be critical for fusion reactors to be able to
+deliver sustainable fusion energy to the grid economically, if at all.
+%Accurate detailed modelling requires large computing resources,
+Rapid exploration of parameter space is important to understand and optimise
+reactor designs, yet the existing software available to UK is dated so that it
+require years of experience to use well and is not suited to the latest HPC.
+Its replacement should remove a major handicap in the race to produce reactor designs.
+\item  {\bf ASSUMPTIONS} % regarding available funding
+
+Funding of approx.\ $\pounds$\,5\,M over $5$~years has been made available to UKAEA via the Strategic
+Priorities Fund under its \exc \ programme to ready the UK for the Exascale era of computing.
+It is expected that further development of the \nep \ software will be funded at a similar if
+somewhat smaller level after 2025.
+%\item  {\bf (CONSTRAINTS)} % laws and regulations)
+\item  {\bf RISKS} %  if resources not available
+
+Funding is via UK government and does not depend on the international situation.
+\item  {\bf IMPACTS} % new processes, training needed
+
+The new software should enable much faster iteration in respect of engineering design of the first wall
+of tokamak reactors. It should save much time and effort in the modelling of
+tokamak edge plasma physics. Generally, it should greatly reduce the training and computer time
+needed to obtain results compared to the existing software. There should also be benefits to
+UKAEA's wider relationships with the Eurofusion E-TASC programme and with ITER.
+\item  {\bf STAKEHOLDERS} % who will win or lose by good or bad outcome
+
+The successful outcome of the project should be a plus for the UK, UKAEA and most employees.
+The only losers will be those UKAEA staff and contractors who have devoted often years of
+their working lives to the dated software that \nep \ is
+designed to replace, and will undergo a loss of status in consequence. However, their physics skills
+and understanding will be valuable for guiding the \nep\ development to produce maximum
+benefits, hence they should soon recover position within UKAEA.
+\item  {\bf GOVERNANCE} % committees
+
+The \nep \ project is overall governed by the UK governance known as PRINCE2~\cite{prince2,prince2wiki}.
+which demands oversight by a local committee known as a project board.
+Finance is subject to the usual UKAEA procedures and controls.
+The \nep \ project is further subject to
+reporting to UK Met Office as part of wider \exc \ activities, whence there is a
+second layer of PRINCE2 oversight.
+
+The planned technical activities are outlined in the Science Plan~\cite{sciplan},
+it and all  major changes and refinements are subject to external refereeing,
+following the \exc \ procedures drawn up by UK Met Office consistent with the 
+demands of the UK Strategic Priorities Fund~\cite{SPF}.
+External procurements similarly follow the \exc \ procedures drawn up by UK Met Office.
+\end{enumerate}
+
+%There are
+%deficiencies in the existing plasma physics software base for modelling the
+%tokamak edge which should be addressed, and there is the question of how best to meet them. There is the issue of
+%whether to exploit opensource software, and if so how best to do so. Factors such as
+%future-proofing, speed of code execution, the need for uncertainty
+%quantification,
+%the interaction between different packages for CAD, meshing and physics codes are
+%accounted for in the discussion. The avoidance of ``heroic computing" in favour of UQ
+%could lead to considerable simplification in choosing a way forward, probably without
+%any significant long-term drawbacks.

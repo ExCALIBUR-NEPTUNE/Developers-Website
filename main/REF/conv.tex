@@ -1,0 +1,23 @@
+% to TS % Latest C++, C++20 if possible including modules. (like Fortran-95 only Import instead of use), and
+% to TS %             Concepts - generalised types of single variable.
+% to TS % Follow Stroustrop~\cite{stroustroptour}.
+% to TS % Use of clang\_tidy.
+
+When discussing software in the text, the following conventions in \LaTeX\  are proposed:
+\begin{itemize}
+\item \F{Small capitals} denote a package name, use \{\verb-\-textsc or abbreviation \verb-\-F\{
+\item \I{Italics} denote a program name, use \{\verb-\-textit or abbreviation \verb-\-I\{
+\item \T{Fixed width font} denotes any code name or fragment which is not otherwise obviously source code,
+use \{\verb-\-texttt or abbreviation \verb-\-T\{
+\end{itemize}
+There is no need for special fonts if the object is identified by a
+suitable suffix, thus ``\_m" for a module containing executable code,
+``\_h" or ``.h" for an object description or namespace code, ``.cpp" for name of file containing
+C++ source, ``.exe" for an executable, etc. Similarly file suffices that imply a particular
+format or software for their interpretation, may simply be written with a leading stop,
+eg.\ ``.html" and ``.exe".
+
+In order to ensure smooth transliteration from mathematical symbols to the names
+of the software variables, \Tab{twoclatex} lists the recommended two-character
+equivalents for \LaTeX \ symbols used in the definition of mathematical symbols.
+\input{REF/naming_map}

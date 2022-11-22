@@ -1,0 +1,25 @@
+\newsection{Nektar-Driftwave}{sec:NektarDriftware}
+Nektar-Driftwave solves the 2D Hasegawa-Wakatani equations describing drift-wave turbulence.  The equations are, for
+vorticity $\zeta$, number density perturbation $n$, and electrostatic potential $\phi$,
+
+\begin{eqnarray}
+\frac{\partial \zeta}{\partial t}+[\phi, \zeta] &=& \alpha (\phi-n)\\
+\frac{\partial n}{\partial t} +[\phi,n] &=& \alpha (\phi-n)-\kappa \frac{\partial \phi}{\partial y},
+\end{eqnarray}
+
+where $[a,b] \equiv \frac{\partial a}{\partial x} \frac{\partial b}{\partial y} - \frac{\partial a}{\partial y}
+ \frac{\partial b}{\partial x}$.
+
+In the above, $\alpha$ is the adiabaticity operator (taken to be constant) and $\kappa$ is the background density 
+gradient scale length.  The electrostatic potential is related to the vorticity by Poisson's equation $\nabla^2 \phi 
+= \zeta$.
+
+The main system is implemented as an advection problem using a discontinuous Galerkin formulation which provides numerical
+stabilization meaning that the usual hyperviscosity term is not required.  The Poisson solve is implemented in a 
+continuous Galerkin formulation. 
+
+The example provided tracks the nonlinear evolution of an initial Gaussian spatial density perturbation to a
+ turbulent quasi-steady state.  See the internal report \cite{y3re222} for a presentation of the output and a 
+comparison with published results.
+
+Nektar-Driftwave is publicly available at \url{https://github.com/ExCALIBUR-NEPTUNE/nektar-driftwave}.  

@@ -1,0 +1,46 @@
+%This is an attempt at a profile of a certain class of \nep \   user stating 
+%what might be reasonable expectations of the code and its interface.
+\subsection{Use Cases: Finite Element Background}\label{sec:use-cases-finite-element-background}
+
+I am a user with perhaps some grasp of plasma physics but with a more extensive 
+knowledge of finite-element software (I might be an experienced user / 
+developer of Nektar++).  My background may be either physics or engineering; I 
+may be a new recruit to the \nep \ team and needing to learn the code with a 
+view to taking a future role as a \nep \ developer.
+
+I need the interface / DSL to provide access to typical FEM parameters eg.\ 
+choice of intra-element basis functions and their polynomial order, continuous 
+/ discontinuous Galerkin, choice of numerical flux, stabilization options; also 
+whether diffusion and advection terms are explicit or implicit.  In line with 
+eg.\ Nektar++ I expect the choice of time-stepper to be largely ``orthogonal'' 
+to most details mentioned above (the exception is explicit / implicit choice).  
+I would like the option to specify the timestep in terms of the CFL number.
+In addition I require control 
+over relevant meshing parameters eg.\ element spatial density and approximation 
+order of any curvilinear elements.
+I would like the DSL to be able to generate a range of regular meshes 
+internally (at least for trivial cases eg.\ boxes meshed with quads).
+
+I should like some simple, physically-motivated canonical examples that might
+assist with learning plasma physics.
+
+I expect the performance of the code to be at least commensurate with other FEM 
+packages eg.\ Nektar++ and to remain so going forward (and obviously must be 
+scalable to the latest hardware, which means foreseeably an efficient GPU 
+implementation, supporting ideally NVidia, AMD, and Intel Xe / Ponte Vecchio).
+
+I am unused to velocity-space effects.
+I would like the particles aspects of the code to be expressible, insofar as is 
+possible, in FEM language: the conversion from discrete to continuum should 
+ideally not be visible to me eg.\ converting particles to FEM forcing terms.  
+Further to this, it would be good if a set of default particle parameters could 
+be produced based on FEM parameters, as required (perhaps a reasonable value 
+for the number of particles can be derived automatically based on FEM 
+resolution).
+
+If there is an issue from PIC compatibility (eg.\ constrained choice of basis 
+functions), the DSL should make this clear in an explicit error message, plus 
+hopefully advice how to remedy.
+
+%The interface to higher-dimensional kinetic aspects needs careful thought.
+

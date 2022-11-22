@@ -1,0 +1,61 @@
+\subsection{Geometry}\label{sec:geometry}
+
+\begin{quote}
+``Ability to handle complex topologies and novel geometries:
+\begin{itemize}
+\item Capacity to treat different topologies with multiple X-points ($>$2),
+	possibly in a dynamic way, or at least implemented in a way that does
+	not preclude time-varying equilibria being modelled in future; 
+\item Ability to handle singularities in the grid (null points) or to develop
+	accurate scheme(s) that do not have singularities;
+\item Ability to interface with 3D CAD designs of the machine; 
+\item Capability to handle conformal grids that go all the way to the wall for
+	both neutrals and plasma; 
+\item Capability to treat subdivertor structures (only neutrals).''
+\end{itemize}
+\end{quote}
+
+\nep\ will use a spectral/hp finite element approach.
+This allows considerable flexibility in meshing, with elemental tetrahedra,
+hexahedra or prisms being used to describe complex geometries.
+In addition to refinement of the elemental grid sizes ($h$-adaptivity),
+the order of the piecewise polynomial basis functions used on each element may
+also be changed ($p$-adaptivity).
+The production of finite element griddings conforming to CAD descriptions is standard
+for virtually all meshing packages. Project \nep \ will specially aim to use
+the small number of packages that may produce finite elements with curved edges and faces 
+to exploit fully the higher order basis.
+This gives a framework which can achieve spectral convergence on complicated, conforming grids,
+while still being able to handle discontinuities in the solution.
+
+%Unlike approaches based on deformations of Cartesian grids
+%{\blue (JTP: is this what is meant by conformal mappings here?)},
+Should it prove necessary to produce a meshing conforming to
+surfaces of an equilibrium magnetic field, then because
+the finite element approach does not require a structured grid, it should
+be able to treat arbitrary geometries and topologies, 
+in particular including multiple X-points.
+The approach could be extended by further use of adaptive meshing to allow for time-varying equilibria.
+
+%From the science plan
+%\begin{quote}
+%	``[NEPTUNE] work will initially focus upon coupling the turbulent plasma periphery
+%	to the surrounding neutral gas and partially ionized impurities that
+%	exist between the plasma and plasma facing components, in the presence
+%	of an arbitrary tokamak magnetic field and full 3-D first wall
+%	geometry.''
+%
+%	``Infrastructure and workflows will be developed so that the resulting
+%	close coupled models can be constructed routinely based around a
+%	high-fidelity representation of the geometry described by Computer
+%	Aided Design (CAD) systems (this likely requiring the development of
+%	high order meshing technology, e.g.\ using Nektar++).''
+%
+%	``P4. Accurate representation of first wall geometry (face normals to
+%	within 0.1$^\circ$), and correspondingly of complex magnetic field
+%	geometries.''
+%
+%	Solvers in complex geometries part of ``Plasma multiphysics model
+%	(Fusion modelling, work package FM-WP2)''
+%
+%\end{quote}

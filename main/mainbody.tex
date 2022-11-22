@@ -1,0 +1,124 @@
+%https://excalibur-neptune.readthedocs.io/en/latest
+
+\newchapter{Program Name}{sec:PN}
+\input{PN/PN}
+% Sommerville  - Preface from Fig. 4.17 (p.128) The structure of a requirements document
+% Hewitt  - Program Name
+\input{approboxw}
+
+\newchapter{Business Design}{sec:BD}
+\input{BD/BD}
+% sections 1 to 7 of Hewitt  - Business Design
+% Sommerville  - Introduction
+
+\newchapter{Requirements Baseline}{sec:RB}
+The Requirements Baseline (RB) expresses the user requirements for the software.
+%The Interface requirements document (IRD) expresses the customer's interface
+%requirements for the software to be produced by the developer.
+%This document is part of the requirements baseline.
+\input{RB/RB}
+% Hewitt  - Use Cases
+% Sommerville  - User requirements definition
+% Smith  - Problem Statement
+% Smith  - Requirements  - Introduction
+% Smith  - Requirements  - Requirements  - Functional Requirements
+% Smith  - Requirements  - General System Description  - User Characteristics
+
+\newchapter{Technical Specification}{sec:TS}
+The Technical Specification (TS)  contains the developer's response to the
+requirements baseline. %, and is the primary input to the PDR review process.
+%The Interface Control Document (ICD) is the developer's response to the IRD, and is part of the TS.
+\input{TS/TS}
+% Hewitt  - Application Design  - Standards and policies
+% Hewitt  - Application Design  - Guidelines and conventions
+% Smith  - Requirements  - Specific System Description  - Problem Description  - Goal Statements
+% ICD Interface Control Document
+% Smith  - Requirements  - General System Description  - System Constraints
+
+\newchapter{Design Justification File}{sec:DJF}
+The Design Justification File (DJF) is generated and reviewed at all stages of the development
+and review processes.  It contains the documents that describe the trade-offs, design choice
+justifications, verification plan, validation plan, validation testing specification,
+test procedures, test results, evaluations and any other documentation called for to justify
+the design of the software.
+\input{DJF/DJF}
+% Hewitt - ideas - put them here
+% Smith  - V+V Plan+Report
+% Hewitt  - Application Design  - Testability
+% Hewitt  - Application Design  - Monitorability and metrics
+
+\newchapter{Design Definition File}{sec:DDF}
+The Design Definition File (DDF) is a developer-generated file that
+documents the result of the design engineering processes.
+%The DDF is the primary input to the CDR review process and it contains
+%all the documents called for by the design engineering requirements.
+\input{DDF/DDF}
+% Sommerville  - System architecture
+% Sommerville  - System requirements specification
+% Sommerville  - System models
+% Sommerville  - Appendices
+% Smith  - Requirements  - Specific System Description  - Problem Description  - Physical System Description
+% Smith  - Requirements  - Specific System Description  - Solution Characteristics Specification
+% Hewitt  - Application Design  - Design patterns
+% Smith  - Design Specification
+% Hewitt  - Application Design  - Scalability and performance
+% Hewitt  - Application Design  - Extensibility
+% Smith  - Requirements  - Likely Changes
+% all of Hewitt  - Data Design
+% Smith  - Requirements  - Requirements  - Nonfunctional Requirements
+% sections 1 and 2 of Hewitt  - Infrastructure Design
+
+\newchapter{Management File}{sec:MGT}
+The Management File (MGT) is a developer generated file
+that describes the management features of the software project notably,
+organizational breakdown and responsibilities, work activities breakdown,
+selected life cycle, deliveries, milestones and new risks.
+\input{MGT/MGT}
+% Smith  - Development Plan
+% Hewitt  - Infrastructure Design  - Software distribution
+% Hewitt  - Business Design  - Governance
+
+\newchapter{Maintenance File}{sec:MF}
+The Maintenance File (MF) is a developer generated file
+that describes the planning and status of the maintenance, migration and retirement activities.
+\input{MF/MF}
+% Sommerville  - System evolution
+% Hewitt  - Application Design  - Availability
+% Hewitt  - Infrastructure Design  - Maintenance
+% Hewitt  - Application Design  - Maintainability
+
+\newchapter{Operational Documentation}{sec:OP}
+The Operational Documentation (OP) consists of the Developer Manual~\Sec{DevMan} and
+the User Manual~\Sec{UMan}. It is important that
+the user's experience of the software feeds back into the instructions
+as to how to use the software, and mechanisms for achieving this end appear
+in \Sec{feedback}.
+\input{OP/OP}
+% \section{Developer Manual}\label{sec:DevMan}
+% \input{DevMan}
+% \input{../t33/gamestruct.tex}
+% \section{User Manual}\label{sec:UMan}
+% \input{UMan}
+% \input{../t51/dimred.tex}
+
+\newchapter{Proxyapps}{sec:proxyapps}
+A number of proxyapps have been written in order to provide initial \nep \ proofs-of-concept and to test relevant 
+numerical physics.  This section provides brief outlines and links to relevant code repositories.
+\input{proxyapps/proxyapps}
+
+\newchapter{Reference Material}{sec:REF}
+\input{REF/REF}
+% % Sommerville  - Glossary
+% % Smith  - Requirements  - Reference Material
+% % Smith  - Requirements  - Specific System Description  - Problem Description  - Terminology and Definitions
+% % Hewitt  - Infrastructure Design  - Standards and guidelines and conventions
+% % Hewitt  -  Acronyms and Symbols
+
+\begin{warpHTML}
+\ForceHTMLPage \refstepcounter{chapter} \chapter*{Videos} \label{sec:videos} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] Videos}
+videoinsert
+\end{warpHTML}
+
+\newchapter{Index}{sec:IND}
+\input{IND/IND}
+  % Sommerville

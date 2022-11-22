@@ -1,0 +1,159 @@
+%\section{Physical properties of the edge plasma}\label{sec:props}
+The following scrape-off layer (SOL) parameters (including decay lengths) are for the
+L-mode scrape off layer in MAST~\cite{Mi13Expe}.
+For MAST,  with the standard notation,
+$R=1.6$\,m, $B_T \approx 0.6$\,T, $I_\phi \approx 400$\,kA and
+$a=0.6$\,m, values which imply that the poloidal field at the
+plasma edge $B_p \approx 0.1$\,T.
+The main result of the paper~\cite{Mi13Expe} is that the decay length of the power
+deposition at midplane is $\lambda_q \approx 2$\,cm (range $1-3$\,cm)
+and $P_{tot} \approx 350$\,kW.
+
+Unless stated otherwise, the derived length, timescales and speeds are derived from
+formulae and graphs in Wesson's book~\cite[Chap 10]{wesson}.
+The derived quantities have been checked against SI formulae
+in ref~\cite[Table 2.2]{miyamoto}, and also compared with those
+listed in~\cite[Appendix]{Xu10Inte}. It is worth noting that although
+the latter table describes the SOL of JET (and in addition its separatrix and pedestal),
+JET values are typically within a factor of~$2$ of those for MAST.
+
+\subsection{Typical discharge}
+
+The edge values found experimentally are 
+$T_e \approx 10$\,eV, $T_i \approx 20$\,eV, $n \approx 3 \times 10^{18}$\,m$^{-3}$.
+These imply that the Coulomb logarithm $\Lambda \approx 12.5$, and
+the flow speed~$U_d \approx 10^5$\,ms$^{-1}$ may be estimated using
+$P_{tot}= 2 \pi R \lambda_q n (T_e+T_i) U_d$.
+Sadly there appears to be no reliable determination of the neutral density~${\sf n}$.
+(Note use of different font to distinguish neutral density from plasma density.)
+
+\subsection{Length scales}
+
+Debye length $\lambda_D \approx 10^{-5}$\,m. \\
+Electron Larmor radius $\rho_{te} \approx 7 \times 10^{-5}$\,m. \\
+$\rho_{ti} \approx 40 \rho_{te} \approx 4$\,mm. \\
+Mean free path for electrons $\lambda_{emfp} \approx 1$\,m (parallel to field).
+
+\subsection{Time scales}
+
+%$\tau_e \approx 2 \times 10^{-8}$\,$s$.
+Collision frequency (electrons with ions) $\nu_e \approx 3$\,MHz, $\tau_e \approx 3 \times 10^{-7}$\,s~\cite{NRLpf07}. \\
+Plasma frequency $f_{pe} \approx 15$\,GHz, $\tau_{pe} \approx 7 \times 10^{-11}$\,s. \\
+$f_{pi} \approx 0.4$\,GHz, $\tau_{pi} \approx 3 \times 10^{-9}$\,s. \\
+Cyclotron frequency based on $B_p=0.1$\,T, $f_{ce} \approx 2.8$\,GHz, $\tau_{ce} \approx 4 \times 10^{-10}$\,s. \\
+$f_{ci} \approx 1.4$\,MHz, $\tau_{ci}\approx  7\times 10^{-7}$\,s.
+
+\subsection{Speeds}
+Electron thermal $c_{se} \approx 1.2 \times 10^6$\,m$s^{-1}$. \\
+$c_{si} \approx 4 \times 10^4$\,m$s^{-1}$. \\
+Alfven speed using $B_T$ is $U_A \approx 10^7$\,m$s^{-1}$.
+
+Collisionality parameter $\nu^{*}_c = \frac{q_e^4}{3 m_p^2\epsilon_0^2} L_0 n_0 /C_0^4$ \\
+(note that $\frac{m_p^2\epsilon_0^2}{e^4}=\frac{1}{3}\;s^4 m^{-6}$.)\\
+Taking $L_0 \approx 10$\,m, $n_0=n$.  Squared sound speed $C_0^2= T_i (|e|/m_e) (m_e/m_i)$, $C_0 \approx 3 \times 10^4$\,m$s^{-1}$, implies  \\
+Collisionality parameter $\nu^{*}_c \approx 30$. \\
+Peclet number $\approx 0.4 \nu^{*}_c \approx 10$, but turbulent coefficients$\approx1$\,m$^2$s$^{-1}$
+will generally give a smaller value.
+
+Resistive diffusion $\eta_d=15$\,$m^2 s^{-1} \propto T_e^{-3/2}$. \\
+(Note that there is a notational clash with~$\eta$; fusion physics and astrophysics
+differ by a factor~$\mu_0$, so that $\eta_d=\eta(\mbox{fusion})/\mu_0$.)
+
+\subsection{Applicability of Fluid Models}\label{sec:applmhd}
+A key requirement for fluid models is that collision times should be much less than
+the timescale of interest, which as the preceding subsections show is true, except in the case of
+$\tau_e$, the electron-ion collision time, and for the electrons more generally
+for dynamics along the field-lines. The ion gyroradius is also uncomfortably large
+compared to quantities of interest. Note that $\tau_e$ is the longest timescale
+in the classical picture of approach to a single fluid picture of plasma, other
+timescales, including the timescale for momentum to equilibrate, are shorter.
+
+Single fluid MHD is widely used in astrophysics consistent with the eloquent advocacy
+by Priest and Forbes~\cite[\S\,1.7]{priestforbes}. They point out that ideal MHD
+is consistent with the drift ordering, despite confusion caused by the easy possibility
+to misinterpret
+Hazeltine and Meiss~\cite {hazeltinemeiss} on the subject. (The point is that
+although MHD treats a faster timescale, it is valid on longer timescales, provided
+relevant smaller/slower terms are retained.)
+Moreover, SOL timescales involving filaments are fast, witnessed by the fact that
+the ion gyro-frequency is used as normalisation for electrostatic models in
+ref~\cite{Mi12Simu}, which from \Sec{props} is a not too dissimilar timescale~$10^{-7}\,s$
+to the Alfven timescale based on the poloidal field~($1$\,cm/$10^6 \approx 10^{-8}$\,s).
+Later, Freidberg~\cite{freidberg}
+showed that, at least in directions perpendicular to~${\bf B}$, the dynamical MHD equation
+applies to a more general `guiding centre' plasma. The situation may be summarised
+by saying that complexity lies mostly in the transport (diffusive) terms
+as these attempt to account for low collisionality, finite Larmor radius (FLR) etc.
+
+Perhaps fortunately, the terms predicted by kinetic theory will usually be small
+(except for the electrical conductivity) compared to the turbulent transport
+expected on the basis of both observation and theory of the SOL plasma. The
+simplest way to account for turbulence is to assume ad-hoc isotropic, uniform `eddy'
+diffusivities in addition to the usual fluid advection terms.
+Lastly, in a simple extension of MHD, large~$\tau_e$  is accounted for by allowing
+the electrons and ions to have different temperatures, consistent with observation.
+Effects due to the presence of a large neutral population in the SOL
+could well be significant, see next \Sec{neuts}.
+However neutrals are mainly expected to act as a sink of momentum and energy.
+
+\subsection{Effect of Neutrals}\label{sec:neuts}
+Formulae for a weakly ionised plasma are given in the Plasma Formulary\cite{NRLpf07}.
+The collision cross-sections for electrons and ions respectively from
+ref~\cite{Ha91hydr} are $\sigma_s^{e|0}= 10^{-19}$\,$m^2$ and
+$\sigma_s^{i|0}= 4 \times 10^{-19}$\,$m^2$.
+Hence, the collision frequencies for electrons and ions respectively are
+\begin{equation}
+\nu_{e{\sf n}}= 1.2 \times 10^{-13} {\sf n},\;\;\; \nu_{i{\sf n}}= 2 \times 10^{-14} {\sf n}
+\end{equation}
+where ${\sf n}$ is the neutral density.
+(Note use of different font to distinguish neutral density from plasma density.)
+If ${\sf n}=n$ is assumed, then
+the corresponding SOL collision times are
+\begin{equation}
+\tau_{e{\sf n}}= 3 \times 10^{-6} s,\;\;\; \tau_{i{\sf n}}= 2 \times 10^{-5} s
+\end{equation}
+so that the number of collisions experienced by a typical SOL ion
+before it hits a PFC is small.
+Nonetheless, since $1/m_e \gg 1/m_i$, $D_e \gg D_i$ and the
+diffusion coefficient for both electrons and ions is numerically large
+\begin{equation}
+D_A \approx (1+\frac{T_e}{T_i}) D_i \approx \frac{10^{23}}{{\sf n}}
+\end{equation}
+
+The parallel electrical diffusivities are different,
+for electrons and ions respectively these are
+\begin{equation}
+\eta_{e {\sf n}\parallel} =4 \frac{{\sf n}}{n},\;\;\;
+\eta_{i {\sf n}\parallel} =0.5 \frac{{\sf n}}{n}
+\end{equation}
+The implication from the formulae in ref~\cite{Le06emer} is that 
+the value for $\eta_{e \parallel}$ combines additively with the usual
+Spitzer value in a more
+highly ionised plasma. Assuming ${\sf n} \approx n$, however the correction
+is seen to be an increase of $4$ in $15$\,$m^2s^{-1}$, i.e. only about~$25$\,\%.
+
+Arber~\cite{Le06emer,Ar07Emer} further points out that
+according to the Formulary~\cite{NRLpf07},
+in a weakly ionised plasma
+the conductivity is greatly reduced (and the magnetic diffusivity
+correspondingly enhanced) in directions normal to a strong magnetic field.
+Typically for Braginskii theory, the
+factor is $x_e^2$ for the perpendicular direction and $x_e$ for
+the other direction, where
+\begin{equation}
+x_e=\frac{2\pi f_{ce}}{\nu_{e{\sf n}}} \approx \frac{8 \times 10^{23}}{{\sf n}}
+\end{equation}
+For ${\sf n}=n=3 \times 10^{18}$, these are huge increases. However it is worth
+noting that if the electromagnetic potential representation is invoked, so that
+\begin{equation}\label{eq:E}
+{\bf E} = -\nabla \Phi + \frac{\partial {\bf A}}{\partial t}
+\end{equation}
+then, in the direction parallel to~${\bf B}$, neglecting the gradient of
+electric potential~$\Phi$
+\begin{equation}\label{eq:A}
+\frac{\partial  A_{\parallel}}{\partial t}=\eta_{e {\sf n}\parallel} J_{\parallel}
+\end{equation}
+Thus the enhanced diffusivities need not signify if this equation is used for
+magnetic field evolution, although applying a gauge condition on the potentials
+may become difficult in complicated 3-D topologies.
+

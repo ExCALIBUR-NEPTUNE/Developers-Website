@@ -1,0 +1,60 @@
+\subsection{Use Cases: Engineers}\label{sec:use-cases-engineers}
+
+\emph{As a thermomechanical engineer I:}
+
+\begin{itemize}
+\item work with a large range of open source and proprietary codes which
+  requires bindings to other tools, eg\.:
+
+  \begin{itemize}
+  \item FMU
+  \item Python (Jupyter and regular)
+  \item OptiSLang
+  \item Twinbuilder
+  \end{itemize}
+\item work with CAD software to generate geometries which I want to
+  propagate through my workflow.
+\item am interested in heat fluxes in all forms: from time and space
+  averages to high resolution 3D time and data.
+\item need to be able iterate on designs quickly and in an automated way.
+\item am neither an HPC expert nor a plasma / tokamak physicist.
+\end{itemize}
+
+\emph{and I want to:}
+
+\begin{itemize}
+\item know, given a sensible physics model provided by other experts, what
+  the transient peak and average heat loads are on plasma facing
+  components.
+\item not have to understand software dependencies and be able to install and
+  run easily eg.\ ``in the cloud''.
+\item be able to configure the software to undertake parameter scans.
+\item have a handle on the sensitivity of the solution to the inputs and
+  sources of error / uncertainty.
+\item be able to re-use the spatio-temporal heat fluxes as a model in more
+  thermo-mechanical calculations. This means:
+
+  \begin{itemize}
+  \item reading in the solution after the calculation.
+  \item using a fit to the data in the form of eg.\ a reduced order model of
+    the heat fluxes, surrogates etc.
+  \item being able to export CAD geometries and import solutions back into
+    engineering tools eg.\ ANSYS.
+  \end{itemize}
+\item have reproducible workflows to save and share with colleagues
+  (eg.\ databases of inputs / outputs / config).
+\item export results flexibly to inter-operate with multiple surrogate
+  frameworks.
+\item be in the loop with development process so it is possible to keep other
+  workflows up to date.
+\end{itemize}
+
+\emph{This would mean I can:}
+
+\begin{itemize}
+\item design components with colleagues within eg.\ STEP.
+\item make use of the \nep\ software in combination with proprietary tools that engineers
+  know inside out.
+\item be insulated, to a sensible extent, from the complexities of the
+  numerics, plasma physics and HPC.
+\end{itemize}

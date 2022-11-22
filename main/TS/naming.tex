@@ -1,0 +1,126 @@
+The success of the project depends on an ability to code up vast numbers
+of complicated mathematical expressions containing a wide range of
+mathematical variables or symbols, illustrated by over $250$ entries
+in Annex B to \cite{pappeqs3}. Coding must be done as automatically, reliably
+and unambiguously as possible, starting with source expressions that are
+presumed to be in the \LaTeX \ markup language. Unfortunately, the
+character set for names of C++ variables is restricted to letters of
+upper and lower case plus underscore '\_`. Underscore will be reserved
+to separate words, ie. to enable use of 'pothole' convention. There is
+thus a challenge as to how to represent the names of variables as set
+out using \LaTeX \ conventions, which involve heavy use of the escape
+character backslash. To enable conversion, to produce C++ equivalents,
+reserve `o' as the escape character, demanding that no mathematical
+variable is allowed to use the letter, or its Greek equivalent omicron,
+even as a suffix or superfix.
+
+A list in alphabetical order of the conventions as two character codes
+is provided by \Tab{twoclatex}.
+
+\subsubsection{Two character variables}\label{sec:two-character-variables}
+
+Each keyboard character will be represented by one or two lowercase
+letters, normally those which form the first two letters of its name,
+ommitting `o', thus :
+
+\begin{itemize}
+\item `a' will represent `a'
+\item `aa' will represent `A'
+\item `as' will represent '*' (for asterisk)
+\item `bl' will represent bracket on left {[}
+\item `br' will represent bracket on right {]}
+\item `pl' will represent parenthesis on left \{
+\item `pr' will represent parenthesis on right \}
+\item `ti' will represent tilde
+\item `ci' will represent circumflex
+\item `sq' will represent single quote
+\item `dq' will represent double quote
+\item `st' will represent stop or dot
+\item `ds' will represent double stop or double dot
+\item `pu' will represent `+'
+\item `mn' will represent `-'
+\item `gt' will represent $>$
+\item `lt' will represent $<$
+\item `vb' will represent $|$
+\end{itemize}
+
+Should it be necessary to use `o', then `ooo' will represent lowercase
+`o' and `oooo' will represent `O'.
+
+Greek lowercase letters and other special characters will similarly be
+represented by two lowercase letters, apart from `o', thus:
+
+\begin{itemize}
+\item `al' will represent $\alpha$
+\item `be' will represent $\beta$
+\item `me' will represent $\omega$
+\item `ar' will represent arrow to right $\rightarrow$
+\item `pa' will represent parallel $\|$
+\item `pe' will represent perpendicular $\perp$
+\item `un' will represent underscore \_
+\end{itemize}
+
+Variant Greek letters will begin with `v', followed by the first letter
+of their transliteration into Roman letters, and uppercase Greek letters
+will be represented by the first and third letters, except for $\Pi$,
+$\Phi$ and $\Psi$ where this is not possible, thus:
+
+\begin{itemize}
+\item `ve' will represent $\varepsilon$
+\item `dl' will represent $\Delta$
+\item `mg' will represent $\Omega$
+\item `py' will represent $\Pi$
+\item `pf' will represent $\Phi$
+\item `pj' will represent $\Psi$
+\end{itemize}
+
+If storage of an expression is required, the following will be useful,
+thus:
+
+\begin{itemize}
+\item `pt' denotes $\partial$
+\item `ml' denotes multiplication
+\item `dv' denotes division
+\end{itemize}
+
+A single letter followed by a digit will have that as a suffix, thus:
+
+\begin{itemize}
+\item `n1' will denote $n_1$
+\end{itemize}
+
+\subsubsection{Escape sequences}\label{sec:escape-sequences}
+
+Use of different fonts will be denoted by `o' followed by one or two
+digits, preceding the above codes, thus :
+
+\begin{itemize}
+\item `o1' will denote uppercase, for use in conjunction with Greek alphabet
+\item `o2' will denote bold(math)
+\item `o3' will denote calligraphic, (math)cal
+\item `o4' will denote sans-serif, (math)sf
+\item `o5' will denote typewriter, (math)tt
+\end{itemize}
+
+Some of the higher integer values might be used to denote members of the
+same `namespace', cf.~the way sf is used to denote neutral quantities.
+
+Positioning of suffixes and prefixes will be denoted by `o' followed by
+a single letter, thus:
+
+\begin{itemize}
+\item `os' indicates underneath, S for South
+\item `on' denotes above, N for North
+\item `oe' denotes suffix, E for East
+\item `ow' denotes prefix, W for West
+\item `or' denotes superfix, R for Right
+\item `ol' denotes preceding superfix, L for Left
+\end{itemize}
+
+Other \LaTeX \ commands will simply see their leading backslash replaced by
+`o', thus:
+
+\begin{itemize}
+\item `onabla' indicates $\nabla$
+\item `otimes' indicates $\times$
+\end{itemize}

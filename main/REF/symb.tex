@@ -1,0 +1,423 @@
+\begin{longtable}{|p{3.0cm}|p{10.0cm}|p{3.0cm}|}
+\caption{\textbf{\textsf{TABLE OF MATHEMATICAL SYMBOLS}}
+If no units are given, then quantity is dimensionless, or if the units are given as~$?$,
+then the dimensions depend on context.
+Generally, the usage of symbols tries to follow that from the Plasma Formulary~\cite{NRLpf07},
+in SI units, with temperatures specified as~$kT$ which returns~$J$. The Formulary also
+give the fundamental dimensions of the SI units, which should enable checking of dimensional consistency of
+equations, eg.\ magnetic field induction is in Tesla~($T$) whence the fundamental
+dimension expression gives~$T=kg s^{-1} C^{-1}$.
+Note that the symbols are sorted by font as well as alphabet, so that boldface symbols
+appear immediately after~`b' (backslashes ignored). The main source for the symbols is
+the Equations document~\cite{pappeqs}, also included are those listed as used in the text by
+Karniadakis and Sherwin~\cite{karniadakissherwin}, prefaced by (K+S), plus symbols used in the
+report~\cite{y2re313}. \label{tab:symbols}
+} \\
+\hline
+\textbf{\textsf{Symbol}} & \textbf{\textsf{Description}}  & \textbf{\textsf{Units}} \\
+\hline
+$a$ & minor radius of the torus (horizontal) & $m$ \\
+$A$ & atomic mass of the ion &  \\
+$[a,b]$ & arbitrary finite interval  & \\
+$\alpha$ & as suffix is species label or index &  \\
+$\alpha_n$ & perturbation amplitude &  \\
+$\alpha^{Z_p\rightarrow Z}$ & partial dielectronic recombination rate coefficient  & $m^3 s^{-1}$  \\
+$\alpha^{Z\rightarrow Z_m}$ & partial dielectronic recombination rate coefficient  & $m^3 s^{-1}$  \\
+$b$ & minor radius of the torus (vertical) & $m$ \\
+$B_0$ & used to make $B$ dimensionless  &  $T$  \\
+$\bar{N}_Z$ & average number of charge states  &   \\
+$B=|{\bf B}|$ & amplitude of the imposed magnetic field  &  $T$  \\
+$\beta$ & as suffix is species label & \\
+$\beta$ & (Glossary) Ratio of plasma pressure to pressure in magnetic field &  \\
+${\bf a} = d^2 {\bf x}/dt^2$ & acceleration experienced by a particle  &  $m^2 s^{-1}$ \\
+${\bf A}({\bf x},t)$ & magnetic vector potential   &  $T m$ \\
+${\bf B}({\bf x},t)$ & magnetic field  &  $T$ \\
+${\bf b}$ & unit vector giving the direction of the magnetic field & \\
+${\bf E}({\bf x},t)$ & electric field  &  $V m^{-1}$ \\
+${\bf E}^{+}$ & modified electric field  &  $m^{-2}$ \\
+${\bf F}$ & force vector  &  $N$ \\
+${\bf u}_0$ & initial fluid velocity  &  $m s^{-1}$ \\
+${\bf u}_{cx}$ & `charge exchange' perpendicular fluid velocity component  &  $m s^{-1}$ \\
+${\bf u}_{E \times B}$ & `E cross B' perpendicular fluid velocity component  &  $m s^{-1}$ \\
+${\bf u}_e$ & velocity of the electrons  &  $m s^{-1}$ \\
+${\bf u}_i$ & velocity of the ion species  &  $m s^{-1}$ \\
+${\bf u}_{\nabla B e}$ & `grad B' perpendicular fluid velocity component for electrons  &  $m s^{-1}$ \\
+${\bf u}_{\nabla B i}$ & `grad B' perpendicular fluid velocity component for ions  &  $m s^{-1}$ \\
+${\bf u}_\textrm{diff}$ & `diffusive' perpendicular fluid velocity component  &  $m s^{-1}$ \\
+${\bf v}_\alpha$ & velocity of species~$\alpha$  &  $m s^{-1}$ \\
+${\bf v}_e$ & velocity of the electrons  &  $m s^{-1}$ \\
+${\bf v}_{\|}$ & fluid velocity component along fieldline  &  $m s^{-1}$ \\
+${\bf v}$ & generic velocity  &  $m s^{-1}$ \\
+${\bf v}_i$ & velocity of the ion species  &  $m s^{-1}$ \\
+${\bf v}_\perp$ & fluid velocity component normal to flux surface  &  $m s^{-1}$ \\
+${\bf v}_\wedge$ & fluid velocity component in flux surface normal to field direction  &  $m s^{-1}$ \\
+${\bf x}=\left(x_1,x_2,\dots,x_d\right)$ & is a $d$-dimensional vector  & \\
+${\bf x}$ & position  &  $m$ \\
+$b_n$ & `b-factors'~ref~\cite[slide 21]{omullane} & \\
+$\boldsymbol{\xi}(\theta)$ & multi-dimensional random variable with a specific probability distribution as a function of the random parameter~$0\leq\theta\leq 1$ & \\
+$\boldsymbol{B}$ &  (K+S) Basis matrix & \\
+$\boldsymbol{D}_{\xi}$ &  (K+S) Elemental derivative matrix with respect to $\xi$ & \\
+$\boldsymbol{f}^e$ &  (K+S) Force vector of the $e$th element & \\
+$\boldsymbol{H}$ &  (K+S) Helmholtz matrix ($=\mathcal{A}^T \underline{\boldsymbol{H}^e} \mathcal{A}$)) & \\
+$\boldsymbol{H}^e$ &  (K+S) Elemental Helmholtz matrix & \\
+$\boldsymbol{L}$ &  (K+S) Laplacian matrix ($=\mathcal{A}^T \underline{\boldsymbol{L}^e} \mathcal{A}$)) & \\
+$\boldsymbol{\Lambda}(u)$ &  (K+S) Diagonal matrix of $u(\xi_i, \xi_2)$ evaluated at quadrature points & \\
+$\boldsymbol{L}^e$ &  (K+S) Elemental Laplacian matrix & \\
+$\boldsymbol{M}$ &  (K+S) Mass matrix ($=\mathcal{A}^T \underline{\boldsymbol{M}^e} \mathcal{A}$) & \\
+$\boldsymbol{\mathcal{A}}^T$ &  (K+S) Matrix global assembly & \\
+$\boldsymbol{M}^e$ &  (K+S) Elemental mass matrix & \\
+$\boldsymbol{n}$ &  (K+S) Unit outward normal & \\
+$\boldsymbol{\omega}$ &  (K+S) Vorticity & \\
+$\boldsymbol{u}^e$ &  (K+S) Vector containing function evaluated at quadrature points & \\
+$\boldsymbol{W}$ &  (K+S) Diagonal weight / Jacobian matrix & \\
+$B_p$ & amplitude of the poloidal magnetic field  &  $T$  \\
+$B_T$ & amplitude of the imposed toroidal magnetic field  &  $T$  \\
+$C_0=\sqrt{kT_0}$ & used to make velocities dimensionless  &  $m s^{-1}$ \\
+$\cap$ &  (Sets) Set intersection & \\
+$\chi$ &  (K+S) Space of trial solutions & \\
+$\chi^{\delta}$ &  (K+S) Finite-dimensional space of trial solutions & \\
+$\chi_i(\xi)$ &  (FE Basis) Local Cartesian to global coordinate mapping & \\
+$c_p$ & specific heat at constant pressure  &  $J kg^{-1} K^{-1}$ \\
+$c_s = \sqrt{\frac{kT_i + {Z_i} kT_e}{{m_i}}}$ & acoustic speed  &  $m s^{-1}$ \\
+$c_{se} = \sqrt{\frac{kT_e}{{m_e}}}$ & acoustic speed of electrons  &  $m s^{-1}$ \\
+$c_{si} = \sqrt{\frac{kT_i}{{m_i}}}$ & acoustic speed of ions  &  $m s^{-1}$ \\
+$C_S$ & sound speed coefficient in radiation equation  &  $m s^{-1}$ \\
+$\cup$ &  (Sets) Set union & \\
+$C(x_i, x_j)$ & covariance of random variables $x_i$, $x_j$  & \\
+$d$ & number of dimensions over which the integral is performed  & \\
+$\delta p_i$ & stress tensor  & $N m^{-2}$ \\
+$\delta$ & Kronecker delta function & \\
+$\delta_e$ & energy flux factor at boundary of the electrons  & \\
+$\delta=\frac{1}{2}(\delta_e+\delta_i)$ & energy flux factor at boundary of `mean' species  & \\
+$\delta_i$ & energy flux factor at boundary of the ion species  & \\
+$\delta_s$ & (Glossary) Magnetisation  parameter, species~$s$  gyroradius normalised to~$L$ & \\
+$\delta(x)$ & Dirac delta function of continuous real variable $x$  & \\
+$D_A$ & diffusion coefficient for plasma charges in a background of neutrals  &  $m^2 s^{-1}$ \\
+$D_e$ & diffusion coefficient for electrons in a background of neutrals  &  $m^2 s^{-1}$ \\
+$D_n$ & neutral diffusion coefficient  &  $m^2 s^{-1}$ \\
+$D_i$ & diffusion coefficient for ions in a background of neutrals  &  $m^2 s^{-1}$ \\
+$|e|$ & absolute value of the charge on the electron & $C$ \\
+$e$ &  (K+S) Finite element number $1 \leq e \leq N_{el}$ & \\
+$e_{ijk}$ & weighted integral of triple products of $\Psi_i$ of the ion species & \\
+$\emptyset$ &  (Sets) Empty set & \\
+$\epsilon_0$ & permittivity of free space  &  $F m^{-1}$ \\
+$\epsilon_r=L_s/(t_0 C_0)$ & scale factor for transient term  & \\
+$\eta_1, \eta_2, \eta_3$ &  (FE Basis) Local collapsed Cartesian coordinates & \\
+$\eta_B$ & plasma resistivity after Braginskii  &  $\Omega m$ \\
+$\eta_d=\eta_B/\mu_0$ & plasma resistivity, as diffusivity  &  $m^2 s^{-1}$ \\
+$\eta_{e{\sf n}}$ & contribution to plasma resistivity, as diffusivity, from electron-neutral interactions  &  $m^2 s^{-1}$ \\
+$\eta_{e{\sf n}\|}$ & contribution to plasma parallel resistivity, as diffusivity, from electron-neutral interactions  &  $m^2 s^{-1}$ \\
+$\eta_{i{\sf n}}$ & contribution to plasma resistivity, as diffusivity, from ion-neutral interactions  &  $m^2 s^{-1}$ \\
+$\eta_{i{\sf n}\|}$ & contribution to plasma parallel resistivity, as diffusivity, from ion-neutral interactions  &  $m^2 s^{-1}$ \\
+$f_0$ & constant in the expansion of $f\left(x_1,\ldots,x_d\right)$  & \\
+$f_0$ & initial distribution function of the electrons & $m^{-6} s^3$ \\
+$f_\alpha$ & distribution function of species~$\alpha$ & $m^{-6} s^3$ \\
+$f_e$ & distribution function of the electrons & $m^{-6} s^3$ \\
+$f_i$ & distribution function of the ion species & $m^{-6} s^3$ \\
+$f_{ij}(x_i,x_j)$ & coefficient in the expansion of $f\left(x_1,\ldots,x_d\right)$  & \\
+$f_{ce}= \frac{\omega_{ce}}{2\pi}$ & electron cyclotron frequency & $s^{-1}$ \\
+$f_{ci}= \frac{\omega_{ci}}{2\pi}$ & ion cyclotron frequency & $s^{-1}$ \\
+$f_{pe}= \frac{\omega_{pe}}{2\pi}$ & electron plasma frequency & $s^{-1}$ \\
+$f_{pi}= \frac{\omega_{pi}}{2\pi}$ & ion plasma frequency & $s^{-1}$ \\
+$f_i(x_i)$ & coefficient in the expansion of $f\left(x_1,\ldots,x_d\right)$  & \\
+$f\left(x_1,\ldots,x_d\right)$ & joint probability distribution  & \\
+$f^\mathcal{E}$ & flux term (fieldline integrated source) for plasma energy  & \\
+$F^\mathcal{E}$ & flux term (fieldline integrated source divided by field) for plasma energy  &  $m^{-1} s^{-2} C$ \\
+$f^n$ & flux term (fieldline integrated source) for plasma number density & \\
+$F^n$ & flux term (fieldline integrated source divided by field) for plasma number density  &  $m^{-3} C$ \\
+$f^u$ & flux term (fieldline integrated source) for plasma momentum  & \\
+$F^u$ & flux term (fieldline integrated source divided by field) for plasma momentum  &  $m^{-2} s^{-1} C$ \\
+$f(x,{\bf v},t)$ & generic distribution function & $m^{-6} s^3$ \\
+$\Gamma(x)$ & gamma function of continuous variable $x$  & \\
+$g(h_j)$ & activation function (of input $h_j$) of a neuron in a neural network  & \\
+$H_\alpha$ & Hamiltonian for species~$\alpha$ & \\
+$\hat{\boldsymbol{u}}^e$ &  (K+S) Vector of expansion coefficients & \\
+$\hat{v}_g$ &  (K+S) Global list of coefficients & \\
+$\hat{v}_g$ &  (K+S) List of all elemental coefficients ($=\underline{v^e}$) & \\
+$h_j$ & real-number input to a neuron in a neural network  & \\
+$h_p(\xi)$ &  (FE Basis) One-dimensional Lagrange polynomial of order $p$ & \\
+$i$ & as suffix denotes ions & \\
+$i$ & as suffix denotes regular excited state & \\
+$i$ & as suffix generic label & \\
+$I_\phi$ & $\phi-$ or toroidal component of plasma current & $A$ \\
+$I_H$ & Hydrogen reionisation potential as defined in ref~\cite{Ha13Benc} & $eV$ \\
+$i,j,k$ &  (K+S) General summation indices & \\
+$^I\mathcal{F}_{i\sigma}$ & coefficient of ionisation for the transition from metastable state~$\sigma$ to regular excited state~$i$ & \\
+$\in$ &  (Sets) Is a member of; belongs to & \\
+$I(\psi)=B_T/R$ & function giving the toroidal field as a function of~$\psi$  & $T m^{-1}$ \\
+$I^Z$ & power per atom released in dielectronic recombination  & $W$ \\
+$j$ & as suffix is generic label & \\
+$j_{ext}(R,Z)$ & electric current density induced in plasma by external coils  & $A m^{-2}$ \\
+$j_\phi$ & $\phi-$ or toroidal component of plasma current density  & $A m^{-2}$ \\
+$k$ & as suffix is generic label & \\
+$k$ & chosen to scale so that $kT_0$, $kT_d$ is an energy & $?$ \\
+$\kappa_\alpha$ & thermal diffusivity of species~$\alpha$ & $m^2 s^{-1}$ \\
+$\kappa_{e\|}$ & parallel thermal diffusivity of electrons & $m^2 s^{-1}$ \\
+$\kappa_{e\perp}$ & perpendicular thermal diffusivity of electrons & $m^2 s^{-1}$ \\
+$\kappa_{i\|}$ & parallel thermal diffusivity of ions & $m^2 s^{-1}$ \\
+$\kappa_{i\perp}$ & perpendicular thermal diffusivity of ions & $m^2 s^{-1}$ \\
+$\kappa=k_c/\rho_m c_p$ & thermal diffusivity tensor of solid & $m^2 s^{-1}$ \\
+$k_B$ & Boltzmann's constant  & $J K^{-1}$ \\
+$k_c$ & thermal conductivity tensor  & $J m^{-1} s^{-1} K^{-1}$ \\
+$K_{cx}\left( n_i, T_i \right)$ & reaction rate of charge exchange reactions  & $m^3 s^{-1}$ \\
+$K_i$ & ionization reaction rate  & $m^3 s^{-1}$ \\
+$K_M$ & chosen as $k_B/m_i$ or $|e|/m_i$ so that $\sqrt{K_MT_0}$, $\sqrt{K_MT_d}$ is an ion speed & $?$ \\
+$K_r$ & recombination reaction rate  & $m^3 s^{-1}$ \\
+$kT_0$ & $T_0$ in energy units  & $J$ \\
+$kT_d$ & $T_d$ in energy units  & $J$ \\
+$K_v(x)$ & modified Bessel function of the second kind, order $v$  & \\
+$k_w$ & wavenumber vector & $m^{-1}$ \\
+$\lambda$ & arbitrary quantity  & $?$ \\
+$\lambda$ & Coulomb logarithm & \\
+$\lambda$ &  (K+S) Helmholtz equation constant & \\
+$\Lambda$ & Coulomb logarithm & \\
+$\lambda_q$ & $e$-folding length of midplane profile of power loss when an exponential is fitted & $m$ \\
+$\Lambda_b$ & sheath potential drop normalized to~$T_e$  & $eV$ \\
+$\lambda_D$ & (Glossary) Debye lengthscale above which local electrostatic fluctuations due to presence of discrete charged particles are negligible  & $m$ \\
+$\lambda_{smfp}$ & (Glossary) Mean free path of particle species~$s$ & $m$  \\
+$\langle \sigma v \rangle_{CX}$ & reaction rate for charge exchange  & $m^3 s^{-1}$ \\
+$\langle \sigma v \rangle_{ION}$ & reaction rate for ionisation  & $m^3 s^{-1}$ \\
+$\langle \sigma v \rangle_{REC}$ & reaction rate for recombination  & $m^3 s^{-1}$ \\
+$\langle\sigma v\rangle$ & generic reaction rate  & $m^3 s^{-1}$ \\
+$L_0$ & Typical lengthscale  & $m$ \\
+$L_i^{N_m}(\boldsymbol{\xi})$ &  (FE Basis) Two-dimensional Lagrange polynomial through $N_m$ nodes ${\mathbf \xi}_i$ & \\
+$L_s$ & length of fieldline  & $m$ \\
+$m$ & species particle mass & $kg$ \\
+$M_0$ & Mach number at $s=0$ boundary & \\
+$M_1$ & Mach number at $s=1$ boundary & \\
+$m_\alpha$ & mass of species~$\alpha$ & $kg$ \\
+$\mathbb{E}$ & expectation  & \\
+$\mathbb{E}_{k\neq i, l\neq j}$ & expectation computed by integrating over all the $x_k$ except for~$x_i$ and  $x_j$  & \\
+$\mathbb{E}_{x_{k\neq i}}$ & expectation computed by integrating over all the $x_k$ except for~$x_i$  & \\
+$\mathbb{L}(u)$ &  (K+S) Linear operator in $u$ & \\
+$\mathbb{P}$ &  (K+S) Projection operator & \\
+$\mathbb{P}^{\delta}$ &  (K+S) Discrete projection operator & \\
+${\mathbf v}$ &  (K+S) Velocity $[u, v, w]^T$ & \\
+$\mathcal{E}_\alpha$ & energy of species~$\alpha$ & $J m^{-3}$ \\
+$\mathcal{E}_e$ & energy of the electrons & $J m^{-3}$ \\
+$\mathcal{E}_i$ & energy of the ion species & $J m^{-3}$ \\
+$\mathcal{E}_R$ & total plasma radiation & $W m^{-3}$ \\
+$\mathcal{F}$ & generic coefficient of excitation, ionisation or recombination  & $m^3 s^{-1}$ \\
+$\mathcal{F}_\alpha$ & functional of moments of species~$\alpha$  & $m^{-6} s^3$ \\
+$\mathcal{I}$ &  (K+S) Interpolation operator & \\
+$\mathcal{I}^{\delta}$ &  (K+S) Discrete interpolation operator & \\
+$\mathcal{K}_{\|}$ & parallel thermal conductivity of plasma & $m^{-1}s^{-1}$ \\
+$\mathcal{K}$ & thermal conductivity of plasma & $m^{-1}s^{-1}$ \\
+$\mathcal{K}_{\perp}$ & thermal conductivity of plasma perpendicular to field and flux surface & $m^{-1}s^{-1}$ \\
+$\mathcal{K}_{\wedge}$ & thermal conductivity of plasma perpendicular to field in flux surface & $m^{-1}s^{-1}$ \\
+$\mathcal{L}_7$ & 7-D Lie derivative (space, velocity-space and time make up the $3+3+1=7$ dimensions)  & $s^{-1}$ \\
+$\mathcal{P}_{P}(\Omega)$ &  (K+S) Polynomial space of order $P$ over $\Omega$ & \\
+$\mathcal{Q}$ & coefficient in radiation equation  & $m^3 s^{-1}$ \\
+$\mathcal{Q}_{\sigma \rightarrow \rho}^{Z\rightarrow Z}$ & parent-metastable cross-coupling coefficient  & $m^3 s^{-1}$ \\
+$\mathcal{S}$ & coefficient in radiation equation  & $m^3 s^{-1}$ \\
+$\mathcal{S}^{Z_m\rightarrow Z}$ & ionisation coefficient  & $m^3 s^{-1}$ \\
+$\mathcal{S}^{Z\rightarrow Z_p}$ & ionisation coefficient  & $m^3 s^{-1}$ \\
+$\mathcal{T}$ & generic tensor & $?$ \\
+$\mathcal{V}$ &  (K+S) Space of test functions & \\
+$\mathcal{V}^{\delta}$ &  (K+S) Finite-dimensional space of test functions & \\
+$\mathcal{X}$ & coefficient in radiation equation  & $m^3 s^{-1}$ \\
+$\mathcal{X}_{\sigma \rightarrow \rho}^{Z\rightarrow Z}$ & generalised collisional-radiative (GCR) excitation coefficient  & $m^3 s^{-1}$ \\
+$\mathfrak{R}$ & Real numbers & \\
+$\mathrm{Var}(f)$ & variance of the distribution of $f$ computed by integrating over all variables~$x_i$  & \\
+$\mathrm{Var}[Q]$ & variance in random variable $Q$  & \\
+$m_e$ & mass of electron & $kg$ \\
+$m_i$ & mass of ion species particle & $kg$ \\
+$m_n$ & neutral species particle mass & $kg$ \\
+$m_p$ & mass of proton & $kg$ \\
+$M_s$ & Mach number, allowed to take either sign & \\
+$M_S$ & number of energy states of an atom & \\
+$\mu, \nu$ &  (K+S) Dynamic, kinematic viscosities & \\
+$\mu_{cx}=\omega_c/\nu_{cx}$ & measures strength of magnetization with respect to charge exchange reaction & \\
+$M_Z$ & number of metastable states for species~$s$ (which includes the ground state) & \\
+$n$ & number density & $m^{-3}$ \\
+$N$ & number density, may be in units of $10^{18}$\,m$^{-3}$ & $m^{-3}$ \\
+$n_0$ & initial number density & $m^{-3}$ \\
+$\nabla \cdot$ &  (K+S) Divergence & \\
+$\nabla \times$ &  (K+S) Curl & \\
+$\nabla^2$ &  (K+S) Laplacian & \\
+$N_{b}$ &  (K+S) Number of global boundary degrees of freedom & \\
+$n_B=N/B$ & number density divided by field strength & $m^{-3}T^{-1}$ \\
+$N_{dof}$ &  (K+S) Number of global degrees of freedom & \\
+$n_e$ & number density of the electrons & $m^{-3}$ \\
+$N_{el}$ &  (K+S) Number of finite elements & \\
+$N_{eof}$ &  (K+S) Total number of elemental degrees of freedom $N_{eof} \simeq N_{el}N_m$ & \\
+$n_i$ & number density of the plasma ions & $m^{-3}$ \\
+$n_j({\bf x},t)$ & member of the set of deterministic coefficients of the ``random trial basis" & \\
+$N_{m}$ &  (K+S) Number of elemental degrees of freedom & \\
+$n_n$ & neutral density & $m^{-3}$ \\
+$\notin$ &  (Sets) Is not a member of; does not belong to & \\
+$\not\subset$ &  (Sets) Is not a subset of & \\
+$n_p$ & number density of the plasma ions & $m^{-3}$ \\
+$N_{Q}$ &  (K+S) Total number of quadrature points $N_Q = Q_1 Q_2 Q_3$ & \\
+$n_s$ & number density of isotope~$s$ & $m^{-3}$ \\
+$N_s$ & number density of isotope~$s$ & $m^{-3}$ \\
+$N_T$ & number of samples in temperature used to define typically a crossection in the ADAS database~\cite{adaswebsite,openadaswebsite} & \\
+$\nu$ & plasma kinematic viscosity & $m^2 s^{-1}$ \\
+$\nu_\alpha$ & kinematic viscosity of species~$\alpha$ & $m^2 s^{-1}$ \\
+$\nu_{cx}=K_{cx} n_n$ & charge exchange `frequency'  & $s^{-1}$ \\
+$\nu_{e0}$ & electron kinematic viscosity caused by neutrals & $m^2 s^{-1}$ \\
+$\nu_{e\|}$ & parallel kinematic viscosity of electrons & $m^2 s^{-1}$ \\
+$\nu_{e\perp}$ & perpendicular kinematic viscosity of electrons & $m^2 s^{-1}$ \\
+$\nu_{i\|}$ & parallel kinematic viscosity of ions & $m^2 s^{-1}$ \\
+$\nu_i$ & ion kinematic viscosity & $m^2 s^{-1}$ \\
+$\nu_{i0}$ & ion kinematic viscosity caused by neutrals & $m^2 s^{-1}$ \\
+$\nu_{i\perp}$ & perpendicular kinematic viscosity of ions & $m^2 s^{-1}$ \\
+$\nu^{*}_s$ & (Glossary) Normalised collision frequency for species~$s$ & \\
+$\nu^{*}_c = \frac{q_e^4}{3 m_p^2\epsilon_0^2} L_0 n_0 /C_0^4$ & Collisionality parameter & \\
+$\nu_s$ & (Glossary) Collision frequency for species~$s$ & $s^{-1}$ \\
+$\nu_{s{\sf n}}$ & Collision frequency for species~$s$ with neutrals & $s^{-1}$ \\
+$n^Z$ & number density for charge state~$Z$  & $m^{-3}$ \\
+$N_Z$ & number of charge states for an ion species & \\
+$n^Z_i$ & number density for charge state~$Z$, excited state~$i$  & $m^{-3}$ \\
+$n^Z_\sigma$ & number density for charge state~$Z$, metastable state~$\sigma$  & $m^{-3}$ \\
+$\omega_{ce}= |e|B/m_e$ & electron cyclotron angular frequency & $radians s^{-1}$ \\
+$\omega_{ci}= Z_i e B/m_i$ & ion cyclotron angular frequency & $radians s^{-1}$ \\
+$\omega_{pe}= \sqrt{\frac{nq_e^2}{\epsilon_0 m_e}}$ & plasma angular frequency for electrons & $radians s^{-1}$ \\
+$\omega_{pi}= Z_i\sqrt{\frac{nq_e^2}{\epsilon_0 m_i}}$ & plasma angular frequency for ions & $radians s^{-1}$ \\
+$\Omega$ &  (K+S) Solution domain & \\
+$\Omega^e$ &  (K+S) Elemental region & \\
+$p$ &  (K+S) Pressure & \\
+$p$ & pressure  & $N m^{-2}$ \\
+$p(A|B)$ & conditional probability of event $A$ given event $B$ is known or assumed to have occurred  & \\
+$p_\alpha$ & pressure of species~$\alpha$  & $N m^{-2}$ \\
+$\parallel  Q \parallel_E $ &the `energy' norm  & \\
+$(\partial f/\partial t)_C$ & source in Boltzmann due to inter-particle interactions  & $m^{-6} s^2$ \\
+$\partial \Omega_e$ &  (K+S) Boundary of $\Omega^e$ & \\
+$\partial \Omega$ &  (K+S) Boundary of $\Omega$ & \\
+$\partial \Omega_{\mathcal D}$ &  (K+S) Domain boundary with Dirichlet conditions & \\
+$\partial \Omega_{\mathcal N}$ &  (K+S) Domain boundary with Neumann conditions & \\
+$P_C$ & number of modes in basis for polynomial chaos & \\
+$p_e$ & pressure of the electrons  & $N m^{-2}$ \\
+$\phi$ & angle in toroidal direction & radians $^c$ \\
+$\Phi$ & electric potential  & $V$ \\
+$\phi_{pq}, \phi_{pqr}$ &  (FE Basis) Expansion basis & \\
+$p_i$ & pressure of the ion species  & $N m^{-2}$ \\
+$P_i$ &  (FE Basis) Polynomial order in the $i$th direction & \\
+$p(\psi)$ & function giving the pressure as a function of~$\psi$ of the magnetic flux  & $N m^{-2}$ \\
+$p,q,r$ &  (K+S) General summation indices & \\
+$Pr$ & Prandtl number & \\
+$Pr_M$ & magnetic Prandtl number & \\
+$\psi$ & poloidal magnetic flux  & $T m^2$ \\
+$\psi^a_p, \psi^b_{pq}, \psi^c_{pqr}$ &  (FE Basis) Modified principal functions & \\
+$\Psi_i$ & $i^{th}$ member of a set of basis functions, typically multi-dimensional Hermite polynomials & \\
+$P(T)$ & emitted power integrated over all wavelengths  & $W m^3$ \\
+$p(x)$ & probability distributions   & \\
+$P(x)$ & Cumulant probability distribution  & \\
+$P^Z$ & radiated power per atom of $n^Z$  & $W$ \\
+$Q_\|$ & combined energy flux at a boundary  & $J m^{-2} s^{-1}$ \\
+$q_\alpha$ & charge on a particle of species~$\alpha$ & $C$ \\
+$q_e$ & charge on an electron & $C$ \\
+$Q(f_\alpha, f_\beta)$ & Boltzmann collision operator  & $m^{-6} s^2$ \\
+$Q_H$ & cooling rate due to excitation as defined in ref~\cite{Ha13Benc}  & $K m^{-3} s^{-1}$ \\
+$q_i$ & charge on an ion  & $C$ \\
+$q_i$ & electron energy flux  & $J m^{-2} s^{-1}$ \\
+$q_i$ & ion energy flux  & $J m^{-2} s^{-1}$ \\
+$Q_i$ &  (FE Basis) Quadrature order in the $i$th direction & \\
+$Q_{ie}$ & collisional energy equipartition term  & $kg m^{-1} s^{-3}$ \\
+$r$ & order of higher order term  & \\
+$R$ & cylindrical coordinate  & $m$ \\
+$R$ & recycling coefficient & \\
+$\rho$ & as suffix is label of metastable state & \\
+$\rho$ &  (K+S) Density & \\
+$\rho_m$ & mass density of the medium  & $kg m^{-3}$ \\
+$\rho_{ts}$  & (Glossary) Gyroradius or Larmor radius of orbit of charged particle of species~$s$ about magnetic field direction  & $m$ \\
+$^R\mathcal{F}_{i\sigma}$ & coefficient of recombination for the transition from metastable state~$\sigma$ to regular excited state~$i$  & \\
+$s_{\|}$ & arclength along fieldline  & $m$ \\
+$s$ & as suffix, species label & \\
+$s$ & parameterises distance along the fieldline $0\leq s \leq 1$ & \\
+$S_\alpha$ & source term in Boltzmann equation for species~$\alpha$  & $m^{-6} s^2$ \\
+$S_C$ & total source term in Boltzmann equation  & $m^{-6} s^2$ \\
+$S_{exp}({\bf x}, {\bf v},t)$ & explicit source term in Boltzmann equation  & $m^{-6} s^2$ \\
+${\sf n}$ & neutral density  & \\
+${\sf T}$ & neutral temperature  & \\
+${\sf u}$ & neutral velocity  & \\
+$s_i$ & arclength parameter for boundary ($i=1$ inner, $i=2$ outer) & \\
+$S_i$ & Sobol sensitivity index, gives a normalised measure of the sensitivity of the distribution of $f$ to the parameter~$x_i$  & \\
+$\sigma$ & as suffix labels metastable state & \\
+$\sigma$ & reaction cross-section  & $m^2$ \\
+$\sigma_C$ & reaction rate for charge exchange  & \\
+$\sigma_E$ & cooling rate due to excitation  & \\
+$\sigma_E$ & electrical conductivity  & $\Omega^{-1} m^{-1}$ \\
+$\sigma_I$ & reaction rate for ionisation  & \\
+$\sigma_s^{i|0}$ & collision cross-section for ions with neutrals  & $m^2$ \\
+$\sigma_s^{e|0}$ & collision cross-section for electrons with neutrals  & $m^2$ \\
+$S_{ij}$ & Sobol sensitivity index, gives a normalised measure of the sensitivity of the distribution of $f$ to the parameters~$x_i$ and $x_j$  & \\
+$S^\mathcal{E}$ & source term in plasma energy equation  & $kg m^{-1} s^{-3}$ \\
+$S^{\mathcal{E}}_{e}$ & energy density source term for electrons  & $kg m^{-1} s^{-3}$ \\
+$S^{\mathcal{E}}_{i}$ & energy density source term for ions  & $kg m^{-1} s^{-3}$ \\
+$S^\mathcal{E}_n$ & source term in neutral energy equation  & $kg m^{-1} s^{-3}$ \\
+$S^\mathcal{E}_{\perp e}$ & energy cross-field source term for electrons  & $kg m^{-1} s^{-3}$ \\
+$S^\mathcal{E}_{\perp i}$ & energy cross-field source term for ions   & $kg m^{-1} s^{-3}$ \\
+$S^\mathcal{E}_{\perp n}$ & energy cross-field source term for neutrals  & $kg m^{-1} s^{-3}$ \\
+$S^n$ & source term in plasma density equation  & $m^{-3} s^{-1}$ \\
+$S^n_{e}$ & number density source term for electrons  & $m^{-3} s^{-1}$ \\
+$S^n_{i}$ & number density source term for ions  & $m^{-3} s^{-1}$ \\
+$S^n_n$ & source term in neutral density equation  & $m^{-3} s^{-1}$ \\
+$S^n_{\perp n}$ & number density cross-field source term for neutrals  & $m^{-3} s^{-1}$ \\
+$S^n_{\perp}$ & number density cross-field source term for plasma  & $m^{-3} s^{-1}$ \\
+$S_{\perp n}$ & generic cross-field source term for neutrals  & $?$ \\
+$S^u$ & source term in plasma momentum equation  & $kg m^{-2} s^{-2}$ \\
+$\subset$ &  (Sets) Is a subset of & \\
+$S^u_n$ & source term in neutral momentum equation   & $kg m^{-2} s^{-2}$ \\
+$S^u_{\perp n}$ & momentum cross-field source term for neutrals  & $kg m^{-2} s^{-2}$ \\
+$S^Z_\rho$ & particle source for ion of metastable state~$\sigma$ (species~$s$) with charge state~$Z$  & $m^{-3} s^{-1}$ \\
+$S^Z_s$ & particle source for ion of species~$s$ with charge state~$Z$  & $m^{-3} s^{-1}$ \\
+$t$ & time usually in seconds  & $s$ \\
+$T$ & plasma temperature  & $eV$ \\
+$t_0$ & characteristic timescale usually in seconds  & $s$ \\
+$T_0$ & initial temperature  & $eV$ \\
+$T_\alpha$ & temperature of species~$\alpha$  & $eV$ \\
+$\tau_\alpha$ & collision or relaxation time of species~$\alpha$   & $s$ \\
+$\tau_e$ & electron collision or relaxation time   & $s$ \\
+$\tau_i$ & ion species collision or relaxation time   & $s$ \\
+$\tau_{e{\sf n}} $ & electron-neutral collision time   & $s$ \\
+$\tau_{i{\sf n}} $ & ion species-neutral collision time   & $s$ \\
+$\tau_{ce}=1/f_{ce}$ & electron cyclotron timescale & $s$ \\
+$\tau_{ci}=1/f_{ci}$ & ion cyclotron timescale & $s$ \\
+$\tau_{pe}=1/f_{pe}$ & plasma timescale for electrons & $s$ \\
+$\tau_{pi}=1/f_{pi}$ & plasma timescale for ions & $s$ \\
+$\tau_{\mathcal{E}_e}$ & loss time of energy density for electrons   & $s$ \\
+$\tau_{\mathcal{E}_i}$ & loss time of energy density for ions   & $s$ \\
+$\tau_{n_e}$ & loss time of number density for electrons   & $s$ \\
+$\tau_{n_i}$ & loss time of number density for ions   & $s$ \\
+$T_d=T_i+T_e$ & combined temperature of the electrons and ions  & $eV$ \\
+$T_e$ & electron temperature  & $eV$ \\
+$T_H$ & the Hydrogen reionisation potential  & \\
+$\theta$ & angular coordinate & radians $^c$ \\
+$\theta$ & random parameter~$0\leq\theta\leq 1$ & \\
+$T_i$ & ion temperature  & $eV$ \\
+$\tilde{b}=B/B_0$ & magnetic field & \\
+$\tilde{\psi}^a_p, \tilde{\psi}^b_{pq}, \tilde{\psi}^c_{pqr}$ &  (FE Basis) Orthogonal principal functions & \\
+$U$ & velocity component (flow) along streamline  & $m s^{-1}$ \\
+$U_d =L_s/t_0$ & speed measuring the importance of the transient term  & $m s^{-1}$ \\
+$U_A$  & Alfv\'{e}n speed  & $m s^{-1}$ \\
+$\underline{\boldsymbol{f}^e}$ &  (K+S) Concatenation of elemental vector $\boldsymbol{f}^e$ & \\
+$\underline{\boldsymbol{W}^e}$ &  (K+S) Block-diagonal extension of matrix $\boldsymbol{W}^e$ & \\
+$u_R=1/R$ & Radial component of Grad-Shafranov `flow' & \\
+$V_i$ & variance of the distribution of $f$ as the parameter~$x_i$ varies  & \\
+$V_{ij}$ & variance of the distribution of $f$ as the parameters~$x_i$ and $x_j$ vary  & \\
+$w_{jk}$ & weight in neural network indexed by neuron $j$ and input $k$  & \\
+$x$ & Cartesian coordinate  & $m$ \\
+$x_1, x_2, x_3, {\mathbf x}$ &  (FE Basis) Global Cartesian coordinates & \\
+$x_\alpha$ & collisionality factor of species~$\alpha$ & \\
+$x_e = \omega_{ce}\tau_e$ & collisionality factor of electrons & \\
+$x_i = \omega_{ci}\tau_i$ & collisionality factor of ions & \\
+$x_i$ & generic parameter or variable  & \\ 
+$\xi_1, \xi_2, \xi_3, \boldsymbol{\xi}$ &  (FE Basis) Local Cartesian coordinates & \\
+$\xi_i$ & random number within the unit interval~$[0,1]$  & \\
+$^X\mathcal{F}_{i\sigma}$ & coefficient of excitation for the transition from metastable state~$\sigma$ to regular excited state~$i$  & \\
+$y$ & Cartesian coordinate  & $m$ \\
+$z$ & Cartesian coordinate  & $m$ \\
+$Z$ & Cartesian coordinate  & $m$ \\
+$Z$ & charge state of the ion & \\
+$Z$ & cylindrical coordinate  & $m$ \\
+$Z_0(s)$ & number of charge states of species~$s$ included in the model & \\
+$Z_a$ & Gaussian random process, index $a$  & \\
+$\zeta$ & magnetic Prandtl number as defined in Cambridge & \\
+$\zeta=-\phi$ & toroidal angle coordinate & radians $^c$ \\
+$Z_i$ & charge state & \\
+$Z_m=Z-1$ & where $Z$ is ion charge state & \\
+$Z_p=Z+1$ & where $Z$ is ion charge state & \\
+$Z_{sum}=\sum_s Z_0(s)$ & where $Z_0$ is number of charge states of species~$s$ & \\
+\hline
+\end{longtable}
