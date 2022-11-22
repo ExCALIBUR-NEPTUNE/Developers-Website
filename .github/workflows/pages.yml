@@ -1,0 +1,54 @@
+# Deploys a github page for each branch requested
+name: Deploy static content to Pages
+
+on: 
+  push:
+    branches: ["**"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: Github-Pages
+          fetch-depth: 0
+      - name: Generate html
+        run: | 
+          git fetch --no-tags origin main
+          git checkout -b main
+          git checkout ${{ github.event.pull_request.head.sha }}
+      - name: Commit new documentation to branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change  
+          branch: Deployment
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload contents of public only
+          path: ./
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
