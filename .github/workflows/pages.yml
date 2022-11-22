@@ -43,7 +43,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change  
-          branch: Deployment
+          branch: Github-Pages
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
