@@ -23,6 +23,6 @@ git rev-parse remotes/origin/main >> hash.txt
 cd ..
 gfortran homepage.f90
 ./a.out >> index.html
-rm a.out hash1.txt hash2.txt list.txt num.txt
+rm a.out hash1.txt list.txt num.txt
 fi
 fi
