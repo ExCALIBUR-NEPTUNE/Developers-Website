@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: Github-pages
+          ref: Github-Pages
           fetch-depth: 0
       - name: Generate html
         run: | 
