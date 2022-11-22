@@ -37,11 +37,13 @@ jobs:
           git fetch --no-tags origin main
           git checkout -b main
           git checkout ${{ github.event.pull_request.head.sha }}
+          git checkout Github-Pages
+          bash ./run.sh
       - name: Commit new documentation to branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change  
-          branch: Deployment
+          branch: Github-Pages
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
