@@ -1,0 +1,129 @@
+\babel@toc {british}{}\relax 
+\contentsline {chapter}{\numberline {1}Program Name}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Executive summary}{5}{section.1.1}%
+\contentsline {subsection}{Further information}{5}{section*.2}%
+\contentsline {subsection}{Benefits of community membership}{5}{section*.3}%
+\contentsline {subsection}{Convention on use of IETF Keywords}{6}{section*.4}%
+\contentsline {chapter}{\numberline {2}Business Design}{8}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Requirements Baseline}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Physical properties of the edge plasma}{11}{section.3.1}%
+\contentsline {subsection}{Typical discharge}{12}{section*.5}%
+\contentsline {subsection}{Length scales}{12}{section*.6}%
+\contentsline {subsection}{Time scales}{12}{section*.7}%
+\contentsline {subsection}{Speeds}{12}{section*.8}%
+\contentsline {subsection}{Applicability of Fluid Models}{13}{section*.9}%
+\contentsline {subsection}{Effect of Neutrals}{13}{section*.10}%
+\contentsline {section}{\numberline {3.2}Engineering Requirements Baseline}{15}{section.3.2}%
+\contentsline {subsection}{Introduction}{15}{section*.11}%
+\contentsline {subsection}{Overall Capabilities}{16}{section*.12}%
+\contentsline {subsection}{Physics Model}{17}{section*.13}%
+\contentsline {subsection}{Physics Capabilities}{18}{section*.14}%
+\contentsline {subsection}{Geometry}{18}{section*.15}%
+\contentsline {section}{\numberline {3.3}Use Cases}{18}{section.3.3}%
+\contentsline {subsection}{Use Cases: Tokamak edge physicist}{18}{section*.16}%
+\contentsline {subsection}{Use Cases: Engineers}{19}{section*.17}%
+\contentsline {subsection}{Use Cases: Particle Specialists}{21}{section*.18}%
+\contentsline {subsection}{Use Cases: Finite Element Background}{22}{section*.19}%
+\contentsline {section}{\numberline {3.4}General Remarks}{23}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Technical Specification}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Response to Tokamak Science Division}{24}{section.4.1}%
+\contentsline {subsection}{Introduction}{24}{section*.20}%
+\contentsline {subsubsection}{\textsc {NEPTUNE}\ Science Plan}{25}{section*.21}%
+\contentsline {paragraph}{Software development.}{25}{section*.22}%
+\contentsline {paragraph}{Theory development.}{25}{section*.23}%
+\contentsline {subsection}{Overall Capabilities}{26}{section*.24}%
+\contentsline {subsubsection}{Hierarchical approach with multiple models}{26}{section*.25}%
+\contentsline {subsubsection}{Numerical efficiency}{26}{section*.26}%
+\contentsline {subsubsection}{Stability of the code}{27}{section*.27}%
+\contentsline {subsubsection}{Exhaust physics modelling capability}{28}{section*.28}%
+\contentsline {subsubsection}{Modern software design}{28}{section*.29}%
+\contentsline {subsubsection}{Ability to integrate with other codes (eg.\ with IMAS).}{28}{section*.30}%
+\contentsline {subsubsection}{Modern visualisation tools}{28}{section*.31}%
+\contentsline {subsubsection}{Accessibility (output easily catalogued and interrogated big data)}{28}{section*.32}%
+\contentsline {subsubsection}{Version control and user support.}{29}{section*.33}%
+\contentsline {subsection}{Physics model}{30}{section*.34}%
+\contentsline {subsubsection}{General requirements}{30}{section*.35}%
+\contentsline {subsubsection}{High fidelity simulations}{31}{section*.36}%
+\contentsline {subsubsection}{Neutrals and impurities}{32}{section*.37}%
+\contentsline {paragraph}{Different levels of multispecies capabilities should be considered.}{32}{section*.38}%
+\contentsline {paragraph}{In medium to high fidelity models, neutrals and heavy species should be treated fully kinetically (the former have potentially low collisionality and they are not bound by the magnetic field, the latter have a large Larmor radius).}{32}{section*.39}%
+\contentsline {paragraph}{In high fidelity models, dynamical neutral evolution on the turbulence time scale would be preferable, if possible.}{32}{section*.40}%
+\contentsline {paragraph}{Ability to model pumps (either directly or via pumping surfaces) should be included. Pellets: the code should enable simulation of, or coupling to models that can model, pellet fuelling.}{32}{section*.41}%
+\contentsline {subsection}{Physics capabilities}{34}{section*.42}%
+\contentsline {paragraph}{Physics models.}{35}{section*.43}%
+\contentsline {paragraph}{Validation, Verification and Uncertainty Quantification (VVUQ).}{35}{section*.44}%
+\contentsline {subsection}{Geometry}{36}{section*.45}%
+\contentsline {section}{\numberline {4.A}Order-of-magnitude estimates for tokamak edge modelling}{36}{section.1.4.A}%
+\contentsline {section}{\numberline {4.2}Software Engineering Response}{37}{section.4.2}%
+\contentsline {subsection}{General Considerations}{38}{section*.46}%
+\contentsline {subsection}{Considerations for Scientific Software}{39}{section*.47}%
+\contentsline {subsubsection}{Structural Considerations}{39}{section*.48}%
+\contentsline {subsubsection}{Interactions between Modules}{40}{section*.49}%
+\contentsline {subsection}{Design of a Module}{40}{section*.50}%
+\contentsline {subsubsection}{Notation}{40}{section*.51}%
+\contentsline {subsubsection}{Module design}{40}{section*.52}%
+\contentsline {subsection}{Processing Module Output}{43}{section*.53}%
+\contentsline {subsection}{Code licence and availability}{44}{section*.54}%
+\contentsline {subsection}{Code style}{44}{section*.55}%
+\contentsline {subsection}{Programming languages}{46}{section*.56}%
+\contentsline {section}{\numberline {4.3}Generating Names for Variables}{47}{section.4.3}%
+\contentsline {subsubsection}{Two character variables}{47}{section*.57}%
+\contentsline {subsubsection}{Escape sequences}{49}{section*.58}%
+\contentsline {chapter}{\numberline {5}Design Justification File}{51}{appendix.5}%
+\contentsline {section}{\numberline {5.1}UKAEA (Internal) Reports}{51}{section.5.1}%
+\contentsline {subsection}{Brief Survey of Reports to end FY 2020/21}{56}{section*.59}%
+\contentsline {subsection}{Brief Survey of Reports FY 2021/22}{57}{section*.60}%
+\contentsline {subsection}{Parallelism Abstraction}{59}{section*.61}%
+\contentsline {chapter}{\numberline {6}Design Definition File}{62}{appendix.6}%
+\contentsline {section}{\numberline {6.1}Design specification}{62}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objects/classes}{64}{section.6.2}%
+\contentsline {subsection}{Base classes}{64}{section*.62}%
+\contentsline {subsection}{Aggregates}{65}{section*.63}%
+\contentsline {subsection}{Simple inherits}{66}{section*.64}%
+\contentsline {subsection}{Solution of Differential Equations}{66}{section*.65}%
+\contentsline {subsection}{Diagnostic Processing}{66}{section*.66}%
+\contentsline {subsection}{Orchestration}{67}{section*.67}%
+\contentsline {section}{\numberline {6.3}Execution sequence}{68}{section.6.3}%
+\contentsline {subsection}{Preprocessing and components}{68}{section*.68}%
+\contentsline {subsection}{Initialise}{68}{section*.69}%
+\contentsline {subsection}{Solution}{68}{section*.70}%
+\contentsline {subsection}{Assortment}{69}{section*.71}%
+\contentsline {subsection}{Diagnostics}{70}{section*.72}%
+\contentsline {subsection}{Utilities}{70}{section*.73}%
+\contentsline {subsection}{Mathematical library operations}{70}{section*.74}%
+\contentsline {section}{\numberline {6.4}Design patterns}{70}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Management File}{72}{appendix.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{72}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Management}{74}{section.7.2}%
+\contentsline {subsection}{Meetings and Workshops}{74}{section*.75}%
+\contentsline {subsection}{Version control}{74}{section*.76}%
+\contentsline {subsection}{Code repositories}{75}{section*.77}%
+\contentsline {subsection}{Development workflow}{76}{section*.78}%
+\contentsline {subsection}{Code release}{77}{section*.79}%
+\contentsline {section}{\numberline {7.3}\textsc {E}x\textsc {CALIBUR}\ Project \textsc {NEPTUNE}\ Charter}{79}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Maintenance File}{81}{appendix.8}%
+\contentsline {chapter}{\numberline {9}Operational Documentation}{82}{appendix.9}%
+\contentsline {section}{\numberline {9.1}Documentation Generally}{82}{section.9.1}%
+\contentsline {subsection}{Documentation}{82}{section*.80}%
+\contentsline {section}{\numberline {9.2}Developer Manual}{83}{section.9.2}%
+\contentsline {subsection}{Testing}{83}{section*.81}%
+\contentsline {subsubsection}{Source code testing}{83}{section*.82}%
+\contentsline {subsubsection}{Performance testing}{83}{section*.83}%
+\contentsline {subsection}{Object Identification}{84}{section*.84}%
+\contentsline {section}{\numberline {9.3}User Manual}{84}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Feedback and Communication}{84}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Proxyapps}{86}{appendix.10}%
+\contentsline {section}{\numberline {10.1}Nektar-Driftwave}{86}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Nektar-Diffusion}{87}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Nektar-1D-SOL}{87}{section.10.3}%
+\contentsline {section}{\numberline {10.4}FabNEPTUNE}{88}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Moment\_Kinetics}{89}{section.10.5}%
+\contentsline {section}{\numberline {10.6}NESO}{89}{section.10.6}%
+\contentsline {chapter}{\numberline {11}Reference Material}{90}{appendix.11}%
+\contentsline {section}{\numberline {11.1}Conventions for Report Writing}{90}{section.11.1}%
+\contentsline {subsection}{General textual issues}{90}{section*.85}%
+\contentsline {subsection}{Citations}{91}{section*.86}%
+\contentsline {subsection}{Software Compatibility}{91}{section*.87}%
+\contentsline {section}{\numberline {11.2}Acronyms}{94}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Symbols}{102}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Index}{113}{appendix.12}%

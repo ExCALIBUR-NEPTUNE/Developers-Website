@@ -1,0 +1,1582 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>main — Use Cases</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+    subequations: "0",
+    section: "",
+    loader: {
+        load: ['[tex]/tagformat', '[tex]/textmacros'],
+    },
+    startup: {
+        ready() {
+            //      These would be replaced by import commands if you wanted to make
+            //      a proper extension.
+            const Configuration = MathJax._.input.tex.Configuration.Configuration;
+            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const Macro = MathJax._.input.tex.Symbol.Macro;
+            const TexError = MathJax._.input.tex.TexError.default;
+            const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+            const expandable = MathJax._.util.Options.expandable;
+
+
+            //      Insert the replacement string into the TeX string, and check
+            //      that there haven't been too many maxro substitutions (prevents
+            //      infinite loops).
+            const useArgument = (parser, text) => {
+                parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                parser.i = 0;
+                if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                    throw new TexError('MaxMacroSub1',
+                    'MathJax maximum macro substitution count exceeded; ' +
+                    'is there a recursive macro call?');
+                }
+            }
+
+
+            //      Create the command map for:
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            new CommandMap('Lwarp-macros', {
+                ifstar: 'IfstarFunction',
+                ifnextchar: 'IfnextcharFunction',
+                ifblank: 'IfblankFunction',
+                ifstrequal: 'IfstrequalFunction',
+                gsubstitute: 'GsubstituteFunction',
+                seteqnumber: 'SeteqnumberFunction'
+            }, {
+                //      This function implements an ifstar macro.
+                IfstarFunction(parser, name) {
+                    const resultstar = parser.GetArgument(name);
+                    const resultnostar = parser.GetArgument(name);
+                    const star = parser.GetStar();                      // true if there is a *
+                    useArgument(parser, star ? resultstar : resultnostar);
+                },
+
+
+                //      This function implements an ifnextchar macro.
+                IfnextcharFunction(parser, name) {
+                    let whichchar = parser.GetArgument(name);
+                    if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                        // $ syntax highlighting
+                        whichchar = String.fromCodePoint(parseInt(whichchar));
+                    }
+                    const resultnextchar = parser.GetArgument(name);
+                    const resultnotnextchar = parser.GetArgument(name);
+                    const gotchar = (parser.GetNext() === whichchar);
+                    useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                },
+
+
+                // This function implements an ifblank macro.
+                IfblankFunction(parser, name) {
+                    const blankarg = parser.GetArgument(name);
+                    const resultblank = parser.GetArgument(name);
+                    const resultnotblank = parser.GetArgument(name);
+                    const isblank = (blankarg.trim() == "");
+                    useArgument(parser, isblank ? resultblank : resultnotblank);
+                },
+
+
+                // This function implements an ifstrequal macro.
+                IfstrequalFunction(parser, name) {
+                    const strequalfirst = parser.GetArgument(name);
+                    const strequalsecond = parser.GetArgument(name);
+                    const resultequal = parser.GetArgument(name);
+                    const resultnotequal = parser.GetArgument(name);
+                    const isequal = (strequalfirst == strequalsecond);
+                    useArgument(parser, isequal ? resultequal : resultnotequal);
+                },
+
+
+                // This function implements a gsub macro.
+                GsubstituteFunction(parser, name) {
+                    const gsubfirst = parser.GetArgument(name);
+                    const gsubsecond = parser.GetArgument(name);
+                    const gsubthird = parser.GetArgument(name);
+                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+                    useArgument(parser, gsubresult);
+                },
+
+
+                //      This function modifies the equation numbers.
+                SeteqnumberFunction(parser, name) {
+                        //   Get the macro parameters
+                        const star = parser.GetStar();                    // true if there is a *
+                        const optBrackets = parser.GetBrackets(name);     // contents of optional brackets
+                        const newsubequations = parser.GetArgument(name);    // the subequations argument
+                        const neweqsection = parser.GetArgument(name);    // the eq section argument
+                        const neweqnumber = parser.GetArgument(name);     // the eq number argument
+                        MathJax.config.subequations=newsubequations ;     // a string with boolean meaning
+                        MathJax.config.section=neweqsection ;             // a string with numeric meaning
+                        parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                }
+
+
+            });
+
+
+            //      Create the Lwarp-macros package
+            Configuration.create('Lwarp-macros', {
+                handler: {macro: ['Lwarp-macros']}
+            });
+
+
+            MathJax.startup.defaultReady();
+
+
+            // For forward references:
+            MathJax.startup.input[0].preFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        MathJax.config.subequations = math.inputData.recompile.subequations;
+                        MathJax.config.section = math.inputData.recompile.section;
+                }
+            });
+            MathJax.startup.input[0].postFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        math.inputData.recompile.subequations = MathJax.config.subequations;
+                        math.inputData.recompile.section = MathJax.config.section;
+                }
+            });
+
+
+                // For \left, \right with unicode-math:
+                const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+                const {Symbol} = MathJax._.input.tex.Symbol;
+                const {MapHandler} = MathJax._.input.tex.MapHandler;
+                const delimiter = MapHandler.getMap('delimiter');
+                delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+                delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+                delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+                delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+                delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+                delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+                delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+                delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+                delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+                delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+                delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+                delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+                delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+                delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+                delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+                delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+                delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+                delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+                delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+                delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+                delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+                delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+                delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+                delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+                delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+                delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+                delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+                delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+                delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+                delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+                delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+                delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+                delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+                delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+                delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+                delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+                delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+                delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+                delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+        }        // ready
+    },           // startup
+
+
+    tex: {
+        packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+        tags: "ams",
+                tagformat: {
+                        number: function (n) {
+                             if(MathJax.config.subequations==0)
+                                 return(MathJax.config.section + n);
+                             else
+                                 return(MathJax.config.section + String.fromCharCode(96+n));
+                        },
+                },
+    }
+}
+</script>
+
+
+<script
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="main-autopage-39"></a>
+
+
+<div class="bodyandsidetoc2">
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Use Cases</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+<div class="sidetoccontainer2">
+
+
+<nav class="sidetoc2">
+
+
+
+
+<div class="sidetoccontents2">
+
+<p class="text">
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p class="text">
+<a href="Program-Name.html#autosec-7" class="tocchapter" >
+[1] Program Name</a>
+</p>
+
+
+<p class="text">
+<a href="Program-Name.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p class="text">
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p class="text">
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p class="text">
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p class="text">
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p class="text">
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p class="text">
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p class="text">
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-132" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-134" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p class="text">
+<a href="Objects-classes.html#autosec-137" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p class="text">
+<a href="Execution-sequence.html#autosec-148" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p class="text">
+<a href="Design-patterns.html#autosec-158" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p class="text">
+<a href="Management-File.html#autosec-162" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p class="text">
+<a href="Introduction.html#autosec-165" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p class="text">
+<a href="Management.html#autosec-168" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p class="text">
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-177" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p class="text">
+<a href="Maintenance-File.html#autosec-180" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-183" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-185" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p class="text">
+<a href="Developer-Manual.html#autosec-189" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-198" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p class="text">
+<a href="Proxyapps.html#autosec-203" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Driftwave.html#autosec-206" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Diffusion.html#autosec-209" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-1D-SOL.html#autosec-212" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p class="text">
+<a href="FabNEPTUNE.html#autosec-215" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p class="text">
+<a href="Moment-Kinetics.html#autosec-218" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p class="text">
+<a href="NESO.html#autosec-221" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-224" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-226" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p class="text">
+<a href="Acronyms.html#autosec-235" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p class="text">
+<a href="Symbols.html#autosec-243" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p class="text">
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p class="text">
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+<div class="bodyandsidetoc"><div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">main</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Program-Name.html#autosec-7" class="tocchapter" >
+[1] Program Name</a>
+</p>
+
+
+<p>
+<a href="Program-Name.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p>
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p>
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p>
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p>
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p>
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p>
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p>
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-132" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-134" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p>
+<a href="Objects-classes.html#autosec-137" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p>
+<a href="Execution-sequence.html#autosec-148" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p>
+<a href="Design-patterns.html#autosec-158" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p>
+<a href="Management-File.html#autosec-162" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p>
+<a href="Introduction.html#autosec-165" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p>
+<a href="Management.html#autosec-168" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p>
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-177" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p>
+<a href="Maintenance-File.html#autosec-180" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-183" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-185" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p>
+<a href="Developer-Manual.html#autosec-189" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-198" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p>
+<a href="Proxyapps.html#autosec-203" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p>
+<a href="Nektar-Driftwave.html#autosec-206" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p>
+<a href="Nektar-Diffusion.html#autosec-209" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p>
+<a href="Nektar-1D-SOL.html#autosec-212" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p>
+<a href="FabNEPTUNE.html#autosec-215" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p>
+<a href="Moment-Kinetics.html#autosec-218" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p>
+<a href="NESO.html#autosec-221" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-224" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-226" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p>
+<a href="Acronyms.html#autosec-235" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p>
+<a href="Symbols.html#autosec-243" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p>
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p>
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+ 
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<p>
+<!--................................-->
+<h4 id="autosec-40">Use Cases</h4>
+<a id="main-autopage-40"></a>
+<a id="main-autofile-6"></a> <a id="sec:use_case"></a>
+<!--................................-->
+<h4 id="autosec-41"></h4>
+<a id="main-autopage-41"></a>
+<!--................................-->
+<h5 id="autosec-42">Use Cases: Tokamak edge physicist</h5>
+<a id="main-autopage-42"></a>
+
+
+<a id="sec:edge-boundary-tokamak-physicist"></a>
+
+<p>
+They are early career, and to progress they need to build a professional reputation by publishing papers, supporting UKAEA’s research programmes and supervising students. They are a competent developer and experienced HPC user, though they do not gain
+any credit directly from developing software.
+</p>
+
+<p>
+In their research work, they study different models for the tokamak edge, and so require code flexibility and a user-friendly DSL to allow them to rapidly prototype different equation sets. This work would require quick iterations – perhaps 5 minute simulations
+performed on a desktop. They will also develop their own algorithms and add infrastructure to the code. While they will do this with an understanding of performance implications, they would expect to perform these developments at a higher level that raw
+performance loops (but at a lower level than the physics model).
+</p>
+
+<p>
+They would expect to contribute their changes back to a community repository, and also to benefit from changes that other code users have made. They would be involved in the community – perhaps raising issues, making and reviewing git pull requests,
+answering queries, and having input into future code releases – but would not be involved “project management” tasks, like maintaining the repository.
+</p>
+
+<p>
+They will also value a user-friendly interface and active user community when it comes to working with their students. In this context it is valuable to have software that will run at a high level and produce sensible results without needing to specify the details of
+the implementation. This allows the student to learn about physical systems without simultaneously having to learn the details of numerical implementations. The active community allows their student to get support and ask (perhaps trivial) questions without
+being dependent on their supervisor.
+</p>
+
+<p>
+Finally, in support of experiments, they will need to perform high-fidelity simulations of tokamaks. These will be highly computationally expensive, either because they are high-resolution simulations of specific shots, or because they are parameter scans or UQ
+campaigns. The simulations will be long-running, perhaps in the range of a week to a few months, on whichever HPC system that they have access to. The software must therefore be performance portable in order to facilitate high performance on a range of
+systems. The software also needs to be robust to numerical instabilities, hardware node failures, etc, as one may not have the resource allocation to repeat failed runs.
+</p>
+<!--................................-->
+<h5 id="autosec-43">Use Cases: Engineers</h5>
+<a id="main-autopage-43"></a>
+
+
+<a id="sec:use-cases-engineers"></a>
+
+<p>
+<em>As a thermomechanical engineer I:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• work with a large range of open source and proprietary codes which requires bindings to other tools, eg:&#x0307;
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+– FMU
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– Python (Jupyter and regular)
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– OptiSLang
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– Twinbuilder
+</p>
+</li>
+</ul>
+</li>
+<li>
+
+
+<p>
+• work with CAD software to generate geometries which I want to propagate through my workflow.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• am interested in heat fluxes in all forms: from time and space averages to high resolution 3D time and data.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• need to be able iterate on designs quickly and in an automated way.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• am neither an HPC expert nor a plasma / tokamak physicist.
+</p>
+</li>
+</ul>
+
+<p>
+<em>and I want to:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• know, given a sensible physics model provided by other experts, what the transient peak and average heat loads are on plasma facing components.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• not have to understand software dependencies and be able to install and run easily eg. “in the cloud”.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• be able to configure the software to undertake parameter scans.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• have a handle on the sensitivity of the solution to the inputs and sources of error / uncertainty.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• be able to re-use the spatio-temporal heat fluxes as a model in more thermo-mechanical calculations. This means:
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+– reading in the solution after the calculation.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– using a fit to the data in the form of eg. a reduced order model of the heat fluxes, surrogates etc.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– being able to export CAD geometries and import solutions back into engineering tools eg. ANSYS.
+</p>
+</li>
+</ul>
+</li>
+<li>
+
+
+<p>
+• have reproducible workflows to save and share with colleagues (eg. databases of inputs / outputs / config).
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• export results flexibly to inter-operate with multiple surrogate frameworks.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• be in the loop with development process so it is possible to keep other workflows up to date.
+</p>
+</li>
+</ul>
+
+<p>
+<em>This would mean I can:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• design components with colleagues within eg. STEP.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• make use of the <span class="textsc">NEPTUNE</span> software in combination with proprietary tools that engineers know inside out.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• be insulated, to a sensible extent, from the complexities of the numerics, plasma physics and HPC.
+</p>
+</li>
+</ul>
+<!--................................-->
+<h5 id="autosec-44">Use Cases: Particle Specialists</h5>
+<a id="main-autopage-44"></a>
+
+
+<a id="sec:use-cases-particle-specialists"></a>
+
+<p>
+<em>As a particle specialist I:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• am very familiar with particle based methods.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• may not be familiar with FEM implementation details but have a working understanding of the approach.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• may not be familiar with low level languages.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• may not be familiar with HPC hardware and architectures.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• understand how to describe complex physical processes such as radiation, recombination, ionisation, charge exchange using both particle and FEM data.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• may not have applied UQ techniques before but may have an understanding of distributions/ensembles from statistical mechanics.
+</p>
+</li>
+</ul>
+
+<p>
+<em>I want to:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• describe particle based operations both collectively and per particle, eg. :
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+– creation and deletion of particles potentially from complex distributions.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– computation with particle data - per particle and collectively.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– identification of groups of particles.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+– representation of arbitrary per particle data.
+</p>
+</li>
+</ul>
+</li>
+<li>
+
+
+<p>
+• visualise particle and FEM data - snapshots and trajectories.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• create new finite element functions on appropriate function spaces.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• add source/sink terms to governing equations (solved with FEM).
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• define particle source and sink regions using the simulation domain geometry.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• define regions of interest, eg. surfaces, as part of diagnostics.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• identify particles near surfaces/points/volumes of interest.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• create and use global data structures for computation, eg. diagnostics.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• represent particle data as FE functions:
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. through pointwise projection.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+2. line integration over particle trajectory.
+</p>
+</li>
+</ul>
+</li>
+<li>
+
+
+<p>
+• use non-trivial functions in my loops, eg. erfc, gamma.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• define functions using expansion coefficients, eg. ionisation rate function approximated by an exponential expansion.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• evaluate these functions using both particle and FEM data.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• describe pairwise operations that implement physical processes.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• describe and sample from non-trivial statistical distributions.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• perform simulations in a reproducible manner.
+</p>
+</li>
+</ul>
+
+<p>
+<em>So that I can:</em>
+</p>
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• use particles as a kinetic description for plasma and neutrals.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• represent highly-collisional regimes by fluid approximations.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• describe plasma-neutral and plasma-plasma interactions.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• use abstractions/DSLs to write once, run anywhere as much as possible.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• experiment with models quickly and efficiently.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• perform ensemble computations and averages.
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• perform UQ and verification.
+</p>
+</li>
+</ul>
+<!--................................-->
+<h5 id="autosec-45">Use Cases: Finite Element Background</h5>
+<a id="main-autopage-45"></a>
+
+
+<a id="sec:use-cases-finite-element-background"></a>
+
+<p>
+I am a user with perhaps some grasp of plasma physics but with a more extensive knowledge of finite-element software (I might be an experienced user / developer of Nektar++). My background may be either physics or engineering; I may be a new recruit to
+the <span class="textsc">NEPTUNE</span> team and needing to learn the code with a view to taking a future role as a <span class="textsc">NEPTUNE</span> developer.
+</p>
+
+<p>
+I need the interface / DSL to provide access to typical FEM parameters eg. choice of intra-element basis functions and their polynomial order, continuous / discontinuous Galerkin, choice of numerical flux, stabilization options; also whether diffusion and
+advection terms are explicit or implicit. In line with eg. Nektar++ I expect the choice of time-stepper to be largely “orthogonal” to most details mentioned above (the exception is explicit / implicit choice). I would like the option to specify the timestep in terms
+of the CFL number. In addition I require control over relevant meshing parameters eg. element spatial density and approximation order of any curvilinear elements. I would like the DSL to be able to generate a range of regular meshes internally (at least for trivial
+cases eg. boxes meshed with quads).
+</p>
+
+<p>
+I should like some simple, physically-motivated canonical examples that might assist with learning plasma physics.
+</p>
+
+<p>
+I expect the performance of the code to be at least commensurate with other FEM packages eg. Nektar++ and to remain so going forward (and obviously must be scalable to the latest hardware, which means foreseeably an efficient GPU implementation,
+supporting ideally NVidia, AMD, and Intel Xe / Ponte Vecchio).
+</p>
+
+<p>
+I am unused to velocity-space effects. I would like the particles aspects of the code to be expressible, insofar as is possible, in FEM language: the conversion from discrete to continuum should ideally not be visible to me eg. converting particles to FEM forcing
+terms. Further to this, it would be good if a set of default particle parameters could be produced based on FEM parameters, as required (perhaps a reasonable value for the number of particles can be derived automatically based on FEM resolution).
+</p>
+
+<p>
+If there is an issue from PIC compatibility (eg. constrained choice of basis functions), the DSL should make this clear in an explicit error message, plus hopefully advice how to remedy.
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+</body>
+</html>

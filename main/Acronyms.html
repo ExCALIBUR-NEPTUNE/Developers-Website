@@ -1,0 +1,5881 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>main — Acronyms</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+    subequations: "0",
+    section: "",
+    loader: {
+        load: ['[tex]/tagformat', '[tex]/textmacros'],
+    },
+    startup: {
+        ready() {
+            //      These would be replaced by import commands if you wanted to make
+            //      a proper extension.
+            const Configuration = MathJax._.input.tex.Configuration.Configuration;
+            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const Macro = MathJax._.input.tex.Symbol.Macro;
+            const TexError = MathJax._.input.tex.TexError.default;
+            const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+            const expandable = MathJax._.util.Options.expandable;
+
+
+            //      Insert the replacement string into the TeX string, and check
+            //      that there haven't been too many maxro substitutions (prevents
+            //      infinite loops).
+            const useArgument = (parser, text) => {
+                parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                parser.i = 0;
+                if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                    throw new TexError('MaxMacroSub1',
+                    'MathJax maximum macro substitution count exceeded; ' +
+                    'is there a recursive macro call?');
+                }
+            }
+
+
+            //      Create the command map for:
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            new CommandMap('Lwarp-macros', {
+                ifstar: 'IfstarFunction',
+                ifnextchar: 'IfnextcharFunction',
+                ifblank: 'IfblankFunction',
+                ifstrequal: 'IfstrequalFunction',
+                gsubstitute: 'GsubstituteFunction',
+                seteqnumber: 'SeteqnumberFunction'
+            }, {
+                //      This function implements an ifstar macro.
+                IfstarFunction(parser, name) {
+                    const resultstar = parser.GetArgument(name);
+                    const resultnostar = parser.GetArgument(name);
+                    const star = parser.GetStar();                      // true if there is a *
+                    useArgument(parser, star ? resultstar : resultnostar);
+                },
+
+
+                //      This function implements an ifnextchar macro.
+                IfnextcharFunction(parser, name) {
+                    let whichchar = parser.GetArgument(name);
+                    if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                        // $ syntax highlighting
+                        whichchar = String.fromCodePoint(parseInt(whichchar));
+                    }
+                    const resultnextchar = parser.GetArgument(name);
+                    const resultnotnextchar = parser.GetArgument(name);
+                    const gotchar = (parser.GetNext() === whichchar);
+                    useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                },
+
+
+                // This function implements an ifblank macro.
+                IfblankFunction(parser, name) {
+                    const blankarg = parser.GetArgument(name);
+                    const resultblank = parser.GetArgument(name);
+                    const resultnotblank = parser.GetArgument(name);
+                    const isblank = (blankarg.trim() == "");
+                    useArgument(parser, isblank ? resultblank : resultnotblank);
+                },
+
+
+                // This function implements an ifstrequal macro.
+                IfstrequalFunction(parser, name) {
+                    const strequalfirst = parser.GetArgument(name);
+                    const strequalsecond = parser.GetArgument(name);
+                    const resultequal = parser.GetArgument(name);
+                    const resultnotequal = parser.GetArgument(name);
+                    const isequal = (strequalfirst == strequalsecond);
+                    useArgument(parser, isequal ? resultequal : resultnotequal);
+                },
+
+
+                // This function implements a gsub macro.
+                GsubstituteFunction(parser, name) {
+                    const gsubfirst = parser.GetArgument(name);
+                    const gsubsecond = parser.GetArgument(name);
+                    const gsubthird = parser.GetArgument(name);
+                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+                    useArgument(parser, gsubresult);
+                },
+
+
+                //      This function modifies the equation numbers.
+                SeteqnumberFunction(parser, name) {
+                        //   Get the macro parameters
+                        const star = parser.GetStar();                    // true if there is a *
+                        const optBrackets = parser.GetBrackets(name);     // contents of optional brackets
+                        const newsubequations = parser.GetArgument(name);    // the subequations argument
+                        const neweqsection = parser.GetArgument(name);    // the eq section argument
+                        const neweqnumber = parser.GetArgument(name);     // the eq number argument
+                        MathJax.config.subequations=newsubequations ;     // a string with boolean meaning
+                        MathJax.config.section=neweqsection ;             // a string with numeric meaning
+                        parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                }
+
+
+            });
+
+
+            //      Create the Lwarp-macros package
+            Configuration.create('Lwarp-macros', {
+                handler: {macro: ['Lwarp-macros']}
+            });
+
+
+            MathJax.startup.defaultReady();
+
+
+            // For forward references:
+            MathJax.startup.input[0].preFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        MathJax.config.subequations = math.inputData.recompile.subequations;
+                        MathJax.config.section = math.inputData.recompile.section;
+                }
+            });
+            MathJax.startup.input[0].postFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        math.inputData.recompile.subequations = MathJax.config.subequations;
+                        math.inputData.recompile.section = MathJax.config.section;
+                }
+            });
+
+
+                // For \left, \right with unicode-math:
+                const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+                const {Symbol} = MathJax._.input.tex.Symbol;
+                const {MapHandler} = MathJax._.input.tex.MapHandler;
+                const delimiter = MapHandler.getMap('delimiter');
+                delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+                delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+                delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+                delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+                delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+                delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+                delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+                delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+                delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+                delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+                delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+                delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+                delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+                delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+                delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+                delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+                delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+                delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+                delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+                delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+                delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+                delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+                delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+                delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+                delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+                delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+                delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+                delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+                delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+                delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+                delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+                delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+                delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+                delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+                delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+                delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+                delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+                delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+                delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+        }        // ready
+    },           // startup
+
+
+    tex: {
+        packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+        tags: "ams",
+                tagformat: {
+                        number: function (n) {
+                             if(MathJax.config.subequations==0)
+                                 return(MathJax.config.section + n);
+                             else
+                                 return(MathJax.config.section + String.fromCharCode(96+n));
+                        },
+                },
+    }
+}
+</script>
+
+
+<script
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="main-autopage-233"></a>
+
+
+<div class="bodyandsidetoc2">
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Acronyms</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+<div class="sidetoccontainer2">
+
+
+<nav class="sidetoc2">
+
+
+
+
+<div class="sidetoccontents2">
+
+<p class="text">
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p class="text">
+<a href="Program-Name.html#autosec-7" class="tocchapter" >
+[1] Program Name</a>
+</p>
+
+
+<p class="text">
+<a href="Program-Name.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p class="text">
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p class="text">
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p class="text">
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p class="text">
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p class="text">
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p class="text">
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p class="text">
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-132" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-134" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p class="text">
+<a href="Objects-classes.html#autosec-137" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p class="text">
+<a href="Execution-sequence.html#autosec-148" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p class="text">
+<a href="Design-patterns.html#autosec-158" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p class="text">
+<a href="Management-File.html#autosec-162" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p class="text">
+<a href="Introduction.html#autosec-165" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p class="text">
+<a href="Management.html#autosec-168" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p class="text">
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-177" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p class="text">
+<a href="Maintenance-File.html#autosec-180" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-183" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-185" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p class="text">
+<a href="Developer-Manual.html#autosec-189" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-198" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p class="text">
+<a href="Proxyapps.html#autosec-203" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Driftwave.html#autosec-206" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Diffusion.html#autosec-209" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-1D-SOL.html#autosec-212" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p class="text">
+<a href="FabNEPTUNE.html#autosec-215" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p class="text">
+<a href="Moment-Kinetics.html#autosec-218" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p class="text">
+<a href="NESO.html#autosec-221" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-224" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-226" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p class="text">
+<a href="Acronyms.html#autosec-235" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p class="text">
+<a href="Symbols.html#autosec-243" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p class="text">
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p class="text">
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+<div class="bodyandsidetoc"><div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">main</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Program-Name.html#autosec-7" class="tocchapter" >
+[1] Program Name</a>
+</p>
+
+
+<p>
+<a href="Program-Name.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p>
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p>
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p>
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p>
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p>
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p>
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p>
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-132" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-134" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p>
+<a href="Objects-classes.html#autosec-137" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p>
+<a href="Execution-sequence.html#autosec-148" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p>
+<a href="Design-patterns.html#autosec-158" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p>
+<a href="Management-File.html#autosec-162" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p>
+<a href="Introduction.html#autosec-165" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p>
+<a href="Management.html#autosec-168" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p>
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-177" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p>
+<a href="Maintenance-File.html#autosec-180" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-183" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-185" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p>
+<a href="Developer-Manual.html#autosec-189" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-198" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p>
+<a href="Proxyapps.html#autosec-203" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p>
+<a href="Nektar-Driftwave.html#autosec-206" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p>
+<a href="Nektar-Diffusion.html#autosec-209" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p>
+<a href="Nektar-1D-SOL.html#autosec-212" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p>
+<a href="FabNEPTUNE.html#autosec-215" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p>
+<a href="Moment-Kinetics.html#autosec-218" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p>
+<a href="NESO.html#autosec-221" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-224" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-226" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p>
+<a href="Acronyms.html#autosec-235" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p>
+<a href="Symbols.html#autosec-243" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p>
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p>
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+ 
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<p>
+<!--................................-->
+<h4 id="autosec-234">Acronyms</h4>
+<a id="main-autopage-234"></a>
+<a id="main-autofile-33"></a> <a id="sec:acro"></a>
+<!--................................-->
+<h4 id="autosec-235"></h4>
+<a id="main-autopage-235"></a>
+
+
+<figure id="autoid-13" class="table ">
+<table>
+
+<tr>
+<td colspan="2" class="tdp">
+
+
+<div class="figurecaption">
+
+<p>
+Table 11.2:&nbsp;<b><span class="textsf">TABLE OF ACRONYMS</span></b> Nearly all the acronyms refer to technical terms. A debt is acknowledged to the book by Brunton and Kutz&nbsp;<a id="main-autopage-236"></a>ref. [<a
+href="Index-0.html#LWR-ht-cite.0@bruntonkutz">107</a>].
+</p>
+</div>
+
+</td>
+</tr>
+
+
+<tr class="hline">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ACM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Association for Computing Machinery
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ADC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Analogue to digital converter
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ADM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Alternating directions method
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+AIC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Akaike information criterion
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ALM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Augmented Lagrange multiplier
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+AMR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Adaptive mesh refinement
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+AMReX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Software framework for block-structured AMR
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ANL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Argonne National Laboratory
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ANN
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Artificial Neural Network
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ANOVA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Analysis of Variance
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+API
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Application Programming Interface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ARMA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Autoregressive moving average
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ARMAX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Autoregressive moving average with exogenous input
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ASQ
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Adaptive sparse quadrature
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+ATS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Advanced Terrestrial Simulator, previously Arctic Terrestrial Simulator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Boundary Condition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BEIS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+(UK government) Department for Business, Energy and Industrial Strategy
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BG/L
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+IBM Blue Gene / L supercomputer platform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BIC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Bayesian information criterion
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BOUT++
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Tokamak edge plasma modelling framework <a href="https://boutproject.github.io/" target="_blank" >https://boutproject.github.io/</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BPOD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Balanced proper orthogonal decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+BSD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Opensource software licence
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CAD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Computer-Aided Design, geometry including NURBS, usually “CAD database" implied
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CCA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Canonical correlation analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CCFE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Culham Centre for Fusion Energy
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CEA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+The French Alternative Energies and Atomic Energy Commission
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CESM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Community Earth System Model
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CFD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Computational fluid dynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Continuous integration
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CLI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Command Line Interface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CNN
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Convolutional neural network
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+COGENT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+LLNL continuum plasma simulation code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+COMPAT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Computing patterns for multiscale HPC (project)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CoSaMP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Compressive sampling matching pursuit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+COSMO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Framework for regional weather prediction in Europe
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+COSSAN
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+UQ and risk analysis package (Uni. Liverpool)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CPP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+C plus plus programming language
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CPU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Central Processing Unit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CRUD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Create, Read, Update, Delete
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Compressed sensing
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CSE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Computational science and engineering
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CSG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Constructive Solid Geometry
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CSMP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Computer science, mathematics, and physics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CTO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Chief Technology Officer
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CUDA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Compute Unified Device Architecture
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CWIPI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Coupling with interpolation parallel interface (coupling library)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+CWT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Continuous wavelet transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Data Assimilation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DAG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Direct Acyclic Graph
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DAKOTA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+UQ and optimization package (Sandia)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DCT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Discrete cosine transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DDA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Digital Differential Analyser
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DDD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Document-Driven Design
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Differential equation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DEIM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Discrete Empirical Interpolation Method
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DFT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Discrete Fourier Transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DiMDc
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Dynamic mode decomposition with control
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Deep learning
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DMD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Dynamic mode decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DMDc
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Dynamic mode decomposition with control
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DNS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Direct numerical simulation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DOE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Department of Energy
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DOI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Digital Object Identifier
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DPC++
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Data Parallel C++, Intel compiler for C++ with SYCL extension
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:   1px solid black">
+
+<p>
+DRAM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:               1px solid black">
+
+<p>
+Delayed Rejection Adaptive Metropolis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+DSL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Domain-Specific Language
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+DWT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Discrete wavelet transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ECOG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Electrocorticography
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ECP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Exascale Computing Project
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ECP-copa
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Co-design centre for particle applications (part of ECP)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+eDMD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Extended DMD
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+EIM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Empirical interpolation method
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+EIRENE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of neutral package
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+EM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Expectation maximization
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+EOF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Empirical orthogonal functions
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ERA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Eigensystem realization algorithm
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ESC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Extremum-seeking control
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ESI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of software company <a href="https://www.esi-group.com/" target="_blank" >https://www.esi-group.com/</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ESMF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Earth System Modeling Framework
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+E-TASC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+EUROfusion Theory and Advanced Simulation Coordination
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ETS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+European Transport Simulator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+EU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+European Union
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FCI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Flux-Coordinate Independent (method)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FELTOR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of edge code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FEM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Finite Element Method
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FEniCS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of PDE software project <a href="https://fenicsproject.org" target="_blank" >https://fenicsproject.org</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FFT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Fast Fourier Transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FFTW
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Fastest Fourier Transform in the West (library)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+FLASH
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of Multiscale physics code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+General Atomics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GBS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Global Braginskii Solver (software)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GCR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Generalied Collisional Radiative (framework)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GDB
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Global Drift-Ballooning
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GDB
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+GNU debugger
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GDPR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+General Data Protection Regulation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GENE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of gyrokinetic code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GMM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Gaussian mixture model
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GMRES
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Generalized Minimal Residual method
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GNU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+GNU’s Not Unix!
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Gaussian Process
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+gPC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Generalised polynomial chaos (Xiu and Karniadakis <a href="https://doi.org/10.1016/S0021-9991(03)00092-5" target="_blank" >https://doi.org/10.1016/S0021-9991(03)00092-5</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GPU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Graphics Processing Unit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GRILLIX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of 3D turbulence code based on the flux-coordinate independent approach
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GSA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Global sensitivity analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+GUI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Graphical User Interface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HAGIS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+HAmiltonian GuIding centre System
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HAVOK
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Hankel alternative view of Koopman
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HDF5
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Hierarchical Data Format (version 5)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HDS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Hierarchical Data Structure
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HLA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+High Level Architecture
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HPC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+High Performance Computing
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+HTC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+High Throughput Computing
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IBM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+International Business Machines Corp., but really known as IBM
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Initial Condition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ICA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Independent component analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ICON
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+ICOsahedral Nonhydrostatic, the global numerical weather prediction model of the German weather service
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IEEE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Institute of Electrical and Electronics Engineers
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IETF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Internet Engineering Taskforce
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IMAS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Integrated Modelling &amp; Analysis Suite, promoted by ITER
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IMEX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Implicit-Explicit Methods
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+IO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Input/Output
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ITER
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of International Thermonuclear Experimental Reactor
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ITG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Ion Temperature Gradient
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ITM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Ion Tearing Mode
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+ITPA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+International Tokamak Physics Activity (ITER research programme)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+JET
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Joint European Torus
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+JIT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+Just In Time
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+JL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+JohnsonLindensfrauss
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+JOREK
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+name of nonlinear MHD code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+JSON
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
+
+<p>
+JavaScript Object Notation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:        1px solid black">
+
+<p>
+KL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Kullback Leibler
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+KLT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Karhunen-Loeve transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LAD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Least absolute deviations
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LAMMPS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Large-scale Atomic/Molecular Massively Parallel Simulator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LANL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Los Alamos National Laboratory
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LASSO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Least Absolute Shrinkage and Selection Operator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LCFS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Last Closed Flux Surface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LDA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Linear discriminant analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LGPL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+GNU Lesser General Public License
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LHSamp
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Latin Hypercube Sampling
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LLNL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Lawrence Livermore National Laboratory
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LOO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Leave One Out
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LQE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Linear quadratic estimator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LQG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Linear quadratic Gaussian controller
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LQR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Linear quadratic regulator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+LTI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Linear time invariant system
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MAP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Maximium A Posteriori
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MBSE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Model-based systems engineering
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Monte-Carlo (methods)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MCMC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Markov chain Monte-Carlo
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MCT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Model Coupling Toolkit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Molecular Dynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MECE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Mutually exclusive and collectively exhaustive
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-fidelity, Matrix-free
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MFMC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-fidelity Monte-Carlo
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MHD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Magnetohydrodynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MIMC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-Index Monte-Carlo
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MIMO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multiple input, multiple output
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MIS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Module Interface Specification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MIT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Massachusetts Institute of Technology
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MIT licence
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Opensource software licence&nbsp;<a id="main-autopage-238"></a>ref. [<a href="Index-0.html#LWR-ht-cite.0@MITlicense">6</a>]
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+ML
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Machine Learning
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MLC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Machine learning control
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MLMC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-Level Monte-Carlo
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MLMF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-Level Multi-Fidelity
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MMF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multiscale Modeling Framework
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MMS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Method of Manufactured Solutions
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MOOSE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multiphysics Object Oriented Simulation Environment
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MOR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Model Order Reduction
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MPE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Missing point estimation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MPI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Message Passing Interface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+mrDMD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multi-resolution dynamic mode decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MSSC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Materials Science and Scientific Computing
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MUMPS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+MUltifrontal Massively Parallel Sparse direct Solver
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+MUSCLE&nbsp;3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Multiscale Coupling Library and Environment version 3
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NAG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Numerical Algorithms Group
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NARMAX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Nonlinear autoregressive model with exogenous inputs
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NEMO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Nucleus for European Modelling of the Ocean
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NEPTUNE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Neutrals and Plasma Turbulence Numerics for the Exascale
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NetCDF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Network Common Data Form
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NLS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Nonlinear Schroedinger equation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NROY
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Not ruled out yet
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NUCODE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Software: SMARDDA/NUCODE for Neutral Beam Duct Calculations
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+NURBS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+NonUniform Rational B-Spline
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OASIS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Ocean Atmosphere Sea Ice Soil
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OASIS4
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Ocean Atmosphere Sea Ice Soil version 4
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+ODE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Ordinary Differential Equation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OKID
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Observer Kalman filter identification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OLYMPUS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+OLYMPUS Programming System
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OMFIT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+One Modeling Framework for Integrated Tasks
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OneAPI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+A Unified, Standards-Based Programming Model, <a href="https://software.intel.com/en-us/oneapi" target="_blank" >https://software.intel.com/en-us/oneapi</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OP2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+API with associated libraries and preprocessors for performance-portable parallel computations on unstructured meshes <a href="https://github.com/OP-DSL/OP2-Common" target="_blank" >https://github.com/OP-DSL/OP2-Common</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OpenMP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Open Multi-Processing
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Oxford University
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+OUU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Optimisation under uncertainty
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+
+<p>
+PASTIX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Parallel Sparse matriX package
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:   1px solid black">
+<p>
+PBH
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+PopovBelevitchHautus test
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Polynomial chaos
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PCA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Principal components analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PCE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Polynomial chaos expansion
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PCP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Principal component pursuit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PDE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Partial Differential Equation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PDE-FIND
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Partial differential equation functional identification of nonlinear dynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PDF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Probability distribution function
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PETSc
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Portable Extensible Toolkit for Scientific Computation <a href="https://www.mcs.anl.gov/petsc/" target="_blank" >https://www.mcs.anl.gov/petsc/</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PFC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Plasma Facing Component
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PGD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Proper Generalised Decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PIC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Particle-In-Cell
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PICPIF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Particle-In-Cell-Particle-In-Fourier
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PID
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Proportional-integral-derivative control
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PIV
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Particle image velocimetry
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+POD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Proper Orthogonal Decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+POOMA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Parallel Object-Oriented Methods and Applications
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PP20
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+SIAM Conference on Parallel Processing for Scientific Computing 2020
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PPMD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Performance-Portable Framework For Atomistic Simulations
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PR
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+git Pull Request
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PSyclone
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+PSyclone is a code generation system that generates appropriate code for the PSyKAl code structure developed in the GungHo project. <a href="https://github.com/stfc/PSyclone" target="_blank" >https://github.com/stfc/PSyclone</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+PyOP2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Framework for performance-portable parallel computations on unstructured meshes <a href="http://op2.github.com/PyOP2" target="_blank" >http://op2.github.com/PyOP2</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+QA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Quality Assurance
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+QCG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Quality in Cloud and Grid, see QCG Pilot Job
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+QMC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Quasi-Monte-Carlo
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+QoI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Quantity of interest
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+QoS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Quality of Service
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RAID
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Risks, Assumptions, Issues, Dependencies
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RAJA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+RAJA Performance Portability Layer (C++) <a href="https://github.com/LLNL/RAJA" target="_blank" >https://github.com/LLNL/RAJA</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+REST
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Representational State Transfer (Resources as simple CRUD objects)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RIP
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Restricted isometry property
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RKF23
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Runge-Kutta-Fehlberg (<em>aka</em> Embedded Runge-Kutta), \(23\) denotes orders of scheme
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RKHS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Reproducing kernel Hilbert space
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RMS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Root-mean-square
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RNG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Random Number Generator
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RNN
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Recurrent neural network
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Responsible Officer
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+ROM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Reduced-Order Model
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+RPCA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Robust principal components analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+rSVD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Randomized SVD
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SAMRAI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Structured Adaptive Mesh Refinement Application Infrastructure
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SD1D
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of 1-D edge code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SDLC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Software Development Life Cycle
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SGD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Stochastic gradient descent
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SIAM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Society for Industrial and Applied Mathematics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SINDy
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Sparse identification of nonlinear dynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SISO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Single input, single output
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SLA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Service-level Agreement
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SLE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Software Language Extensions
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SLE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+System Level Engineering
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SLEPc
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of Scalable Library for Eigenvalue Problem Computations
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SLSQT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Sequential Least-Squares’ Thresholding
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SMARDDA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of Ray-tracing algorithm, hybrid of SMART and DDA
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SMART
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of Ray-tracing algorithm based on use of octree
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SMITER
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+SMARDDA modules with ITER interface
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SNOWPAC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Stochastic Nonlinear Optimisation with Path-Augmented Constraints (software package)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SOL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Scrape-Off Layer
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SOLEDGE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of edge modelling code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SOLPS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+name of edge modelling code combines B2 and EIRENE
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SPH
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Smoothed Particle Hydrodynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SRC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Sparse representation for classification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SRO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Senior Responsible Owner role in UK government project delivery
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SRS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Software Requirements Specification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SSA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Singular spectrum analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+SSD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Scientific Software Development
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                 1px solid black; border-right:   1px solid black">
+
+<p>
+StarPU
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:              1px solid black">
+
+<p>
+Runtime system supporting heterogeneous multicore architectures <a href="http://starpu.gforge.inria.fr/doc/html/" target="_blank" >http://starpu.gforge.inria.fr/doc/html/</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STARWALL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of vacuum field code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STFT
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Short time Fourier transform
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STIX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Scientific And Technical Information eXchange
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STLS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Sequential thresholded least-squares
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STORM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Scrape-off layer Transport ORiented Module
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+STRUMPACK
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+STRUctured Matrix PACKage
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+SUNDIALS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of ODE package
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+SVD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Singular Value Decomposition
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+SVM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Support Vector Machine
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+SYCL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+C++-single-source heterogeneous programming for acceleration offload, <a href="https://www.khronos.org/sycl/" target="_blank" >https://www.khronos.org/sycl/</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+SysML
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Systems Modeling Language
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TAE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Toroidal Alfven Eigenmode
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TDD
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Test Driven Development
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TICA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Time-lagged independent component analysis
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+TradeMark
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TOKAM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of set of edge modelling codes
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TOKAM3X
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of Edge modelling software
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TOMS
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Transactions on Mathematical Software
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TORPEX
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+TORoidal Plasma Experiment
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+Trilinos
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Object-oriented software framework for the solution of large-scale, complex multi-physics engineering and scientific problems <a href="https://trilinos.github.io/" target="_blank" >https://trilinos.github.io/</a>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TRIMEG
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+TRIangular MEsh based Gyrokinetic code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TSVV
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Theory, Simulation, Validation and Verification, tasks of the E-TASC programme of Eurofusion
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+TUM
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Technical University Munich
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UK
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+United Kingdom
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UKAEA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+United Kingdom Atomic Energy Authority
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UKRI
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+United Kingdom Research and Innovation, a non-departmental public body encompassing the research councils and Innovate UK
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UML
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Unified Modelling Language
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UQ
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Uncertainty quantification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+US
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+United States
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+USA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+United States of America
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UTF-8
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Unicode Transformation Format (Unicode denotes Universal Coded Character Set)
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+UUID
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Universally Unique IDentifier is a 128-bit label used for information in computer systems
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VAC
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Variational approach of conformation dynamics
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VDE
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Vertical Dispacement Event
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VECMA
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Verified Exascale Computing for Multiscale Applications
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VECMAtk
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+VECMA toolkit
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VORPAL
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of Electromagnetic Particle-in-Cell code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VSVO
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+variable stepsize, variable order solver of differential equation
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+VVUQ
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+Verification, Validation and Uncertainty Quantification
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+XGC1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+name of Particle-based gyrokinetic code
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+XML
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+eXtensible Markup Language
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+XMSF
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+eXtensible Modeling and Simulation Framework
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:   1px solid black">
+
+<p>
+XPN
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:                1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span>
+</p>
+</td>
+</tr>
+
+
+<tr class="hline">
+<td class="tdp">
+
+</td>
+<td class="tdp">
+
+</td>
+</tr>
+
+</table>
+
+</figure>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+</body>
+</html>
