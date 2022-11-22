@@ -7,7 +7,7 @@ It should be sufficient to first clone this repo, cd into the directory and then
 ```
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
 mkdir public
-bash buildwebsite.sh
+bash buildwebsite-local.sh
 ```
 
 then open `public/index.html` in your preferred browser.
@@ -16,7 +16,7 @@ then open `public/index.html` in your preferred browser.
 If you want to generate just the pdf version of the website then you perform the following command
 
 ```
-bash buildwebsite.sh PDF
+bash buildwebsite-local.sh PDF
 ```
 
 ##  Partial PDF and HTML generation
