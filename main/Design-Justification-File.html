@@ -59,13 +59,12 @@ MathJax = {
 
 
             //      Create the command map for:
-            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
             new CommandMap('Lwarp-macros', {
                 ifstar: 'IfstarFunction',
                 ifnextchar: 'IfnextcharFunction',
                 ifblank: 'IfblankFunction',
                 ifstrequal: 'IfstrequalFunction',
-                gsubstitute: 'GsubstituteFunction',
                 seteqnumber: 'SeteqnumberFunction'
             }, {
                 //      This function implements an ifstar macro.
@@ -109,16 +108,6 @@ MathJax = {
                     const resultnotequal = parser.GetArgument(name);
                     const isequal = (strequalfirst == strequalsecond);
                     useArgument(parser, isequal ? resultequal : resultnotequal);
-                },
-
-
-                // This function implements a gsub macro.
-                GsubstituteFunction(parser, name) {
-                    const gsubfirst = parser.GetArgument(name);
-                    const gsubsecond = parser.GetArgument(name);
-                    const gsubthird = parser.GetArgument(name);
-                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-                    useArgument(parser, gsubresult);
                 },
 
 
@@ -229,7 +218,7 @@ MathJax = {
 
 <script
         id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
 
 </head>
@@ -3232,9 +3221,9 @@ For Deliverable 6, UKAEA produced two milestone reports, namely
 <p>
 The first (Report&nbsp;51) details the application of the Nektar++ spectral / hp finite-element software to the classic problem of two-dimensional vertical natural convection - physically a model for the heat transfer that takes place within the cavity of a
 double-glazing unit and also relevant to heat transport in a plasma. A brief survey of results from the literature is followed by a numerical investigation showing transitions between conducting, laminar convective, and turbulent regimes. Small extensions to the
-existing Nektar++ framework, aimed at extracting engineering-relevant quantities such as the maximum near-wall temperature, are given. The second (Report&nbsp;64) builds on these results with a quantitative comparison to the well-established MIT
-numerical convection benchmark and also the reproduction of some detailed flow-fields from a recent publication; excellent agreement between results from Nektar++ and those from the literature is obtained in both cases. Also included in this report is a
-preliminary study of a numerical implementation of discrete exterior calculus with a demonstration of spectral convergence for a simple test problem, work motivated by the favourable properties of such schemes when coupled to particle kinetic codes.
+existing Nektar++ framework, aimed at extracting engineering-relevant quantities such as the maximum near-wall temperature, are given. The second (Report&nbsp;64) builds on these results with a quantitative comparison to the well-established MIT numerical
+convection benchmark and also the reproduction of some detailed flow-fields from a recent publication; excellent agreement between results from Nektar++ and those from the literature is obtained in both cases. Also included in this report is a preliminary study
+of a numerical implementation of discrete exterior calculus with a demonstration of spectral convergence for a simple test problem, work motivated by the favourable properties of such schemes when coupled to particle kinetic codes.
 </p>
 
 <p>
@@ -3323,8 +3312,8 @@ Set N(i)=1 to suppress dependence on index i
 In a physics modelling code, it seems reasonable that physics should have a say as to how the data is arranged, with the special implication that all information relating to a particular position in space should be as close together as possible. However, particularly
 for edge physics, this may lead to conflict with an array level API. There are two main problems, namely that at a given spatial point (1) some species may be represented as particles and others as finite elements and some as both, and (2) not all species need be
 present at a given point. The issue at (1) arises when the species collisionality varies so that a fluid and a high-dimensional representation that accounts more accurately for non-Maxwellian effects are needed in different spatial regions, with the different
-representations allowed to overlap. Situation&nbsp;(2) may occur with a neutral species that becomes fully ionised with distance into the plasma, or when say singly-charged ions of a certain species are only present in the divertor. The problem is intensified
-when \(p\)-adaptive finite elements are used such that adjacent elements may have different orders of polynomial discretisation. It may also be desirable when working with ensembles to have samples from different solutions but for the same spatial region to be
+representations allowed to overlap. Situation&nbsp;(2) may occur with a neutral species that becomes fully ionised with distance into the plasma, or when say singly-charged ions of a certain species are only present in the divertor. The problem is intensified when
+\(p\)-adaptive finite elements are used such that adjacent elements may have different orders of polynomial discretisation. It may also be desirable when working with ensembles to have samples from different solutions but for the same spatial region to be
 physically close together in storage.
 </p>
 

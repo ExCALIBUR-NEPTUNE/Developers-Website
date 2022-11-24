@@ -59,13 +59,12 @@ MathJax = {
 
 
             //      Create the command map for:
-            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
             new CommandMap('Lwarp-macros', {
                 ifstar: 'IfstarFunction',
                 ifnextchar: 'IfnextcharFunction',
                 ifblank: 'IfblankFunction',
                 ifstrequal: 'IfstrequalFunction',
-                gsubstitute: 'GsubstituteFunction',
                 seteqnumber: 'SeteqnumberFunction'
             }, {
                 //      This function implements an ifstar macro.
@@ -109,16 +108,6 @@ MathJax = {
                     const resultnotequal = parser.GetArgument(name);
                     const isequal = (strequalfirst == strequalsecond);
                     useArgument(parser, isequal ? resultequal : resultnotequal);
-                },
-
-
-                // This function implements a gsub macro.
-                GsubstituteFunction(parser, name) {
-                    const gsubfirst = parser.GetArgument(name);
-                    const gsubsecond = parser.GetArgument(name);
-                    const gsubthird = parser.GetArgument(name);
-                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-                    useArgument(parser, gsubresult);
                 },
 
 
@@ -229,7 +218,7 @@ MathJax = {
 
 <script
         id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
 
 </head>
@@ -969,8 +958,8 @@ volume of SOL \(\approx 4 \pi ^2 a R_0 L \approx 100\)&#x202f;m\(^3\). It follow
 The shortest timescale is inverse \(e B/m_e\), the electron cyclotron frequency, where the ratio of charge to mass for the electron is \(|e|/m_e = 1.76 \times 10^{11}\)&#x202f;C kg\(^{-1}\), and \(B\approx 10\)&#x202f;T, so \(\tau _{Be}\approx
 10^{-12}\)&#x202f;s. Hence the number of particle-steps to evolve \(1\)&#x202f;s of physical time is \(10^{20+12+1}\) (assuming of order \(10\pi \)&nbsp;timesteps per orbit), which assuming \(1000\)&#x202f;flop per update, needs a total
 of&nbsp;\(10^{36}\)&#x202f;flop. Thus to complete a computation in \(1\)&#x202f;s on Exascale machine, only one \(1\)&nbsp;particle-step in \(10^{18}\) is allowed. This implies for example only \(100\)&nbsp;superparticles in the volume can be used
-supposing each has a weight&nbsp;\(10^{18}\), which is unlikely to be adequate because electrostatic and other effects will produce a noise level that swamps any physical effects. However if \(3\) or \(4\)&nbsp;months (approx.&nbsp;\(10^7\)&#x202f;s)
-are allowed, then a calculation with&nbsp;\(10^9\) particles may be performed if memory-access bandwidth constraints can be satisfied, when the noise levels may be manageable.
+supposing each has a weight&nbsp;\(10^{18}\), which is unlikely to be adequate because electrostatic and other effects will produce a noise level that swamps any physical effects. However if \(3\) or \(4\)&nbsp;months (approx.&nbsp;\(10^7\)&#x202f;s) are
+allowed, then a calculation with&nbsp;\(10^9\) particles may be performed if memory-access bandwidth constraints can be satisfied, when the noise levels may be manageable.
 </p>
 
 <p>

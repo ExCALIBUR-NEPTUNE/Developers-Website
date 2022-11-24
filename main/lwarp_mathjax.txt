@@ -44,13 +44,12 @@ MathJax = {
       }
 
       //  Create the command map for:
-      //    \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+      //    \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
       new CommandMap('Lwarp-macros', {
         ifstar: 'IfstarFunction',
         ifnextchar: 'IfnextcharFunction',
         ifblank: 'IfblankFunction',
         ifstrequal: 'IfstrequalFunction',
-        gsubstitute: 'GsubstituteFunction',
         seteqnumber: 'SeteqnumberFunction'
       }, {
         //  This function implements an ifstar macro.
@@ -91,15 +90,6 @@ MathJax = {
           const resultnotequal = parser.GetArgument(name);
           const isequal = (strequalfirst == strequalsecond);
           useArgument(parser, isequal ? resultequal : resultnotequal);
-        },
-
-        // This function implements a gsub macro.
-        GsubstituteFunction(parser, name) {
-          const gsubfirst = parser.GetArgument(name);
-          const gsubsecond = parser.GetArgument(name);
-          const gsubthird = parser.GetArgument(name);
-          let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-          useArgument(parser, gsubresult);
         },
 
         //  This function modifies the equation numbers.
@@ -202,5 +192,5 @@ MathJax = {
 
 <script
     id="MathJax-script"
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>

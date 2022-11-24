@@ -59,13 +59,12 @@ MathJax = {
 
 
             //      Create the command map for:
-            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
             new CommandMap('Lwarp-macros', {
                 ifstar: 'IfstarFunction',
                 ifnextchar: 'IfnextcharFunction',
                 ifblank: 'IfblankFunction',
                 ifstrequal: 'IfstrequalFunction',
-                gsubstitute: 'GsubstituteFunction',
                 seteqnumber: 'SeteqnumberFunction'
             }, {
                 //      This function implements an ifstar macro.
@@ -109,16 +108,6 @@ MathJax = {
                     const resultnotequal = parser.GetArgument(name);
                     const isequal = (strequalfirst == strequalsecond);
                     useArgument(parser, isequal ? resultequal : resultnotequal);
-                },
-
-
-                // This function implements a gsub macro.
-                GsubstituteFunction(parser, name) {
-                    const gsubfirst = parser.GetArgument(name);
-                    const gsubsecond = parser.GetArgument(name);
-                    const gsubthird = parser.GetArgument(name);
-                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-                    useArgument(parser, gsubresult);
                 },
 
 
@@ -229,7 +218,7 @@ MathJax = {
 
 <script
         id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
 
 </head>
@@ -974,8 +963,8 @@ Table 11.3:&nbsp;<b><span class="textsf">TABLE OF MATHEMATICAL SYMBOLS</span></b
 of symbols tries to follow that from the Plasma Formulary&nbsp;<a id="main-autopage-244"></a>ref. [<a href="Index-0.html#LWR-ht-cite.0@NRLpf07">17</a>], in SI units, with temperatures specified as&nbsp;\(kT\) which returns&nbsp;\(J\). The
 Formulary also give the fundamental dimensions of the SI units, which should enable checking of dimensional consistency of equations, eg. magnetic field induction is in Tesla&nbsp;(\(T\)) whence the fundamental dimension expression gives&nbsp;\(T=kg
 s^{-1} C^{-1}\). Note that the symbols are sorted by font as well as alphabet, so that boldface symbols appear immediately after&nbsp;‘b’ (backslashes ignored). The main source for the symbols is the Equations document&nbsp;ref. [<a
-href="Index-0.html#LWR-ht-cite.0@pappeqs">108</a>], also included are those listed as used in the text by Karniadakis and Sherwin&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@karniadakissherwin">109</a>], prefaced by (K+S), plus
-symbols used in the report&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re313">57</a>]. <a id="tab:symbols"></a>
+href="Index-0.html#LWR-ht-cite.0@pappeqs">108</a>], also included are those listed as used in the text by Karniadakis and Sherwin&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@karniadakissherwin">109</a>], prefaced by (K+S), plus symbols
+used in the report&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re313">57</a>]. <a id="tab:symbols"></a>
 </p>
 </div>
 
@@ -3068,7 +3057,7 @@ electron cyclotron frequency
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f_{ci}= \frac {\omega _{ci}}{2\pi }\)
@@ -3090,7 +3079,7 @@ ion cyclotron frequency
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f_{pe}= \frac {\omega _{pe}}{2\pi }\)
@@ -3112,7 +3101,7 @@ electron plasma frequency
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f_{pi}= \frac {\omega _{pi}}{2\pi }\)
@@ -3134,7 +3123,7 @@ ion plasma frequency
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f_i(x_i)\)
@@ -3153,7 +3142,7 @@ coefficient in the expansion of \(f\left (x_1,\ldots ,x_d\right )\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f\left (x_1,\ldots ,x_d\right )\)
@@ -3172,7 +3161,7 @@ joint probability distribution
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f^\mathcal {E}\)
@@ -3191,7 +3180,7 @@ flux term (fieldline integrated source) for plasma energy
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(F^\mathcal {E}\)
@@ -3213,7 +3202,7 @@ flux term (fieldline integrated source divided by field) for plasma energy
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f^n\)
@@ -3232,7 +3221,7 @@ flux term (fieldline integrated source) for plasma number density
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(F^n\)
@@ -3254,7 +3243,7 @@ flux term (fieldline integrated source divided by field) for plasma number densi
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f^u\)
@@ -3273,7 +3262,7 @@ flux term (fieldline integrated source) for plasma momentum
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(F^u\)
@@ -3295,7 +3284,7 @@ flux term (fieldline integrated source divided by field) for plasma momentum
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(f(x,{\bf v},t)\)
@@ -3317,7 +3306,7 @@ generic distribution function
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\Gamma (x)\)
@@ -3336,7 +3325,7 @@ gamma function of continuous variable \(x\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(g(h_j)\)
@@ -3355,7 +3344,7 @@ activation function (of input \(h_j\)) of a neuron in a neural network
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(H_\alpha \)
@@ -3374,7 +3363,7 @@ Hamiltonian for species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\hat {\boldsymbol {u}}^e\)
@@ -3393,7 +3382,7 @@ Hamiltonian for species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\hat {v}_g\)
@@ -3412,7 +3401,7 @@ Hamiltonian for species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\hat {v}_g\)
@@ -3431,7 +3420,7 @@ Hamiltonian for species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(h_j\)
@@ -3450,7 +3439,7 @@ real-number input to a neuron in a neural network
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(h_p(\xi )\)
@@ -3469,7 +3458,7 @@ real-number input to a neuron in a neural network
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(i\)
@@ -3488,7 +3477,7 @@ as suffix denotes ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(i\)
@@ -3507,7 +3496,7 @@ as suffix denotes regular excited state
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(i\)
@@ -3526,7 +3515,7 @@ as suffix generic label
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(I_\phi \)
@@ -3548,7 +3537,7 @@ as suffix generic label
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(I_H\)
@@ -3570,7 +3559,7 @@ Hydrogen reionisation potential as defined in ref&nbsp;<a id="main-autopage-246"
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(i,j,k\)
@@ -3589,7 +3578,7 @@ Hydrogen reionisation potential as defined in ref&nbsp;<a id="main-autopage-246"
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(^I\mathcal {F}_{i\sigma }\)
@@ -3608,7 +3597,7 @@ coefficient of ionisation for the transition from metastable state&nbsp;\(\sigma
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\in \)
@@ -3627,7 +3616,7 @@ coefficient of ionisation for the transition from metastable state&nbsp;\(\sigma
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(I(\psi )=B_T/R\)
@@ -3649,7 +3638,7 @@ function giving the toroidal field as a function of&nbsp;\(\psi \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(I^Z\)
@@ -3671,7 +3660,7 @@ power per atom released in dielectronic recombination
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(j\)
@@ -3690,7 +3679,7 @@ as suffix is generic label
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(j_{ext}(R,Z)\)
@@ -3712,7 +3701,7 @@ electric current density induced in plasma by external coils
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(j_\phi \)
@@ -3734,7 +3723,7 @@ electric current density induced in plasma by external coils
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(k\)
@@ -3753,7 +3742,7 @@ as suffix is generic label
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(k\)
@@ -3775,7 +3764,7 @@ chosen to scale so that \(kT_0\), \(kT_d\) is an energy
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa _\alpha \)
@@ -3797,7 +3786,7 @@ thermal diffusivity of species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa _{e\|}\)
@@ -3819,7 +3808,7 @@ parallel thermal diffusivity of electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa _{e\perp }\)
@@ -3841,7 +3830,7 @@ perpendicular thermal diffusivity of electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa _{i\|}\)
@@ -3863,7 +3852,7 @@ parallel thermal diffusivity of ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa _{i\perp }\)
@@ -3885,7 +3874,7 @@ perpendicular thermal diffusivity of ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(\kappa =k_c/\rho _m c_p\)
@@ -3907,7 +3896,7 @@ thermal diffusivity tensor of solid
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(k_B\)
@@ -3929,7 +3918,7 @@ Boltzmann’s constant
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(k_c\)
@@ -3951,7 +3940,7 @@ thermal conductivity tensor
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(K_{cx}\left ( n_i, T_i \right )\)
@@ -3973,7 +3962,7 @@ reaction rate of charge exchange reactions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(K_i\)
@@ -3995,7 +3984,7 @@ ionization reaction rate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(K_M\)
@@ -4017,7 +4006,7 @@ chosen as \(k_B/m_i\) or \(|e|/m_i\) so that \(\sqrt {K_MT_0}\), \(\sqrt {K_MT_d
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(K_r\)
@@ -4039,7 +4028,7 @@ recombination reaction rate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(kT_0\)
@@ -4061,7 +4050,7 @@ recombination reaction rate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(kT_d\)
@@ -4083,7 +4072,7 @@ recombination reaction rate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(K_v(x)\)
@@ -4102,7 +4091,7 @@ modified Bessel function of the second kind, order \(v\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:      1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:                1px solid black; border-right:       1px solid black">
 
 <p>
 \(k_w\)
@@ -5174,13 +5163,13 @@ generalised collisional-radiative (GCR) excitation coefficient
 \(\mathfrak {R}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 Real numbers
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5193,7 +5182,7 @@ Real numbers
 \(\mathrm {Var}(f)\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 variance of the distribution of \(f\) computed by integrating over all variables&nbsp;\(x_i\)
@@ -5212,13 +5201,13 @@ variance of the distribution of \(f\) computed by integrating over all variables
 \(\mathrm {Var}[Q]\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 variance in random variable \(Q\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5231,13 +5220,13 @@ variance in random variable \(Q\)
 \(m_e\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 mass of electron
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(kg\)
@@ -5253,13 +5242,13 @@ mass of electron
 \(m_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 mass of ion species particle
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(kg\)
@@ -5275,13 +5264,13 @@ mass of ion species particle
 \(m_n\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 neutral species particle mass
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(kg\)
@@ -5297,13 +5286,13 @@ neutral species particle mass
 \(m_p\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 mass of proton
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(kg\)
@@ -5319,13 +5308,13 @@ mass of proton
 \(M_s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 Mach number, allowed to take either sign
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5338,13 +5327,13 @@ Mach number, allowed to take either sign
 \(M_S\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number of energy states of an atom
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5357,13 +5346,13 @@ number of energy states of an atom
 \(\mu , \nu \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Dynamic, kinematic viscosities
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5376,7 +5365,7 @@ number of energy states of an atom
 \(\mu _{cx}=\omega _c/\nu _{cx}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 measures strength of magnetization with respect to charge exchange reaction
@@ -5395,7 +5384,7 @@ measures strength of magnetization with respect to charge exchange reaction
 \(M_Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number of metastable states for species&nbsp;\(s\) (which includes the ground state)
@@ -5414,13 +5403,13 @@ number of metastable states for species&nbsp;\(s\) (which includes the ground st
 \(n\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5436,7 +5425,7 @@ number density
 \(N\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density, may be in units of \(10^{18}\)&#x202f;m\(^{-3}\)
@@ -5458,13 +5447,13 @@ number density, may be in units of \(10^{18}\)&#x202f;m\(^{-3}\)
 \(n_0\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 initial number density
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5480,13 +5469,13 @@ initial number density
 \(\nabla \cdot \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Divergence
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5499,13 +5488,13 @@ initial number density
 \(\nabla \times \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Curl
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5518,13 +5507,13 @@ initial number density
 \(\nabla ^2\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Laplacian
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5537,13 +5526,13 @@ initial number density
 \(N_{b}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Number of global boundary degrees of freedom
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5556,13 +5545,13 @@ initial number density
 \(n_B=N/B\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density divided by field strength
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}T^{-1}\)
@@ -5578,13 +5567,13 @@ number density divided by field strength
 \(N_{dof}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Number of global degrees of freedom
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5597,13 +5586,13 @@ number density divided by field strength
 \(n_e\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density of the electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5619,13 +5608,13 @@ number density of the electrons
 \(N_{el}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Number of finite elements
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5638,7 +5627,7 @@ number density of the electrons
 \(N_{eof}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Total number of elemental degrees of freedom \(N_{eof} \simeq N_{el}N_m\)
@@ -5657,13 +5646,13 @@ number density of the electrons
 \(n_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density of the plasma ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5679,7 +5668,7 @@ number density of the plasma ions
 \(n_j({\bf x},t)\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 member of the set of deterministic coefficients of the “random trial basis"
@@ -5698,13 +5687,13 @@ member of the set of deterministic coefficients of the “random trial basis"
 \(N_{m}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Number of elemental degrees of freedom
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5717,13 +5706,13 @@ member of the set of deterministic coefficients of the “random trial basis"
 \(n_n\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 neutral density
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5739,13 +5728,13 @@ neutral density
 \(\notin \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (Sets) Is not a member of; does not belong to
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5758,13 +5747,13 @@ neutral density
 \(\not \subset \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (Sets) Is not a subset of
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -5777,13 +5766,13 @@ neutral density
 \(n_p\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density of the plasma ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5799,7 +5788,7 @@ number density of the plasma ions
 \(N_{Q}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (K+S) Total number of quadrature points \(N_Q = Q_1 Q_2 Q_3\)
@@ -5818,13 +5807,13 @@ number density of the plasma ions
 \(n_s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density of isotope&nbsp;\(s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5840,13 +5829,13 @@ number density of isotope&nbsp;\(s\)
 \(N_s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density of isotope&nbsp;\(s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -5862,7 +5851,7 @@ number density of isotope&nbsp;\(s\)
 \(N_T\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number of samples in temperature used to define typically a crossection in the ADAS database&nbsp;<a id="main-autopage-248"></a>refs. [<a href="Index-0.html#LWR-ht-cite.0@adaswebsite">112</a>, <a
@@ -5882,13 +5871,13 @@ href="Index-0.html#LWR-ht-cite.0@openadaswebsite">113</a>]
 \(\nu \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 plasma kinematic viscosity
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -5904,13 +5893,13 @@ plasma kinematic viscosity
 \(\nu _\alpha \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 kinematic viscosity of species&nbsp;\(\alpha \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -5926,13 +5915,13 @@ kinematic viscosity of species&nbsp;\(\alpha \)
 \(\nu _{cx}=K_{cx} n_n\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 charge exchange ‘frequency’
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(s^{-1}\)
@@ -5948,13 +5937,13 @@ charge exchange ‘frequency’
 \(\nu _{e0}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 electron kinematic viscosity caused by neutrals
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -5970,13 +5959,13 @@ electron kinematic viscosity caused by neutrals
 \(\nu _{e\|}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 parallel kinematic viscosity of electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -5992,13 +5981,13 @@ parallel kinematic viscosity of electrons
 \(\nu _{e\perp }\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 perpendicular kinematic viscosity of electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -6014,13 +6003,13 @@ perpendicular kinematic viscosity of electrons
 \(\nu _{i\|}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 parallel kinematic viscosity of ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -6036,13 +6025,13 @@ parallel kinematic viscosity of ions
 \(\nu _i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 ion kinematic viscosity
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -6058,13 +6047,13 @@ ion kinematic viscosity
 \(\nu _{i0}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 ion kinematic viscosity caused by neutrals
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -6080,13 +6069,13 @@ ion kinematic viscosity caused by neutrals
 \(\nu _{i\perp }\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 perpendicular kinematic viscosity of ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^2 s^{-1}\)
@@ -6102,7 +6091,7 @@ perpendicular kinematic viscosity of ions
 \(\nu ^{*}_s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (Glossary) Normalised collision frequency for species&nbsp;\(s\)
@@ -6127,7 +6116,7 @@ perpendicular kinematic viscosity of ions
 Collisionality parameter
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -6140,13 +6129,13 @@ Collisionality parameter
 \(\nu _s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 (Glossary) Collision frequency for species&nbsp;\(s\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(s^{-1}\)
@@ -6162,13 +6151,13 @@ Collisionality parameter
 \(\nu _{s{\sf n}}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 Collision frequency for species&nbsp;\(s\) with neutrals
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right: 1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(s^{-1}\)
@@ -6184,13 +6173,13 @@ Collision frequency for species&nbsp;\(s\) with neutrals
 \(n^Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density for charge state&nbsp;\(Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 \(m^{-3}\)
@@ -6206,13 +6195,13 @@ number density for charge state&nbsp;\(Z\)
 \(N_Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number of charge states for an ion species
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 </td>
 </tr>
@@ -6225,7 +6214,7 @@ number of charge states for an ion species
 \(n^Z_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:            1px solid black">
+<td class="tdp tvertbarr" style="border-right:             1px solid black">
 
 <p>
 number density for charge state&nbsp;\(Z\), excited state&nbsp;\(i\)
@@ -7290,7 +7279,7 @@ mass density of the medium
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\rho _{ts}\)
@@ -7312,7 +7301,7 @@ mass density of the medium
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(^R\mathcal {F}_{i\sigma }\)
@@ -7331,7 +7320,7 @@ coefficient of recombination for the transition from metastable state&nbsp;\(\si
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(s_{\|}\)
@@ -7353,7 +7342,7 @@ arclength along fieldline
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(s\)
@@ -7372,7 +7361,7 @@ as suffix, species label
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(s\)
@@ -7391,7 +7380,7 @@ parameterises distance along the fieldline \(0\leq s \leq 1\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_\alpha \)
@@ -7413,7 +7402,7 @@ source term in Boltzmann equation for species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_C\)
@@ -7435,7 +7424,7 @@ total source term in Boltzmann equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_{exp}({\bf x}, {\bf v},t)\)
@@ -7457,7 +7446,7 @@ explicit source term in Boltzmann equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sf n\)
@@ -7476,7 +7465,7 @@ neutral density
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sf T\)
@@ -7495,7 +7484,7 @@ neutral temperature
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sf u\)
@@ -7514,7 +7503,7 @@ neutral velocity
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(s_i\)
@@ -7533,7 +7522,7 @@ arclength parameter for boundary (\(i=1\) inner, \(i=2\) outer)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_i\)
@@ -7552,7 +7541,7 @@ Sobol sensitivity index, gives a normalised measure of the sensitivity of the di
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma \)
@@ -7571,7 +7560,7 @@ as suffix labels metastable state
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma \)
@@ -7593,7 +7582,7 @@ reaction cross-section
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _C\)
@@ -7612,7 +7601,7 @@ reaction rate for charge exchange
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _E\)
@@ -7631,7 +7620,7 @@ cooling rate due to excitation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _E\)
@@ -7653,7 +7642,7 @@ electrical conductivity
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _I\)
@@ -7672,7 +7661,7 @@ reaction rate for ionisation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _s^{i|0}\)
@@ -7694,7 +7683,7 @@ collision cross-section for ions with neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\sigma _s^{e|0}\)
@@ -7716,7 +7705,7 @@ collision cross-section for electrons with neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_{ij}\)
@@ -7735,7 +7724,7 @@ Sobol sensitivity index, gives a normalised measure of the sensitivity of the di
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^\mathcal {E}\)
@@ -7757,7 +7746,7 @@ source term in plasma energy equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^{\mathcal {E}}_{e}\)
@@ -7779,7 +7768,7 @@ energy density source term for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^{\mathcal {E}}_{i}\)
@@ -7801,7 +7790,7 @@ energy density source term for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^\mathcal {E}_n\)
@@ -7823,7 +7812,7 @@ source term in neutral energy equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^\mathcal {E}_{\perp e}\)
@@ -7845,7 +7834,7 @@ energy cross-field source term for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^\mathcal {E}_{\perp i}\)
@@ -7867,7 +7856,7 @@ energy cross-field source term for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^\mathcal {E}_{\perp n}\)
@@ -7889,7 +7878,7 @@ energy cross-field source term for neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n\)
@@ -7911,7 +7900,7 @@ source term in plasma density equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n_{e}\)
@@ -7933,7 +7922,7 @@ number density source term for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n_{i}\)
@@ -7955,7 +7944,7 @@ number density source term for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n_n\)
@@ -7977,7 +7966,7 @@ source term in neutral density equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n_{\perp n}\)
@@ -7999,7 +7988,7 @@ number density cross-field source term for neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^n_{\perp }\)
@@ -8021,7 +8010,7 @@ number density cross-field source term for plasma
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S_{\perp n}\)
@@ -8043,7 +8032,7 @@ generic cross-field source term for neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^u\)
@@ -8065,7 +8054,7 @@ source term in plasma momentum equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\subset \)
@@ -8084,7 +8073,7 @@ source term in plasma momentum equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^u_n\)
@@ -8106,7 +8095,7 @@ source term in neutral momentum equation
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^u_{\perp n}\)
@@ -8128,7 +8117,7 @@ momentum cross-field source term for neutrals
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^Z_\rho \)
@@ -8150,7 +8139,7 @@ particle source for ion of metastable state&nbsp;\(\sigma \) (species&nbsp;\(s\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(S^Z_s\)
@@ -8172,7 +8161,7 @@ particle source for ion of species&nbsp;\(s\) with charge state&nbsp;\(Z\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(t\)
@@ -8194,7 +8183,7 @@ time usually in seconds
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(T\)
@@ -8216,7 +8205,7 @@ plasma temperature
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(t_0\)
@@ -8238,7 +8227,7 @@ characteristic timescale usually in seconds
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(T_0\)
@@ -8260,7 +8249,7 @@ initial temperature
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(T_\alpha \)
@@ -8282,7 +8271,7 @@ temperature of species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\tau _\alpha \)
@@ -8304,7 +8293,7 @@ collision or relaxation time of species&nbsp;\(\alpha \)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\tau _e\)
@@ -8326,7 +8315,7 @@ electron collision or relaxation time
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:          1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:               1px solid black; border-right:         1px solid black">
 
 <p>
 \(\tau _i\)
@@ -8337,7 +8326,7 @@ electron collision or relaxation time
 ion species collision or relaxation time
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8347,19 +8336,19 @@ ion species collision or relaxation time
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{e{\sf n}} \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 electron-neutral collision time
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8369,19 +8358,19 @@ electron-neutral collision time
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{i{\sf n}} \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 ion species-neutral collision time
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8391,19 +8380,19 @@ ion species-neutral collision time
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{ce}=1/f_{ce}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 electron cyclotron timescale
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8413,19 +8402,19 @@ electron cyclotron timescale
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{ci}=1/f_{ci}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 ion cyclotron timescale
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8435,19 +8424,19 @@ ion cyclotron timescale
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{pe}=1/f_{pe}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 plasma timescale for electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8457,19 +8446,19 @@ plasma timescale for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{pi}=1/f_{pi}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 plasma timescale for ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8479,19 +8468,19 @@ plasma timescale for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{\mathcal {E}_e}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 loss time of energy density for electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8501,19 +8490,19 @@ loss time of energy density for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{\mathcal {E}_i}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 loss time of energy density for ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8523,19 +8512,19 @@ loss time of energy density for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{n_e}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 loss time of number density for electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8545,19 +8534,19 @@ loss time of number density for electrons
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tau _{n_i}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 loss time of number density for ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(s\)
@@ -8567,19 +8556,19 @@ loss time of number density for ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(T_d=T_i+T_e\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 combined temperature of the electrons and ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(eV\)
@@ -8589,19 +8578,19 @@ combined temperature of the electrons and ions
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(T_e\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 electron temperature
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(eV\)
@@ -8611,38 +8600,38 @@ electron temperature
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(T_H\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 the Hydrogen reionisation potential
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\theta \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 angular coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 radians \(^c\)
@@ -8652,38 +8641,38 @@ radians \(^c\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\theta \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 random parameter&nbsp;\(0\leq \theta \leq 1\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(T_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 ion temperature
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(eV\)
@@ -8693,26 +8682,26 @@ ion temperature
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tilde {b}=B/B_0\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 magnetic field
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\tilde {\psi }^a_p, \tilde {\psi }^b_{pq}, \tilde {\psi }^c_{pqr}\)
@@ -8724,26 +8713,26 @@ magnetic field
 (FE Basis) Orthogonal principal functions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(U\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 velocity component (flow) along streamline
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m s^{-1}\)
@@ -8753,19 +8742,19 @@ velocity component (flow) along streamline
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(U_d =L_s/t_0\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 speed measuring the importance of the transient term
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m s^{-1}\)
@@ -8775,19 +8764,19 @@ speed measuring the importance of the transient term
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(U_A\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Alfve&#x0301;n speed
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m s^{-1}\)
@@ -8797,13 +8786,13 @@ Alfve&#x0301;n speed
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\underline {\boldsymbol {f}^e}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 (K+S) Concatenation of elemental vector \(\boldsymbol {f}^e\)
@@ -8816,13 +8805,13 @@ Alfve&#x0301;n speed
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\underline {\boldsymbol {W}^e}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 (K+S) Block-diagonal extension of matrix \(\boldsymbol {W}^e\)
@@ -8835,32 +8824,32 @@ Alfve&#x0301;n speed
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(u_R=1/R\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Radial component of Grad-Shafranov ‘flow’
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(V_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 variance of the distribution of \(f\) as the parameter&nbsp;\(x_i\) varies
@@ -8873,13 +8862,13 @@ variance of the distribution of \(f\) as the parameter&nbsp;\(x_i\) varies
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(V_{ij}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 variance of the distribution of \(f\) as the parameters&nbsp;\(x_i\) and \(x_j\) vary
@@ -8892,13 +8881,13 @@ variance of the distribution of \(f\) as the parameters&nbsp;\(x_i\) and \(x_j\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(w_{jk}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 weight in neural network indexed by neuron \(j\) and input \(k\)
@@ -8911,19 +8900,19 @@ weight in neural network indexed by neuron \(j\) and input \(k\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Cartesian coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m\)
@@ -8933,127 +8922,127 @@ Cartesian coordinate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x_1, x_2, x_3, {\mathbf x}\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 (FE Basis) Global Cartesian coordinates
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x_\alpha \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 collisionality factor of species&nbsp;\(\alpha \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x_e = \omega _{ce}\tau _e\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 collisionality factor of electrons
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x_i = \omega _{ci}\tau _i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 collisionality factor of ions
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(x_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 generic parameter or variable
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\xi _1, \xi _2, \xi _3, \boldsymbol {\xi }\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 (FE Basis) Local Cartesian coordinates
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\xi _i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 random number within the unit interval&nbsp;\([0,1]\)
@@ -9066,13 +9055,13 @@ random number within the unit interval&nbsp;\([0,1]\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(^X\mathcal {F}_{i\sigma }\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 coefficient of excitation for the transition from metastable state&nbsp;\(\sigma \) to regular excited state&nbsp;\(i\)
@@ -9085,19 +9074,19 @@ coefficient of excitation for the transition from metastable state&nbsp;\(\sigma
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(y\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Cartesian coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m\)
@@ -9107,19 +9096,19 @@ Cartesian coordinate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Cartesian coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m\)
@@ -9129,19 +9118,19 @@ Cartesian coordinate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Cartesian coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m\)
@@ -9151,38 +9140,38 @@ Cartesian coordinate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 charge state of the ion
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 cylindrical coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 \(m\)
@@ -9192,13 +9181,13 @@ cylindrical coordinate
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_0(s)\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 number of charge states of species&nbsp;\(s\) included in the model
@@ -9211,57 +9200,57 @@ number of charge states of species&nbsp;\(s\) included in the model
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_a\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 Gaussian random process, index \(a\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\zeta \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 magnetic Prandtl number as defined in Cambridge
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(\zeta =-\phi \)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 toroidal angle coordinate
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 radians \(^c\)
@@ -9271,70 +9260,70 @@ radians \(^c\)
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_i\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 charge state
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_m=Z-1\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 where \(Z\) is ion charge state
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_p=Z+1\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 where \(Z\) is ion charge state
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 </td>
 </tr>
 
 
 <tr>
-<td class="tdp tvertbarl tvertbarr" style="border-left:             1px solid black; border-right:         1px solid black">
+<td class="tdp tvertbarl tvertbarr" style="border-left:              1px solid black; border-right:        1px solid black">
 
 <p>
 \(Z_{sum}=\sum _s Z_0(s)\)
 </p>
 </td>
-<td class="tdp tvertbarr" style="border-right:           1px solid black">
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
 
 <p>
 where \(Z_0\) is number of charge states of species&nbsp;\(s\)

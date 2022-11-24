@@ -59,13 +59,12 @@ MathJax = {
 
 
             //      Create the command map for:
-            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
             new CommandMap('Lwarp-macros', {
                 ifstar: 'IfstarFunction',
                 ifnextchar: 'IfnextcharFunction',
                 ifblank: 'IfblankFunction',
                 ifstrequal: 'IfstrequalFunction',
-                gsubstitute: 'GsubstituteFunction',
                 seteqnumber: 'SeteqnumberFunction'
             }, {
                 //      This function implements an ifstar macro.
@@ -109,16 +108,6 @@ MathJax = {
                     const resultnotequal = parser.GetArgument(name);
                     const isequal = (strequalfirst == strequalsecond);
                     useArgument(parser, isequal ? resultequal : resultnotequal);
-                },
-
-
-                // This function implements a gsub macro.
-                GsubstituteFunction(parser, name) {
-                    const gsubfirst = parser.GetArgument(name);
-                    const gsubsecond = parser.GetArgument(name);
-                    const gsubthird = parser.GetArgument(name);
-                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-                    useArgument(parser, gsubresult);
                 },
 
 
@@ -229,7 +218,7 @@ MathJax = {
 
 <script
         id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
 
 </head>
@@ -977,8 +966,8 @@ detailed physical understanding of the often turbulent, plasma-wall interaction.
 </p>
 
 <p>
-This website is set out as described in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d34">1</a>] to cover all aspects of the overall <span class="textsc">NEPTUNE</span> package, as they emerge, beginning with the initial concept,
-advancing to detailed design of classes (objects) and interfaces, and ultimately producing documentation to ensure the software remains usable, maintainable and relevant for at least 30&nbsp;years.
+This website is set out as described in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d34">1</a>] to cover all aspects of the overall <span class="textsc">NEPTUNE</span> package, as they emerge, beginning with the initial concept, advancing
+to detailed design of classes (objects) and interfaces, and ultimately producing documentation to ensure the software remains usable, maintainable and relevant for at least 30&nbsp;years.
 </p>
 <!--................................-->
 <h5 id="autosec-10">Further information</h5>
@@ -1188,7 +1177,7 @@ Date:
 <td class="tdp tvertbarrdouble" style="border-right:   4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1276,7 +1265,7 @@ N/A
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1302,7 +1291,7 @@ N/A
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1328,7 +1317,7 @@ N/A
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1354,7 +1343,7 @@ N/A
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1429,7 +1418,7 @@ Rob Akers
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>
@@ -1504,7 +1493,7 @@ Rob Akers
 <td class="tdp tvertbarrdouble" style="border-right:     4px double black">
 
 <p>
-22nd&nbsp;November 2022
+24th&nbsp;November 2022
 </p>
 </td>
 </tr>

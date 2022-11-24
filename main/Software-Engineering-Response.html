@@ -59,13 +59,12 @@ MathJax = {
 
 
             //      Create the command map for:
-            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
             new CommandMap('Lwarp-macros', {
                 ifstar: 'IfstarFunction',
                 ifnextchar: 'IfnextcharFunction',
                 ifblank: 'IfblankFunction',
                 ifstrequal: 'IfstrequalFunction',
-                gsubstitute: 'GsubstituteFunction',
                 seteqnumber: 'SeteqnumberFunction'
             }, {
                 //      This function implements an ifstar macro.
@@ -109,16 +108,6 @@ MathJax = {
                     const resultnotequal = parser.GetArgument(name);
                     const isequal = (strequalfirst == strequalsecond);
                     useArgument(parser, isequal ? resultequal : resultnotequal);
-                },
-
-
-                // This function implements a gsub macro.
-                GsubstituteFunction(parser, name) {
-                    const gsubfirst = parser.GetArgument(name);
-                    const gsubsecond = parser.GetArgument(name);
-                    const gsubthird = parser.GetArgument(name);
-                    let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
-                    useArgument(parser, gsubresult);
                 },
 
 
@@ -229,7 +218,7 @@ MathJax = {
 
 <script
         id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
 
 </head>
@@ -1763,8 +1752,8 @@ Given a need to mix with Object Fortran, which is not case-sensitive, the ‘pot
 </p>
 <p>
 Occasionally a convention is used where the name includes a part which indicates the type of the variable. For example, the JSF style for C++&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@pittwhitely">42</a>, §&#x202f;6.6] recommends that
-pointer names begin&nbsp;‘p_’ and that private or protected (‘member’) variables should have names beginning with&nbsp;‘m’. In general naming conventions are probably not essential, since the type can be read in the code, and modern IDEs will easily
-provide this information to the developer. Nonetheless, there is no objection to employing a convention, and <span class="textsc">NEPTUNE</span> recommend the following one for coders who wish to do so.
+pointer names begin&nbsp;‘p_’ and that private or protected (‘member’) variables should have names beginning with&nbsp;‘m’. In general naming conventions are probably not essential, since the type can be read in the code, and modern IDEs will easily provide
+this information to the developer. Nonetheless, there is no objection to employing a convention, and <span class="textsc">NEPTUNE</span> recommend the following one for coders who wish to do so.
 </p>
 <p>
 For C++, based on the recommendations of the book “Professional C++" (eg. ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@solterkleper">43</a>, §&#x202f;7], the following prefix strings should be employed: ‘m_’ for member (particularly
