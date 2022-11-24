@@ -10,7 +10,7 @@ mkdir public
 bash buildwebsite-local.sh
 ```
 
-then open `public/index.html` with the 'main'  in your preferred browser.
+then open `public/index.html` in your preferred browser.
 
 ## PDF only
 If you want to generate just the pdf version of the website then you perform the following command
@@ -28,21 +28,29 @@ bash singlepage.sh '\input{proxyapps/proxyapps}'
 
 ## Non-stanard LaTeX commands
 When adding a new chapter or section to the latex documentation the following command should be used instead of \section and \chapter
-'''
+
+```
 \newsection{}{}
-'''
+```
+
 and
-'''
+
+```
 \newchapter{}{}
-'''
+```
+
 where the first argument is the section/chapter title and the second argument is the label for that section/chapter. If you do not want the new section or chapter to start on a new webpage, then you use the following
-'''
+
+```
 \newsectionnobreak{}{}
-'''
+```
+
 and
-'''
+
+```
 \newchapternobreak{}{}
-'''
+```
+
 ## Installation in WSL
 ### Ubuntu 22.04
 To build the website, follow the instructions for the native linux distro above.
