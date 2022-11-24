@@ -10,7 +10,7 @@ mkdir public
 bash buildwebsite-local.sh
 ```
 
-then open `public/index.html` with the 'main'  in your preferred browser.
+then open `public/index.html` in your preferred browser.
 
 ## PDF only
 If you want to generate just the pdf version of the website then you perform the following command
