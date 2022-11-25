@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
       - name: Generate html
         run: | 
-          echo ${{ github.event.pull_request.head.sha }}
+          echo ${GITHUB_REF##*/}
           git fetch --no-tags origin main
           git checkout -b main
           git checkout ${{ github.event.pull_request.head.sha }}
