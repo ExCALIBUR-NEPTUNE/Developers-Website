@@ -1,11 +1,9 @@
 # Neptune-Website
 
 ## Installation on Ubuntu 22.04
-
 To build the website locally it should be sufficient to first clone this repo, then perform the following commands
 
 ```
-cd ./main/
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
 mkdir public
 bash buildwebsite-local.sh
