@@ -34,6 +34,7 @@ jobs:
           fetch-depth: 0
       - name: Generate html
         run: | 
+          echo $CI_COMMIT_BRANCH
           git fetch --no-tags origin main
           git checkout -b main
           git checkout ${{ github.event.pull_request.head.sha }}
