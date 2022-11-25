@@ -6,10 +6,6 @@ error=$?
 #If different check whether timestamp for documentation folder
 #in changed branch is more recent to one in Github pages folder
 if [ $error -eq 1 ]
-then
-num1=$(git log -1 --pretty="format:%ct" ./main)
-num2=$(git log Github-Pages..remotes/origin/$1 -1 --pretty="format:%ct" ./main)
-if (( $num2 > $num1 ))
 then 
 #Compile new documentation if needed
 rm index.html
@@ -24,6 +20,5 @@ cd ..
 gfortran homepage.f90
 ./a.out >> index.html
 rm a.out list.txt num.txt
-fi
 fi
 rm hash1.txt
