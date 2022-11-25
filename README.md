@@ -2,7 +2,7 @@
 
 ## Installation on Ubuntu 22.04
 
-To build the website locally it should be sufficient to first clone this repo, cd into folder called 'main' and then:
+To build the website locally it should be sufficient to first clone this repo, then perform the following commands
 
 ```
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
