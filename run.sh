@@ -15,7 +15,6 @@ mkdir $1
 git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
 cd ./$1
 bash buildwebsite-githubpage.sh
-rm hash.txt
 git rev-parse remotes/origin/$1 >> hash.txt
 cd ..
 gfortran homepage.f90
