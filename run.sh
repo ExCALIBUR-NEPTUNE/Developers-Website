@@ -15,7 +15,7 @@ then
 rm index.html
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
 rm -rf ./$1/
-git checkout remotes/origin/$1 -- main
+git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
 cd ./$1
 bash buildwebsite-githubpage.sh
 rm hash.txt
