@@ -37,5 +37,4 @@ else
   gfortran homepage.f90
   ./a.out >> index.html
   rm a.out list.txt num.txt
-  fi
 fi
