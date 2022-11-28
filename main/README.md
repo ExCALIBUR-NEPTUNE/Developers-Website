@@ -9,7 +9,7 @@ mkdir public
 bash buildwebsite-local.sh
 ```
 
-then open `public/index.html` in your preferred browser.
+then open `public/index.html` in your preferred browser. The homepage for this branch is available at https://excalibur-neptune.github.io/Developers-Website/main/main.html
 
 ## PDF only
 If you want to generate just the pdf version of the website then you perform the following command
