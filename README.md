@@ -5,6 +5,7 @@ To build the website locally it should be sufficient to first clone this repo, t
 
 ```
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
+(Note pre-existing linux package installations may be checked using *sudo apt list --installed* which takes multiple arguments.)
 mkdir public
 bash buildwebsite-local.sh
 ```

@@ -1,6 +1,3 @@
-%Edit 0054 ZZZ to report number nnnn 
-%Edit 3.1 YYMILE to milestone number m.m.m
-%Edit Software Requirements Specification document YYTITLE to report title - Words Start with Caps
 \documentclass[11pt,twoside,a4paper]{report}
 \usepackage{iftex}
 
@@ -88,8 +85,6 @@
 \usepackage{latexsym}
 \usepackage{longtable} % insert tables that break over pages
 \usepackage{appendix}            %insert hyper-links
-% uncomment the following to override auto page total
-%\pptotal{20}
 %%======================================================================
 \setcounter{tocdepth}{1}        % Include subsections in the \TOC.
 \setcounter{secnumdepth}{1}     % Number down to subsections.
@@ -144,7 +139,7 @@
 
 %% REPORT COVER PAGE Information
 
-\newcommand{\culhamtitle}{\LARGE Software Specification Website  \\[1.0\baselineskip] Release 0.0.2}%<==edit
+\newcommand{\culhamtitle}{\LARGE Software Developer's Central Website  \\[1.0\baselineskip] Release 0.0.3}%<==edit
 
 %%QA BOX information -- change following as needed
 \newcommand{\culhamboardname}{Martin O'Brien}%<==edit
@@ -153,14 +148,11 @@
 \newcommand{\culhamauthora}{Ed Threlfall}%<==edit
 \newcommand{\culhamauthorb}{Joseph Parker}%<==edit
 \newcommand{\culhamauthorc}{Will Saunders}%<==edit
-%\newcommand{\culhamcontacttel}{Telephone: 01235 466498}
-%\newcommand{\culhamcontactemail}{Email: rob.akers@ukaea.uk}
 
-\newcommand{\culhamdate}{\today}%<=edit
-\newcommand{\culhamdatea}{\today}%<=edit
-\newcommand{\culhamdateb}{\today}%<=edit
+\newcommand{\culhamdate}{2023 January 16}%<=edit
+\newcommand{\culhamdatea}{2023 January 16}%<=edit
+\newcommand{\culhamdateb}{2023 January 16}%<=edit
 
-% reproduce Rob's page size
 
 \setlength{\topmargin}{0.0mm}
 \setlength{\oddsidemargin}{10.0mm}
@@ -178,16 +170,23 @@
 {\LARGE {\textbf{\textsf{ExCALIBUR Project NEPTUNE}}}\\[2.0\baselineskip]}
 {\LARGE \culhamtitle } \\[2.0\baselineskip]
 {\textbf{\textsf{Abstract}}}\\
-Formal specification document to be used for a rational design of software.
-See the Development Plan \cite{y2d34} , minutes
-of the workshop~\cite{y3re181}, and the development document~\cite{y3re314}.
+Web incarnation of a detailed design document for the \nep \ software.
+It presents background information needed by all developers, common
+standards and conventions to be employed, and links to the separate
+\papp \ and codes developed.
+(For those interested in such matters, the `design' of the design
+was laid down following the \nep \ workshop minuted as~\cite{y3re181},
+and the related documents~\cite{y2d34,y3re314}.)\\
+\emph{Practical Point} Although the DD document is freely available,
+access to many supporting reports is restricted to members of the \nep \
+community, please email {\tt neptune@ukaea.uk} if/when you get
+{\tt GitHub}~404 errors, to join in.
 \vfill
 %\centerline{\includegraphics[width=0.3\textwidth]{../png/neptune.png}}
 %\centerline{\includegraphics[width=0.3\textwidth]{../png/trident.png}}
 \centerline{\includegraphics[width=8cm]{./png/neptune.png}}
-\centerline{\includegraphics[width=8cm]{./png/trident.png}}
+%\centerline{\includegraphics[width=8cm]{./png/trident.png}}
 \tableofcontents
-%\input{approboxw}
 \clearpage
 \input{mainbody}
 \clearpage

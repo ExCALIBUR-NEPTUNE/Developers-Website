@@ -12,7 +12,7 @@ function buildwebsite() {
   rm main_html.html    
   #Add in download link for pdf version of webpage
   sed -i -e '/<div class="center">/r link.txt' main.html
-  #Remove first occrance of /<div class="center">  in mainpage
+  #Remove first occurrence of /<div class="center">  in mainpage
   sed -i -e '0,/<div class="center">/{s// /}' main.html
   #Locate and create drop down menu for website
   test=$(grep -r -n 'bodyandsidetoc' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
