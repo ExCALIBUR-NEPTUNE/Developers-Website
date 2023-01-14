@@ -1,92 +1,35 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'main_html.blg'
-[72] biber:340> INFO - === Sat Jan 14, 2023, 15:11:00
-[86] Biber.pm:418> INFO - Reading 'main_html.bcf'
-[177] Biber.pm:972> INFO - Found 113 citekeys in bib section 0
-[189] Biber.pm:4383> INFO - Processing section 0
-[199] Biber.pm:4574> INFO - Looking for bibtex file './bib/new.bib' for section 0
-[216] bibtex.pm:1713> INFO - LaTeX decoding ...
-[821] bibtex.pm:1518> INFO - Found BibTeX data source './bib/new.bib'
-[962] Biber.pm:4574> INFO - Looking for bibtex file './bib/waynes.bib' for section 0
-[966] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1099] bibtex.pm:1518> INFO - Found BibTeX data source './bib/waynes.bib'
-[1125] Biber.pm:4574> INFO - Looking for bibtex file './bib/misc.bib' for section 0
-[1127] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1187] bibtex.pm:1518> INFO - Found BibTeX data source './bib/misc.bib'
-[1195] Biber.pm:4574> INFO - Looking for bibtex file './bib/warv.bib' for section 0
-[1201] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1426] bibtex.pm:1518> INFO - Found BibTeX data source './bib/warv.bib'
-[1442] Biber.pm:4574> INFO - Looking for bibtex file './bib/neuts.bib' for section 0
-[1446] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1531] bibtex.pm:1518> INFO - Found BibTeX data source './bib/neuts.bib'
-[1538] Biber.pm:4574> INFO - Looking for bibtex file './bib/reac.bib' for section 0
-[1540] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1594] bibtex.pm:1518> INFO - Found BibTeX data source './bib/reac.bib'
-[1615] Biber.pm:4574> INFO - Looking for bibtex file './bib/exc.bib' for section 0
-[1625] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1946] bibtex.pm:1518> INFO - Found BibTeX data source './bib/exc.bib'
-[2338] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2338] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2338] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
-[2338] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
-[2389] bbl.pm:654> INFO - Writing 'main_html.bbl' with encoding 'UTF-8'
-[2434] bbl.pm:757> INFO - Output to main_html.bbl
-[2434] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_zZzZ/71757f0ce88fd145f622498f22462569_5845.utf8, line 5484, warning: 142 characters of junk seen at toplevel
-[2434] Biber.pm:130> WARN - Entry 'y3re181' (./bib/exc.bib): Invalid format '21/10/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2d34' (./bib/exc.bib): Invalid format '25/10/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y3re314' (./bib/exc.bib): Invalid format '31/10/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'sciplan' (./bib/exc.bib): Invalid format '29/11/19, WA 21/10/19, RA 22/10/19 and 27/11/19, AV 14/11/19, MOB 1/12/19' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'pappeqs2' (./bib/exc.bib): Invalid format '6/5/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2d33' (./bib/exc.bib): Invalid format '15/3/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re333' (./bib/exc.bib): Invalid format '11/12/20, RA 18/12/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re331' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 12/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re332' (./bib/exc.bib): Invalid format '12/8/20, RA 16/8/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'pappeqs3' (./bib/exc.bib): Invalid format '23/12/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y12acts' (./bib/exc.bib): Invalid format '29/9/19, WA 28/11/19, MOB 1/12/19' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re111b' (./bib/exc.bib): Invalid format '10/3/20, RA 12/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re121' (./bib/exc.bib): Invalid format '10/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re211' (./bib/exc.bib): Invalid format '10/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re231' (./bib/exc.bib): Invalid format '5/9/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re311' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 11/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re351' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 12/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y1re111a' (./bib/exc.bib): Invalid format '10/3/20, RA 12/3/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'charter' (./bib/exc.bib): Invalid format '30/6/20, for procurement 7/9/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re312' (./bib/exc.bib): Invalid format '30/6/20, RA 10/8/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re313' (./bib/exc.bib): Invalid format '14/10/20' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2grant' (./bib/exc.bib): Invalid format '16/11/2020' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y3act' (./bib/exc.bib): Invalid format '27/9/2021' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re141' (./bib/exc.bib): Invalid format '18/3/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2close' (./bib/exc.bib): Invalid format '20/3/2021' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re251' (./bib/exc.bib): Invalid format '15/3/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re221' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re241' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring
-[2435] Biber.pm:130> WARN - Entry 'y2re271' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y2re281' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y2re261' (./bib/exc.bib): Invalid format 'DY/6/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re321' (./bib/exc.bib): Invalid format '28/6/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re51' (./bib/exc.bib): Invalid format '27/8/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re322' (./bib/exc.bib): Invalid format '30/7/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re242' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re252' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re272' (./bib/exc.bib): Invalid format '27/8/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re212' (./bib/exc.bib): Invalid format '12/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re222' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re232' (./bib/exc.bib): Invalid format '15/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3d32' (./bib/exc.bib): Invalid format '23/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3d35' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re61' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re71' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re72' (./bib/exc.bib): Invalid format '28/9/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y2d31' (./bib/exc.bib): Invalid format '31/10/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3grant' (./bib/exc.bib): Invalid format '9/8/2021' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re262' (./bib/exc.bib): Invalid format '23/11/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re282' (./bib/exc.bib): Invalid format '09/12/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y45act' (./bib/exc.bib): Invalid format '3/3/2022' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3close' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re42' (./bib/exc.bib): Invalid format '17/12/21' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re43' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re52' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re62' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re73' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:130> WARN - Entry 'y3re41' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring
-[2436] Biber.pm:132> INFO - WARNINGS: 58
+[69] biber:340> INFO - === Sat Jan 14, 2023, 17:28:43
+[83] Biber.pm:418> INFO - Reading 'main_html.bcf'
+[172] Biber.pm:972> INFO - Found 113 citekeys in bib section 0
+[184] Biber.pm:4383> INFO - Processing section 0
+[194] Biber.pm:4574> INFO - Looking for bibtex file './bib/new.bib' for section 0
+[210] bibtex.pm:1713> INFO - LaTeX decoding ...
+[727] bibtex.pm:1518> INFO - Found BibTeX data source './bib/new.bib'
+[862] Biber.pm:4574> INFO - Looking for bibtex file './bib/waynes.bib' for section 0
+[866] bibtex.pm:1713> INFO - LaTeX decoding ...
+[978] bibtex.pm:1518> INFO - Found BibTeX data source './bib/waynes.bib'
+[1002] Biber.pm:4574> INFO - Looking for bibtex file './bib/misc.bib' for section 0
+[1004] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1053] bibtex.pm:1518> INFO - Found BibTeX data source './bib/misc.bib'
+[1060] Biber.pm:4574> INFO - Looking for bibtex file './bib/warv.bib' for section 0
+[1065] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1251] bibtex.pm:1518> INFO - Found BibTeX data source './bib/warv.bib'
+[1268] Biber.pm:4574> INFO - Looking for bibtex file './bib/neuts.bib' for section 0
+[1271] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1344] bibtex.pm:1518> INFO - Found BibTeX data source './bib/neuts.bib'
+[1350] Biber.pm:4574> INFO - Looking for bibtex file './bib/reac.bib' for section 0
+[1352] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1398] bibtex.pm:1518> INFO - Found BibTeX data source './bib/reac.bib'
+[1418] Biber.pm:4574> INFO - Looking for bibtex file './bib/exc.bib' for section 0
+[1429] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1752] bibtex.pm:1518> INFO - Found BibTeX data source './bib/exc.bib'
+[2144] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2144] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2144] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
+[2144] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
+[2193] bbl.pm:654> INFO - Writing 'main_html.bbl' with encoding 'UTF-8'
+[2238] bbl.pm:757> INFO - Output to main_html.bbl
+[2238] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_j04n/71757f0ce88fd145f622498f22462569_5726.utf8, line 5484, warning: 142 characters of junk seen at toplevel
+[2238] Biber.pm:132> INFO - WARNINGS: 1
