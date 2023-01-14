@@ -1,0 +1,76 @@
+% Sommerville  - System architecture
+% Sommerville  - System requirements specification
+% Sommerville  - System models
+% Sommerville  - Appendices
+% Smith  - Requirements  - Specific System Description  - Problem Description  - Physical System Description
+% Smith  - Requirements  - Specific System Description  - Solution Characteristics Specification
+% Hewitt  - Application Design  - Design patterns
+% Smith  - Design Specification
+% Hewitt  - Application Design  - Scalability and performance
+% Hewitt  - Application Design  - Extensibility
+% Smith  - Requirements  - Likely Changes
+% all of Hewitt  - Data Design
+% Smith  - Requirements  - Requirements  - Nonfunctional Requirements
+% sections 1 and 2 of Hewitt  - Infrastructure Design
+
+\newsectionnobreak{Design specification}{sec:DDF_spec}
+Template given. Describe modules and hierarchy of modules. Also describes likely and unlikely changes to the code.
+Anticipated changes guide the design: ideally a change affects only one module
+
+%How to decompose into modules?
+
+The design specification may need to be supplemented by a Module Interface Specification (MIS).
+More concrete in defining access routines and syntax, but still abstract in not defining how
+things are done.
+
+Use of VECMA/SEAVEA as framework
+UQ by ensembles,  active subspaces (from \cite{y3re242}) and GPs for surrogates (from \cite{y3re252}).
+
+%For an example of write once, re-use many times, see the \F{smardda-misc}
+%software~\cite{miscwebsite}, which is Fortran-based and illustrates the concept.
+The proposed \nep\ development is of sufficient complexity that the production
+of code should be as automatic as as possible, and the `write once, use many times'
+principle implies that the starting point for code generation will often be \LaTeX \ or Markdown format
+documents from the DJF or indeed DDF.
+
+For \nep, the initial write should be in  \LaTeX \ format representing an extension
+of the tabular layout used to generate \Tab{symbols}, for conversion to \F{Doxygen} input
+format for documentation and C++ source, specifying:
+\begin{itemize}
+\item variable name, which for \nep \ should be generated from \LaTeX \ using
+substitutions set out in \Tab{twoclatex}.
+\item brief description, to remind user what is the purpose of the variable
+\item units
+\begin{itemize}
+\item physical units should be SI, except eV for temperatures and mm for CAD inputs
+\item scale factors for extreme-valued fields, eg.\ $10^{18}$  for number densities, 
+or for quantised fields, eg.\ position expressed in units of separation of a uniform grid.
+\end{itemize}
+\item default value(s) on input
+\item simple constraints on variable values
+\begin{itemize}
+\item whether real number or integer-valued
+\item range specification, eg.\ $0 <  n \leq 10$ if $n$ must be a positive, small integer
+\end{itemize}
+\item detailed description of what variable does, if not covered by group description.
+\item constraints in terms of other variables
+\end{itemize}
+Input variables are grouped according to the objects/classes which they help define.
+
+\F{smardda-misc} illustrates how to produce software that auto-generates the equivalent
+of .h files to describe objects and and .cpp or .m  files for 
+\begin{enumerate}
+\item setting default values of variables
+\item dumping inputs to .log text-files if required
+\item checking constraints on input variables
+\item saving acceptable values 
+\end{enumerate}
+
+\clearpage
+\newsection{Objects/classes}{sec:DDF_objects}
+\input{DDF/basic_objects}
+\clearpage
+\newsection{Execution sequence}{sec:DDF_sequence}
+\input{DDF/functions}
+\newsection{Design patterns}{sec:desi_patt}
+\input{DDF/desipatt}

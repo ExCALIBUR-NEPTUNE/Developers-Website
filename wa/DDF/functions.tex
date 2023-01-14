@@ -1,0 +1,190 @@
+\subsection{Preprocessing and
+components}\label{preprocessing-and-components}
+
+\begin{itemize}
+\item
+  Convert equilibrium B-field to standard format (ie. a standard
+  resembling EQDSK)
+\item
+  Convert n-D geometry (NURBS) to opensource format
+\end{itemize}
+
+\subsection{Initialise}\label{sec:initialise}
+
+\begin{itemize}
+\item
+  Convert n-D mesh to readable format
+\item
+  Assign boundary conditions to mesh (finite element by finite element)
+\item
+  Validate inputs (eg. Python Cerberus)
+\item
+  Initialise fields, possibly exploiting toroidal symmetry
+
+  \begin{itemize}
+  \item
+    using sources, calculate with possibly simplified dynamics
+  \item
+    semi-analytically (Gaussian in vel. space)
+  \item
+    random perturbations
+  \item
+    from disk file
+  \item
+    from previous calculation
+  \item
+    apply operators to field (eg.\ EQDSK data \(\rightarrow\) B-Equil)
+  \item
+    combine vacuum field and B-Equil
+  \end{itemize}
+\item
+  Calculate LCFS
+\item
+  Normalise field
+\item
+  Distribute mesh across processors
+\item
+  Distribute particles across processors
+\end{itemize}
+
+\subsection{Solution}\label{sec:solution}
+
+\begin{itemize}
+\item
+  Extra outer loop over parameters (UQ Framework)
+\item
+  Outer loop over time
+\item
+  Inner loop over solvera
+
+  \begin{itemize}
+  \item
+    loop over particles
+  \item
+    loop over rays
+  \end{itemize}
+\item
+  More deeply nested iteration
+\item
+  Convergence test
+\item
+  Rouletting particles
+\item
+  Particle collision
+
+  \begin{itemize}
+  \item
+    with geometry
+  \item
+    with other particle
+  \end{itemize}
+\item
+  Adaptive meshing
+\item
+  Construct surrogates (UQ Framework)
+
+  \begin{itemize}
+  \item
+    Reduce in n-D (\(n \rightarrow n-1\))
+  \item
+    Combine particles
+  \item
+    Replace particles by FE
+  \item
+    Smoothing
+  \item
+    Gyro-averaging
+  \item
+    Sparse models for Data Assimilation (SINDy)
+  \item
+    Gaussian Process
+  \item
+    Polynomial Chaos Expansion
+  \item
+    Active Subspaces
+  \item
+    PGD
+  \end{itemize}
+\item
+  Connect surrogates (UQ Framework)
+\end{itemize}
+
+\subsection{Assortment}\label{sec:assortment}
+
+\begin{itemize}
+\item
+  Calculate HDS from Field geometry data
+\item
+  Intersect triangle with cuboid
+\item
+  Calculate surface normal and tangents, curvatures
+\item
+  Calculate curve tangent and normals, torsion, curvature
+\item
+  Calculate volumes
+\item
+  Locate point in field element geometry data
+\item
+  Select algorithms
+\item
+  Label with physical units, array dimensions, transformations
+\item
+  Increase in n-D (\(n \rightarrow n+1\))
+\item
+  Replace FE by particles
+\item
+  Evaluate FE representation at set of points
+\end{itemize}
+
+\subsection{Diagnostics}\label{sec:diagnostics}
+
+\begin{itemize}
+\item
+  Calculate terms in power balance
+\end{itemize}
+
+\subsection{Utilities}\label{sec:utilities}
+
+\begin{itemize}
+\item
+  Format conversion
+\item
+  sorting
+\end{itemize}
+
+\subsection{Mathematical library operations}\label{sec:mathematical-library-operations}
+
+\begin{itemize}
+\item
+  FFT (FFTW package)
+\item
+  linear algebra
+\item
+  quadrature
+\item
+  optimisation
+\item
+  geometry transformations on point and tensor
+\item
+  Interpolation STRATEGY to select among
+
+  \begin{itemize}
+  \item
+    splines (2-D, 3-D)
+
+    \begin{itemize}
+    \item
+      regular (de Boor)
+    \item
+      local
+    \item
+      Weiland
+    \end{itemize}
+  \item
+    Fourier interpolation
+  \item
+    rational interpolation
+  \item
+    Lagrange interpolation (after Trefethen)
+  \end{itemize}
+\end{itemize}

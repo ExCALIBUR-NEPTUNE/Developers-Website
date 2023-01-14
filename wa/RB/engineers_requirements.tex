@@ -1,0 +1,114 @@
+\subsection{Introduction}\label{sec:RB2_intro}
+This set of requirements is based on four main sources, namely
+\begin{itemize}
+\item presentation by Chris Jones~(CJ) at the \nep\ internal workshop on 16 December~2019
+\item points made in an email by Michael Kovari~(MK) dated 19 December~2019
+\item interview with Zsolt Vizvary~(ZV) on 20 December 2019
+\item use by author~(WA) of \F{SMARDDA-PFC} software in tokamak reactor design 2016-2020
+\end{itemize}
+
+A significant part of CJ's talk concerned calculations of stress in `contact' problems and in
+tokamak-relevant materials, particularly those to be used in and adjacent to the
+first wall. Mention was also made of nuclear heating and activation effects in the wall, and
+their effect on its strength. Since \nep \ is primarily intended as a plasma modelling tool, this
+material is neglected here except insofar as it has implications for \nep \ interfaces.
+Similarly ZV has as high priority, a capability to do magnetic equilibrium calculations so
+as to be able to calculate electromagnetic stresses in the wall.
+CJ emphasised that engineering design at UKAEA makes heavy use of the ANSYS$^{TM}$
+software for multiphysics calculations, and that since plasma effects including neutral beams
+and fast ions are not part of any standard finite element toolkit, particular consideration should 
+be given to interfacing \nep \ to ANSYS macros and ACT~(Python scripting for ANSYS).
+CJ stated that ANSYS had been implementing additional physics very slowly, on a timescale of decades,
+and there is anyway not a satisfactory licence model for using ANSYS on HPC,
+nor any to be expected soon.
+
+Although the \F{SMARDDA} software takes as input general surface triangulations, which may therefore
+represent arbitrary surface topologies, \F{SMARDDA-PFC} calculates power deposition on the basis
+of a simple, empirical physical model of transport from the outer midplane.
+The errors in the model are frequently unquantifiable, given an absence of relevant experimental data,
+notably when `small' limiters are proposed, where `small' implies that many lines of magnetic field make several
+mid-plane passes before interacting with the limiter(s). The \nep \ software should provide a better
+physical model to enable (1) calculation of the midplane profile of power `deposition' and associated
+parameters such as the e-folding length~$\lambda_q$, when an exponential is fitted, and
+(2) an assessment of the accuracy of the whole \F{SMARDDA} surrogate model in a wide range of
+existing and novel configurations.
+ 
+
+\subsection{Overall Capabilities}\label{sec:RB2_overall}
+Chris Jones has been led to dream of a \\
+\emph{Whole-system full-physics digital twin available for real time in-silicon simulation and experimentation}\\
+but recognised that a more immediately realisable prospect was integration of plasma software into ANSYS
+Workbench$^{TM}$.
+
+\begin{enumerate}
+\item Simulations must be of known, improved accuracy, so that the performance of the
+built designs can be enhanced without sacrificing safety.
+Thus the code and data structure should support mesh convergence studies, and be `physics aware' as described
+in \Sec{RB2_physmod}.
+\item The power load should be easily transferable to ANSYS for stress, heat transfer and other  multi-physics analysis.
+\item The software should be easy to couple to other physics packages produced within the fusion
+community such as \F{RACLETTE} and \F{ERO} for erosion calculations, \F{LOCUST} and \F{SMARDDA-PFC} for power
+deposition by particles, and neutronics software such as \F{MCNP}.
+\item The software should be designed to support easy production of statistics from ensemble calculations,
+even when costs limit the size of the ensemble. The ensembles should be able to include different model
+selections as well as different parameter choices.
+\item The software should be easy to use on HPC, eg.\ through cloud-based services, where 
+it should be resilient to  network bottlenecks.  Its performance
+should scale well and  not depend on the OS used.
+\item The software should be able to exploit GPGPUs.
+%\item The software should be capable of calculating both (quasi-)static and transient behaviour
+\item The software should use well-defined standard, open formats for both input and output of data.
+\item The code should be easy to extend, without writing new code. Thus a user should be able to
+extend (at least virtually) a data structure to include a new parameter, and add a new physical effect.
+\item The following aspects of the software should be open: 
+\begin{enumerate}
+\item data structure requirements and documentation
+\item code and documentation
+\item test cases and their documentation
+\item all results and their documentation
+\end{enumerate}
+\end{enumerate}
+
+\clearpage
+\subsection{Physics Model}\label{sec:RB2_physmod}
+The software should be automatically `physics aware', ie.\ it should
+\begin{enumerate}
+\item be able to test the physical assumptions and orderings used, perhaps by calculations at randomly placed points, and
+when this is impossible, to
+produce output to enable an independent person to check against a separate code.
+\item be intelligent enough to switch to a simpler assumption
+when appropriate or when instructed to do so, for example by using classical
+transport coefficients when they apply.
+\item be able to test the level of detail used.  For example, the code  (1) 
+could carry out an ensemble calculation using a simplified model of radiative loss,
+and then check the results in a much shorter time against a fuller model using
+a sampling technique, (2)  be able to identify
+automatically that a fully 3-D field calculation with say 12 or 18 discrete TF
+coils has produced a toroidally axisymmetric field in the vacuum vessel.
+\item be able to simulate transient behaviour, being able to determine an initial approximate quasi-static solution, then
+depending on the length of the simulation relative to physical timescales of interest, perform
+either an implicit or an explicit calculation.
+\item distinguish physical time from pseudo-time when relevant, eg.\ in an implicit calculation.
+\item be able to handle incompatible timescales for bulk and local behaviour, eg.\ account for particle effects on overall flow.
+\end{enumerate}
+\clearpage
+\subsection{Physics Capabilities}\label{sec:RB2_physcap}
+The software should be able to 
+\begin{enumerate}
+\item compute the total power load on solid walls, due to plasma, fast ions and neutral beams
+\item compute the production of impurity species by first wall melt and evaporation
+\item compute heat conduction in first wall coatings in contact with the plasma
+\item perform high frequency electrical and magnetic analysis, accounting for skin effects
+\end{enumerate}
+%\clearpage
+\subsection{Geometry}\label{sec:RB2_geom}
+\begin{enumerate}
+\item The software should be able to account for the effect of changes to geometry caused by radiation swelling,
+erosion and deposition due to plasma interaction, and corrosion.
+\item The code should allow periodic toroidal boundary conditions.
+\item The software should be able to handle 0-D, 1-D, 2-D and 3-D representations of the same plasma pulse,
+transferring between the different representations.
+\item A related example concerns the recognition of field axisymmetry as in \Sec{RB2_physmod}.
+\item Convexities in the surface, even sharp corners capable of causing singularities in the magnetic and stress fields, should
+be treatable by the software.
+\end{enumerate}

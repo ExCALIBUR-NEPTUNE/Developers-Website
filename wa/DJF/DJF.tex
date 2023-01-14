@@ -1,0 +1,79 @@
+A wide range of ideas for \nep \ has been considered both by UKAEA and \nep \ grantees,
+as indicated by the titles in \Tab{tabtit}, and choices described in the DDF
+will be found supported by by the minutes of meetings which form
+part of many reports. To see what has been considered before, it is recommended that 
+the access-controlled github repository~\cite{xpndocswebsite} be cloned to a
+local directory and its subdirectories {\tt reports} and {\tt reports/ukaea\_reports}
+be indexed using software such as DocFetcher~\cite{docfetcherwebsite} or Recoll~\cite{recollwebsite}.
+\newsectionnobreak{UKAEA (Internal) Reports}{sec:DJF_internal}
+\input{DJF/tabtit}
+  % Hewitt - ideas - put them here
+
+\subsection{Brief Survey of Reports to end FY 2020/21}\label{sec:summary}
+\input{DJF/report_summary1}
+\subsection{Brief Survey of Reports FY 2021/22}\label{sec:summary22}
+\input{DJF/report_summary2}
+
+%%%\section{Notes (TODO)}\label{sec:DJF_notes}
+%%%Specific discharge from exptal data-base (at a specific time)
+%%%implies have a files of pseudo discharges as well
+%%%
+%%%Initialise with particles - deduce when fluid etc.
+%%%
+%%%Need data-base of first wall geometry
+%%%
+%%%Code has inbuilt capability for simple mesh generation  - uniform Cartesians, Cylindricals, toroids
+%%%and simple assignment to faces
+%%%
+%%%Don't want  to learn new DSL.
+%%%Special \LaTeX \ for generating equations
+%%%Take output from computer algebra system/get system to output special \LaTeX
+%%%
+%%%Field variables - descriptions - suitable for generating modules, even simple menus as in ITER work
+ 
+\subsection{Parallelism Abstraction}\label{sec:parabstr}
+\input{DJF/parabstr}
+
+%%%\section{Verification and Validation (VV) Plan and Report}
+%%%Template given in this section
+%%%
+%%%\subsection{Ideas for tests}
+%%%\begin{itemize}
+%%%\item  system level tests, ie integrated tests
+%%%\item  MMS, possibly iPoPe of Cartier-Michaud et al
+%%%\item  interval arithmetic
+%%%\item  Convergence studies
+%%%\item  Benchmarking with other programs
+%%%\item  Nonfunctional requirements - performance, portability, accuracy
+%%%\end{itemize}
+%%%
+%%%Plan should describe how unit test cases will be selected. Code coverage metrics. Mutation testing, fault testing, if 
+%%%appropriate.
+%%%
+%%%\subsection{Validation}
+%%%Experimental results to replicate
+%%% 
+%%%% Smith  - V+V Plan+Report
+%%%% Hewitt  - Application Design  - Testability
+%%%% Hewitt  - Application Design  - Monitorability and metric
+%%%
+%%%Surveys available options for issues by review or research
+%%%gives reasons for preferring (maximum of 2) choices.
+%%%
+%%%\begin{enumerate}
+%%%\item Novel physics for spectral elements
+%%%\begin{itemize}
+%%%\item Strong anisotropy due to magnetic field
+%%%\item Unusual outflow and other boundary conditions at engineered boundaries
+%%%\item Large particle sources and sinks
+%%%\item Additional (plasma) kinetic effects
+%%%\end{itemize}
+%%%\item High order accurate mesh generation
+%%%\item Design of overall code, data structures and separation of concerns
+%%%\item Kinetics/gyrokinetics and high-dimensional finite elements/particles for edge
+%%%\item Uncertainty quantification, including error control and bifurcation tracking
+%%%\item Construction of surrogates
+%%%\item Preconditioners
+%%%\item Radical new computational ideas 
+%%%\end{enumerate}
+%%%

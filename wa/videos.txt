@@ -1,0 +1,61 @@
+<figure class='figure' >
+
+<div class="center">
+<p>
+<video width="530" height="530" controls preload="auto">
+  <source type="video/mp4" src="./Animations/HasegawaWakatani.mp4">
+</video>
+</p>
+</div>
+
+<p>
+<div class='figurecaption'>
+Output from Nektar-Driftwave proxyapp. 
+An initial Gaussian density perturbation is time-evolved to the nonlinear turbulent state. 
+More details can be found <a href="http://ammar-hakim.org/sj/je/je17/je17-hasegawa-wakatani.html">here</a> - see alpha=2 example.
+</div>
+</p>
+</div>
+
+
+<figure class='figure' >
+
+<div class="center">
+<p>
+<video width="530" height="530" controls preload="auto">
+  <source type="video/mp4" src="./Animations/SlotConvection.mp4">
+</video>
+</p>
+</div>
+
+<p>
+<div  class='figurecaption'>
+Shows convective flow in a 2D slot simulated using incompressible Navier-Stokes in the Boussinesq approximation.  
+The Rayleigh number (basically specifying the temperature difference across the slot from the hot side on the left to the cold side on the right) is sufficiently high that boundary-layer instability leads to waves travelling up the hot side and down the cold.  
+These waves lead to complex fluid motion in the bulk and ultimately turbulence.  
+This the problem reported <a href="https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0051-M6.1.pdf">here</a>
+</div>
+</p>
+</div>
+
+
+<figure class='figure'>
+
+<div class="center">
+<p>
+<video width="530" height="530" controls preload="auto">
+  <source type="video/mp4" src="./Animations/VlasovPoisson.mp4">
+</video>
+</p>
+</div>
+
+<p>
+<div  class='figurecaption'>
+Time-evolution of the electron density for counter-propagating beams of matter governed by the collisionless Vlasov-Poisson equation.  
+The beams are initially uniform in space (x-axis) and Gaussian in velocity (y-axis).  
+The system develops a linear instability that leads to a nonlinear quasi-steady state.  
+This work is reported <a href="https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0066-M4.1.pdf">here</a>
+</div>
+</p>
+
+</div>

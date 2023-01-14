@@ -1,0 +1,31 @@
+\newsection{Nektar-1D-SOL}{sec:Nektar1DSOl}
+
+The Nektar-1D-SOL proxyapp models plasma transport in the scrape-off layer (SOL).
+The SOL is treated as a 1D flux tube, with mass being added continously near the centre of the domain and flowing out to a divertor at either end.
+Neutral species are ignored and the plasma is assumed to have an ideal-gas equation of state.
+
+The proxyapp was built using Nektar's solver framework and is based on existing solver types that were designed for unsteady advection problems.
+It adopts a similar approach to that used in the \textsc{soldrake} code described in section 4 of the internal report \cite{y3re222}.
+The starting point is a set of non-dimensionalised equations describing the evolution of SOL density, momentum and energy, which were derived in \cite{detach-rp2}:
+
+\begin{align}
+    U_r \frac{\partial n}{\partial t} &= 
+        - \frac{\partial }{\partial s}(nu)
+        + S^n, \label{eqn:n}\\
+    U_r \frac{\partial }{\partial t} (nu)&= 
+        - \frac{\partial }{\partial s} (nu^2)
+        - \frac{\partial }{\partial s} (nT)
+        + S^u, \label{eqn:u} \\
+    U_r \frac{\partial }{\partial t} \left( (g-2)nT + nu^2  \right) &= 
+        - \frac{\partial }{\partial s}(gnuT + nu^3)
+        + \kappa_d \frac{\partial^2  T}{\partial s^2}
+        + S^E. \label{eqn:T}
+\end{align}
+The relative weight of time-dependent terms, $U_r$, is set to unity and the diffusivity coefficient, $\kappa_d$, to zero, yielding a system that closely resembles the compressible Euler equations.
+Source terms and boundary conditions are then chosen so as to simulate mass deposition at the domain centre due to cross-field-line transport, and sonic outflow at each end (see \cite{y3re222} for a detailed description).
+The domain is discretised using the Discontinous Galerkin method and time integration is performed using a 4$^{\rm th}$ order Runge-Kutta scheme.
+
+Running the proxyapp produces a number of output files containing the values of the $n$, $nu$, and $E$ fields for each fluid element, which can be postprocessed using Nektar's `FieldConvert` tool to produce equilibrium profiles for $n$, $u$, and $T$.
+These profiles closely match the analytical solutions derived in \cite{detach-rp2} and the results obtained using the \textsc{soldrake} code.
+
+Nektar-1D-SOL is publicly available at \url{https://github.com/ExCALIBUR-NEPTUNE/nektar-1d-sol}.

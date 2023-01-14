@@ -1,0 +1,58 @@
+\subsection{Testing} \label{sec:test}
+
+Requirements before merging changes in \T{git} include:
+\begin{itemize}
+\item Tests must pass. (Merge blocking can be enforced eg.\ on \T{github}.)
+\item The code must be in the standard style, which will be at least
+partly enforced as part of the automated testing.
+\item Documentation must be updated or added to reflect changes in the code.
+\end{itemize}
+
+\subsubsection{Source code testing} \label{sec:source}
+
+Testing of code is essential to ensure correctness, reduce incidents
+of accidental breakage or regression of code features, and enable code
+changes to be made with confidence. These tests must be automated, and
+as far as possible be ``unit" tests, which test isolated components of
+the code. A strictly Test Driven Development (TDD) approach is not
+always appropriate, but encouraging incremental development and
+testing in small pieces has several advantages in terms of the
+resulting code structure and maintainability:
+
+\begin{enumerate}
+\item It encourages the writing of code which has ``clean" interfaces ie.\ 
+a well defined set of inputs and outputs, with minimal side channels (eg.\ 
+global state).
+\item Having to test components individually discourages strong coupling
+between code, because then these dependency components have to be
+``mocked" up in testing.
+\item Good code test coverage makes later maintenance, modification and refactoring
+of the code easier. The tests also function as a type of documentation
+of the intended use of the code, and also of the corner-cases which may not
+be obvious to a new user or developer.
+\end{enumerate}
+
+The most important types of tests are for correctness. These can use standard
+services such as \T{github actions}, \T{Travis} etc. Performance is however
+a crucial property of the code, and should also be monitored.
+
+\subsubsection{Performance testing} \label{sec:perf}
+
+It is useful to include timing information in test output, which is
+then contained in the test logs. This is valuable as a quick way for
+developers to observe the impact of changes on performance. It is
+however not very accurate, especially under virtual machines on shared
+hardware as is typical for testing services. These tests also only
+typically use a small number of processors (less than four), usually without
+accelerator support, making them of limited use in evaluating
+performance of high performance code for the Exascale. 
+
+Periodic testing of code versions on a range of hardware will be
+needed to monitor performance, and catch performance regressions. This
+could be carried out by a researcher, but the possibility of
+automating this process and making use of services such as Amazon AWS
+HPC and GPU servers. Studies carried to date indicate a lack of appropriate
+software for ensuring performance portability and a consequent
+need at least to enhance existing packages.
+
+

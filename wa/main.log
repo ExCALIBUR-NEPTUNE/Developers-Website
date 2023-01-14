@@ -1,0 +1,3141 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.14)  14 JAN 2023 15:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lwarp/lwarp.sty
+Package: lwarp 2022/02/01 v0.903 Allows LaTeX to directly produce HTML5 output.
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifptex/ifptex.sty
+Package: ifptex 2021/07/01 v2.1 pTeX checker
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count194
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count195
+\l__pdf_internal_box=\box50
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 858.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 859.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 860.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 861.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 862.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 863.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 864.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+\LWR@templengthone=\skip49
+\LWR@templengthtwo=\skip50
+\LWR@templengththree=\skip51
+\c@LWR@tempcountone=\count196
+\c@LWR@texboxdepth=\count197
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+Package lwarp Info: Using option 'mathjax' on input line 1175.
+
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment') Lwarp: Including comment 'warpall'
+Lwarp: Excluding comment 'warpHTML' Lwarp: Including comment 'warpprint'
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut Lwarp: Excluding comment 'warpMathJax')
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+Lwarp: Including comment 'warpsvg') Excluding 'warpHTML' comment.
+Lwarp: Excluding comment 'LWRcreatelwarpmk' Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count198
+\calc@Bcount=\count199
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip52
+\calc@Bskip=\skip53
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count266
+\calc@Cskip=\skip54
+))
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count267
+\decimalpart=\count268
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks19
+))
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+\LWR@quickfile=\write4
+)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Lwarp: Excluding comment 'LWRwriteconf' Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+Package lwarp Info: Generating lwarp configuration files, on input line 12.
+
+Lwarp: Including comment 'LWRwriteconf') Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+
+Straight input of comment_writeconf.cut. (./comment_writeconf.cut
+\openout4 = `main_html.tex'.
+
+)
+Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+
+Straight input of comment_writeconf.cut. (./comment_writeconf.cut)
+Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+
+Straight input of comment_writeconf.cut. (./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp.css'.
+
+\openout15 = `lwarp.css'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp_sagebrush.css'.
+
+\openout15 = `lwarp_sagebrush.css'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp_formal.css'.
+
+\openout15 = `lwarp_formal.css'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./sample_project.css'.
+
+\openout15 = `sample_project.css'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp.ist'.
+
+\openout15 = `lwarp.ist'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp.xdy'.
+
+\openout15 = `lwarp.xdy'.
+
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+ Straight input of comment_writeconf.cut.
+(./comment_writeconf.cut
+\openout4 = `lwarp_one_limage.txt'.
+
+) Including 'LWRwriteconf' comment.
+\openout3 = `comment_writeconf.cut'.
+
+
+Straight input of comment_writeconf.cut. (./comment_writeconf.cut
+
+LaTeX Warning: Writing or overwriting file `./lwarp_mathjax.txt'.
+
+\openout15 = `lwarp_mathjax.txt'.
+
+
+) Excluding 'LWRcreatelwarpmk' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut
+\c@FootnoteDepth=\count269
+\c@footnoteReset=\count270
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+\c@LWR@currentautosecpage=\count271
+\c@LWR@currentautosecfloatpage=\count272
+\c@LWR@previousautopagelabel=\count273
+
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut
+\c@FileDepth=\count274
+) Excluding 'warpHTML' comment.
+Excluding 'warpMathJax' comment. Excluding 'warpMathJax' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+\HTMLvleftskip=\skip55
+\HTMLleftmargini=\skip56
+)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut
+\VerbatimHTMLWidth=\skip57
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+\c@SideTOCDepth=\count275
+)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut
+\LWR@fminipagebox=\box51
+)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (./comment_all.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(./comment_all.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+\@indexfile=\write5
+\openout5 = `main.idx'.
+
+
+Writing index file main.idx
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen141
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count276
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count277
+\leftroot@=\count278
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count279
+\DOTSCASE@=\count280
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count281
+\c@MaxMatrixCols=\count282
+\dotsspace@=\muskip16
+\c@parentequation=\count283
+\dspbrk@lvl=\count284
+\tag@help=\toks21
+\row@=\count285
+\column@=\count286
+\maxfields@=\count287
+\andhelp@=\toks22
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks23
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen150
+\Hy@linkcounter=\count288
+\Hy@pagecounter=\count289
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count290
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count291
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen151
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count292
+\Field@Width=\dimen152
+\Fld@charsize=\dimen153
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count293
+\c@Item=\count294
+\c@Hfootnote=\count295
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count296
+\c@bookmark@seq@number=\count297
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count298
+\U@D=\dimen154
+\l@unhyphenated=\language27
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count299
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/british.ldf
+Language: british 2017/06/06 v3.3r English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
+
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count300
+
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count301
+\c@listtotal=\count302
+\c@listcount=\count303
+\c@liststart=\count304
+\c@liststop=\count305
+\c@citecount=\count306
+\c@citetotal=\count307
+\c@multicitecount=\count308
+\c@multicitetotal=\count309
+\c@instcount=\count310
+\c@maxnames=\count311
+\c@minnames=\count312
+\c@maxitems=\count313
+\c@minitems=\count314
+\c@citecounter=\count315
+\c@maxcitecounter=\count316
+\c@savedcitecounter=\count317
+\c@uniquelist=\count318
+\c@uniquename=\count319
+\c@refsection=\count320
+\c@refsegment=\count321
+\c@maxextratitle=\count322
+\c@maxextratitleyear=\count323
+\c@maxextraname=\count324
+\c@maxextradate=\count325
+\c@maxextraalpha=\count326
+\c@abbrvpenalty=\count327
+\c@highnamepenalty=\count328
+\c@lownamepenalty=\count329
+\c@maxparens=\count330
+\c@parenlevel=\count331
+\blx@tempcnta=\count332
+\blx@tempcntb=\count333
+\blx@tempcntc=\count334
+\c@blx@maxsection=\count335
+\c@blx@maxsegment@0=\count336
+\blx@notetype=\count337
+\blx@parenlevel@text=\count338
+\blx@parenlevel@foot=\count339
+\c@blx@sectionciteorder@0=\count340
+\blx@entrysetcounter=\count341
+\blx@biblioinstance=\count342
+\labelnumberwidth=\skip62
+\labelalphawidth=\skip63
+\biblabelsep=\skip64
+\bibitemsep=\skip65
+\bibnamesep=\skip66
+\bibinitsep=\skip67
+\bibparsep=\skip68
+\bibhang=\skip69
+\blx@bcfin=\read3
+\blx@bcfout=\write6
+\blx@langwohyphens=\language28
+\c@mincomprange=\count343
+\c@maxcomprange=\count344
+\c@mincompwidth=\count345
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex citestyle data model...
+Package biblatex Info: ... file 'numeric-comp.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count346
+\c@savedafterword=\count347
+\c@annotator=\count348
+\c@savedannotator=\count349
+\c@author=\count350
+\c@savedauthor=\count351
+\c@bookauthor=\count352
+\c@savedbookauthor=\count353
+\c@commentator=\count354
+\c@savedcommentator=\count355
+\c@editor=\count356
+\c@savededitor=\count357
+\c@editora=\count358
+\c@savededitora=\count359
+\c@editorb=\count360
+\c@savededitorb=\count361
+\c@editorc=\count362
+\c@savededitorc=\count363
+\c@foreword=\count364
+\c@savedforeword=\count365
+\c@holder=\count366
+\c@savedholder=\count367
+\c@introduction=\count368
+\c@savedintroduction=\count369
+\c@namea=\count370
+\c@savednamea=\count371
+\c@nameb=\count372
+\c@savednameb=\count373
+\c@namec=\count374
+\c@savednamec=\count375
+\c@translator=\count376
+\c@savedtranslator=\count377
+\c@shortauthor=\count378
+\c@savedshortauthor=\count379
+\c@shorteditor=\count380
+\c@savedshorteditor=\count381
+\c@labelname=\count382
+\c@savedlabelname=\count383
+\c@institution=\count384
+\c@savedinstitution=\count385
+\c@lista=\count386
+\c@savedlista=\count387
+\c@listb=\count388
+\c@savedlistb=\count389
+\c@listc=\count390
+\c@savedlistc=\count391
+\c@listd=\count392
+\c@savedlistd=\count393
+\c@liste=\count394
+\c@savedliste=\count395
+\c@listf=\count396
+\c@savedlistf=\count397
+\c@location=\count398
+\c@savedlocation=\count399
+\c@organization=\count400
+\c@savedorganization=\count401
+\c@origlocation=\count402
+\c@savedoriglocation=\count403
+\c@origpublisher=\count404
+\c@savedorigpublisher=\count405
+\c@publisher=\count406
+\c@savedpublisher=\count407
+\c@language=\count408
+\c@savedlanguage=\count409
+\c@origlanguage=\count410
+\c@savedoriglanguage=\count411
+\c@pageref=\count412
+\c@savedpageref=\count413
+\shorthandwidth=\skip70
+\shortjournalwidth=\skip71
+\shortserieswidth=\skip72
+\shorttitlewidth=\skip73
+\shortauthorwidth=\skip74
+\shorteditorwidth=\skip75
+\locallabelnumberwidth=\skip76
+\locallabelalphawidth=\skip77
+\localshorthandwidth=\skip78
+\localshortjournalwidth=\skip79
+\localshortserieswidth=\skip80
+\localshorttitlewidth=\skip81
+\localshortauthorwidth=\skip82
+\localshorteditorwidth=\skip83
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+\c@textcitecount=\count414
+\c@textcitetotal=\count415
+\c@textcitemaxnames=\count416
+\c@biburlbigbreakpenalty=\count417
+\c@biburlbreakpenalty=\count418
+\c@biburlnumpenalty=\count419
+\c@biburlucpenalty=\count420
+\c@biburllcpenalty=\count421
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count422
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count423
+\c@bbx:relatedtotal=\count424
+))
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count425
+\c@cbx@tempcntb=\count426
+\c@cbx@tempcntc=\count427
+\c@cbx@tempcntd=\count428
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2022-01-21 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+))
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count429
+)
+   defining Unicode char U+0301 (decimal 769)
+Package biblatex Info: Redefining '\cite' on input line 56.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip84
+\f@nch@O@elh=\skip85
+\f@nch@O@erh=\skip86
+\f@nch@O@olh=\skip87
+\f@nch@O@orh=\skip88
+\f@nch@O@elf=\skip89
+\f@nch@O@erf=\skip90
+\f@nch@O@olf=\skip91
+\f@nch@O@orf=\skip92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip93
+\LTright=\skip94
+\LTpre=\skip95
+\LTpost=\skip96
+\LTchunksize=\count430
+\LTcapwidth=\dimen157
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count431
+\LT@rows=\count432
+\c@LT@tables=\count433
+\c@LT@chunks=\count434
+\LT@p@ftn=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count435
+\c@@ppsavesec=\count436
+\c@@ppsaveapp=\count437
+) (./stdefns.tex)
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count438
+\@quotereset=\count439
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+66.
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+\openout4 = `lwarpmk.conf'.
+
+\openout4 = `main.lwarpmkconf'.
+
+\LWR@colorminipagebox=\box59
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count440
+\scratchdimen=\dimen158
+\scratchbox=\box60
+\nofMPsegments=\count441
+\nofMParguments=\count442
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count443
+\MPscratchDim=\dimen159
+\MPnumerator=\count444
+\makeMPintoPDFobject=\count445
+\everyMPtoPDFconversion=\toks27
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring OFF on input line 166.
+LaTeX Info: Redefining \ref on input line 166.
+LaTeX Info: Redefining \pageref on input line 166.
+LaTeX Info: Redefining \nameref on input line 166.
+
+(./main.out) (./main.out)
+\@outlinefile=\write7
+\openout7 = `main.out'.
+
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+File: british.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout6 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re181':
+(biblatex)                - Entry 'y3re181' (./bib/exc.bib): Invalid format '21
+/10/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2d34':
+(biblatex)                - Entry 'y2d34' (./bib/exc.bib): Invalid format '25/1
+0/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re314':
+(biblatex)                - Entry 'y3re314' (./bib/exc.bib): Invalid format '31
+/10/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'sciplan':
+(biblatex)                - Entry 'sciplan' (./bib/exc.bib): Invalid format '29
+/11/19, WA 21/10/19, RA 22/10/19 and 27/11/19, AV 14/11/19, MOB 1/12/19' of dat
+e field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'pappeqs2':
+(biblatex)                - Entry 'pappeqs2' (./bib/exc.bib): Invalid format '6
+/5/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2d33':
+(biblatex)                - Entry 'y2d33' (./bib/exc.bib): Invalid format '15/3
+/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re333':
+(biblatex)                - Entry 'y2re333' (./bib/exc.bib): Invalid format '11
+/12/20, RA 18/12/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re331':
+(biblatex)                - Entry 'y1re331' (./bib/exc.bib): Invalid format '10
+/3/20, LA and RA 12/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re332':
+(biblatex)                - Entry 'y2re332' (./bib/exc.bib): Invalid format '12
+/8/20, RA 16/8/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'pappeqs3':
+(biblatex)                - Entry 'pappeqs3' (./bib/exc.bib): Invalid format '2
+3/12/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y12acts':
+(biblatex)                - Entry 'y12acts' (./bib/exc.bib): Invalid format '29
+/9/19, WA 28/11/19, MOB 1/12/19' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re111b':
+(biblatex)                - Entry 'y1re111b' (./bib/exc.bib): Invalid format '1
+0/3/20, RA 12/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re121':
+(biblatex)                - Entry 'y1re121' (./bib/exc.bib): Invalid format '10
+/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re211':
+(biblatex)                - Entry 'y1re211' (./bib/exc.bib): Invalid format '10
+/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re231':
+(biblatex)                - Entry 'y1re231' (./bib/exc.bib): Invalid format '5/
+9/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re311':
+(biblatex)                - Entry 'y1re311' (./bib/exc.bib): Invalid format '10
+/3/20, LA and RA 11/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re351':
+(biblatex)                - Entry 'y1re351' (./bib/exc.bib): Invalid format '10
+/3/20, LA and RA 12/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y1re111a':
+(biblatex)                - Entry 'y1re111a' (./bib/exc.bib): Invalid format '1
+0/3/20, RA 12/3/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'charter':
+(biblatex)                - Entry 'charter' (./bib/exc.bib): Invalid format '30
+/6/20, for procurement 7/9/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re312':
+(biblatex)                - Entry 'y2re312' (./bib/exc.bib): Invalid format '30
+/6/20, RA 10/8/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re313':
+(biblatex)                - Entry 'y2re313' (./bib/exc.bib): Invalid format '14
+/10/20' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2grant':
+(biblatex)                - Entry 'y2grant' (./bib/exc.bib): Invalid format '16
+/11/2020' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3act':
+(biblatex)                - Entry 'y3act' (./bib/exc.bib): Invalid format '27/9
+/2021' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re141':
+(biblatex)                - Entry 'y2re141' (./bib/exc.bib): Invalid format '18
+/3/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2close':
+(biblatex)                - Entry 'y2close' (./bib/exc.bib): Invalid format '20
+/3/2021' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re251':
+(biblatex)                - Entry 'y2re251' (./bib/exc.bib): Invalid format '15
+/3/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re221':
+(biblatex)                - Entry 'y2re221' (./bib/exc.bib): Invalid format '27
+/4/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re241':
+(biblatex)                - Entry 'y2re241' (./bib/exc.bib): Invalid format '27
+/4/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re271':
+(biblatex)                - Entry 'y2re271' (./bib/exc.bib): Invalid format '27
+/4/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re281':
+(biblatex)                - Entry 'y2re281' (./bib/exc.bib): Invalid format '27
+/4/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2re261':
+(biblatex)                - Entry 'y2re261' (./bib/exc.bib): Invalid format 'DY
+/6/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re321':
+(biblatex)                - Entry 'y3re321' (./bib/exc.bib): Invalid format '28
+/6/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re51':
+(biblatex)                - Entry 'y3re51' (./bib/exc.bib): Invalid format '27/
+8/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re322':
+(biblatex)                - Entry 'y3re322' (./bib/exc.bib): Invalid format '30
+/7/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re242':
+(biblatex)                - Entry 'y3re242' (./bib/exc.bib): Invalid format '30
+/9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re252':
+(biblatex)                - Entry 'y3re252' (./bib/exc.bib): Invalid format '30
+/9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re272':
+(biblatex)                - Entry 'y3re272' (./bib/exc.bib): Invalid format '27
+/8/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re212':
+(biblatex)                - Entry 'y3re212' (./bib/exc.bib): Invalid format '12
+/9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re222':
+(biblatex)                - Entry 'y3re222' (./bib/exc.bib): Invalid format '30
+/9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re232':
+(biblatex)                - Entry 'y3re232' (./bib/exc.bib): Invalid format '15
+/9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3d32':
+(biblatex)                - Entry 'y3d32' (./bib/exc.bib): Invalid format '23/9
+/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3d35':
+(biblatex)                - Entry 'y3d35' (./bib/exc.bib): Invalid format '30/9
+/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re61':
+(biblatex)                - Entry 'y3re61' (./bib/exc.bib): Invalid format '30/
+9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re71':
+(biblatex)                - Entry 'y3re71' (./bib/exc.bib): Invalid format '30/
+9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re72':
+(biblatex)                - Entry 'y3re72' (./bib/exc.bib): Invalid format '28/
+9/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y2d31':
+(biblatex)                - Entry 'y2d31' (./bib/exc.bib): Invalid format '31/1
+0/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3grant':
+(biblatex)                - Entry 'y3grant' (./bib/exc.bib): Invalid format '9/
+8/2021' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re262':
+(biblatex)                - Entry 'y3re262' (./bib/exc.bib): Invalid format '23
+/11/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re282':
+(biblatex)                - Entry 'y3re282' (./bib/exc.bib): Invalid format '09
+/12/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y45act':
+(biblatex)                - Entry 'y45act' (./bib/exc.bib): Invalid format '3/3
+/2022' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3close':
+(biblatex)                - Entry 'y3close' (./bib/exc.bib): Invalid format '18
+/3/22' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re42':
+(biblatex)                - Entry 'y3re42' (./bib/exc.bib): Invalid format '17/
+12/21' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re43':
+(biblatex)                - Entry 'y3re43' (./bib/exc.bib): Invalid format '18/
+3/22' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re52':
+(biblatex)                - Entry 'y3re52' (./bib/exc.bib): Invalid format '18/
+3/22' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re62':
+(biblatex)                - Entry 'y3re62' (./bib/exc.bib): Invalid format '18/
+3/22' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re73':
+(biblatex)                - Entry 'y3re73' (./bib/exc.bib): Invalid format '18/
+3/22' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'y3re41':
+(biblatex)                - Entry 'y3re41' (./bib/exc.bib): Invalid format '18/
+3/22' of date field 'date' - ignoring.
+
+)
+Package biblatex Info: Reference section=0 on input line 166.
+Package biblatex Info: Reference segment=0 on input line 166.
+<./corpics/cofaplus.png, id=172, 74.2775pt x 74.2775pt>
+File: ./corpics/cofaplus.png Graphic file (type png)
+<use ./corpics/cofaplus.png>
+Package pdftex.def Info: ./corpics/cofaplus.png  used on input line 170.
+(pdftex.def)             Requested size: 71.13188pt x 71.13557pt.
+
+
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 174.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 181.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+83.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<./png/neptune.png, id=177, 601.24625pt x 822.07124pt>
+File: ./png/neptune.png Graphic file (type png)
+<use ./png/neptune.png>
+Package pdftex.def Info: ./png/neptune.png  used on input line 188.
+(pdftex.def)             Requested size: 227.62204pt x 311.22374pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./corpics/cofaplus.png>] [
+2 <./png/neptune.png>] (./main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 3.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [3
+
+])
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+ [4]
+(./mainbody.tex
+Chapter 1.
+(./PN/PN.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+36.
+ (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (3.23634pt too wide) in paragraph at lines 36--39
+[]\T1/lmss/m/n/10.95 Access to re-ports as the com-mu-nity pro-duces them, in t
+he access-controlled
+ []
+
+
+Overfull \hbox (1.83902pt too wide) in paragraph at lines 36--39
+\T1/lmss/m/n/10.95 github site ref. [[]7[]], sub-di-rec-to-ries \T1/lmtt/m/n/10
+.95 reports \T1/lmss/m/n/10.95 and \T1/lmtt/m/n/10.95 reports/ukaea_reports\T1/
+lmss/m/n/10.95 .
+ []
+
+[5
+
+
+]
+Overfull \hbox (0.99811pt too wide) in paragraph at lines 58--63
+\T1/lmss/m/n/10.95 The RFC2119 sub-set of the In-ter-net En-gi-neer-ing Task Fo
+rce (IETF) key-words ref.
+ []
+
+) (./approboxw.tex
+<./corpics/blanksign.png, id=269, 135.50626pt x 57.21375pt>
+File: ./corpics/blanksign.png Graphic file (type png)
+<use ./corpics/blanksign.png>
+Package pdftex.def Info: ./corpics/blanksign.png  used on input line 33.
+(pdftex.def)             Requested size: 85.35826pt x 36.04134pt.
+File: ./corpics/blanksign.png Graphic file (type png)
+<use ./corpics/blanksign.png>
+Package pdftex.def Info: ./corpics/blanksign.png  used on input line 37.
+(pdftex.def)             Requested size: 85.35826pt x 36.04134pt.
+
+Overfull \hbox (118.17226pt too wide) in paragraph at lines 4--43
+ [] 
+ []
+
+
+Overfull \hbox (118.79175pt too wide) in paragraph at lines 4--43
+ [] 
+ []
+
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] [7 <./corpics/blanksign.png (PNG copy)>]
+Chapter 2.
+(./BD/BD.tex [8
+
+] [9]) [10]
+Chapter 3.
+(./RB/RB.tex (./RB/edgeprop.tex [11
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+28.
+ (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [12] [13]) (./RB/engineers_requirements.tex [14] [15] [16] [17
+
+])
+(./RB/use_case_physicist.tex [18
+
+]) (./RB/use_case_engineer.tex [19]
+Overfull \hbox (8.4967pt too wide) in paragraph at lines 44--46
+[]\T1/lmss/m/n/10.95 have re-pro-ducible work-flows to save and share with col-
+leagues (eg. databases
+ []
+
+) (./RB/use_case_particle_specialist.tex [20] [21])
+(./RB/use_case_FEM_background.tex [22])) [23]
+Chapter 4.
+(./TS/TS.tex (./TS/introduction.tex [24
+
+]
+
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 36.
+
+
+Overfull \hbox (6.35172pt too wide) in paragraph at lines 68--75
+ []\T1/lmss/bx/n/10.95 Theory de-vel-op-ment.[] \T1/lmss/m/n/10.95 The above fr
+ame-work ap-proach notwith-stand-ing, \T1/lmr/m/sc/10.95 NEP-
+ []
+
+[25]) (./TS/overall_capabilities.tex
+<./pics/proxyflow2.png, id=491, 1587.9325pt x 870.25125pt>
+File: ./pics/proxyflow2.png Graphic file (type png)
+<use ./pics/proxyflow2.png>
+Package pdftex.def Info: ./pics/proxyflow2.png  used on input line 28.
+(pdftex.def)             Requested size: 341.9989pt x 187.41907pt.
+ [26] [27 <./pics/proxyflow2.png (PNG copy)>] [28]) [29] (./TS/physics_model.te
+x [30
+
+]
+
+LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
+(Font)              using `T1/lmss/m/sc' instead on input line 75.
+
+<./png/colpri.png, id=534, 534.99875pt x 252.945pt>
+File: ./png/colpri.png Graphic file (type png)
+<use ./png/colpri.png>
+Package pdftex.def Info: ./png/colpri.png  used on input line 82.
+(pdftex.def)             Requested size: 251.9989pt x 119.14662pt.
+[31 <./png/colpri.png>]) [32] [33] (./TS/physics_capabilities.tex
+Overfull \hbox (0.93913pt too wide) in paragraph at lines 8--10
+[]\T1/lmss/m/n/10.95 Reliable cal-cu-la-tion of up-stream par-ti-cle and heat f
+lux pro-files: proper
+ []
+
+[34
+
+]
+<./pics/dimensions2.png, id=563, 1001.7425pt x 470.75874pt>
+File: ./pics/dimensions2.png Graphic file (type png)
+<use ./pics/dimensions2.png>
+Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
+(pdftex.def)             Requested size: 251.9989pt x 118.42207pt.
+) [35 <./pics/dimensions2.png (PNG copy)>] (./TS/geometry.tex)
+(./TS/estimates.tex [36
+
+]) [37] (./TS/nonfunc.tex
+<./png/hierarchygroup.png, id=605, 828.09375pt x 388.45125pt>
+File: ./png/hierarchygroup.png Graphic file (type png)
+<use ./png/hierarchygroup.png>
+Package pdftex.def Info: ./png/hierarchygroup.png  used on input line 31.
+(pdftex.def)             Requested size: 251.9989pt x 118.20776pt.
+ [38] [39 <./png/hierarchygroup.png (PNG copy)>]
+Underfull \hbox (badness 2856) in paragraph at lines 119--119
+[]\T1/lmss/m/n/10.95 Component and Type-bound
+ []
+
+
+Overfull \hbox (102.79134pt too wide) in paragraph at lines 111--127
+ [] 
+ []
+
+[40] [41] [42] [43]) (./TS/mgt.tex [44] [45] [46]) (./TS/naming.tex [47]
+[48] [49])) [50]
+Chapter 5.
+(./DJF/DJF.tex (./DJF/tabtit.tex
+Overfull \hbox (6.03484pt too wide) in paragraph at lines 11--11
+[]|\T1/lmss/m/n/10.95 sciplanref.
+ []
+
+
+Overfull \hbox (17.07864pt too wide) in paragraph at lines 11--12
+[]|\T1/lmss/m/n/10.95 sciplan/rp1| 
+ []
+
+
+Overfull \hbox (9.44096pt too wide) in paragraph at lines 12--12
+[]|\T1/lmss/m/n/10.95 y12actsref.
+ []
+
+
+Overfull \hbox (16.37616pt too wide) in paragraph at lines 13--13
+[]|\T1/lmss/m/n/10.95 y1re111bref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|\T1/lmss/m/n/10.95 0010-
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 14--14
+[]|\T1/lmss/m/n/10.95 y1re121ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|\T1/lmss/m/n/10.95 0011-1.00-
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 14--15
+[]|\T1/lmss/m/n/10.95 t12/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 15--15
+[]|\T1/lmss/m/n/10.95 y1re211ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmss/m/n/10.95 0012-1.00-
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 15--16
+[]|\T1/lmss/m/n/10.95 t21/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 16--16
+[]|\T1/lmss/m/n/10.95 y1re231ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/lmss/m/n/10.95 0013-1.01-
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 16--17
+[]|\T1/lmss/m/n/10.95 t23/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 17--17
+[]|\T1/lmss/m/n/10.95 y1re311ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/lmss/m/n/10.95 0014-1.00-
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 18--18
+[]|\T1/lmss/m/n/10.95 y1re331ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\T1/lmss/m/n/10.95 0015-1.00-
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 19--19
+[]|\T1/lmss/m/n/10.95 y1re351ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmss/m/n/10.95 0016-1.00-
+ []
+
+
+Overfull \hbox (15.98067pt too wide) in paragraph at lines 20--20
+[]|\T1/lmss/m/n/10.95 y1re111aref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
+[]|\T1/lmss/m/n/10.95 0018-
+ []
+
+
+Overfull \hbox (6.94699pt too wide) in paragraph at lines 21--21
+[]|\T1/lmss/m/n/10.95 charterref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmss/m/n/10.95 [[]55[]]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmss/m/n/10.95 EX-CAL-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmss/m/n/10.95 IBUR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmr/m/sc/10.95 NEP-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmr/m/sc/10.95 TUNE
+ []
+
+
+Overfull \hbox (17.8971pt too wide) in paragraph at lines 22--22
+[]|\T1/lmss/m/n/10.95 pappeqs3ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\T1/lmss/m/n/10.95 [[]44[]]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\T1/lmss/m/n/10.95 Equa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\T1/lmss/m/n/10.95 EX-CAL-
+ []
+
+
+Overfull \hbox (50.29219pt too wide) in paragraph at lines 22--22
+\T1/lmss/m/n/10.95 IBUR/\T1/lmr/m/sc/10.95 NEPTUNE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\T1/lmss/m/n/10.95 Prox-
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 23--23
+[]|\T1/lmss/m/n/10.95 y2re312ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 23--24
+[]|\T1/lmss/m/n/10.95 t31/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 24--24
+[]|\T1/lmss/m/n/10.95 y2re332ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 24--25
+[]|\T1/lmss/m/n/10.95 t33/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 25--25
+[]|\T1/lmss/m/n/10.95 y2re313ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 25--26
+[]|\T1/lmss/m/n/10.95 t31/rp3| 
+ []
+
+
+Overfull \hbox (9.77548pt too wide) in paragraph at lines 26--26
+[]|\T1/lmss/m/n/10.95 y2grantref.
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 27--27
+[]|\T1/lmss/m/n/10.95 y2re333ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 27--28
+[]|\T1/lmss/m/n/10.95 t33/rp3| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]|\T1/lmss/m/n/10.95 y3actref.
+ []
+
+
+Overfull \hbox (26.90271pt too wide) in paragraph at lines 28--29
+[]|\T1/lmss/m/n/10.95 y3act/genpdf| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 29--29
+[]|\T1/lmss/m/n/10.95 y2re141ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 29--30
+[]|\T1/lmss/m/n/10.95 t14/rp1| 
+ []
+
+
+Overfull \hbox (4.39969pt too wide) in paragraph at lines 30--30
+[]|\T1/lmss/m/n/10.95 0030a| 
+ []
+
+
+Overfull \hbox (7.70761pt too wide) in paragraph at lines 30--30
+[]|\T1/lmss/m/n/10.95 y2closeref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]|\T1/lmss/m/n/10.95 0030a-
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 31--31
+[]|\T1/lmss/m/n/10.95 y2re251ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 31--32
+[]|\T1/lmss/m/n/10.95 t25/rp1| 
+ []
+
+
+Overfull \hbox (2.2932pt too wide) in paragraph at lines 32--32
+[]|\T1/lmss/m/n/10.95 y2d33ref.
+ []
+
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 32--33
+[]|\T1/lmss/m/n/10.95 d33/rpc| 
+ []
+
+
+Overfull \hbox (2.2932pt too wide) in paragraph at lines 33--33
+[]|\T1/lmss/m/n/10.95 y2d34ref.
+ []
+
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 33--34
+[]|\T1/lmss/m/n/10.95 d34/rpc| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 34--34
+[]|\T1/lmss/m/n/10.95 y2re221ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 34--35
+[]|\T1/lmss/m/n/10.95 t22/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 35--35
+[]|\T1/lmss/m/n/10.95 y2re241ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 35--36
+[]|\T1/lmss/m/n/10.95 t24/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 36--36
+[]|\T1/lmss/m/n/10.95 y2re271ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 36--37
+[]|\T1/lmss/m/n/10.95 t27/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 37--37
+[]|\T1/lmss/m/n/10.95 y2re281ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 37--38
+[]|\T1/lmss/m/n/10.95 t28/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 38--38
+[]|\T1/lmss/m/n/10.95 y2re261ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 38--39
+[]|\T1/lmss/m/n/10.95 t26/rp1| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 39--39
+[]|\T1/lmss/m/n/10.95 y3re321ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 39--40
+[]|\T1/lmss/m/n/10.95 t32/rp1| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 40--40
+[]|\T1/lmss/m/n/10.95 y3re51ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 40--41
+[]|\T1/lmss/m/n/10.95 t51/rpc| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 41--41
+[]|\T1/lmss/m/n/10.95 y3re322ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 41--42
+[]|\T1/lmss/m/n/10.95 t32/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 42--42
+[]|\T1/lmss/m/n/10.95 y3re314ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 42--43
+[]|\T1/lmss/m/n/10.95 t31/rp4| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 43--43
+[]|\T1/lmss/m/n/10.95 y3re242ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 43--44
+[]|\T1/lmss/m/n/10.95 t24/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 44--44
+[]|\T1/lmss/m/n/10.95 y3re252ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 44--45
+[]|\T1/lmss/m/n/10.95 t25/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 45--45
+[]|\T1/lmss/m/n/10.95 y3re272ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 45--46
+[]|\T1/lmss/m/n/10.95 t27/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 46--46
+[]|\T1/lmss/m/n/10.95 y3re212ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 46--47
+[]|\T1/lmss/m/n/10.95 t21/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 47--47
+[]|\T1/lmss/m/n/10.95 y3re222ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 47--48
+[]|\T1/lmss/m/n/10.95 t22/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 48--48
+[]|\T1/lmss/m/n/10.95 y3re232ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 48--49
+[]|\T1/lmss/m/n/10.95 t23/rp2| 
+ []
+
+
+Overfull \hbox (2.2932pt too wide) in paragraph at lines 49--49
+[]|\T1/lmss/m/n/10.95 y3d32ref.
+ []
+
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 49--50
+[]|\T1/lmss/m/n/10.95 d32/rpc| 
+ []
+
+
+Overfull \hbox (2.2932pt too wide) in paragraph at lines 50--50
+[]|\T1/lmss/m/n/10.95 y3d35ref.
+ []
+
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 50--51
+[]|\T1/lmss/m/n/10.95 d35/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 51--51
+[]|\T1/lmss/m/n/10.95 y3re61ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 51--52
+[]|\T1/lmss/m/n/10.95 t61/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 52--52
+[]|\T1/lmss/m/n/10.95 y3re71ref.
+ []
+
+
+Overfull \hbox (13.6715pt too wide) in paragraph at lines 52--53
+[]|\T1/lmss/m/n/10.95 t71/report| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 53--53
+[]|\T1/lmss/m/n/10.95 y3re72ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 53--54
+[]|\T1/lmss/m/n/10.95 t72/rpc| 
+ []
+
+
+Overfull \hbox (2.2932pt too wide) in paragraph at lines 54--54
+[]|\T1/lmss/m/n/10.95 y2d31ref.
+ []
+
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 54--55
+[]|\T1/lmss/m/n/10.95 d31/rpc| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 55--55
+[]|\T1/lmss/m/n/10.95 y3re181ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 55--56
+[]|\T1/lmss/m/n/10.95 t18/rp1| 
+ []
+
+
+Overfull \hbox (9.77548pt too wide) in paragraph at lines 56--56
+[]|\T1/lmss/m/n/10.95 y3grantref.
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 57--57
+[]|\T1/lmss/m/n/10.95 y3re262ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 57--58
+[]|\T1/lmss/m/n/10.95 t26/rp2| 
+ []
+
+
+Overfull \hbox (10.71866pt too wide) in paragraph at lines 58--58
+[]|\T1/lmss/m/n/10.95 y3re282ref.
+ []
+
+
+Overfull \hbox (1.10951pt too wide) in paragraph at lines 58--59
+[]|\T1/lmss/m/n/10.95 t28/rp2| 
+ []
+
+
+Overfull \hbox (5.24347pt too wide) in paragraph at lines 59--59
+[]|\T1/lmss/m/n/10.95 y45actref.
+ []
+
+
+Overfull \hbox (32.3777pt too wide) in paragraph at lines 59--60
+[]|\T1/lmss/m/n/10.95 y45act/genpdf| 
+ []
+
+
+Overfull \hbox (7.70761pt too wide) in paragraph at lines 60--60
+[]|\T1/lmss/m/n/10.95 y3closeref.
+ []
+
+
+Overfull \hbox (6.28041pt too wide) in paragraph at lines 60--61
+[]|\T1/lmss/m/n/10.95 t110/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 61--61
+[]|\T1/lmss/m/n/10.95 y3re42ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 61--62
+[]|\T1/lmss/m/n/10.95 t42/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 62--62
+[]|\T1/lmss/m/n/10.95 y3re43ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 62--63
+[]|\T1/lmss/m/n/10.95 t43/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 63--63
+[]|\T1/lmss/m/n/10.95 y3re52ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 63--64
+[]|\T1/lmss/m/n/10.95 t52/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 64--64
+[]|\T1/lmss/m/n/10.95 y3re62ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 64--65
+[]|\T1/lmss/m/n/10.95 t62/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 65--65
+[]|\T1/lmss/m/n/10.95 y3re73ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 65--66
+[]|\T1/lmss/m/n/10.95 t73/rpc| 
+ []
+
+
+Overfull \hbox (5.24367pt too wide) in paragraph at lines 66--66
+[]|\T1/lmss/m/n/10.95 y3re41ref.
+ []
+
+
+Overfull \hbox (0.80542pt too wide) in paragraph at lines 66--67
+[]|\T1/lmss/m/n/10.95 t41/rpc| 
+ []
+
+
+Overfull \hbox (143.8627pt too wide) in alignment at lines 2--68
+ [] [] [] [] [] 
+ []
+
+[51
+
+] [52] [53]) (./DJF/report_summary1.tex
+Overfull \hbox (35.86792pt too wide) in paragraph at lines 7--9
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.00-M1.2.1 - Equa-tions for \T1/lmr/m
+/sc/10.95 NEP-TUNE\T1/lmss/m/n/10.95 /\T1/lmr/m/sc/10.95 E\T1/lmss/m/n/10.95 x\
+T1/lmr/m/sc/10.95 CALIBUR
+ []
+
+[54]
+Overfull \hbox (16.00418pt too wide) in paragraph at lines 42--43
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0016-M3.5.1 - Bench-mark-ing re-quire-men
+ts for \T1/lmr/m/sc/10.95 NEP-
+ []
+
+) [55] (./DJF/report_summary2.tex
+Overfull \hbox (7.43373pt too wide) in paragraph at lines 4--5
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0066-M4.1 Sup-port High-dimensional Pro-c
+ure-ment 
+ []
+
+
+Overfull \hbox (2.26357pt too wide) in paragraph at lines 6--7
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0062-M4.3 High-dimensional Mod-els Com-pl
+e-men-
+ []
+
+
+Overfull \hbox (5.90233pt too wide) in paragraph at lines 23--24
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0040-M5.1 Man-age-ment of ex-ter-nal re-s
+earch. Sup-
+ []
+
+
+Overfull \hbox (1.70003pt too wide) in paragraph at lines 24--25
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0063-M5.2 Se-lec-tion of tech-niques for 
+Un-cer-tainty
+ []
+
+[56]
+Overfull \hbox (6.97687pt too wide) in paragraph at lines 64--65
+[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0052-M7.1 Lit-er-a-ture re-view for Call 
+T/AW086/21:
+ []
+
+[57]) (./DJF/parabstr.tex [58]
+Overfull \hbox (30.91388pt too wide) in paragraph at lines 32--32
+[]\T1/lmtt/m/n/10.95 (L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3
+)=N0*N1*N3[] 
+ []
+
+
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+ [59]))
+[60]
+Chapter 6.
+(./DDF/DDF.tex [61
+
+] [62] (./DDF/basic_objects.tex
+<./pics/baseclasses.png, id=901, 1084.05pt x 476.78125pt>
+File: ./pics/baseclasses.png Graphic file (type png)
+<use ./pics/baseclasses.png>
+Package pdftex.def Info: ./pics/baseclasses.png  used on input line 8.
+(pdftex.def)             Requested size: 251.9989pt x 110.82866pt.
+ [63
+
+ <./pics/baseclasses.png>]
+<./pics/aggregates.png, id=910, 1625.07124pt x 989.6975pt>
+File: ./pics/aggregates.png Graphic file (type png)
+<use ./pics/aggregates.png>
+Package pdftex.def Info: ./pics/aggregates.png  used on input line 69.
+(pdftex.def)             Requested size: 251.9989pt x 153.46193pt.
+[64 <./pics/aggregates.png (PNG copy)>] [65]) [66] (./DDF/functions.tex
+[67
+
+] [68]) (./DDF/desipatt.tex
+<./pics/puppeteer_wab.png, id=964, 496.85625pt x 167.62625pt>
+File: ./pics/puppeteer_wab.png Graphic file (type png)
+<use ./pics/puppeteer_wab.png>
+Package pdftex.def Info: ./pics/puppeteer_wab.png  used on input line 12.
+(pdftex.def)             Requested size: 341.9989pt x 115.38342pt.
+)) [69] [70 <./pics/puppeteer_wab.png (PNG copy)>]
+Chapter 7.
+(./MGT/MGT.tex (./MGT/MGT_intro.tex [71
+
+]) [72] (./MGT/dudson.tex [73
+
+]
+Overfull \hbox (3.17455pt too wide) in paragraph at lines 66--68
+[]\T1/lmss/m/n/10.95 Since the soft-ware is widely used, er-ror mes-sages can i
+n-vari-ably be `googled'
+ []
+
+[74]
+Overfull \hbox (4.15955pt too wide) in paragraph at lines 111--118
+[]\T1/lmss/m/n/10.95 A \T1/lmtt/m/n/10.95 github \T1/lmss/m/n/10.95 `or-gan-i-s
+a-tion' []$\T1/lmtt/m/n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE$[]
+ \T1/lmss/m/n/10.95 was
+ []
+
+[75] [76]
+Overfull \hbox (15.44586pt too wide) in paragraph at lines 204--205
+[]\T1/lmss/m/n/10.95 Release num-ber-ing should fol-low (a mod-i-fied) Se-man-t
+ic Ver-sion-ing ap-proach ref.
+ []
+
+) [77] (./MGT/charter.tex [78
+
+])) [79]
+Chapter 8.
+(./MF/MF.tex) [80
+
+]
+Chapter 9.
+(./OP/OP.tex (./OP/mgt.tex) (./OP/testing.tex [81
+
+] [82]) (./OP/objdisc.tex
+Underfull \hbox (badness 1436) in paragraph at lines 23--23
+[]\T1/lmss/m/n/10.95 Messages and in-for-
+ []
+
+
+Overfull \hbox (105.0177pt too wide) in paragraph at lines 7--64
+ [] 
+ []
+
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./OP/UMan.tex
+Overfull \hbox (0.48389pt too wide) in paragraph at lines 3--6
+[]\T1/lmss/m/n/10.95 With video tu-to-rial, quick start, in-stal-la-tion, ex-am
+-ples. Ex-am-ples use Jupyter
+ []
+
+)) [83] [84]
+Chapter 10.
+(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex)
+Overfull \hbox (50.23827pt too wide) in paragraph at lines 25--2
+[]\T1/lmss/m/n/10.95 Nektar-Driftwave is pub-licly avail-able at []$\T1/lmtt/m/
+n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
+ []
+
+(./proxyapps/nektar-diffusion.tex [85
+
+])
+Overfull \hbox (47.13628pt too wide) in paragraph at lines 24--4
+[]\T1/lmss/m/n/10.95 Nektar-Diffusion is pub-licly avail-able at []$\T1/lmtt/m/
+n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
+ []
+
+(./proxyapps/nektar-1d-sol.tex
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+ [86])
+Overfull \hbox (43.72832pt too wide) in paragraph at lines 31--6
+[]\T1/lmss/m/n/10.95 Nektar-1D-SOL is pub-licly avail-able at []$\T1/lmtt/m/n/1
+0.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
+ []
+
+(./proxyapps/fabneptune.tex)
+Overfull \hbox (42.8003pt too wide) in paragraph at lines 18--8
+[]\T1/lmss/m/n/10.95 FabNEPTUNE is pub-licly avail-able at []$\T1/lmtt/m/n/10.9
+5 https : / / github . com / UCL-[]CCS / FabNEPTUNE$[]\T1/lmss/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--8
+
+ []
+
+[87] (./proxyapps/moment-kinetics.tex)
+Overfull \hbox (2.0166pt too wide) in paragraph at lines 28--10
+[]\T1/lmss/m/n/10.95 Moment_Kinetics is pub-licly avail-able at []$\T1/lmtt/m/n
+/10.95 https : / / github . com / mabarnes /
+ []
+
+(./proxyapps/NESO.tex))
+Overfull \hbox (29.4936pt too wide) in paragraph at lines 11--108
+[]\T1/lmss/m/n/10.95 NESO is pub-licly avail-able at https://github.com/ExCALIB
+UR-NEPTUNE/NESO.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--108
+
+ []
+
+[88]
+Chapter 11.
+(./REF/REF.tex [89
+
+] (./REF/conv.tex [90] (./REF/naming_map.tex
+Overfull \hbox (189.47043pt too wide) in paragraph at lines 4--45
+ [] 
+ []
+
+)) [91] [92] (./REF/acro.tex
+Underfull \hbox (badness 1466) in paragraph at lines 25--26
+[]|\T1/lmss/m/n/10.95 Tokamak edge plasma mod-elling frame-work []$\T1/lmtt/m/n
+/10.95 https : / / boutproject .
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 29--30
+[]|\T1/lmss/m/n/10.95 Computer-Aided De-sign, ge-om-e-try in-clud-ing NURBS, us
+u-ally ``CAD
+ []
+
+
+Overfull \hbox (119.24408pt too wide) in alignment at lines 1--207
+ [] [] 
+ []
+
+
+Overfull \hbox (119.24408pt too wide) in alignment at lines 207--314
+ [] [] 
+ []
+
+[93
+
+] [94] [95] [96] [97] [98] [99]) [100] (./REF/symb.tex
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+[]|$\OT1/lmr/bx/n/10.95 x \OT1/lmr/m/n/10.95 =
+ []
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 57.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 57.
+
+
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 58.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 58.
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 73.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 73.
+
+
+
+Overfull \hbox (131.24408pt too wide) in alignment at lines 1--217
+ [] [] [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 229
+.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
+[]|$\OML/lmm/m/it/10.95 ^^W[] \OT1/lmr/m/n/10.95 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|$\OML/lmm/m/it/10.95 ^^Z[] \OT1/lmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
+ [] [] [] 
+ []
+
+[101
+
+] [102] [103] [104] [105]
+Overfull \hbox (131.24408pt too wide) in alignment at lines 417--456
+ [] [] [] 
+ []
+
+[106] [107] [108] [109] [110] [111])) Excluding 'warpHTML' comment. [112]
+Chapter 12.
+(./IND/IND.tex)) [113
+
+] (./metackn.tex) [114
+
+
+]
+Overfull \hbox (1.8797pt too wide) in paragraph at lines 201--201
+\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
+in / reports /
+ []
+
+
+Overfull \hbox (3.95576pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0033-D3.4. []$\T1/lmtt/m/n/10.95 https : / 
+/ github . com / ExCALIBUR -[]
+ []
+
+
+Overfull \hbox (1.8797pt too wide) in paragraph at lines 201--201
+\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
+in / reports /
+ []
+
+
+Overfull \hbox (12.87717pt too wide) in paragraph at lines 201--201
+\T1/lmtt/m/n/10.95 gov . uk / binaries / content / assets / metofficegovuk / pd
+f / research /
+ []
+
+
+Overfull \hbox (11.97841pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/sl/10.95 ExCALIBUR-NEPTUNE Bid Doc-u-ments, Calls, Re-ports and No
+tes\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https :
+ []
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 200.
+[115
+
+] [116]
+Overfull \hbox (37.26216pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.01-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
+ps : / / github . com / ExCALIBUR -[]
+ []
+
+
+Overfull \hbox (33.47076pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter, J. Parker and E. Threlfall. \T1/lmss/m/sl/10.95 
+Mod-ule Guide\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (24.69922pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0032-D3.3. []$\T1/lmtt/m/n/10.95 https : / / github . co
+m / ExCALIBUR -[] NEPTUNE / Documents /
+ []
+
+[117]
+Overfull \hbox (37.26216pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.20-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
+ps : / / github . com / ExCALIBUR -[]
+ []
+
+
+Overfull \hbox (1.8797pt too wide) in paragraph at lines 201--201
+\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
+in / reports /
+ []
+
+[118]
+Overfull \hbox (3.43066pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 Tech. rep. CD/EXCALIBUR-FMS/0013-1.01-M2.3.1. []$\T1/lmtt/m/
+n/10.95 https : / / github .
+ []
+
+
+Overfull \hbox (48.7358pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 L. An-ton. \T1/lmss/m/sl/10.95 NEP-TUNE: Re-port on sys-te
+m re-quire-ments\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (0.51828pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0014-1.00-M3.1.1. []$\T1/lmtt/m/n/10.95 https : / / gith
+ub . com / ExCALIBUR -[] NEPTUNE /
+ []
+
+
+Overfull \hbox (0.27977pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 L. An-ton. \T1/lmss/m/sl/10.95 Bench-mark-ing re-quire-men
+ts for NEP-TUNE and avail-able tools\T1/lmss/m/n/10.95 .
+ []
+
+
+Overfull \hbox (3.43066pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 Tech. rep. CD/EXCALIBUR-FMS/0016-1.00-M3.5.1. []$\T1/lmtt/m/
+n/10.95 https : / / github .
+ []
+
+
+Overfull \hbox (2.0255pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 EX-CAL-IBUR NEP-TUNE Char-te
+r\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (4.12984pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 cer-tainty Quan-tifi-ca-tion\T1/lmss/m/n/10.95 . Tech. rep.
+ CD/EXCALIBUR-FMS/0024-M3.1.3.
+ []
+
+
+Overfull \hbox (2.48808pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 rec-om-men-da-tion re-port\T1/lmss/m/n/10.95 . Tech. rep. C
+D/EXCALIBUR-FMS/0025-M1.3.1.
+ []
+
+[119]
+Overfull \hbox (4.13934pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 E. Threlfall et al. \T1/lmss/m/sl/10.95 Win-ter 2020-21 Wo
+rk-shop\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (1.81511pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 out Y2\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/0030
+a-M1.6.1. UKAEA, 2021. 
+ []
+
+
+LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
+(Font)              using `T1/lmss/m/sc' instead on input line 200.
+
+
+Overfull \hbox (14.44897pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 niques\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/0036
+-M2.7.1. []$\T1/lmtt/m/n/10.95 https : / / github .
+ []
+
+
+Overfull \hbox (14.14555pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0037-M2.8.1. []$\T1/lmtt/m/n/10.95 https : 
+/ / github . com / ExCALIBUR -[]
+ []
+
+
+LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
+(Font)              using `T1/lmss/m/sc' instead on input line 200.
+
+[120]
+Overfull \hbox (2.38882pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 UQ Pro-cure-ment\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBU
+R-FMS/0040-M5.1. []$\T1/lmtt/m/n/10.95 https :
+ []
+
+
+Overfull \hbox (14.14555pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0041-M3.2.2. []$\T1/lmtt/m/n/10.95 https : 
+/ / github . com / ExCALIBUR -[]
+ []
+
+
+Overfull \hbox (1.8797pt too wide) in paragraph at lines 201--201
+\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
+in / reports /
+ []
+
+
+Overfull \hbox (35.28912pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter and E. Threlfall. \T1/lmss/m/sl/10.95 Sur-face me
+sh gen-er-a-tion\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (14.14555pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0048-M2.3.2. []$\T1/lmtt/m/n/10.95 https : 
+/ / github . com / ExCALIBUR -[]
+ []
+
+[121]
+Overfull \hbox (44.65582pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 Ver-i-fi-ca-tion and Bench-m
+arks Method-ol-ogy\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (24.69922pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0050-D3.5. []$\T1/lmtt/m/n/10.95 https : / / github . co
+m / ExCALIBUR -[] NEPTUNE / Documents /
+ []
+
+
+Overfull \hbox (15.74904pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 e-mat-i-cal Sup-port for Soft-ware Im-ple-men-ta-tion\T1/lm
+ss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (26.37238pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0052-M7.1. []$\T1/lmtt/m/n/10.95 https : / / github . co
+m / ExCALIBUR -[] NEPTUNE / Documents /
+ []
+
+
+Overfull \hbox (35.0138pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 J.T. Parker et al. \T1/lmss/m/sl/10.95 Code cou-pling and 
+bench-mark-ing\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (26.37238pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0053-M7.2. []$\T1/lmtt/m/n/10.95 https : / / github . co
+m / ExCALIBUR -[] NEPTUNE / Documents /
+ []
+
+
+Overfull \hbox (17.64394pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter et al. \T1/lmss/m/sl/10.95 Soft-ware Spec-i-fi-ca
+-tion Web-site\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (24.69922pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 FMS/0054-D3.1. []$\T1/lmtt/m/n/10.95 https : / / github . co
+m / ExCALIBUR -[] NEPTUNE / Documents /
+ []
+
+
+Overfull \hbox (2.48808pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 rec-om-men-da-tion re-port\T1/lmss/m/n/10.95 . Tech. rep. C
+D/EXCALIBUR-FMS/0056-M1.7.1.
+ []
+
+
+Overfull \hbox (24.32396pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 E. Threlfall and W. Arter. \T1/lmss/m/sl/10.95 Fluid Ref-e
+r-ent Mod-els\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+
+Overfull \hbox (58.13078pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 ExCALIBUR-Fusion Mod-elling 
+Sys-tem Y4-Y6\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
+ []
+
+[122]
+Overfull \hbox (5.11087pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/sl/10.95 ca-tion\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/006
+3-M5.2. []$\T1/lmtt/m/n/10.95 https : / / github .
+ []
+
+
+Overfull \hbox (5.62892pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0064-M6.2. []$\T1/lmtt/m/n/10.95 https : / 
+/ github . com / ExCALIBUR -[]
+ []
+
+[123]
+Overfull \hbox (18.1242pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/sl/10.95 A fast, flex-i-ble, physi-cist's toolkit for gy-roki-net-
+ics\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https : / / gyrokinetics .
+ []
+
+
+Overfull \hbox (5.03795pt too wide) in paragraph at lines 201--201
+[]\T1/lmss/m/sl/10.95 Government open source guid-ance\T1/lmss/m/n/10.95 . []$\
+T1/lmtt/m/n/10.95 https : / / www . gov . uk / government /
+ []
+
+
+Overfull \hbox (37.26216pt too wide) in paragraph at lines 201--201
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.00-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
+ps : / / github . com / ExCALIBUR -[]
+ []
+
+[124] [125] (./main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 90E4ED0947B7FC28A805965046F97AC2;6456.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 25068 strings out of 479727
+ 450771 string characters out of 5884998
+ 1347288 words of memory out of 5000000
+ 41914 multiletter control sequences out of 15000+600000
+ 571487 words of font info for 89 fonts, out of 8000000 for 9000
+ 264 hyphenation exceptions out of 8191
+ 74i,15n,87p,1218b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (125 pages, 2197887 bytes).
+PDF statistics:
+ 1819 PDF objects out of 2073 (max. 8388607)
+ 1601 compressed objects within 17 object streams
+ 481 named destinations out of 1000 (max. 500000)
+ 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+

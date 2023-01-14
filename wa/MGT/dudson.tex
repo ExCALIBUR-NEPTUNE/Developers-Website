@@ -1,0 +1,243 @@
+\newsection{Management}{sec:MGT_MGT}
+
+Meetings, whether on-line or in-person are regarded as critical for good collaboration,
+and are discussed in \Sec{meet}. The other key collaborative element centres
+naturally on the software, where use of the \T{git} control system, see \Sec{version}
+and consequent use of repositories, see \Sec{repo}, is becoming universal.
+
+\subsection{Meetings and Workshops} \label{sec:meet}
+
+To start the project and any notable identifiable piece of work
+within it, a kick-off meeting should bring
+together all partners who will contribute significant code to the
+project.  The aim of this meeting will be to build personal links
+among the team, and to establish community practices consistent with the charter.
+Efforts should be made to build consensus and
+a community spirit within the project team.
+
+A regular project planning and monitoring meeting should be set up,
+at least monthly. Its agenda should include short updates on progress of
+each project component, and focus on the project planning and
+coordination. In addition, a separate series of seminars and training
+should be organised, where each partner might give a longer talk on an
+aspect of their work, for example showing other partners how to use
+recently developed capabilities.
+
+
+Development and collaboration mechanisms should include:
+\begin{enumerate}
+\item A system of code repositories for version control (eg.\ \T{github})
+\item Automated testing infrastructure (eg.\ \T{github} actions)
+\item Documentation infrastructure, ie.\ as a website
+\item A repository for long-term storage of large files, records of
+meetings, presentations etc. (eg.\ Google shared drive)
+\item A chat/messaging service such as Slack, to facilitate interactions
+between developers
+\end{enumerate}
+As these are established, a series of training workshops should be
+arranged. These should include talks on the ``high level" objectives, 
+on the near-term plans of each partner, and also hands-on training in
+the tools being used. 
+
+
+\subsection{Version control} \label{sec:version}
+
+The standard \T{git} version control system should be used; there is no
+viable competitor to this in terms of capabilities, widespread adoption,
+or integration into other tools and services (eg.\ \T{github}).
+
+A common complaint against \T{git} is the user interface, which can be intimidating 
+to new users. There are very strong reasons why even programmers with
+plenty of other experience, should seek guidance and preferably training
+in use of the command line interface~(CLI). For those who have time enough to attempt to do so without, 
+a few hints are provided: 
+\begin{enumerate}
+\item The complexity of the interface can be mitigated by restricting usage
+to a few well-chosen subcommands such as \T{clone}, \T{add}, \T{commit}, \T{push}, \T{pull}, \T{diff}, \T{log} and \T{status}.
+\item  Exercise caution before using other
+subcommands or new options to the core subcommands, eg.\  by first committing all files, adding a suboption
+which indicates what will be done without actually modifying any files, and avoiding 
+forcing options.
+\item For the purpose of the key subcommands such as `pull' and `push', it is important
+to remember than these are are defined from the user's point-of-view,
+so that `pull' brings source from the repo towards the user, and `push' sends it away.
+There are other non-intuitive aspects so that it is important to study very carefully the
+description of any new sub-command/option and particularly its ordering of options.
+\item Since the software is widely used, error messages can invariably be `googled'
+for further explanation.
+\item Should conflicts occur, these are recorded by the insertion of strings `+++\ldots',
+`\verb->>>>...-' and `\verb-<<<<...-' in disc files to indicate lines where the clashes lie. Many users
+find resolving conflicts very difficult on the basis of such information,
+however making up for  the absence of a GUI mechanism within \T{git} to do this,
+it is possible to integrate GUIs such as \B{meld}, being aware of possible system dependences.
+\end{enumerate}
+
+Otherwise, the experience of \T{git} can be mitigated through:
+\begin{itemize}
+\item Training: Links to training material for adopted tools should be made available
+as part of the project documentation. This should be supplemented by training,
+both one-to-one and as part of a programme of talks and training.
+
+\item Adoption of, and training in, tools to provide easier interfaces. \T{github} itself
+allows browsing of history; \T{Magit} is an excellent interface integrated into Emacs;
+and similar tools exist for eg.\ Visual Studio Code.
+The ITER organisation uses \T{bitbucket} and UKAEA uses \T{gitlab}.
+\end{itemize}
+%Training in use of \T{git} should make clear that pretty every much aspect of the
+%CLI is unsatisfactory and similar features should be deprecated in the new development. 
+
+
+\subsection{Code repositories} \label{sec:repo}
+
+The structure of \exc \  will result in a number of different
+components, experimental \papp s, and increasingly complex
+applications. There are two main different approaches as to how these different
+components could be split between git repositories, namely (1) Several large code
+bases are kept in a single repository (a `monorepo') and (2) 
+projects are kept in  separate repositories, with
+dependencies being included as \T{git} submodules. 
+
+%Advantages of `monorepos' include simplified dependencies, synchronisation of
+%changes to different components, and a central location for documentation.
+%The main argument for having separate repositories is for the occasion when several components
+%already pre-exist as separate repositories. For new modules, strong
+%coupling between components should be discouraged, so that components
+%can be reused in a range of applications. %The separate repositories
+%enables finer control over access rights, though this can imply
+%additional barriers to shared code ownership.
+
+Adopted is a compromise approach whereby:
+\begin{itemize}
+\item A \T{github} `organisation' \url{https://github.com/ExCALIBUR-NEPTUNE}
+was created to host new repositories. 
+%(The names ``Neptune" and ``Excalibur" were taken, but
+%``excalibur-neptune" was available, for example.)
+Organisations allow permissions for groups of administrators and
+developers to be managed, and this is currently restricted to community members, so
+that it is important to be `logged in' to access their components.
+\item Individual components and \papp s are hosted in separate repositories under this
+organisation. These contain the code, unit tests, documentation etc.
+specific to these components.
+\item Reports produced as part of the \nep \ project, unless they
+contain commercially sensitive information, are to be found in the
+repository~\cite{xpndocswebsite}.
+\item A central repository under this 
+organisation includes components as sub-modules. These could be
+organised into a directory structure, with documentation explaining the relations
+or coupling between components. In this repository should go:
+\begin{itemize}
+\item Integration tests which couple components and ensure that they work together
+\item Documentation of the interfaces between components, project conventions
+(eg.\ style guides), and overall project aims.
+\end{itemize}
+Sub-modules are pinned to a particular \T{git} commit, so that at any
+point the versions included are those which are known to work with
+each other. A developer who wants the latest version of a component
+should clone the individual repository, while a user who wants
+something that ``just works" should clone the central repository.
+\end{itemize}
+(There is the disadvantage of a tie specifically to \T{github}, but loss
+of the `organisation' capability would be expected to be an inconvenience rather
+than a disaster for a project.)
+
+\subsection{Development workflow} \label{sec:develop}
+
+The standard \T{git} work flow has been adopted, since this is widely
+familiar and has been developed as best practice based on industrial
+experience. Exceptions are allowed for minor issues, such as typographical
+errors and broken links in documentation.
+
+Each code component maintains a \T{main} branch (often referred to as the `master'
+as in `master copy'), which can only be modified
+through a pull request mechanism which ensures peer review and testing. Bug fixes
+and feature development are done in separate branches, either in the same
+repository, or in forked repositories. When someone encounters a bug, or wishes to
+develop a new feature, the recommended approach ise:
+
+\begin{enumerate}
+\item An issue is opened, describing the bug or feature request or proposal. This
+allows discussion of the issue, and possible approaches to addressing it.
+\item A pull request is opened as early as possible, marked ``Work in
+progress" or similar. This can contain only minimal code or outline
+of the code structure. This links to the issue, lets other people
+know that it is being worked on, and enables peer review and input
+into the development direction.
+\item Once ready for merging, and consensus has been reached that the proposed change
+should be made, then it is merged.
+\end{enumerate}
+
+If a code is sufficiently large, then a further degree of separation between
+the stable \T{main} branch and active development is needed. A common pattern
+is to only branch off and merge features into a  \T{next} branch. Periodically
+this branch is merged into \T{main} as a new release, once the new features 
+are judged to be sufficiently mature and tested.
+
+Whether into \T{main} or \T{next}, pull requests should be reviewed
+using a checklist the remind the reviewers. 
+Review involves testing, aspects of which are addressed in \Sec{test}.
+
+It must be stressed that code review is not a job separate from
+code development: {\bf All developers should be expected to participate in
+and carry out code reviews}. Reviewing code benefits not only the
+original author, but also the reviewer. Through the discussion, it
+contributes to a sense of shared ownership of the code base, and
+spreads good practices. There is the implication that code should be
+written `for the other guy', ie.\ so that the other guy can understand it
+without much difficulty.  It also ensures that at least two developers
+know how each part of the code works.
+
+\subsection{Code release}
+
+Code releases should be a regular occurrence.
+Code release helps with project branding and user engagement,
+and ensures that the project is seen as active.
+It also helps project administration by ensuring new features are shared in a timely fashion,
+and by reducing the number of long-lived divergent branches. 
+
+The project \nep\ codebase contains \papp s, and infrastructure code that interfaces them.
+A code release will consist of a version of this infrastructure code, 
+plus commit hashes that fix the versions of the \papp s.
+As \papp s might be independent projects with their own established release cycle,
+the following release policy applies only to the infrastructure code.
+It is the recommended policy for new \papp s written under Project \nep.
+
+Release numbering should follow (a modified) Semantic Versioning approach~\cite{semverwebsite}, summarized as
+\begin{quote}
+``Given a version number MAJOR.MINOR.PATCH, increment the:
+\begin{enumerate}
+  \item MAJOR version when you make incompatible API changes,
+  \item MINOR version when you add functionality in a backwards compatible manner, and
+  \item PATCH version when you make backwards compatible bug fixes.''
+\end{enumerate}
+\end{quote}
+Here it is understood that ``API'' refers to user-facing interfaces;
+APIs to functions internal to \papp s may break backwards compatibility in
+MINOR releases.
+There is however an absolute guarantee that no backwards incompatible changes
+are made for end users in MINOR and PATCH releases, except those that arise
+from fixing a bug.
+That is, physics results are permitted to change in such releases if the new
+release's results are ``correct'' and the previous release's results were
+``wrong''.
+
+It is also understood that releases with MAJOR number 0 are considered beta releases,
+for which there are no guarantees of backwards compatibility.
+ 
+Each release will be uploaded as a Zenodo\cite{zenodowebsite}
+record with its own DOI.
+This gives a clear citation for the project (to be included in the project's
+README or CITATION.cff file),
+while ensuring that developers receive credit for their work, without the need
+for associating each release with a publication.
+Encouraging researchers to use release versions and to cite by version number
+also aids scientific reproducibility.
+
+While some technical aspects of the release process can be automated,
+many of the tasks, such as curating issues and writing release notes, are
+inherently manual.
+To prevent \nep\ relying on a single person to make releases,
+the exact workflow will be codified and included in the project documentation.
+An example of such a workflow for the GS2 project may be found
+online~\cite{gs2website}.
+
+

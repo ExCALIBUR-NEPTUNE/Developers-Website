@@ -1,0 +1,3338 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>main — Design Justification File</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+    subequations: "0",
+    section: "",
+    loader: {
+        load: ['[tex]/tagformat', '[tex]/textmacros'],
+    },
+    startup: {
+        ready() {
+            //      These would be replaced by import commands if you wanted to make
+            //      a proper extension.
+            const Configuration = MathJax._.input.tex.Configuration.Configuration;
+            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const Macro = MathJax._.input.tex.Symbol.Macro;
+            const TexError = MathJax._.input.tex.TexError.default;
+            const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+            const expandable = MathJax._.util.Options.expandable;
+
+
+            //      Insert the replacement string into the TeX string, and check
+            //      that there haven't been too many maxro substitutions (prevents
+            //      infinite loops).
+            const useArgument = (parser, text) => {
+                parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                parser.i = 0;
+                if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                    throw new TexError('MaxMacroSub1',
+                    'MathJax maximum macro substitution count exceeded; ' +
+                    'is there a recursive macro call?');
+                }
+            }
+
+
+            //      Create the command map for:
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
+            new CommandMap('Lwarp-macros', {
+                ifstar: 'IfstarFunction',
+                ifnextchar: 'IfnextcharFunction',
+                ifblank: 'IfblankFunction',
+                ifstrequal: 'IfstrequalFunction',
+                seteqnumber: 'SeteqnumberFunction'
+            }, {
+                //      This function implements an ifstar macro.
+                IfstarFunction(parser, name) {
+                    const resultstar = parser.GetArgument(name);
+                    const resultnostar = parser.GetArgument(name);
+                    const star = parser.GetStar();                      // true if there is a *
+                    useArgument(parser, star ? resultstar : resultnostar);
+                },
+
+
+                //      This function implements an ifnextchar macro.
+                IfnextcharFunction(parser, name) {
+                    let whichchar = parser.GetArgument(name);
+                    if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                        // $ syntax highlighting
+                        whichchar = String.fromCodePoint(parseInt(whichchar));
+                    }
+                    const resultnextchar = parser.GetArgument(name);
+                    const resultnotnextchar = parser.GetArgument(name);
+                    const gotchar = (parser.GetNext() === whichchar);
+                    useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                },
+
+
+                // This function implements an ifblank macro.
+                IfblankFunction(parser, name) {
+                    const blankarg = parser.GetArgument(name);
+                    const resultblank = parser.GetArgument(name);
+                    const resultnotblank = parser.GetArgument(name);
+                    const isblank = (blankarg.trim() == "");
+                    useArgument(parser, isblank ? resultblank : resultnotblank);
+                },
+
+
+                // This function implements an ifstrequal macro.
+                IfstrequalFunction(parser, name) {
+                    const strequalfirst = parser.GetArgument(name);
+                    const strequalsecond = parser.GetArgument(name);
+                    const resultequal = parser.GetArgument(name);
+                    const resultnotequal = parser.GetArgument(name);
+                    const isequal = (strequalfirst == strequalsecond);
+                    useArgument(parser, isequal ? resultequal : resultnotequal);
+                },
+
+
+                //      This function modifies the equation numbers.
+                SeteqnumberFunction(parser, name) {
+                        //   Get the macro parameters
+                        const star = parser.GetStar();                    // true if there is a *
+                        const optBrackets = parser.GetBrackets(name);     // contents of optional brackets
+                        const newsubequations = parser.GetArgument(name);    // the subequations argument
+                        const neweqsection = parser.GetArgument(name);    // the eq section argument
+                        const neweqnumber = parser.GetArgument(name);     // the eq number argument
+                        MathJax.config.subequations=newsubequations ;     // a string with boolean meaning
+                        MathJax.config.section=neweqsection ;             // a string with numeric meaning
+                        parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                }
+
+
+            });
+
+
+            //      Create the Lwarp-macros package
+            Configuration.create('Lwarp-macros', {
+                handler: {macro: ['Lwarp-macros']}
+            });
+
+
+            MathJax.startup.defaultReady();
+
+
+            // For forward references:
+            MathJax.startup.input[0].preFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        MathJax.config.subequations = math.inputData.recompile.subequations;
+                        MathJax.config.section = math.inputData.recompile.section;
+                }
+            });
+            MathJax.startup.input[0].postFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        math.inputData.recompile.subequations = MathJax.config.subequations;
+                        math.inputData.recompile.section = MathJax.config.section;
+                }
+            });
+
+
+                // For \left, \right with unicode-math:
+                const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+                const {Symbol} = MathJax._.input.tex.Symbol;
+                const {MapHandler} = MathJax._.input.tex.MapHandler;
+                const delimiter = MapHandler.getMap('delimiter');
+                delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+                delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+                delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+                delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+                delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+                delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+                delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+                delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+                delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+                delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+                delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+                delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+                delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+                delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+                delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+                delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+                delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+                delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+                delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+                delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+                delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+                delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+                delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+                delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+                delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+                delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+                delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+                delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+                delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+                delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+                delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+                delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+                delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+                delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+                delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+                delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+                delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+                delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+                delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+        }        // ready
+    },           // startup
+
+
+    tex: {
+        packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+        tags: "ams",
+                tagformat: {
+                        number: function (n) {
+                             if(MathJax.config.subequations==0)
+                                 return(MathJax.config.section + n);
+                             else
+                                 return(MathJax.config.section + String.fromCharCode(96+n));
+                        },
+                },
+    }
+}
+</script>
+
+
+<script
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="main-autopage-118"></a>
+
+
+<div class="bodyandsidetoc2">
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Design Justification File</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+<div class="sidetoccontainer2">
+
+
+<nav class="sidetoc2">
+
+
+
+
+<div class="sidetoccontents2">
+
+<p class="text">
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p class="text">
+<a href="Program-Identity.html#autosec-6" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p class="text">
+<a href="Program-Identity.html#autosec-8" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p class="text">
+<a href="Business-Design.html#autosec-17" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p class="text">
+<a href="Requirements-Baseline.html#autosec-20" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Physical-properties-edge-plasma.html#autosec-23" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p class="text">
+<a href="Engineering-Requirements-Baseline.html#autosec-32" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Use-Cases.html#autosec-40" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p class="text">
+<a href="General-Remarks.html#autosec-47" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-50" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-52" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p class="text">
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-95" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p class="text">
+<a href="Software-Engineering-Response.html#autosec-98" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p class="text">
+<a href="Generating-Names-Variables.html#autosec-115" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-120" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-122" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-131" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-133" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p class="text">
+<a href="Objects-classes.html#autosec-136" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p class="text">
+<a href="Execution-sequence.html#autosec-147" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p class="text">
+<a href="Design-patterns.html#autosec-157" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p class="text">
+<a href="Management-File.html#autosec-161" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p class="text">
+<a href="Introduction.html#autosec-164" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p class="text">
+<a href="Management.html#autosec-167" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p class="text">
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-176" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p class="text">
+<a href="Maintenance-File.html#autosec-179" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-182" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-184" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p class="text">
+<a href="Developer-Manual.html#autosec-188" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-197" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-199" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p class="text">
+<a href="Proxyapps.html#autosec-202" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Driftwave.html#autosec-205" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Diffusion.html#autosec-208" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-1D-SOL.html#autosec-211" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p class="text">
+<a href="FabNEPTUNE.html#autosec-214" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p class="text">
+<a href="Moment-Kinetics.html#autosec-217" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p class="text">
+<a href="NESO.html#autosec-220" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-223" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-225" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p class="text">
+<a href="Acronyms.html#autosec-234" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p class="text">
+<a href="Symbols.html#autosec-242" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p class="text">
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p class="text">
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+<div class="bodyandsidetoc"><div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">main</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Program-Identity.html#autosec-6" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p>
+<a href="Program-Identity.html#autosec-8" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p>
+<a href="Business-Design.html#autosec-17" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p>
+<a href="Requirements-Baseline.html#autosec-20" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Physical-properties-edge-plasma.html#autosec-23" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p>
+<a href="Engineering-Requirements-Baseline.html#autosec-32" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Use-Cases.html#autosec-40" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p>
+<a href="General-Remarks.html#autosec-47" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-50" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-52" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p>
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-95" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p>
+<a href="Software-Engineering-Response.html#autosec-98" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p>
+<a href="Generating-Names-Variables.html#autosec-115" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-120" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-122" class="tocsection" >
+[5.1] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-131" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-133" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p>
+<a href="Objects-classes.html#autosec-136" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p>
+<a href="Execution-sequence.html#autosec-147" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p>
+<a href="Design-patterns.html#autosec-157" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p>
+<a href="Management-File.html#autosec-161" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p>
+<a href="Introduction.html#autosec-164" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p>
+<a href="Management.html#autosec-167" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p>
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-176" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p>
+<a href="Maintenance-File.html#autosec-179" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-182" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-184" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p>
+<a href="Developer-Manual.html#autosec-188" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-197" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-199" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p>
+<a href="Proxyapps.html#autosec-202" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p>
+<a href="Nektar-Driftwave.html#autosec-205" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p>
+<a href="Nektar-Diffusion.html#autosec-208" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p>
+<a href="Nektar-1D-SOL.html#autosec-211" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p>
+<a href="FabNEPTUNE.html#autosec-214" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p>
+<a href="Moment-Kinetics.html#autosec-217" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p>
+<a href="NESO.html#autosec-220" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-223" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-225" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p>
+<a href="Acronyms.html#autosec-234" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p>
+<a href="Symbols.html#autosec-242" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p>
+<a href="Videos.html#autosec-254" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p>
+<a href="Index-0.html#autosec-257" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+ 
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<p>
+<!--................................-->
+<h3 id="autosec-119">Design Justification File</h3>
+<a id="main-autopage-119"></a>
+<a id="main-autofile-12"></a>
+
+<a id="sec:DJF"></a>
+<!--................................-->
+<h4 id="autosec-120"></h4>
+<a id="main-autopage-120"></a>
+
+
+<p>
+The Design Justification File (DJF) is generated and reviewed at all stages of the development and review processes. It contains the documents that describe the trade-offs, design choice justifications, verification plan, validation plan, validation testing
+specification, test procedures, test results, evaluations and any other documentation called for to justify the design of the software. A wide range of ideas for <span class="textsc">NEPTUNE</span> has been considered both by UKAEA and <span
+class="textsc">NEPTUNE</span> grantees, as indicated by the titles in Table&nbsp;<a href="Design-Justification-File.html#tab:tabtit">5.1</a>, and choices described in the DDF will be found supported by by the minutes of meetings which
+form part of many reports. To see what has been considered before, it is recommended that the access-controlled github repository&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@xpndocswebsite">7</a>] be cloned to a local directory and its
+subdirectories reports and reports/ukaea_reports be indexed using software such as DocFetcher&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@docfetcherwebsite">45</a>] or Recoll&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@recollwebsite">46</a>].
+</p>
+<!--................................-->
+<h4 id="autosec-121">UKAEA (Internal) Reports</h4>
+<a id="main-autopage-121"></a>
+
+
+<a id="sec:DJF_internal"></a>
+<!--................................-->
+<h4 id="autosec-122"></h4>
+<a id="main-autopage-122"></a>
+
+
+<figure id="autoid-7" class="table ">
+<table>
+
+<tr>
+<td colspan="5" class="tdp">
+
+
+<div class="figurecaption">
+
+<p>
+Table 5.1:&nbsp;<b><span class="textsf"><span class="textsc">NEPTUNE</span> REPORT TITLES</span></b> For full filenames, prepend the string ‘CD-EXCALIBUR-FMS’. Source is in subdirectory ‘tex’. <a id="tab:tabtit"></a>
+</p>
+</div>
+
+</td>
+</tr>
+
+
+<tr class="hline">
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+<b><span class="textsf">No.</span></b>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">Key</span>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">Title</span>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">Filename</span>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">Source</span>
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+bibtex
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">PDF</span>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+<span class="textsf">.tex file</span>
+</p>
+</td>
+</tr>
+
+
+<tr class="hline">
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0001
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+sciplan<a id="main-autopage-123"></a>ref. [<a href="Index-0.html#LWR-ht-cite.0@sciplan">4</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Fusion Modelling System Science Plan
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0001
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+sciplan/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0004
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y12actsref. [<a href="Index-0.html#LWR-ht-cite.0@y12acts">47</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Fusion Modelling System Activities Y1-2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0004
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0010
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re111bref. [<a href="Index-0.html#LWR-ht-cite.0@y1re111b">48</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">NEPTUNE</span> : Report on Y1 2020 External Workshop (REPORT1)
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0010-M1.1.1b
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0011
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re121ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re121">49</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Year One Summary Report
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0011-1.00-M1.2.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t12/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0012
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re211ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re211">50</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Options for Geometry Representation
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0012-1.00-M2.1.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t21/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0013
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re231ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re231">51</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Options for Particle Algorithms
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0013-1.01-M2.3.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t23/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0014
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re311ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re311">52</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">NEPTUNE</span> : Report on system requirements
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0014-1.00-M3.1.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0015
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re331ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re331">31</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">NEPTUNE</span> : Background information and user requirements for design patterns
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0015-1.00-M3.3.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0016
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re351ref. [<a href="Index-0.html#LWR-ht-cite.0@y1re351">53</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Benchmarking requirements for <span class="textsc">NEPTUNE</span> and available tools
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0016-1.00-M3.5.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0018
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y1re111aref. [<a href="Index-0.html#LWR-ht-cite.0@y1re111a">54</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">NEPTUNE</span> : Report on Y1 2019 Internal Workshop
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0018-M1.1.1a
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+-
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0020
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+charterref. [<a href="Index-0.html#LWR-ht-cite.0@charter">55</a>] EXCALIBUR <span class="textsc">NEPTUNE</span> Charter
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0020
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+chart/rp
+</p>
+</td>
+<td class="tdp" style="border-right:         1px solid black">
+
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0021
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+pappeqs3ref. [<a href="Index-0.html#LWR-ht-cite.0@pappeqs3">44</a>] Equations for EXCALIBUR/<span class="textsc">NEPTUNE</span> Proxyapps
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0021-1.20-M1.2.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+rp21/rpc
+</p>
+</td>
+<td class="tdp" style="border-right:         1px solid black">
+
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0022
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re312ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re312">56</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Report on user frameworks for tokamak multiphysics
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0022-M3.1.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t31/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0023
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re332ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re332">32</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Report on design patterns specifications and prototypes
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0023-M3.3.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t33/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0024
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re313ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re313">57</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Report on user layer design for Uncertainty Quantification
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0024-M3.1.3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t31/rp3
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0025
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2grantref. [<a href="Index-0.html#LWR-ht-cite.0@y2grant">58</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Fusion Modelling use case: contract award recommendation report
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0025-M1.3.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+docx
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0026
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re333ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Design patterns evaluation report
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0026-M3.3.3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t33/rp3
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0027
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y3actref. [<a href="Index-0.html#LWR-ht-cite.0@y3act">59</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Fusion Model SPF Research Plan Y3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0027-M1.5.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y3act/genpdf
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0030
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re141ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re141">60</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Winter 2020-21 Workshop
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0030-M1.4.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t14/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0030a
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2closeref. [<a href="Index-0.html#LWR-ht-cite.0@y2close">61</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> <span class="textsc">NEPTUNE</span> Project analysis to date: close out Y2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0030a-M1.6.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+docx
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0031
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re251ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re251">62</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Select techniques for MOR (Model Order Reduction)
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0031-M2.5.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t25/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0032
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2d33ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d33">29</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Module Guide
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0032-D3.3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+d33/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0033
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2d34ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d34">2</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Development Plan
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0033-D3.4
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+d34/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0034
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re221ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re221">63</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Performance of spectral-hp element methods for the referent plasma models
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0034-M2.2.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t22/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0035
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re241ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re241">64</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Assessment of which UQ methods are required to make <span class="textsc">NEPTUNE</span> software actionable
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0035-M2.4.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t24/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0036
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re271ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re271">65</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Identification of suitable preconditioner techniques
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0036-M2.7.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t27/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0037
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re281ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re281">66</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Selection of the physics models
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0037-M2.8.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t28/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0038
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y2re261ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re261">67</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Identification of a preferred overall numerical scheme
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+0038-M2.6.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+t26/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:            1px solid black; border-right:   1px solid black">
+
+<p>
+0039
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:            1px solid black">
+
+<p>
+y3re321ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re321">68</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Survey of code generators and their suitability for <span class="textsc">NEPTUNE</span>
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0039-M3.2.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t32/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0040
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re51<a id="main-autopage-124"></a>ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re51">69</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Management of external research. Supports UQ Procurement
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0040-M5.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t51/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0041
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re322ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re322">70</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Survey of Domain Specific Languages
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0041-M3.2.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t32/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0042
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re314ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re314">3</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Specification and Integration of Scientific Software
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0042-M3.1.4
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t31/rp4
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0043
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re242ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re242">71</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Selection of techniques for Uncertainty Quantification
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0043-M2.4.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t24/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0044
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re252ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re252">72</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Selection of techniques for Model Order Reduction
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0044-M2.5.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t25/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0045
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re272ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re272">73</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Identification of suitable preconditioner techniques
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0045-M2.7.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t27/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0046
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re212ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re212">74</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Surface mesh generation
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0046-M2.1.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t21/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0047
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re222ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re222">75</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Finite Element Models: Performance
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0047-M2.2.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t22/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0048
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re232ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re232">76</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Options for Particle Algorithms
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0048-M2.3.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t23/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0049
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3d32ref. [<a href="Index-0.html#LWR-ht-cite.0@y3d32">77</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Domain-Specific Language (DSL) and Performance Portability Assessment
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0049-D3.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+d32/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0050
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3d35ref. [<a href="Index-0.html#LWR-ht-cite.0@y3d35">78</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Verification and Benchmarks Methodology
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0050-D3.5
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+d35/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0051
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re61ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re61">79</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Finite Element Models: Complementary Activities I
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0051-M6.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t61/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0052
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re71ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re71">80</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Literature review for Call T/AW086/21: Mathematical Support for Software Implementation
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0052-M7.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t71/report
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0053
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re72ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re72">81</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Code coupling and benchmarking
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0053-M7.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t72/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0054
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y2d31ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d31">82</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Software Specification Web-site
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0054-D3.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+d31/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0055
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re181ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re181">1</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Report of <span class="textsc">NEPTUNE</span> Workshop 7 October 2021
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0055-M1.8.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t18/rp1
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0056
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3grantref. [<a href="Index-0.html#LWR-ht-cite.0@y3grant">83</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Fusion Modelling use case: contract award recommendation report
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0056-M1.7.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+docx
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0057
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re262ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re262">84</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Fluid Referent Models
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0057-M2.6.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t26/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0058
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re282ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re282">85</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Technical report on Physics model selection
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0058-M2.8.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t28/rp2
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0059
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y45actref. [<a href="Index-0.html#LWR-ht-cite.0@y45act">86</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> -Fusion Model System Y4-Y6
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+0059-M1.9.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y45act/genpdf
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0060
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3closeref. [<a href="Index-0.html#LWR-ht-cite.0@y3close">87</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Analysis to Date: Close out Y3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0060-M1.10
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t110/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0061
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re42ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re42">88</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+2-D Model of Neutral Gas and Impurities
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0061-M4.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t42/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0062
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re43ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re43">89</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+High-dimensional Models Complementary Actions 2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0062-M4.3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t43/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0063
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re52ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re52">90</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Selection of techniques for Uncertainty Quantification
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0063-M5.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t52/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0064
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re62ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re62">91</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Finite Element Models Complementary Actions 2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0064-M6.2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t62/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0065
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re73ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re73">92</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Software Support Complementary Actions 2
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0065-M7.3
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t73/rpc
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td class="tdp tvertbarl tvertbarr" style="border-left:           1px solid black; border-right:   1px solid black">
+
+<p>
+0066
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+y3re41ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re41">93</a>]
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right: 1px solid black">
+
+<p>
+Support High-dimensional Procurement
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+0066-M4.1
+</p>
+</td>
+<td class="tdp tvertbarr" style="border-right:           1px solid black">
+
+<p>
+t41/rpc
+</p>
+</td>
+</tr>
+
+
+<tr class="hline">
+<td class="tdp">
+
+</td>
+<td class="tdp">
+
+</td>
+<td class="tdp">
+
+</td>
+<td class="tdp">
+
+</td>
+<td class="tdp">
+
+</td>
+</tr>
+
+</table>
+
+</figure>
+<!--................................-->
+<h5 id="autosec-125">Brief Survey of Reports to end FY 2020/21</h5>
+<a id="main-autopage-125"></a>
+
+
+<a id="sec:summary"></a>
+
+<p>
+For Activity 2, UKAEA produced three milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0012-M2.1.1 - Options for Geometry Representation
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0013-M2.3.1 - Options for Particle Algorithms
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0031-M2.5.1 - Select techniques for MOR (Model Order Reduction)
+</p>
+</li>
+</ul>
+
+<p>
+together with the Activity&nbsp;1 Report (’Equations document’)<br />
+CD/EXCALIBUR-FMS/0021-1.00-M1.2.1 - Equations for <span class="textsc">NEPTUNE</span>/<span class="textsc">E</span>x<span class="textsc">CALIBUR</span> proxyapps
+</p>
+
+<p>
+The first two (Reports 12 and 13) describe the problems presented by the fusion use case in respect of geometry and strong magnetic field in the first, and of generally but not invariably low collisionality of the edge plasma in the second. They set out issues that
+needed to be urgently addressed and possible lines of research. Report&nbsp;31 discusses in depth a wide range of options for research into Model Order Reduction, drawing attention to the possibility of producing scalable algorithms by borrowing ideas from the
+field of Data Assimilation. Report&nbsp;21 sets out equations to be studied using the first six proxyapps, beginning with relatively simple models for anisotropic transport and advancing to complex models of plasma-neutral interaction.
+</p>
+
+<p>
+For Activity 3, UKAEA produced six milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0022-M3.1.2 - User frameworks for tokamak multiphysics
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0024-M3.1.3 - User layer design for uncertainty quantification
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0023-M3.3.2 - Design patterns specifications and prototypes
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0026-M3.3.3 - Design patterns evaluation
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0032-D3.3 - Module Guide
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0033-D3.4 - Development Plan
+</p>
+</li>
+</ul>
+
+<p>
+and there were three earlier milestone reports from FY2019/20, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0014-M3.1.1 - <span class="textsc">NEPTUNE</span>: Report on system requirements
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0015-M3.3.1 - <span class="textsc">NEPTUNE</span>: Background information and user requirements for design patterns
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0016-M3.5.1 - Benchmarking requirements for <span class="textsc">NEPTUNE</span> and available tools
+</p>
+</li>
+</ul>
+
+<p>
+These reports are concerned principally with assessing the state-of-the-art in software design with a particular emphasis on design of scientific software, and of course paying attention to Exascale applicability. Selected textbooks and the wider literature were
+examined for the factors important for successful software developments. This examination threw up the importance of (1) software frameworks described in Report&nbsp;22 as an integrated set of software artefacts that collaborate to provide a reusable
+architecture for a family of related applications, (2) software layering in Report&nbsp;24 as a more widely useful technique than just one enabling ‘separation of concerns’, and (3) design patterns in Reports&nbsp;15, 23 and&nbsp;26 as an approach to reusing
+and communicating reliable software structures. The importance of building a community and the techniques for doing so were also described in Report&nbsp;22.
+</p>
+
+<p>
+Report&nbsp;32 describes how the concept of module or class should be integrated into a structure of frameworks, layers and design patterns, so that a large, complex code can be partitioned into manageable segments. The utility of the Unified Modeling
+Language (UML&nbsp;2) to describe not just software structure, but also code use in a wider based engineering structure, through model-based systems engineering (MBSE) was noted. Report&nbsp;33 attempts a preliminary synthesis of the material presented
+in the previous Activity&nbsp;3 reports into a plan for the <span class="textsc">NEPTUNE</span> software life-cycle, with focus on the subdivision of the plan into documents expected to be arranged as a web-site. Report&nbsp;24 also includes an
+introduction to a wide range of uncertainty quantification&nbsp;(UQ) techniques.
+</p>
+<!--................................-->
+<h5 id="autosec-126">Brief Survey of Reports FY 2021/22</h5>
+<a id="main-autopage-126"></a>
+
+
+<a id="sec:summary22"></a>
+
+<p>
+For Deliverable 4, UKAEA produced three milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0066-M4.1 Support High-dimensional Procurement
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0061-M4.2 2-D Model of Neutral Gas and Impurities
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0062-M4.3 High-dimensional Models Complementary Actions 2
+</p>
+</li>
+</ul>
+
+<p>
+The first (Report&nbsp;66) supports the usefulness of the call for development of higher dimensional elements, suitable for solution of a continuum kinetic model of plasma, by demonstrating Nektar++ solution of a&nbsp;\(1d1v\) model. The second
+(Report&nbsp;61) considers the use of the Julia language as a means to coding particle models of plasma and neutral gas at HPC, with broadly favourable conclusions. The third and final (Report&nbsp;62) outlines critical physics expected to require treatment
+using particle-based and/or Monte-Carlo methods. Its principal content examines how best to treat inter-processor communication of particle-based information at the Exascale. There is also a brief description of a proxyapp for the exploration of
+\(1d1v\)&nbsp;solution by particles.
+</p>
+
+<p>
+For Deliverable 5, UKAEA produced two milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0040-M5.1 Management of external research. Supports UQ Procurement
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0063-M5.2 Selection of techniques for Uncertainty Quantification
+</p>
+</li>
+</ul>
+
+<p>
+The first (Report&nbsp;40) begins with a reminder of the high level of “noise" in tokamak data, and the kind of comparisons with simulation required. It is pointed out that although spline interpolants are provably optimal, they may perform poorly for classes of
+functions relevant to the tokamak edge. The main content is the use of the VECMA toolkit for UQ of BOUT++ and Nektar++ for two 2-D fluid dynamical models. There is also derivation of simplified model by dimension reduction, by integration in one
+coordinate and/or by use of the Lie derivative. The report finishes with a summary of UQ-related PhD projects sponsored by <span class="textsc">NEPTUNE</span>.
+</p>
+
+<p>
+The second (Report&nbsp;63) pursues the use of splines for <span class="textsc">NEPTUNE</span>, indicating utility in the case of noisy data, and explores the use of Gaussian processes, including derivation of key formulae, and highlighting their
+strengths relative to splines. There is a brief comparison with neural network surrogates in an annex.
+</p>
+
+<p>
+For Deliverable 6, UKAEA produced two milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0051-M6.1 Finite Element Models: Complementary Activities I
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0064-M6.2 Finite Element Models Complementary Actions 2
+</p>
+</li>
+</ul>
+
+<p>
+The first (Report&nbsp;51) details the application of the Nektar++ spectral / hp finite-element software to the classic problem of two-dimensional vertical natural convection - physically a model for the heat transfer that takes place within the cavity of a
+double-glazing unit and also relevant to heat transport in a plasma. A brief survey of results from the literature is followed by a numerical investigation showing transitions between conducting, laminar convective, and turbulent regimes. Small extensions to the
+existing Nektar++ framework, aimed at extracting engineering-relevant quantities such as the maximum near-wall temperature, are given. The second (Report&nbsp;64) builds on these results with a quantitative comparison to the well-established MIT numerical
+convection benchmark and also the reproduction of some detailed flow-fields from a recent publication; excellent agreement between results from Nektar++ and those from the literature is obtained in both cases. Also included in this report is a preliminary study
+of a numerical implementation of discrete exterior calculus with a demonstration of spectral convergence for a simple test problem, work motivated by the favourable properties of such schemes when coupled to particle kinetic codes.
+</p>
+
+<p>
+For Deliverable 7, UKAEA produced three milestone reports, namely
+</p>
+<ul style="list-style-type:none">
+
+<li>
+<p>
+• CD/EXCALIBUR-FMS/0052-M7.1 Literature review for Call T/AW086/21: Mathematical Support for Software Implementation
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0053-M7.2 Code coupling and benchmarking
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+• CD/EXCALIBUR-FMS/0065-M7.3 Software Support Complementary Actions 2
+</p>
+</li>
+</ul>
+
+<p>
+The first of these (Report&nbsp;52) is a literature review performed to support the Call T/AW086/21: Mathematical Support for Software Implementation. It describes recent advances in algorithm development for hyperbolic and elliptic equations. In particular,
+the report describes developments in IMEX schemes, Deferred Correction methods, Asymptotic Preserving (AP) methods, and Variable Stepsize, Variable Order (VSVO) timestepping for hyperbolic problems, and AP methods and nested solvers for elliptic
+problems.
+</p>
+
+<p>
+The second (Report&nbsp;53) provides a commentary on the present state of Exascale hardware and software, and discusses the available tools and technologies available for benchmarking and code coupling. The hardware and software landscape of HPC
+systems is becoming increasing diverse, with a proliferation of vendors and different technologies. To perform well at Exascale, software will likely need be able to target multiple heterogeneous systems. In such an environment, it is crucial for developers to have
+access to benchmarking infrastructure to measure performance and highlight regressions. This environment and the separation of concerns approach taken to navigate it necessitates the development of discrete proxyapps which will need to be drawn together into
+a single software suite. Thus the issue of code coupling will also be important at Exascale.
+</p>
+
+<p>
+The final (Report&nbsp;65) describes aspects of coordination within the <span class="textsc">NEPTUNE</span> project not covered in previous reports, namely, the development of a GitHub repository for infrastructure code and project planning; the
+development of a project website for knowledge transfer within <span class="textsc">NEPTUNE</span> ; and a description of collaborations arising from <span class="textsc">NEPTUNE</span> -related interactions, including the Fusion Modelling
+Use Case working group established create a connection between Project <span class="textsc">NEPTUNE</span> and the wider <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> programme.
+</p>
+<!--................................-->
+<h5 id="autosec-127">Parallelism Abstraction</h5>
+<a id="main-autopage-127"></a>
+
+
+<a id="sec:parabstr"></a>
+
+<p>
+To exploit parallelism most effectively on any given architecture, data must be arranged in arrays to which the same operations can be applied to many&nbsp;(\(N_{adj}\)) adjacent elements. The arrangement of data describing, say, the magnetic field or a
+particle distribution function can nonetheless make a big difference to ultimate speed of execution which can depend sensitively on&nbsp;\(N_{adj}\). Thus a good API could be defined at the array level, taking away from the developer the decision as to
+whether the data is arranged as \(n_x \times n_y \times n_z\) or \(n_z \times n_x \times n_y\), ie. as to which array index runs the fastest. Further, extremely large first indices&nbsp;\(n_x\) might for example be factored so that the first index is of
+order&nbsp;\(64\) to exploit caching, whereas the final index might be used to map array contents to different nodes of the machine.
+</p>
+<pre class="verbatim">
+Address of array
+General indexing (start at 0)
+I(0)*INC(0)+I(1)*INC(1)+I(2)*INC(2)+I(3)*INC(3)+...
+Suppose I index from 0 to N0-1
+J index from 0 to N1-1
+K index from 0 to N2-1
+L index from 0 to N3-1
+Address :
+(I,J,K,L,...), I=0,N(0), J=0,N(1), K=0,N(2), L=0,N(3)
+Set INC(0)=1, INC(1)=N0, INC(2)=N0*N1, INC(3)=N0*N1*N2
+N(0)=N0-1, N(1)=N1-1, N(2)=N2-1, N(3)=N3-1
+Address :
+(L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3)=N0*N1*N3
+N(0)=N3-1, N(1)=N0-1, N(2)=N1-1, N(3)=N2-1
+(0123)->(3012) is permutation
+integer value 1, labels 3, 30, 301,.. give increments
+Set N(i)=1 to suppress dependence on index i
+
+</pre>
+
+<p>
+In a physics modelling code, it seems reasonable that physics should have a say as to how the data is arranged, with the special implication that all information relating to a particular position in space should be as close together as possible. However, particularly
+for edge physics, this may lead to conflict with an array level API. There are two main problems, namely that at a given spatial point (1) some species may be represented as particles and others as finite elements and some as both, and (2) not all species need be
+present at a given point. The issue at (1) arises when the species collisionality varies so that a fluid and a high-dimensional representation that accounts more accurately for non-Maxwellian effects are needed in different spatial regions, with the different
+representations allowed to overlap. Situation&nbsp;(2) may occur with a neutral species that becomes fully ionised with distance into the plasma, or when say singly-charged ions of a certain species are only present in the divertor. The problem is intensified when
+\(p\)-adaptive finite elements are used such that adjacent elements may have different orders of polynomial discretisation. It may also be desirable when working with ensembles to have samples from different solutions but for the same spatial region to be
+physically close together in storage.
+</p>
+
+<p>
+The plasma physical constraint may be met by domain decomposition in position space, so that within each subdomain, fluid species can be represented by one set of arrays, one per species, and particles or other high-dimensional representations as other set(s)
+of arrays. The optimality of this arrangement, and certainly the size of subdomain, depends on machine architecture. For example, on a node with both conventional CPU cores and a GPU, it might be good to store finite elements adjacent to the CPU and use
+the GPU for particles. Another option might be to take the localisation concept to its extreme, and arrange together quantities that are close in the 6-D phase velocity and position space, perhaps using an hierarchy of elements in velocity space. Fluid species
+might be represented by pointers in these elements, without too much wastage of store, even if there is only one species that requires a high-dimensional representation.
+</p>
+
+<p>
+Since the main work of a <span class="textsc">NEPTUNE</span> solver is expected to be the numerical inversion of a large matrix to obtain field values at a new time or iteration, there is even a question mark over how much weight should be attached to
+the localisation constraint. At the Exascale, the matrix and especially its preconditioner must be virtual in the sense that it will be too large to store all the coefficients simultaneously, given the size of field discretisation. Hence the ease of computation of the
+coefficients of the matrix may be more important for performance.
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+</body>
+</html>

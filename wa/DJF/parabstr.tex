@@ -1,0 +1,71 @@
+%\subsection{Parallelism Abstraction}\label{sec:parabstr}
+To exploit parallelism most effectively on any given architecture,
+data must be arranged in arrays to which the same operations
+can be applied to many~($N_{adj}$)  adjacent elements. The arrangement of data describing, say, the
+magnetic field or a particle distribution function can nonetheless make a big difference
+to ultimate speed of execution which can depend sensitively on~$N_{adj}$.
+Thus a good API could be defined  at the array level, taking away from the developer
+the decision as to whether the data is arranged as $n_x \times n_y \times n_z$
+or $n_z \times n_x \times n_y$, ie.\ as to which array index runs the fastest. 
+Further, extremely large first indices~$n_x$
+might for example be factored so that the first index is of order~$64$ to exploit caching,
+whereas the final index might be used to map array contents to different nodes of the machine.
+
+\begin{verbatim}
+Address of array
+General indexing (start at 0)
+I(0)*INC(0)+I(1)*INC(1)+I(2)*INC(2)+I(3)*INC(3)+...
+Suppose I index from 0 to N0-1
+J index from 0 to N1-1
+K index from 0 to N2-1
+L index from 0 to N3-1
+Address :
+(I,J,K,L,...), I=0,N(0), J=0,N(1), K=0,N(2), L=0,N(3)
+Set INC(0)=1, INC(1)=N0, INC(2)=N0*N1, INC(3)=N0*N1*N2
+N(0)=N0-1, N(1)=N1-1, N(2)=N2-1, N(3)=N3-1
+Address :
+(L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3)=N0*N1*N3
+N(0)=N3-1, N(1)=N0-1, N(2)=N1-1, N(3)=N2-1
+(0123)->(3012) is permutation
+integer value 1, labels 3, 30, 301,.. give increments
+Set N(i)=1 to suppress dependence on index i
+\end{verbatim}
+
+In a physics modelling code, it seems reasonable that physics should have a say as to how 
+the data is arranged, with the special implication that all information relating to a particular position in
+space should be as close together as possible. However, particularly for edge physics, this
+may lead to conflict with an array level API. There are two main problems, namely that
+at a given spatial point (1) some species may be represented as particles and others
+as finite elements and some as both, and (2) not all species need be present at a given point.
+The issue at (1) arises when the species collisionality varies so that a fluid and a 
+high-dimensional representation that accounts more accurately for non-Maxwellian effects are needed in
+different spatial regions, with the different representations allowed to overlap. Situation~(2)
+may occur with a neutral species that becomes fully ionised with distance into the plasma,
+or when say singly-charged ions of a certain species are only present in the divertor.
+The problem is intensified when $p$-adaptive finite elements are used such that adjacent
+elements may have different orders of polynomial discretisation. It may also be desirable
+when working with ensembles to have samples from different solutions but for the same spatial region
+to be physically close together in storage.
+
+The plasma physical constraint may be met by domain decomposition in position space,
+so that within each subdomain,
+fluid species can be represented by one set of arrays, one per species, and particles
+or other high-dimensional representations as other set(s) of arrays. The optimality of
+this arrangement, and certainly the size of subdomain, depends on machine architecture.
+For example, on a node with both conventional CPU cores and a GPU, it might be good to store finite
+elements adjacent to the CPU and use the GPU for particles. Another option
+might be to take the localisation concept to its extreme, and arrange together quantities that are close
+in the 6-D phase velocity and position space, perhaps using an hierarchy of elements in velocity space.
+Fluid species might be represented by pointers in these elements, without too much wastage
+of store, even if there is only one species that requires a high-dimensional representation.
+
+Since the main work of a \nep\ solver is expected to be the numerical inversion of a
+large matrix to obtain field values at a new time or iteration, there is even a question
+mark over how much weight should be attached to the localisation constraint. At the Exascale,
+the matrix and especially its preconditioner must be virtual in the sense that it will
+be too large to store all the coefficients simultaneously, given the size of field discretisation.
+Hence the ease
+of computation of the coefficients of the matrix may be more important for performance. 
+
+
+

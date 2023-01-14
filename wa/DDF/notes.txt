@@ -1,0 +1,22 @@
+\begin{verbatim}
+Component
+Object
+
+Address of array
+General indexing (start at 0)
+I(0)*INC(0)+I(1)*INC(1)+I(2)*INC(2)+I(3)*INC(3)+...
+Suppose I index from 0 to N0-1
+J index from 0 to N1-1
+K index from 0 to N2-1
+L index from 0 to N3-1
+Address :
+(I,J,K,L,...), I=0,N(0), J=0,N(1), K=0,N(2), L=0,N(3)
+Set INC(0)=1, INC(1)=N0, INC(2)=N0*N1, INC(3)=N0*N1*N2
+N(0)=N0-1, N(1)=N1-1, N(2)=N2-1, N(3)=N3-1
+Address :
+(L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3)=N0*N1*N3
+N(0)=N3-1, N(1)=N0-1, N(2)=N1-1, N(3)=N2-1
+(0123)->(3012) is permutation
+integer value 1, labels 3, 30, 301,.. give increments
+Set N(i)=1 to suppress dependence on index i
+\end{verbatim}

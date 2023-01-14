@@ -1,0 +1,167 @@
+%\section{Technical Specification}\label{sec:TS_MGT}
+
+\subsection{Code licence and availability} \label{sec:lic}
+
+Code should be made available to collaborators at the earliest opportunity, to maintain
+close alignment between groups. 
+
+\begin{itemize}
+\item To minimise friction and unnecessary legal restrictions on combining
+code components, a common, MIT licence has been adopted. This may be regarded 
+as equivalent to the BSD3 licence in the \nep \ Charter, see~\Sec{charter}.
+
+\item
+Code development should be carried out in public
+repositories. The benefits of minimising delay to code use, feedback
+and peer review, outweigh any potential for embarrassment or code misuse.
+\end{itemize}
+
+\subsection{Code style} \label{sec:style}
+
+There are many different code styles, each of which have their
+proponents, and can be debated at length.  While everyone has their
+own favourite style, it seems likely that the choice of style makes little
+difference to objective quality or productivity.  Anecdotal experience
+and experience from the gaming world in developing large, complicated packages
+(eg.\ Gregory~\cite[\S\,3]{gregory}),
+indicate however that it is very important that there is a well-defined
+code style and that developers stick to it, since a mixture of
+styles in a code base adds unnecessary mental load and overhead.
+The ultimate choice is down to the project Lead, under advice from
+major code contributors, leading websites and textbooks, eg.\ in the
+case of the C++ language, the C++ core guidelines~\cite{cppguidelines}
+and more compactly Stroustrop's ``Tour of of C++"~\cite{stroustroptour}.
+ 
+The following style choices have been made and efforts will be made to enforce them
+in \nep \ repositories.
+\begin{enumerate}
+\item Formatting of C++ and Python will follow the style used by Nektar++
+\begin{itemize}
+\item Developer tools: Code formatting tools should be used to
+automatically format code.  For C++ \T{clang-tidy}~\cite{clang-tidywebsite}
+should  be used while, and for Python \T{Black}~\cite{blackwebsite}
+is recommended. Similar tools should be chosen
+for any other languages adopted by the project.
+
+\item Enforcement: Tests run on pull requests and code pushes to the
+shared repository should include code formatting: The automated
+formatter is applied to the code, and if the output is different
+from the input then the code is incorrectly formatted, and the test
+fails.
+
+\item Documentation: \LaTeX \ or Markdown should be used
+and conventions enforced regarding a maximum line length of $120$~characters,
+restriction to ASCII character set, abbreviations, hyphenation,
+capitalisation, minimal use of~`z', and use of fonts to denote code names.
+Usage of \F{LaTeX2HTML} implies a restricted set of packages.
+
+\end{itemize}
+
+\item Naming 
+
+Naming of code components (modules, classes, functions, variables
+etc.) is less easy to enforce automatically than formatting, but is
+arguably essential for \nep, because of the complexity of the physical
+processes to be modelled.
+Widely applicable good practices to be adopted are as follows:
+\begin{itemize}
+\item Consistency: Whatever convention is used, stick to it.
+\item Be descriptive: Names should be meaningful, not cryptic, and need
+not be very short, although brevity consistent with frequency of usage
+is recommended.
+\begin{itemize}
+\item Variable names, used only on input, might consist of $3-4$ words primarily describing
+the variable, using `pot-hole' convention
+\item Loop or indexing variables, might consist of single characters, eg.\ \T{i}, \T{j}, \T{k}
+\item Mathematical symbols, eg.\ those defined in \Sec{symbol}, should be converted 
+from \LaTeX \ into variable names using the conventions of \Sec{conv}.
+\item Where mathematical symbols are converted for use in larger expressions, 
+the mathematical expression
+should be in the documentation within or linked to  the code.
+\end{itemize}
+\item Generally prefer nouns for variables, and verbs for functions
+\end{itemize}
+%Some code styles for C++ (eg.\ BOUT++, adapted from LLVM and with features of the 
+%the JSF coding style~\cite[\S\,6.6]{pittwhitely}), use different cases
+%for different types of things: \T{snake\_case} for variables, \T{camelCase}
+%for functions/methods, and \T{PascalCase} for classes and types.
+Given a need to mix with Object Fortran, which is not case-sensitive,
+the `pot-hole' convention for naming C++ variables, ie.\ separating
+name elements by underscores, is recommended.
+
+Occasionally a convention is used where the name includes a part which
+indicates the type of the variable. For example, the JSF style for C++~\cite[\S\,6.6]{pittwhitely}
+recommends that pointer names begin~`p\_' and that private or protected (`member') variables
+should have names beginning with~`m'.
+In general naming conventions are probably not
+essential, since the type can be read in the code, and modern IDEs will
+easily provide this information to the developer.
+Nonetheless, there is no objection to employing a convention, and \nep \
+recommend the following one for coders who wish to do so.
+
+For C++, based on the recommendations of the book ``Professional C++" (eg.\
+ref~\cite[\S\,7]{solterkleper}, the following prefix strings should be employed:
+`m\_' for  member (particularly useful for indicating scope),
+`p\_' for pointer, `s\_' for static, `k\_' for constant,
+`f\_' for flag (Boolean value),
+`d\_' for buffers/pointers on an accelerator device,
+and aggregations thereof, eg.\ `ms\_variable'.
+Use of global variables is deprecated, so the `g\_' prefix should not be used.
+
+For Object Fortran naming conventions, Arter~et~al~\cite{fprog} codifies best practice.
+%More useful is a
+%means of instantly identifying the scope of the variable, ie.\ non-local (default) or
+%local (prefix `z'),  and whether its value is variable (default) or fixed (static~C++,
+%prefix `k'). 
+It may also be useful to reserve the single letters~`i', `j', `k' etc. for the
+names of loop-count variables. Loop counting should start at unity, consistent
+with everyday practice, unless there are good reasons for starting at zero
+or using offset values. % (which should normally start with a value of unity).
+
+\end{enumerate}
+
+\subsection{Programming languages} \label{sec:lang}
+
+A small set of ``approved" languages is to be used in the project
+consistent with the rule of `two' described in \Sec{MGT_intro}.
+This rule covers the high performance code itself and
+also the input/output, testing scripts and other infrastructure included in
+the code repository.
+
+Important factors in the choice made included:
+\begin{enumerate}
+\item Widespread use. It must be possible for several project members at any one time
+to understand the language, and be able to maintain the code.
+\item Stability. The code developed will potentially have a long life-span, 
+and there are insufficient resources to continually update code to respond to
+upstream changes.
+\item Previous usage in HPC and scientific computing. There should be an
+existing ecosystem of code packages, tutorials, and potential users.
+\end{enumerate}
+The above considerations implied that the following options were extensively discussed.
+\begin{itemize}
+\item C++14, Fortran (eg.\ 2008), C and Python all satisfy the above criteria. 
+For configuration, CMake, Autotools and Bash also qualify.
+\item SYCL (building on C++) and Julia are both less widely adopted so
+far, but both appear to be heading towards satisfying the above
+criteria and  might be considered.
+\end{itemize}
+
+The recommended languages are
+\begin{itemize}
+\item As higher level DSL : Python and Julia
+\item For lower level HPC compatibility/DSL: Kokkos and SYCL
+\item General scientific work : the latest versions of C++ and (Object) Fortran, provided
+they are compatible with pre-existing packages and reliable compilers are available
+(eg.\ as of mid-2021 usage of SYCL implies a need for C++17.)
+\item For code compilation and linking etc.\ : CMake
+\end{itemize}
+
+Other languages may have technical merits in particular areas, or are
+being adopted outside scientific computing but not to a significant
+degree within the community.  Use of these languages should be limited
+to isolated experiments, rather than core components. If shown to be
+useful in these experiments, to a level which is worth the additional
+overhead and risk of maintaining it, then the Lead should consider
+expanding the list of approved languages, consistent with the `rule of two'.
+

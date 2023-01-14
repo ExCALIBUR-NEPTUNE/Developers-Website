@@ -1,0 +1,60 @@
+\newsection{Introduction}{sec:MGT_intro}
+Webpages on this site concerning management details are taken from the
+report~\cite{y3re314}, based largely on the work of Ben Dudson, which
+presents guidance concerning the mechanics of an opensource development
+by a community distributed  across different sites and organisations,
+intended to produce software intended for widespread long-term usage.
+Parts of ref~\cite{y3re314} relate more to 
+the technical specification~(TS) and are reproduced in \Sec{TS_sw_response},
+another part concerns operational aspects~(OP), see \Sec{OP_MGT}.
+Its recommendations are broadly consistent with those laid out by Bungarth \&
+Heister~\cite{Ba13What}, and in particular those for the usage of \T{git}
+conform to practice recommended by the ITER organisation.
+This document is not the place for a general discussion of software engineering practices,
+and does not cover code coupling, both of which topics are discussed in the open literature,
+see in particular Lawrence~et~al~\cite{La18Cros} for HPC software engineering and
+Belete~et~al~\cite{Be17over} for code coupling,
+also see other \nep \ reports, particularly refs~\cite{y2re312,y2re333,y3re72}.
+
+Ref~\cite{y3re314} assumes that all the community has signed up to a ``Charter"
+which for \nep \ appeared as report~\cite{charter}, reproduced in \Sec{charter}.
+The guidance\cite{y3re314}  includes  important issues that need to be agreed as early as possible.
+%drawing on the ``Development Plan" document~\cite{y2d34} and on
+These include practical points concerning frequency of meetings, code review etc.,
+designed to ensure efficient collaboration between a wide group of project partners. 
+%It is important to distinguish use-cases. There appear to be three
+%use-cases worth treating separately:
+%\begin{enumerate}
+%\item code produced for immediate and local use only, eg\. to test out an idea or to illustrate a
+%scientific paper.
+%\item software for long-term use, where execution speed is time-critical, eg\. for real-time
+%control or inter-shot discharge analysis.
+%\end{enumerate}
+%This note relates most closely to the third case.
+The guidance document\cite{y3re314} also seeks not merely to prescribe, but to
+give compelling arguments for the choices made in respect of guidelines.
+Acknowledging the possibility of diagreements, it states that efforts will be made to ensure
+consensus or at least agreement between the two most affected project partners
+on any decisions taken. However, in the event of continuing disagreement, the technical
+leader or `Lead' for the project will ultimately decide on the basis of technical
+evidence presented, subject to ratification by higher management.
+
+One general rule is always to allow two options (`rule of two'), intended to enable exploitation 
+and possible incorporation of any promising new software (eg.\ package, library or language)
+or relevant algorithm which emerges during the course of the project.
+Since however, each option doubles the potential cost of developing and maintaining software,
+a good case must be made to the Lead for a new option, and the innovator include provision
+for retiring one of the existing options should there already be two. Implicitly
+thereby, as discussed at the end of \Sec{lang}, a third exploratory option is also allowed.
+
+A similar recommendation (rather than rule) regarding both code and documentation is to
+`write once, re-use many times'.
+This to a large extent explains a preference for \F{LaTeX2HTML} as enabling
+multiple reuse of the same text and mathematical expressions in different
+documents and on different webpages, via use of \LaTeX \ input command.
+
+
+%The guidelines for a development are set out in the body of this document in an
+%arrangement consistent with the concordance, such that separate sections
+%correspond to the different documents/web-pages required.
+

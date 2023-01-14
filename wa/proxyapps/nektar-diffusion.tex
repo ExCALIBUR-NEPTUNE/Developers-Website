@@ -1,0 +1,24 @@
+\newsection{Nektar-Diffusion}{sec:NektarDiffusion}
+Proxyapp capable of simulating 2D diffusion with arbitrary symmetric diffusivity tensor, based on Nektar++.  The
+equation solved, for diffusivity tensor $D$, temperature T (in the case where the diffusing quantity is heat), and 
+time $t$, is
+
+\begin{equation}
+\frac{\partial T}{\partial t} = \nabla \cdot \left ( D  \nabla T \right ). 
+\end{equation}  
+
+The problem is motivated by the fact that a characteristic of magnetically-confined fusion devices is that diffusive 
+transport is strongly anisotropic, with heat transport in the direction of the magnetic field lines being favoured 
+(ratios in the components of the diffusivity tensor of up to approximately $10^6$ are physically-motivated).
+
+A typical scenario for the proxyapp is a domain containing linear, parallel magnetic fieldlines making 
+angle $\theta$ with the horizontal axis, with a heat source implemented as a Dirichlet boundary condition on the 
+left-hand-side vertical boundary, resulting in the diffusive transfer of heat to the lower domain boundary.  The 
+interest is in small incident angles as these represent configurations in which the power incident on the wall of a 
+nuclear fusion reactor (and hence the likelihood of damage) is minimized.
+
+A number of examples are included, including time-dependent and steady-state problems in the type of geometry
+ described above.  There is also an example of 2D semi-annulus in which the field-lines are circular arcs.  See the 
+internal report \cite{y3re222} for an presentation of the relevant outputs.
+
+Nektar-Diffusion is publicly available at \url{https://github.com/ExCALIBUR-NEPTUNE/nektar-diffusion}.
