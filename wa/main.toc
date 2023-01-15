@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1.1}Executive summary}{5}{section.1.1}%
 \contentsline {subsection}{Further information}{5}{section*.2}%
 \contentsline {subsection}{Benefits of community membership}{5}{section*.3}%
-\contentsline {subsection}{Convention on use of IETF Keywords}{6}{section*.4}%
+\contentsline {subsection}{Convention on use of IETF Keywords (not yet enforced)}{6}{section*.4}%
 \contentsline {chapter}{\numberline {2}Business Design}{8}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Requirements Baseline}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Physical properties of the edge plasma}{11}{section.3.1}%
