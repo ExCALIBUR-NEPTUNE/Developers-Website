@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.14)  14 JAN 2023 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.15)  15 JAN 2023 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1780,7 +1780,7 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
 (Font)              Font shape `T1/lmr/m/sc' tried instead on input line 174.
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 181.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 178.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
@@ -2046,11 +2046,11 @@ File: "lwarp_mathjax.txt"  (verbatim)
 (./main_html.sidetoc) [256] (./IND/IND.tex)) [257] (./metackn.tex) [258]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 200.
+(Font)              using `T1/lmr/m/scsl' instead on input line 199.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 200.
+(Font)              using `T1/lmr/m/scsl' instead on input line 199.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2088,7 +2088,7 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (260 pages, 963695 bytes).
+Output written on main_html.pdf (260 pages, 963636 bytes).
 PDF statistics:
  956 PDF objects out of 1000 (max. 8388607)
  646 compressed objects within 7 object streams

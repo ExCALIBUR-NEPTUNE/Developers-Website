@@ -162,8 +162,8 @@
       \strng{authornamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
       \strng{authorfullhash}{9a65604a77c27903541b0a5d6762207d}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -175,8 +175,8 @@
       \field{dateera}{ce}
     \endentry
     \entry{exch+eswebsite}{misc}{}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://excalibur.ac.uk/excalibur}}
       \field{note}{Accessed: May 2021}
@@ -184,8 +184,8 @@
       \field{year}{2021}
     \endentry
     \entry{MITlicense}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://en.wikipedia.org/wiki/MIT_License}}
       \field{note}{Accessed: January 2022}
@@ -193,8 +193,8 @@
       \field{year}{2022}
     \endentry
     \entry{xpndocswebsite}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents}}
       \field{note}{Accessed: March 2021}
@@ -202,8 +202,8 @@
       \field{year}{2021}
     \endentry
     \entry{xpntexwebsite}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/tree/main/tex}}
       \field{note}{Accessed: January 2022}
@@ -211,8 +211,8 @@
       \field{year}{2022}
     \endentry
     \entry{rfc2119}{misc}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ietf.org/rfc/rfc2119.txt}}
       \field{note}{Accessed: March 2021}
@@ -238,16 +238,16 @@
       \strng{authorbibnamehash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
       \strng{authornamehash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
       \strng{authorfullhash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Managing Successful Projects with PRINCE2, 6th Edition}}
       \field{year}{2017}
     \endentry
     \entry{prince2wiki}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://en.wikipedia.org/wiki/PRINCE2}}
       \field{note}{Accessed: January 2022}
@@ -501,8 +501,8 @@
       \strng{authorbibnamehash}{8245ec49e200af89a2119903b3e871de}
       \strng{authornamehash}{8245ec49e200af89a2119903b3e871de}
       \strng{authorfullhash}{8245ec49e200af89a2119903b3e871de}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Plasma Confinement}
@@ -704,8 +704,8 @@
       \strng{authornamehash}{bda833f3d19a05e21d8d928d371c0b58}
       \strng{authorfullhash}{bda833f3d19a05e21d8d928d371c0b58}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{5}
@@ -1072,8 +1072,8 @@
       \strng{editorbibnamehash}{c39908f2f4422cca6524aa8e9a1ee921}
       \strng{editornamehash}{c39908f2f4422cca6524aa8e9a1ee921}
       \strng{editorfullhash}{c39908f2f4422cca6524aa8e9a1ee921}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines}}
@@ -1222,8 +1222,8 @@
       \field{year}{2022}
     \endentry
     \entry{recollwebsite}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.lesbonscomptes.com/recoll}}
       \field{note}{Accessed: January 2022}
@@ -1503,8 +1503,8 @@
       \strng{authornamehash}{4ee222c065b9e737ed244eb314cdf9b8}
       \strng{authorfullhash}{4ee222c065b9e737ed244eb314cdf9b8}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{3}
@@ -1755,8 +1755,8 @@
       \strng{authornamehash}{1e51702bf5f739c50fc0ad0c3875e13e}
       \strng{authorfullhash}{1e51702bf5f739c50fc0ad0c3875e13e}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{3}
@@ -2034,8 +2034,8 @@
       \strng{authornamehash}{a15fb09d2c58fa6e2db7bb2d5b842d7f}
       \strng{authorfullhash}{a15fb09d2c58fa6e2db7bb2d5b842d7f}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{8}
@@ -2373,8 +2373,8 @@
       \strng{authornamehash}{bda833f3d19a05e21d8d928d371c0b58}
       \strng{authorfullhash}{bda833f3d19a05e21d8d928d371c0b58}
       \field{extraname}{4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{9}
