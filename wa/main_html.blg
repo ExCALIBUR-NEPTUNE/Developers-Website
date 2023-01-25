@@ -1,35 +1,35 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'main_html.blg'
-[69] biber:340> INFO - === Sun Jan 15, 2023, 18:03:42
+[69] biber:340> INFO - === Wed Jan 25, 2023, 12:48:31
 [83] Biber.pm:418> INFO - Reading 'main_html.bcf'
-[171] Biber.pm:972> INFO - Found 113 citekeys in bib section 0
-[184] Biber.pm:4383> INFO - Processing section 0
-[194] Biber.pm:4574> INFO - Looking for bibtex file './bib/new.bib' for section 0
-[209] bibtex.pm:1713> INFO - LaTeX decoding ...
-[730] bibtex.pm:1518> INFO - Found BibTeX data source './bib/new.bib'
-[865] Biber.pm:4574> INFO - Looking for bibtex file './bib/waynes.bib' for section 0
-[870] bibtex.pm:1713> INFO - LaTeX decoding ...
-[983] bibtex.pm:1518> INFO - Found BibTeX data source './bib/waynes.bib'
-[1006] Biber.pm:4574> INFO - Looking for bibtex file './bib/misc.bib' for section 0
-[1008] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1058] bibtex.pm:1518> INFO - Found BibTeX data source './bib/misc.bib'
-[1064] Biber.pm:4574> INFO - Looking for bibtex file './bib/warv.bib' for section 0
-[1070] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1257] bibtex.pm:1518> INFO - Found BibTeX data source './bib/warv.bib'
-[1274] Biber.pm:4574> INFO - Looking for bibtex file './bib/neuts.bib' for section 0
-[1277] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1351] bibtex.pm:1518> INFO - Found BibTeX data source './bib/neuts.bib'
-[1357] Biber.pm:4574> INFO - Looking for bibtex file './bib/reac.bib' for section 0
-[1359] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1406] bibtex.pm:1518> INFO - Found BibTeX data source './bib/reac.bib'
-[1426] Biber.pm:4574> INFO - Looking for bibtex file './bib/exc.bib' for section 0
-[1437] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1762] bibtex.pm:1518> INFO - Found BibTeX data source './bib/exc.bib'
-[2153] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2153] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2153] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
-[2153] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
-[2203] bbl.pm:654> INFO - Writing 'main_html.bbl' with encoding 'UTF-8'
-[2248] bbl.pm:757> INFO - Output to main_html.bbl
-[2248] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_6u7q/71757f0ce88fd145f622498f22462569_5778.utf8, line 5484, warning: 142 characters of junk seen at toplevel
-[2248] Biber.pm:132> INFO - WARNINGS: 1
+[173] Biber.pm:972> INFO - Found 113 citekeys in bib section 0
+[185] Biber.pm:4383> INFO - Processing section 0
+[195] Biber.pm:4574> INFO - Looking for bibtex file './bib/new.bib' for section 0
+[211] bibtex.pm:1713> INFO - LaTeX decoding ...
+[732] bibtex.pm:1518> INFO - Found BibTeX data source './bib/new.bib'
+[869] Biber.pm:4574> INFO - Looking for bibtex file './bib/waynes.bib' for section 0
+[873] bibtex.pm:1713> INFO - LaTeX decoding ...
+[985] bibtex.pm:1518> INFO - Found BibTeX data source './bib/waynes.bib'
+[1009] Biber.pm:4574> INFO - Looking for bibtex file './bib/misc.bib' for section 0
+[1011] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1061] bibtex.pm:1518> INFO - Found BibTeX data source './bib/misc.bib'
+[1068] Biber.pm:4574> INFO - Looking for bibtex file './bib/warv.bib' for section 0
+[1074] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1264] bibtex.pm:1518> INFO - Found BibTeX data source './bib/warv.bib'
+[1281] Biber.pm:4574> INFO - Looking for bibtex file './bib/neuts.bib' for section 0
+[1284] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1358] bibtex.pm:1518> INFO - Found BibTeX data source './bib/neuts.bib'
+[1364] Biber.pm:4574> INFO - Looking for bibtex file './bib/reac.bib' for section 0
+[1366] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1413] bibtex.pm:1518> INFO - Found BibTeX data source './bib/reac.bib'
+[1433] Biber.pm:4574> INFO - Looking for bibtex file './bib/exc.bib' for section 0
+[1444] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1770] bibtex.pm:1518> INFO - Found BibTeX data source './bib/exc.bib'
+[2163] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2164] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2164] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
+[2164] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
+[2213] bbl.pm:654> INFO - Writing 'main_html.bbl' with encoding 'UTF-8'
+[2259] bbl.pm:757> INFO - Output to main_html.bbl
+[2259] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_5epZ/71757f0ce88fd145f622498f22462569_5865.utf8, line 5484, warning: 142 characters of junk seen at toplevel
+[2259] Biber.pm:132> INFO - WARNINGS: 1
