@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.28)  28 JAN 2023 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.30)  30 JAN 2023 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,16 +1379,22 @@ File: ./png/neptune.png Graphic file (type png)
 <use ./png/neptune.png>
 Package pdftex.def Info: ./png/neptune.png  used on input line 187.
 (pdftex.def)             Requested size: 227.62204pt x 311.22374pt.
+<./png/trident.png, id=175, 488.82625pt x 450.68375pt>
+File: ./png/trident.png Graphic file (type png)
+<use ./png/trident.png>
+Package pdftex.def Info: ./png/trident.png  used on input line 188.
+(pdftex.def)             Requested size: 227.62204pt x 209.86147pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./corpics/cofaplus.png>] [
-2 <./png/neptune.png>] (./main.toc
+2 <./png/neptune.png> <./png/trident.png>] (./main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
 .
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
@@ -1467,7 +1473,7 @@ rce (IETF) key-words ref.
  []
 
 ) (./approboxw.tex
-<./corpics/blanksign.png, id=267, 135.50626pt x 57.21375pt>
+<./corpics/blanksign.png, id=269, 135.50626pt x 57.21375pt>
 File: ./corpics/blanksign.png Graphic file (type png)
 <use ./corpics/blanksign.png>
 Package pdftex.def Info: ./corpics/blanksign.png  used on input line 33.
@@ -1531,7 +1537,7 @@ ame-work ap-proach notwith-stand-ing, \T1/lmr/m/sc/10.95 NEP-
  []
 
 [25]) (./TS/overall_capabilities.tex
-<./pics/proxyflow2.png, id=490, 1587.9325pt x 870.25125pt>
+<./pics/proxyflow2.png, id=492, 1587.9325pt x 870.25125pt>
 File: ./pics/proxyflow2.png Graphic file (type png)
 <use ./pics/proxyflow2.png>
 Package pdftex.def Info: ./pics/proxyflow2.png  used on input line 28.
@@ -1544,7 +1550,7 @@ x [30
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 75.
 
-<./png/colpri.png, id=533, 534.99875pt x 252.945pt>
+<./png/colpri.png, id=535, 534.99875pt x 252.945pt>
 File: ./png/colpri.png Graphic file (type png)
 <use ./png/colpri.png>
 Package pdftex.def Info: ./png/colpri.png  used on input line 82.
@@ -1558,7 +1564,7 @@ lux pro-files: proper
 [34
 
 ]
-<./pics/dimensions2.png, id=562, 1001.7425pt x 470.75874pt>
+<./pics/dimensions2.png, id=564, 1001.7425pt x 470.75874pt>
 File: ./pics/dimensions2.png Graphic file (type png)
 <use ./pics/dimensions2.png>
 Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
@@ -1567,7 +1573,7 @@ Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
 (./TS/estimates.tex [36
 
 ]) [37] (./TS/nonfunc.tex
-<./png/hierarchygroup.png, id=604, 828.09375pt x 388.45125pt>
+<./png/hierarchygroup.png, id=606, 828.09375pt x 388.45125pt>
 File: ./png/hierarchygroup.png Graphic file (type png)
 <use ./png/hierarchygroup.png>
 Package pdftex.def Info: ./png/hierarchygroup.png  used on input line 31.
@@ -2255,7 +2261,7 @@ Chapter 6.
 (./DDF/DDF.tex [61
 
 ] [62] (./DDF/basic_objects.tex
-<./pics/baseclasses.png, id=900, 1084.05pt x 476.78125pt>
+<./pics/baseclasses.png, id=902, 1084.05pt x 476.78125pt>
 File: ./pics/baseclasses.png Graphic file (type png)
 <use ./pics/baseclasses.png>
 Package pdftex.def Info: ./pics/baseclasses.png  used on input line 8.
@@ -2263,7 +2269,7 @@ Package pdftex.def Info: ./pics/baseclasses.png  used on input line 8.
  [63
 
  <./pics/baseclasses.png>]
-<./pics/aggregates.png, id=909, 1625.07124pt x 989.6975pt>
+<./pics/aggregates.png, id=911, 1625.07124pt x 989.6975pt>
 File: ./pics/aggregates.png Graphic file (type png)
 <use ./pics/aggregates.png>
 Package pdftex.def Info: ./pics/aggregates.png  used on input line 69.
@@ -2272,7 +2278,7 @@ Package pdftex.def Info: ./pics/aggregates.png  used on input line 69.
 [67
 
 ] [68]) (./DDF/desipatt.tex
-<./pics/puppeteer_wab.png, id=963, 496.85625pt x 167.62625pt>
+<./pics/puppeteer_wab.png, id=965, 496.85625pt x 167.62625pt>
 File: ./pics/puppeteer_wab.png Graphic file (type png)
 <use ./pics/puppeteer_wab.png>
 Package pdftex.def Info: ./pics/puppeteer_wab.png  used on input line 12.
@@ -2533,7 +2539,7 @@ m / ExCALIBUR -[] NEPTUNE / Documents /
 
 [117]
 Overfull \hbox (37.26216pt too wide) in paragraph at lines 200--200
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.20-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
+\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.23-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
 ps : / / github . com / ExCALIBUR -[]
  []
 
@@ -2761,10 +2767,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25069 strings out of 479727
- 450786 string characters out of 5884998
+ 25076 strings out of 479727
+ 450930 string characters out of 5884998
  1347288 words of memory out of 5000000
- 41914 multiletter control sequences out of 15000+600000
+ 41920 multiletter control sequences out of 15000+600000
  571487 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  74i,15n,87p,1218b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2789,10 +2795,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (125 pages, 2198097 bytes).
+Output written on main.pdf (125 pages, 2203364 bytes).
 PDF statistics:
- 1820 PDF objects out of 2073 (max. 8388607)
+ 1822 PDF objects out of 2073 (max. 8388607)
  1602 compressed objects within 17 object streams
  481 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 392 words of extra memory for PDF output out of 10000 (max. 10000000)
 

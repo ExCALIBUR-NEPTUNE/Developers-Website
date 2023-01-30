@@ -1204,12 +1204,12 @@
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{12}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.01-M1.2.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0021-1.20-M1.2.1}}
+      \field{month}{10}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.23-M1.2.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0021-1.23-M1.2.1}}
       \field{title}{{Equations for EXCALIBUR/NEPTUNE Proxyapps}}
       \field{type}{techreport}
-      \field{year}{2021}
+      \field{year}{2022}
       \field{dateera}{ce}
     \endentry
     \entry{docfetcherwebsite}{misc}{}

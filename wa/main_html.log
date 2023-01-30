@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.28)  28 JAN 2023 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.30)  30 JAN 2023 09:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1783,32 +1783,31 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 178.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 \openout6 = `main_html.sidetoc'.
 
- [2] (./main_html.toc)
+ [3] (./main_html.toc)
 \tf@toc=\write9
 \openout9 = `main_html.toc'.
 
-
-(./mainbody.tex [3]
+ (./mainbody.tex [4]
 File: "lwarp_mathjax.txt"  (verbatim)
- [4] (./main_html.sidetoc) [5] (./PN/PN.tex [6] [7] [8]
-[9]
+ [5] (./main_html.sidetoc) [6] (./PN/PN.tex [7] [8]
+[9] [10]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 6.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [10]) (./approboxw.tex [11]
-[12] [13]) [14]
+) [11]) (./approboxw.tex
+[12] [13] [14]) [15]
 File: "lwarp_mathjax.txt"  (verbatim)
- [15] (./main_html.sidetoc) [16] (./BD/BD.tex) [17]
+ [16] (./main_html.sidetoc) [17] (./BD/BD.tex) [18]
 File: "lwarp_mathjax.txt"  (verbatim)
- [18]
-(./main_html.sidetoc) [19] (./RB/RB.tex [20]
+
+[19] (./main_html.sidetoc) [20] (./RB/RB.tex [21]
 File: "lwarp_mathjax.txt"  (verbatim)
- [21] (./main_html.sidetoc)
-[22] (./RB/edgeprop.tex [23] [24] [25] [26] [27] [28]
+ [22] (./main_html.sidetoc)
+[23] (./RB/edgeprop.tex [24] [25] [26] [27] [28] [29]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 08.
 
@@ -1868,46 +1867,46 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [29]
+)) [30]
 File: "lwarp_mathjax.txt"  (verbatim)
- [30] (./main_html.sidetoc)
-[31] (./RB/engineers_requirements.tex [32] [33] [34] [35] [36]) [37]
+ [31] (./main_html.sidetoc)
+[32] (./RB/engineers_requirements.tex [33] [34] [35] [36] [37]) [38]
 File: "lwarp_mathjax.txt"  (verbatim)
- [38]
-(./main_html.sidetoc) [39] (./RB/use_case_physicist.tex [40])
-(./RB/use_case_engineer.tex [41]) (./RB/use_case_particle_specialist.tex
-[42]) (./RB/use_case_FEM_background.tex [43]) [44]
+ [39]
+(./main_html.sidetoc) [40] (./RB/use_case_physicist.tex [41])
+(./RB/use_case_engineer.tex [42]) (./RB/use_case_particle_specialist.tex
+[43]) (./RB/use_case_FEM_background.tex [44]) [45]
 File: "lwarp_mathjax.txt"  (verbatim)
- [45] (./main_html.sidetoc)
-[46]) [47]
+ [46] (./main_html.sidetoc)
+[47]) [48]
 File: "lwarp_mathjax.txt"  (verbatim)
- [48] (./main_html.sidetoc) [49] (./TS/TS.tex [50] [51]
-(./TS/introduction.tex [52] [53] [54] [55] [56] [57])
-(./TS/overall_capabilities.tex [58] [59] [60] [61] [62] [63] [64] [65] [66]
-[67] [68]) (./TS/physics_model.tex [69] [70] [71] [72] [73] [74] [75] [76]
-[77] [78] [79]
+ [49] (./main_html.sidetoc) [50] (./TS/TS.tex [51] [52]
+(./TS/introduction.tex [53] [54] [55] [56] [57] [58])
+(./TS/overall_capabilities.tex [59] [60] [61] [62] [63] [64] [65] [66] [67]
+[68] [69]) (./TS/physics_model.tex [70] [71] [72] [73] [74] [75] [76] [77]
+[78] [79] [80]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 75.
 
-[80] [81] [82] [83] [84] [85]) (./TS/physics_capabilities.tex [86] [87]
-[88] [89]) (./TS/geometry.tex [90] [91]) (./TS/estimates.tex [92]
+[81] [82] [83] [84] [85] [86]) (./TS/physics_capabilities.tex [87] [88]
+[89] [90]) (./TS/geometry.tex [91] [92]) (./TS/estimates.tex [93]
 File: "lwarp_mathjax.txt"  (verbatim)
- [93]
-(./main_html.sidetoc) [94]) [95]
+ [94]
+(./main_html.sidetoc) [95]) [96]
 File: "lwarp_mathjax.txt"  (verbatim)
- [96] (./main_html.sidetoc) [97]
-(./TS/nonfunc.tex [98] [99] [100] [101] [102] [103] [104] [105] [106] [107]
-[108]) (./TS/mgt.tex [109] [110]
+ [97] (./main_html.sidetoc) [98]
+(./TS/nonfunc.tex [99] [100] [101] [102] [103] [104] [105] [106] [107] [108]
+[109]) (./TS/mgt.tex [110] [111]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 73.
- [111]) [112]
+ [112]) [113]
 File: "lwarp_mathjax.txt"  (verbatim)
- [113] (./main_html.sidetoc)
-[114] (./TS/naming.tex [115] [116])) [117]
+ [114] (./main_html.sidetoc)
+[115] (./TS/naming.tex [116] [117])) [118]
 File: "lwarp_mathjax.txt"  (verbatim)
- [118] (./main_html.sidetoc) [119]
-(./DJF/DJF.tex [120] [121] (./DJF/tabtit.tex [122]
+ [119] (./main_html.sidetoc) [120]
+(./DJF/DJF.tex [121] [122] (./DJF/tabtit.tex [123]
 
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 (Font)              using `T1/lmss/bx/n' instead on input line 6.
@@ -1915,70 +1914,70 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123])
-[124] (./DJF/report_summary1.tex) [125] (./DJF/report_summary2.tex) [126]
-(./DJF/parabstr.tex [127])) [128]
+ [124])
+[125] (./DJF/report_summary1.tex) [126] (./DJF/report_summary2.tex) [127]
+(./DJF/parabstr.tex [128])) [129]
 File: "lwarp_mathjax.txt"  (verbatim)
- [129] (./main_html.sidetoc) [130]
-(./DDF/DDF.tex [131] [132] [133]
+ [130] (./main_html.sidetoc) [131]
+(./DDF/DDF.tex [132] [133] [134]
 File: "lwarp_mathjax.txt"  (verbatim)
- [134] (./main_html.sidetoc) [135]
-(./DDF/basic_objects.tex [136] [137] [138] [139] [140] [141] [142] [143])
-[144]
+ [135] (./main_html.sidetoc) [136]
+(./DDF/basic_objects.tex [137] [138] [139] [140] [141] [142] [143] [144])
+[145]
 File: "lwarp_mathjax.txt"  (verbatim)
- [145] (./main_html.sidetoc) [146] (./DDF/functions.tex [147] [148]
-[149] [150] [151] [152] [153]) [154]
+ [146] (./main_html.sidetoc) [147] (./DDF/functions.tex [148] [149]
+[150] [151] [152] [153] [154]) [155]
 File: "lwarp_mathjax.txt"  (verbatim)
- [155] (./main_html.sidetoc) [156]
-(./DDF/desipatt.tex [157])) [158]
+ [156] (./main_html.sidetoc) [157]
+(./DDF/desipatt.tex [158])) [159]
 File: "lwarp_mathjax.txt"  (verbatim)
- [159] (./main_html.sidetoc) [160]
-(./MGT/MGT.tex (./MGT/MGT_intro.tex [161]
+ [160] (./main_html.sidetoc) [161]
+(./MGT/MGT.tex (./MGT/MGT_intro.tex [162]
 File: "lwarp_mathjax.txt"  (verbatim)
- [162] (./main_html.sidetoc) [163])
-(./MGT/dudson.tex [164]
+ [163] (./main_html.sidetoc) [164])
+(./MGT/dudson.tex [165]
 File: "lwarp_mathjax.txt"  (verbatim)
- [165] (./main_html.sidetoc) [166] [167] [168] [169]
-[170] [171] [172]) [173]
+ [166] (./main_html.sidetoc) [167] [168] [169] [170]
+[171] [172] [173]) [174]
 File: "lwarp_mathjax.txt"  (verbatim)
- [174] (./main_html.sidetoc) [175] (./MGT/charter.tex)) [176]
+ [175] (./main_html.sidetoc) [176] (./MGT/charter.tex)) [177]
 File: "lwarp_mathjax.txt"  (verbatim)
- [177] (./main_html.sidetoc) [178] (./MF/MF.tex) [179]
+ [178] (./main_html.sidetoc) [179] (./MF/MF.tex) [180]
 File: "lwarp_mathjax.txt"  (verbatim)
- [180]
-(./main_html.sidetoc) [181] (./OP/OP.tex [182] [183] (./OP/opmgt.tex [184])
-[185]
+ [181]
+(./main_html.sidetoc) [182] (./OP/OP.tex [183] [184] (./OP/opmgt.tex [185])
+[186]
 File: "lwarp_mathjax.txt"  (verbatim)
- [186] (./main_html.sidetoc) [187] (./OP/testing.tex [188] [189] [190])
-[191] (./OP/objdisc.tex [192] [193]) [194]
+ [187] (./main_html.sidetoc) [188] (./OP/testing.tex [189] [190] [191])
+[192] (./OP/objdisc.tex [193] [194]) [195]
 File: "lwarp_mathjax.txt"  (verbatim)
- [195] (./main_html.sidetoc) [196]
-(./OP/UMan.tex [197] [198])) [199]
+ [196] (./main_html.sidetoc) [197]
+(./OP/UMan.tex [198] [199])) [200]
 File: "lwarp_mathjax.txt"  (verbatim)
- [200] (./main_html.sidetoc) [201]
-(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex [202]
+ [201] (./main_html.sidetoc) [202]
+(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex [203]
 File: "lwarp_mathjax.txt"  (verbatim)
- [203]
-(./main_html.sidetoc) [204]) (./proxyapps/nektar-diffusion.tex [205]
+ [204]
+(./main_html.sidetoc) [205]) (./proxyapps/nektar-diffusion.tex [206]
 File: "lwarp_mathjax.txt"  (verbatim)
- [206]
-(./main_html.sidetoc) [207]) (./proxyapps/nektar-1d-sol.tex [208]
+ [207]
+(./main_html.sidetoc) [208]) (./proxyapps/nektar-1d-sol.tex [209]
 File: "lwarp_mathjax.txt"  (verbatim)
- [209]
-(./main_html.sidetoc) [210]) (./proxyapps/fabneptune.tex [211]
+ [210]
+(./main_html.sidetoc) [211]) (./proxyapps/fabneptune.tex [212]
 File: "lwarp_mathjax.txt"  (verbatim)
- [212]
-(./main_html.sidetoc) [213]) (./proxyapps/moment-kinetics.tex [214]
+ [213]
+(./main_html.sidetoc) [214]) (./proxyapps/moment-kinetics.tex [215]
 File: "lwarp_mathjax.txt"  (verbatim)
- [215]
-(./main_html.sidetoc) [216]) (./proxyapps/NESO.tex [217]
+ [216]
+(./main_html.sidetoc) [217]) (./proxyapps/NESO.tex [218]
 File: "lwarp_mathjax.txt"  (verbatim)
- [218]
-(./main_html.sidetoc) [219])) [220]
+ [219]
+(./main_html.sidetoc) [220])) [221]
 File: "lwarp_mathjax.txt"  (verbatim)
- [221] (./main_html.sidetoc) [222]
-(./REF/REF.tex [223] [224] [225] [226] [227] (./REF/conv.tex
-(./REF/naming_map.tex [228]
+ [222] (./main_html.sidetoc) [223]
+(./REF/REF.tex [224] [225] [226] [227] [228] (./REF/conv.tex
+(./REF/naming_map.tex [229]
 Overfull \hbox (44.40192pt too wide) in paragraph at lines 3--3
 []\T1/lmss/m/n/9 Table 11.1:&nbsp;\T1/lmtt/m/n/9 <b><span class="textsf">\T1/lm
 ss/bx/n/9 TWO CHAR-AC-TER EQUIV-A-LENTS\T1/lmtt/m/n/9 </span></b> \T1/lmss/m/n/
@@ -1988,16 +1987,13 @@ s/m/n/9 L\T1/lmtt/m/n/9 <span class="latexlogosup">\T1/lmss/m/n/9 a\T1/lmtt/m/n
 n/9 e\T1/lmtt/m/n/9 </span>\T1/lmss/m/n/9 X\T1/lmtt/m/n/9 </span></span>
  []
 
-[229]
+[230]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [230]))
-[231]
+ [231]))
+[232]
 File: "lwarp_mathjax.txt"  (verbatim)
- [232] (./main_html.sidetoc) [233] (./REF/acro.tex [234]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [235]
+ [233] (./main_html.sidetoc) [234] (./REF/acro.tex [235]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [236]
@@ -2006,13 +2002,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [237]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [238])
-[239]
-File: "lwarp_mathjax.txt"  (verbatim)
- [240] (./main_html.sidetoc) [241] (./REF/symb.tex [242]
+ [238]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [243]
+ [239])
+[240]
+File: "lwarp_mathjax.txt"  (verbatim)
+ [241] (./main_html.sidetoc) [242] (./REF/symb.tex [243]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [244]
@@ -2033,17 +2029,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [249]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [250]))
+ [250]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [251]))
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(./comment_html.cut [251]
+(./comment_html.cut [252]
 File: "lwarp_mathjax.txt"  (verbatim)
- [252] (./main_html.sidetoc) [253]) [254]
+ [253] (./main_html.sidetoc) [254]) [255]
 File: "lwarp_mathjax.txt"  (verbatim)
- [255]
-(./main_html.sidetoc) [256] (./IND/IND.tex)) [257] (./metackn.tex) [258]
+ [256]
+(./main_html.sidetoc) [257] (./IND/IND.tex)) [258] (./metackn.tex) [259]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
 (Font)              using `T1/lmr/m/scsl' instead on input line 199.
@@ -2055,8 +2054,8 @@ LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [259]
-[260] (./main_html.aux)
+ [260]
+[261] (./main_html.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2065,10 +2064,10 @@ Package logreq Info: Writing requests to 'main_html.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25731 strings out of 479727
- 504814 string characters out of 5884998
- 1353298 words of memory out of 5000000
- 42790 multiletter control sequences out of 15000+600000
+ 25734 strings out of 479727
+ 504873 string characters out of 5884998
+ 1353311 words of memory out of 5000000
+ 42792 multiletter control sequences out of 15000+600000
  539286 words of font info for 72 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  93i,8n,108p,1250b,2449s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2088,10 +2087,10 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (260 pages, 963061 bytes).
+Output written on main_html.pdf (261 pages, 963439 bytes).
 PDF statistics:
- 956 PDF objects out of 1000 (max. 8388607)
- 646 compressed objects within 7 object streams
+ 959 PDF objects out of 1000 (max. 8388607)
+ 648 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

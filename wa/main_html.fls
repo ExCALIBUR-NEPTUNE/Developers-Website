@@ -1917,6 +1917,9 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./png/neptune.png
 INPUT ./png/neptune.png
 INPUT ./png/neptune.png
+INPUT ./png/trident.png
+INPUT ./png/trident.png
+INPUT ./png/trident.png
 OUTPUT main_html.sidetoc
 INPUT main_html.toc
 INPUT ./main_html.toc
