@@ -26,7 +26,7 @@ If you want to generate just the HTML and PDF of some tex, and not the whole web
 bash singlepage.sh '\input{proxyapps/proxyapps}'
 ```
 
-## Non-stanard LaTeX commands
+## Non-standard LaTeX commands
 When adding a new chapter or section to the latex documentation the following command should be used instead of \section and \chapter
 
 ```
