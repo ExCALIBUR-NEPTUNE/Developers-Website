@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.2.19)  19 FEB 2023 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.4.3)  3 APR 2023 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2032,17 +2032,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [250]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [251]))
+ [251]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [252]))
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(./comment_html.cut [252]
+(./comment_html.cut [253]
 File: "lwarp_mathjax.txt"  (verbatim)
- [253] (./main_html.sidetoc) [254]) [255]
+ [254] (./main_html.sidetoc) [255]) [256]
 File: "lwarp_mathjax.txt"  (verbatim)
- [256]
-(./main_html.sidetoc) [257] (./IND/IND.tex)) [258] (./metackn.tex) [259]
+ [257]
+(./main_html.sidetoc) [258] (./IND/IND.tex)) [259] (./metackn.tex) [260]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
 (Font)              using `T1/lmr/m/scsl' instead on input line 199.
@@ -2054,8 +2057,8 @@ LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [260]
-[261] (./main_html.aux)
+ [261]
+[262] (./main_html.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2064,10 +2067,10 @@ Package logreq Info: Writing requests to 'main_html.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25734 strings out of 479727
- 504873 string characters out of 5884998
- 1354309 words of memory out of 5000000
- 42792 multiletter control sequences out of 15000+600000
+ 25738 strings out of 479727
+ 504919 string characters out of 5884999
+ 1353358 words of memory out of 5000000
+ 42796 multiletter control sequences out of 15000+600000
  539286 words of font info for 72 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  93i,8n,108p,1250b,2449s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2087,10 +2090,10 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (261 pages, 963890 bytes).
+Output written on main_html.pdf (262 pages, 965447 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 648 compressed objects within 7 object streams
+ 962 PDF objects out of 1000 (max. 8388607)
+ 650 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

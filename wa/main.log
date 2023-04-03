@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.2.19)  19 FEB 2023 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.4.3)  3 APR 2023 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2425,26 +2425,26 @@ Overfull \hbox (119.24408pt too wide) in alignment at lines 207--314
 [93
 
 ] [94] [95] [96] [97] [98] [99]) [100] (./REF/symb.tex
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []|$\OT1/lmr/bx/n/10.95 x \OT1/lmr/m/n/10.95 =
  []
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 57.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 60.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 57.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 60.
 
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 58.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 58.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 61.
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 73.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 76.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 73.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 76.
 
 
 
@@ -2452,17 +2452,17 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 1--217
  [] [] [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 229
+LaTeX Font Info:    Trying to load font information for U+euf on input line 233
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 280--280
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []|$\OML/lmm/m/it/10.95 ^^W[] \OT1/lmr/m/n/10.95 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--341
+Underfull \hbox (badness 10000) in paragraph at lines 345--345
 []|$\OML/lmm/m/it/10.95 ^^Z[] \OT1/lmr/m/n/10.95 =
  []
 
@@ -2474,7 +2474,7 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
 [101
 
 ] [102] [103] [104] [105]
-Overfull \hbox (131.24408pt too wide) in alignment at lines 417--470
+Overfull \hbox (131.24408pt too wide) in alignment at lines 417--480
  [] [] [] 
  []
 
@@ -2768,10 +2768,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25077 strings out of 479727
- 450938 string characters out of 5884998
- 1347286 words of memory out of 5000000
- 41920 multiletter control sequences out of 15000+600000
+ 25081 strings out of 479727
+ 450984 string characters out of 5884999
+ 1348335 words of memory out of 5000000
+ 41924 multiletter control sequences out of 15000+600000
  571487 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  74i,15n,87p,1218b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2796,10 +2796,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 2204839 bytes).
+Output written on main.pdf (126 pages, 2206263 bytes).
 PDF statistics:
- 1826 PDF objects out of 2073 (max. 8388607)
- 1605 compressed objects within 17 object streams
+ 1828 PDF objects out of 2073 (max. 8388607)
+ 1607 compressed objects within 17 object streams
  482 named destinations out of 1000 (max. 500000)
  392 words of extra memory for PDF output out of 10000 (max. 10000000)
 

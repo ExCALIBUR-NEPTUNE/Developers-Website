@@ -2978,6 +2978,12 @@
       \field{year}{2013}
       \field{pages}{015010 (18 pages)}
       \range{pages}{-1}
+      \verb{urlraw}
+      \verb \url{https://doi.org/10.1088/1749-4699/6/1/015010}
+      \endverb
+      \verb{url}
+      \verb %5Curl%7Bhttps://doi.org/10.1088/1749-4699/6/1/015010%7D
+      \endverb
     \endentry
     \entry{La18Cros}{article}{}
       \true{moreauthor}
