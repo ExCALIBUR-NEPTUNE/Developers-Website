@@ -3274,7 +3274,9 @@
       \field{title}{Data-driven science and engineering: Machine learning, dynamical systems, and control}
       \field{year}{2019}
     \endentry
-    \entry{pappeqs}{report}{}
+    \entry{pappeqs8}{report}{}
+      \true{moreauthor}
+      \true{morelabelname}
       \name{author}{1}{}{%
         {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
            family={Arter},
@@ -3285,23 +3287,23 @@
       \list{institution}{1}{%
         {UKAEA}%
       }
-      \strng{namehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{fullhash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{bibnamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authorbibnamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authornamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authorfullhash}{bda833f3d19a05e21d8d928d371c0b58}
-      \field{extraname}{8}
+      \strng{namehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{fullhash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{bibnamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authorbibnamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authornamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authorfullhash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \field{extraname}{7}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{03}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.00-M1.2.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0021-1.00-M1.2.1}}
+      \field{month}{10}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.30-M1.2.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0021-1.31-M1.2.1}}
       \field{title}{{Equations for EXCALIBUR/NEPTUNE Proxyapps}}
       \field{type}{techreport}
-      \field{year}{2020}
+      \field{year}{2023}
       \field{dateera}{ce}
     \endentry
     \entry{karniadakissherwin}{book}{}
