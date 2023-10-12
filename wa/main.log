@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.11)  11 OCT 2023 05:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.12)  12 OCT 2023 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2396,7 +2396,7 @@ Chapter 11.
 (./REF/REF.tex [89
 
 ] (./REF/conv.tex [90] (./REF/naming_map.tex
-Overfull \hbox (189.47043pt too wide) in paragraph at lines 4--45
+Overfull \hbox (189.47043pt too wide) in paragraph at lines 4--48
  [] 
  []
 
@@ -2764,7 +2764,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  25081 strings out of 479727
  450988 string characters out of 5884997
- 1347335 words of memory out of 5000000
+ 1347337 words of memory out of 5000000
  41924 multiletter control sequences out of 15000+600000
  571487 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
@@ -2790,7 +2790,7 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 2207211 bytes).
+Output written on main.pdf (126 pages, 2207619 bytes).
 PDF statistics:
  1828 PDF objects out of 2073 (max. 8388607)
  1607 compressed objects within 17 object streams
