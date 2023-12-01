@@ -18,7 +18,9 @@ report~\cite{y2re313}. \label{tab:symbols}
 \hline
 $a$ & minor radius of the torus (horizontal) & $m$ \\
 $a_{ij}$ & coefficient of matrix~$A$ &  \\
-$A$ & atomic mass of the ion &  \\
+$A$ & atomic mass of ion &  \\
+$A_i$ & atomic mass of ion & \\
+$A_\alpha$ & atomic mass of ion species $\alpha$ & \\
 $[a,b]$ & arbitrary finite interval  & \\
 $\alpha$ & as suffix is species label or index &  \\
 $\alpha_n$ & perturbation amplitude &  \\
@@ -99,7 +101,7 @@ $\delta_\alpha$ & (Glossary) Magnetisation  parameter, species~$\alpha$  gyrorad
 $\delta(x)$ & Dirac delta function of continuous real variable $x$  & \\
 $D$ & spatial dimensionality of problem &   \\
 $D_A$ & diffusion coefficient for plasma charges in a background of neutrals  &  $m^2 s^{-1}$ \\
-$D_e$ & diffusion coefficient for electrons in a background of neutrals  &  $m^2 s^{-1}$ \\
+$D_e$ & diffusion coefficient for electrons, eg.\  in a background of neutrals  &  $m^2 s^{-1}$ \\
 $D_{fv\alpha}$ & scale dissipation in  equation for evolution of species velocity ${\bf v}_\alpha$ & \\
 $D_n$ & neutral diffusion coefficient  &  $m^2 s^{-1}$ \\
 $D_{fp\alpha}$ & scale dissipation in  equation for evolution of species pressure/energy $p_\alpha$ & \\
@@ -138,12 +140,14 @@ $F^u$ & flux term (fieldline integrated source divided by field) for plasma mome
 $f(x,{\bf v},t)$ & generic distribution function & $m^{-6} s^3$ \\
 $f_{n,Kn}({\bf v})$ & Knudsen distribution function & $m^{-4} s^4$ \\
 $\Gamma(x)$ & gamma function of continuous variable $x$  & \\
+$g$ & factor in (twice) the heat flux  & \\
 $g(h_j)$ & activation function (of input $h_j$) of a neuron in a neural network  & \\
 $G$ & Green's function & \\
 $H_\alpha$ & Hamiltonian for species~$\alpha$ & \\
 $\hat{\boldsymbol{u}}^e$ &  (K+S) Vector of expansion coefficients & \\
 $\hat{v}_g$ &  (K+S) Global list of coefficients & \\
 $\hat{v}_g$ &  (K+S) List of all elemental coefficients ($=\underline{v^e}$) & \\
+$h$ & mesh or inter-node spacing & $m$ \\
 $h_j$ & real-number input to a neuron in a neural network  & \\
 $h_p(\xi)$ &  (FE Basis) One-dimensional Lagrange polynomial of order $p$ & \\
 $i$ & as suffix denotes ions & \\
@@ -192,9 +196,10 @@ $\langle \sigma v \rangle_{CX}$ & reaction rate for charge exchange  & $m^3 s^{-
 $\langle \sigma v \rangle_{ION}$ & reaction rate for ionisation  & $m^3 s^{-1}$ \\
 $\langle \sigma v \rangle_{REC}$ & reaction rate for recombination  & $m^3 s^{-1}$ \\
 $\langle\sigma v\rangle$ & generic reaction rate  & $m^3 s^{-1}$ \\
-$L_0$ & Typical lengthscale  & $m$ \\
+$L_0$ & typical lengthscale  & $m$ \\
 $L_i^{N_m}(\boldsymbol{\xi})$ &  (FE Basis) Two-dimensional Lagrange polynomial through $N_m$ nodes ${\mathbf \xi}_i$ & \\
-$L_s$ & Typical lengthscale along fieldline  & $m$ \\
+$L_s$ & typical lengthscale along fieldline  & $m$ \\
+$L_{\|}$ & connection length of typical fieldline  & $m$ \\
 $m$ & species particle mass & $kg$ \\
 $M_0$ & Mach number at $s=0$ boundary & \\
 $M_1$ & Mach number at $s=1$ boundary & \\
@@ -256,6 +261,7 @@ $N_{b}$ &  (K+S) Number of global boundary degrees of freedom & \\
 $n_B=N/B$ & number density divided by field strength & $m^{-3}T^{-1}$ \\
 $N_D$ &  Number of degrees of freedom per dimension, $D=1,2,\ldots6$ & \\
 $N_{dof}$ &  (K+S) Number of global degrees of freedom & \\
+$n_{con}$ & blob contrast factor  &  \\
 $n_e$ & number density of the electrons & $m^{-3}$ \\
 $N_{el}$ &  (K+S) Number of finite elements & \\
 $N_{eof}$ &  (K+S) Total number of elemental degrees of freedom $N_{eof} \simeq N_{el}N_m$ & \\
@@ -285,6 +291,8 @@ $\nu^{*}_c = \frac{q_e^4}{3 m_p^2\epsilon_0^2} L_0 n_0 /C_0^4$ & Collisionality 
 $\nu_\alpha$ & (Glossary) Collision frequency for species~$\alpha$ & $s^{-1}$ \\
 $\nu_{\alpha{\sf n}}$ & Collision frequency for species~$\alpha$ with neutrals & $s^{-1}$ \\
 $n^Z$ & number density for charge state~$Z$  & $m^{-3}$ \\
+$N_P$ & number of particles in a calculation & \\
+$N_{P\alpha} $ & number of particles of species $\alpha$ in a calculation & \\
 $N_Z$ & number of charge states for an ion species & \\
 $n^Z_i$ & number density for charge state~$Z$, excited state~$i$  & $m^{-3}$ \\
 $n^Z_\sigma$ & number density for charge state~$Z$, metastable state~$\sigma$  & $m^{-3}$ \\
@@ -307,7 +315,7 @@ $p_e$ & pressure of the electrons  & $N m^{-2}$ \\
 $\phi$ & angle in toroidal direction & radians $^c$ \\
 $\Phi$ & electr(ostat)ic potential  & $V$ \\
 $\phi_{pq}, \phi_{pqr}$ &  (FE Basis) Expansion basis & \\
-$\phi_{e,\xi}$ (FE Basis) expansion basis as a function of global position~${\bf x}$ & \\
+$\phi_{e,\xi}$ & (FE Basis) expansion basis as a function of global position~${\bf x}$ & \\
 $p$ & (K+S) pressure  & $N m^{-2}$ \\
 $p = \sum_\alpha n_\alpha kT_\alpha$ & plasma pressure  & $N m^{-2}$ \\
 $p$ & as suffix labels (super-)particles & \\
@@ -335,6 +343,7 @@ ${\bf q}_i$ & ion energy flux  & $J m^{-2} s^{-1}$ \\
 $Q_i$ &  (FE Basis) Quadrature order in the $i$th direction & \\
 $Q_{ie}$ & collisional energy equipartition term  & $kg m^{-1} s^{-3}$ \\
 $r$ & order of higher order term  & \\
+$r_0$ & radius used in initial condition, such as blob size & $m$ \\
 $R$ & cylindrical coordinate  & $m$ \\
 $R_0$ & major radius of torus & $m$ \\
 $R_p$ & recycling coefficient for particles & \\
@@ -455,6 +464,7 @@ $w_{\alpha,ref}$ & normalising or reference weight of particle of species~$\alph
 $w_{ref} $ & normalising or reference number for superparticles & $10^{10}$  \\
 $W$ & weighting function for particle-in-cell & \\
 $x$ & Cartesian coordinate  & $m$ \\
+$x_0$ & coordinate value used in specifying initial condition, eg.\ blob position & $m$ \\
 $x_1, x_2, x_3, {\mathbf x}$ &  (FE Basis) Global Cartesian coordinates & \\
 $x_\alpha$ & collisionality factor of species~$\alpha$ & \\
 $x_e = \omega_{ce}\tau_e$ & collisionality factor of electrons & \\
@@ -464,7 +474,9 @@ $\xi_1, \xi_2, \xi_3, \boldsymbol{\xi}$ &  (FE Basis) Local Cartesian coordinate
 $\xi_i$ & random number within the unit interval~$[0,1]$  & \\
 $^X\mathcal{F}_{i\sigma}$ & coefficient of excitation for the transition from metastable state~$\sigma$ to regular excited state~$i$  & \\
 $y$ & Cartesian coordinate  & $m$ \\
+$y_0$ & coordinate value used in specifying initial condition, eg.\ blob position & $m$ \\
 $z$ & Cartesian coordinate  & $m$ \\
+$z_0$ & coordinate value used in specifying initial condition & $m$ \\
 $Z$ & Cartesian coordinate  & $m$ \\
 $Z$ & charge state of the ion & \\
 $Z$ & cylindrical coordinate  & $m$ \\
@@ -472,7 +484,9 @@ $Z_0(\alpha)$ & number of charge states of species~$\alpha$ included in the mode
 $Z_a$ & Gaussian random process, index $a$  & \\
 $\zeta$ & magnetic Prandtl number as defined in Cambridge & \\
 $\zeta=-\phi$ & toroidal angle coordinate & radians $^c$ \\
-$Z_i$ & charge state & \\
+$Z_{eff}$ & effective charge state of plasma ions & \\
+$Z_i$ & charge state of ion & \\
+$Z_\alpha$ & charge state of ion species $\alpha$ & \\
 $Z_m=Z-1$ & where $Z$ is ion charge state & \\
 $Z_p=Z+1$ & where $Z$ is ion charge state & \\
 $Z_{sum}=\sum_\alpha Z_0(\alpha)$ & where $Z_0$ is number of charge states of species~$\alpha$ & \\
