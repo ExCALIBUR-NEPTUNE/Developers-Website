@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.1)  1 DEC 2023 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.2)  2 DEC 2023 07:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2425,26 +2425,26 @@ Overfull \hbox (119.24408pt too wide) in alignment at lines 207--314
 [93
 
 ] [94] [95] [96] [97] [98] [99]) [100] (./REF/symb.tex
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
 []|$\OT1/lmr/bx/n/10.95 x \OT1/lmr/m/n/10.95 =
  []
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 62.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 65.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 62.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 65.
 
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 63.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 63.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 66.
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 78.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 81.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 78.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 81.
 
 
 
@@ -2452,17 +2452,17 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 1--217
  [] [] [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 239
+LaTeX Font Info:    Trying to load font information for U+euf on input line 242
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
 []|$\OML/lmm/m/it/10.95 ^^W[] \OT1/lmr/m/n/10.95 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 362--362
 []|$\OML/lmm/m/it/10.95 ^^Z[] \OT1/lmr/m/n/10.95 =
  []
 
@@ -2474,7 +2474,7 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
 [101
 
 ] [102] [103] [104] [105]
-Overfull \hbox (131.24408pt too wide) in alignment at lines 417--500
+Overfull \hbox (131.24408pt too wide) in alignment at lines 417--505
  [] [] [] 
  []
 
@@ -2790,7 +2790,7 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 2207646 bytes).
+Output written on main.pdf (126 pages, 2208411 bytes).
 PDF statistics:
  1828 PDF objects out of 2073 (max. 8388607)
  1607 compressed objects within 17 object streams
