@@ -2292,6 +2292,13 @@ INPUT DJF/DJF.tex
 INPUT ./DJF/DJF.tex
 INPUT ./DJF/DJF.tex
 INPUT DJF/DJF.tex
+INPUT ./DJF/general.tex
+INPUT ./DJF/general.tex
+INPUT ./DJF/general.tex
+INPUT DJF/general.tex
+INPUT ./DJF/general.tex
+INPUT ./DJF/general.tex
+INPUT DJF/general.tex
 INPUT ./DJF/tabtit.tex
 INPUT ./DJF/tabtit.tex
 INPUT ./DJF/tabtit.tex

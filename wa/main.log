@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.2)  2 DEC 2023 07:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.2.8)  8 FEB 2024 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1354,10 +1354,25 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                niederreiter
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                y1r211
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 166.
 Package biblatex Info: Reference segment=0 on input line 166.
-<./corpics/cofaplus.png, id=172, 74.2775pt x 74.2775pt>
+<./corpics/cofaplus.png, id=176, 74.2775pt x 74.2775pt>
 File: ./corpics/cofaplus.png Graphic file (type png)
 <use ./corpics/cofaplus.png>
 Package pdftex.def Info: ./corpics/cofaplus.png  used on input line 170.
@@ -1374,12 +1389,12 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./png/neptune.png, id=174, 601.24625pt x 822.07124pt>
+<./png/neptune.png, id=178, 601.24625pt x 822.07124pt>
 File: ./png/neptune.png Graphic file (type png)
 <use ./png/neptune.png>
 Package pdftex.def Info: ./png/neptune.png  used on input line 187.
 (pdftex.def)             Requested size: 227.62204pt x 311.22374pt.
-<./png/trident.png, id=175, 488.82625pt x 450.68375pt>
+<./png/trident.png, id=179, 488.82625pt x 450.68375pt>
 File: ./png/trident.png Graphic file (type png)
 <use ./png/trident.png>
 Package pdftex.def Info: ./png/trident.png  used on input line 188.
@@ -1473,7 +1488,7 @@ rce (IETF) key-words ref.
  []
 
 ) (./approboxw.tex
-<./corpics/blanksign.png, id=269, 135.50626pt x 57.21375pt>
+<./corpics/blanksign.png, id=274, 135.50626pt x 57.21375pt>
 File: ./corpics/blanksign.png Graphic file (type png)
 <use ./corpics/blanksign.png>
 Package pdftex.def Info: ./corpics/blanksign.png  used on input line 33.
@@ -1537,7 +1552,7 @@ ame-work ap-proach notwith-stand-ing, \T1/lmr/m/sc/10.95 NEP-
  []
 
 [25]) (./TS/overall_capabilities.tex
-<./pics/proxyflow2.png, id=492, 1587.9325pt x 870.25125pt>
+<./pics/proxyflow2.png, id=497, 1587.9325pt x 870.25125pt>
 File: ./pics/proxyflow2.png Graphic file (type png)
 <use ./pics/proxyflow2.png>
 Package pdftex.def Info: ./pics/proxyflow2.png  used on input line 28.
@@ -1550,7 +1565,7 @@ x [30
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 75.
 
-<./png/colpri.png, id=535, 534.99875pt x 252.945pt>
+<./png/colpri.png, id=540, 534.99875pt x 252.945pt>
 File: ./png/colpri.png Graphic file (type png)
 <use ./png/colpri.png>
 Package pdftex.def Info: ./png/colpri.png  used on input line 82.
@@ -1564,7 +1579,7 @@ lux pro-files: proper
 [34
 
 ]
-<./pics/dimensions2.png, id=564, 1001.7425pt x 470.75874pt>
+<./pics/dimensions2.png, id=569, 1001.7425pt x 470.75874pt>
 File: ./pics/dimensions2.png Graphic file (type png)
 <use ./pics/dimensions2.png>
 Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
@@ -1573,7 +1588,7 @@ Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
 (./TS/estimates.tex [36
 
 ]) [37] (./TS/nonfunc.tex
-<./png/hierarchygroup.png, id=606, 828.09375pt x 388.45125pt>
+<./png/hierarchygroup.png, id=611, 828.09375pt x 388.45125pt>
 File: ./png/hierarchygroup.png Graphic file (type png)
 <use ./png/hierarchygroup.png>
 Package pdftex.def Info: ./png/hierarchygroup.png  used on input line 31.
@@ -1591,7 +1606,17 @@ Overfull \hbox (102.79134pt too wide) in paragraph at lines 111--127
 [40] [41] [42] [43]) (./TS/mgt.tex [44] [45] [46]) (./TS/naming.tex [47]
 [48] [49])) [50]
 Chapter 5.
-(./DJF/DJF.tex (./DJF/tabtit.tex
+(./DJF/DJF.tex (./DJF/general.tex
+
+LaTeX Warning: Citation 'y1r211' on page 51 undefined on input line 7.
+
+[51
+
+]
+
+LaTeX Warning: Citation 'niederreiter' on page 52 undefined on input line 27.
+
+) (./DJF/tabtit.tex
 Overfull \hbox (6.03484pt too wide) in paragraph at lines 11--11
 []|\T1/lmss/m/n/10.95 sciplanref.
  []
@@ -2201,22 +2226,24 @@ Overfull \hbox (143.8627pt too wide) in alignment at lines 2--68
  [] [] [] [] [] 
  []
 
-[51
 
-] [52] [53]) (./DJF/report_summary1.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+[53] [54] [55]) (./DJF/report_summary1.tex
 Overfull \hbox (35.86792pt too wide) in paragraph at lines 7--9
 \T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.00-M1.2.1 - Equa-tions for \T1/lmr/m
 /sc/10.95 NEP-TUNE\T1/lmss/m/n/10.95 /\T1/lmr/m/sc/10.95 E\T1/lmss/m/n/10.95 x\
 T1/lmr/m/sc/10.95 CALIBUR
  []
 
-[54]
+[56]
 Overfull \hbox (16.00418pt too wide) in paragraph at lines 42--43
 []\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0016-M3.5.1 - Bench-mark-ing re-quire-men
 ts for \T1/lmr/m/sc/10.95 NEP-
  []
 
-) [55] (./DJF/report_summary2.tex
+) (./DJF/report_summary2.tex
 Overfull \hbox (7.43373pt too wide) in paragraph at lines 4--5
 []\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0066-M4.1 Sup-port High-dimensional Pro-c
 ure-ment 
@@ -2228,7 +2255,7 @@ Overfull \hbox (2.26357pt too wide) in paragraph at lines 6--7
 e-men-
  []
 
-
+[57]
 Overfull \hbox (5.90233pt too wide) in paragraph at lines 23--24
 []\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0040-M5.1 Man-age-ment of ex-ter-nal re-s
 earch. Sup-
@@ -2240,54 +2267,50 @@ Overfull \hbox (1.70003pt too wide) in paragraph at lines 24--25
 Un-cer-tainty
  []
 
-[56]
+[58]
 Overfull \hbox (6.97687pt too wide) in paragraph at lines 64--65
 []\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0052-M7.1 Lit-er-a-ture re-view for Call 
 T/AW086/21:
  []
 
-[57]) (./DJF/parabstr.tex [58]
+) (./DJF/parabstr.tex [59]
 Overfull \hbox (30.91388pt too wide) in paragraph at lines 32--32
 []\T1/lmtt/m/n/10.95 (L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3
 )=N0*N1*N3[] 
  []
 
-
-Underfull \vbox (badness 1859) has occurred while \output is active []
-
- [59]))
-[60]
+[60])) [61]
 Chapter 6.
-(./DDF/DDF.tex [61
+(./DDF/DDF.tex [62
 
-] [62] (./DDF/basic_objects.tex
-<./pics/baseclasses.png, id=902, 1084.05pt x 476.78125pt>
+] [63] (./DDF/basic_objects.tex
+<./pics/baseclasses.png, id=911, 1084.05pt x 476.78125pt>
 File: ./pics/baseclasses.png Graphic file (type png)
 <use ./pics/baseclasses.png>
 Package pdftex.def Info: ./pics/baseclasses.png  used on input line 8.
 (pdftex.def)             Requested size: 251.9989pt x 110.82866pt.
- [63
+ [64
 
  <./pics/baseclasses.png>]
-<./pics/aggregates.png, id=911, 1625.07124pt x 989.6975pt>
+<./pics/aggregates.png, id=920, 1625.07124pt x 989.6975pt>
 File: ./pics/aggregates.png Graphic file (type png)
 <use ./pics/aggregates.png>
 Package pdftex.def Info: ./pics/aggregates.png  used on input line 69.
 (pdftex.def)             Requested size: 251.9989pt x 153.46193pt.
-[64 <./pics/aggregates.png (PNG copy)>] [65]) [66] (./DDF/functions.tex
-[67
+[65 <./pics/aggregates.png (PNG copy)>] [66]) [67] (./DDF/functions.tex
+[68
 
-] [68]) (./DDF/desipatt.tex
-<./pics/puppeteer_wab.png, id=965, 496.85625pt x 167.62625pt>
+] [69]) (./DDF/desipatt.tex
+<./pics/puppeteer_wab.png, id=974, 496.85625pt x 167.62625pt>
 File: ./pics/puppeteer_wab.png Graphic file (type png)
 <use ./pics/puppeteer_wab.png>
 Package pdftex.def Info: ./pics/puppeteer_wab.png  used on input line 12.
 (pdftex.def)             Requested size: 341.9989pt x 115.38342pt.
-)) [69] [70 <./pics/puppeteer_wab.png (PNG copy)>]
+)) [70] [71 <./pics/puppeteer_wab.png (PNG copy)>]
 Chapter 7.
-(./MGT/MGT.tex (./MGT/MGT_intro.tex [71
+(./MGT/MGT.tex (./MGT/MGT_intro.tex [72
 
-]) [72] (./MGT/dudson.tex [73
+]) [73] (./MGT/dudson.tex [74
 
 ]
 Overfull \hbox (3.17455pt too wide) in paragraph at lines 66--68
@@ -2295,30 +2318,30 @@ Overfull \hbox (3.17455pt too wide) in paragraph at lines 66--68
 n-vari-ably be `googled'
  []
 
-[74]
+[75]
 Overfull \hbox (4.15955pt too wide) in paragraph at lines 111--118
 []\T1/lmss/m/n/10.95 A \T1/lmtt/m/n/10.95 github \T1/lmss/m/n/10.95 `or-gan-i-s
 a-tion' []$\T1/lmtt/m/n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE$[]
  \T1/lmss/m/n/10.95 was
  []
 
-[75] [76]
+[76] [77]
 Overfull \hbox (15.44586pt too wide) in paragraph at lines 204--205
 []\T1/lmss/m/n/10.95 Release num-ber-ing should fol-low (a mod-i-fied) Se-man-t
 ic Ver-sion-ing ap-proach ref.
  []
 
-) [77] (./MGT/charter.tex [78
+) [78] (./MGT/charter.tex [79
 
-])) [79]
+])) [80]
 Chapter 8.
-(./MF/MF.tex) [80
+(./MF/MF.tex) [81
 
 ]
 Chapter 9.
-(./OP/OP.tex (./OP/opmgt.tex) (./OP/testing.tex [81
+(./OP/OP.tex (./OP/opmgt.tex) (./OP/testing.tex [82
 
-] [82]) (./OP/objdisc.tex
+] [83]) (./OP/objdisc.tex
 Underfull \hbox (badness 1436) in paragraph at lines 23--23
 []\T1/lmss/m/n/10.95 Messages and in-for-
  []
@@ -2338,7 +2361,7 @@ Overfull \hbox (0.48389pt too wide) in paragraph at lines 3--6
 -ples. Ex-am-ples use Jupyter
  []
 
-)) [83] [84]
+)) [84] [85]
 Chapter 10.
 (./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex)
 Overfull \hbox (50.23827pt too wide) in paragraph at lines 25--2
@@ -2346,7 +2369,7 @@ Overfull \hbox (50.23827pt too wide) in paragraph at lines 25--2
 n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
  []
 
-(./proxyapps/nektar-diffusion.tex [85
+(./proxyapps/nektar-diffusion.tex [86
 
 ])
 Overfull \hbox (47.13628pt too wide) in paragraph at lines 24--4
@@ -2357,7 +2380,7 @@ n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
 (./proxyapps/nektar-1d-sol.tex
 Underfull \vbox (badness 1377) has occurred while \output is active []
 
- [86])
+ [87])
 Overfull \hbox (43.72832pt too wide) in paragraph at lines 31--6
 []\T1/lmss/m/n/10.95 Nektar-1D-SOL is pub-licly avail-able at []$\T1/lmtt/m/n/1
 0.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
@@ -2374,7 +2397,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--8
 
  []
 
-[87] (./proxyapps/moment-kinetics.tex)
+[88] (./proxyapps/moment-kinetics.tex)
 Overfull \hbox (2.0166pt too wide) in paragraph at lines 28--10
 []\T1/lmss/m/n/10.95 Moment_Kinetics is pub-licly avail-able at []$\T1/lmtt/m/n
 /10.95 https : / / github . com / mabarnes /
@@ -2391,16 +2414,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--108
 
  []
 
-[88]
+[89]
 Chapter 11.
-(./REF/REF.tex [89
+(./REF/REF.tex [90
 
-] (./REF/conv.tex [90] (./REF/naming_map.tex
+] (./REF/conv.tex [91] (./REF/naming_map.tex
 Overfull \hbox (189.47043pt too wide) in paragraph at lines 4--48
  [] 
  []
 
-)) [91] [92] (./REF/acro.tex
+)) [92] [93] (./REF/acro.tex
 Underfull \hbox (badness 1466) in paragraph at lines 25--26
 []|\T1/lmss/m/n/10.95 Tokamak edge plasma mod-elling frame-work []$\T1/lmtt/m/n
 /10.95 https : / / boutproject .
@@ -2422,9 +2445,9 @@ Overfull \hbox (119.24408pt too wide) in alignment at lines 207--314
  [] [] 
  []
 
-[93
+[94
 
-] [94] [95] [96] [97] [98] [99]) [100] (./REF/symb.tex
+] [95] [96] [97] [98] [99] [100]) [101] (./REF/symb.tex
 Underfull \hbox (badness 10000) in paragraph at lines 62--62
 []|$\OT1/lmr/bx/n/10.95 x \OT1/lmr/m/n/10.95 =
  []
@@ -2471,19 +2494,19 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
  [] [] [] 
  []
 
-[101
+[102
 
-] [102] [103] [104] [105]
+] [103] [104] [105] [106]
 Overfull \hbox (131.24408pt too wide) in alignment at lines 417--505
  [] [] [] 
  []
 
-[106] [107] [108] [109] [110] [111] [112])) Excluding 'warpHTML' comment.
-[113]
+[107] [108] [109] [110] [111] [112] [113])) Excluding 'warpHTML' comment.
+[114]
 Chapter 12.
-(./IND/IND.tex)) [114
+(./IND/IND.tex)) [115
 
-] (./metackn.tex) [115
+] (./metackn.tex) [116
 
 
 ]
@@ -2518,9 +2541,9 @@ tes\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https :
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 199.
-[116
+[117
 
-] [117]
+] [118]
 Overfull \hbox (37.26216pt too wide) in paragraph at lines 200--200
 \T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.01-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
 ps : / / github . com / ExCALIBUR -[]
@@ -2538,7 +2561,7 @@ Overfull \hbox (24.69922pt too wide) in paragraph at lines 200--200
 m / ExCALIBUR -[] NEPTUNE / Documents /
  []
 
-[118]
+[119]
 Overfull \hbox (37.26216pt too wide) in paragraph at lines 200--200
 \T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.23-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
 ps : / / github . com / ExCALIBUR -[]
@@ -2550,7 +2573,7 @@ Overfull \hbox (1.8797pt too wide) in paragraph at lines 200--200
 in / reports /
  []
 
-[119]
+[120]
 Overfull \hbox (3.43066pt too wide) in paragraph at lines 200--200
 \T1/lmss/m/n/10.95 Tech. rep. CD/EXCALIBUR-FMS/0013-1.01-M2.3.1. []$\T1/lmtt/m/
 n/10.95 https : / / github .
@@ -2592,7 +2615,7 @@ Overfull \hbox (4.12984pt too wide) in paragraph at lines 200--200
  CD/EXCALIBUR-FMS/0024-M3.1.3.
  []
 
-[120]
+[121]
 Overfull \hbox (2.48808pt too wide) in paragraph at lines 200--200
 \T1/lmss/m/sl/10.95 rec-om-men-da-tion re-port\T1/lmss/m/n/10.95 . Tech. rep. C
 D/EXCALIBUR-FMS/0025-M1.3.1.
@@ -2626,7 +2649,7 @@ Overfull \hbox (14.14555pt too wide) in paragraph at lines 200--200
 / / github . com / ExCALIBUR -[]
  []
 
-[121]
+[122]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 199.
@@ -2655,7 +2678,7 @@ Overfull \hbox (35.28912pt too wide) in paragraph at lines 200--200
 sh gen-er-a-tion\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
  []
 
-[122]
+[123]
 Overfull \hbox (14.14555pt too wide) in paragraph at lines 200--200
 \T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0048-M2.3.2. []$\T1/lmtt/m/n/10.95 https : 
 / / github . com / ExCALIBUR -[]
@@ -2721,7 +2744,7 @@ Overfull \hbox (24.32396pt too wide) in paragraph at lines 200--200
 r-ent Mod-els\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
  []
 
-[123]
+[124]
 Overfull \hbox (58.13078pt too wide) in paragraph at lines 200--200
 []\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 ExCALIBUR-Fusion Mod-elling 
 Sys-tem Y4-Y6\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
@@ -2739,7 +2762,7 @@ Overfull \hbox (5.62892pt too wide) in paragraph at lines 200--200
 / github . com / ExCALIBUR -[]
  []
 
-[124]
+[125]
 Overfull \hbox (18.1242pt too wide) in paragraph at lines 200--200
 []\T1/lmss/m/sl/10.95 A fast, flex-i-ble, physi-cist's toolkit for gy-roki-net-
 ics\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https : / / gyrokinetics .
@@ -2751,21 +2774,21 @@ Overfull \hbox (5.03795pt too wide) in paragraph at lines 200--200
 T1/lmtt/m/n/10.95 https : / / www . gov . uk / government /
  []
 
-[125] [126] (./main.aux)
+[126] [127] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 90E4ED0947B7FC28A805965046F97AC2;6456.
+(rerunfilecheck)             Checksum: F082320E606E2DD3D51801FC94E2B63B;6620.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25081 strings out of 479727
- 450988 string characters out of 5884998
- 1347335 words of memory out of 5000000
- 41924 multiletter control sequences out of 15000+600000
+ 25093 strings out of 479727
+ 451179 string characters out of 5884999
+ 1347461 words of memory out of 5000000
+ 41931 multiletter control sequences out of 15000+600000
  571487 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  74i,15n,87p,1219b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2790,10 +2813,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 2208411 bytes).
+Output written on main.pdf (127 pages, 2212532 bytes).
 PDF statistics:
- 1828 PDF objects out of 2073 (max. 8388607)
- 1607 compressed objects within 17 object streams
- 482 named destinations out of 1000 (max. 500000)
- 392 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1838 PDF objects out of 2073 (max. 8388607)
+ 1616 compressed objects within 17 object streams
+ 484 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 
