@@ -1,0 +1,53 @@
+A prime consideration for edge modelling is accurately to represent the surface
+normal, not just the surface itself, since good power-handling demands that
+plasma flows in close to tangency, typically within $2^{o}$. Unless there is to be
+special coding at boundaries, the educational material for finite difference
+modellers explains why this approach is unsatisfactory, and the same objection
+also applies to AMR type meshes, although in view of the unexpected success of AMR
+in fluid and PIC codes, it was carefully discussed as detailed in ref~\cite{y1r211}. The
+most serious objection appeared to be the need to represent plasma diffusion
+which is strongly anisotropic due to an applied magnetic field. (Moreover,
+if hanging nodes are allowed in the FEM, then AMR behaviour may be reproduced by FEM codes,
+whereas the converse is not true.)
+
+Similar objections also apply to Lattice Boltzmann methods~(LBM), where there is the simple
+objection that since their complexity arises from treating diffusive transport, why not code
+the diffusive operators directly? Equally when it is significant that
+the dissipation operator is mathematically extremely complex as
+in many plasma transport problems, why not use a more accurate representation of
+velocity-phase space effects than is provided by a small number of LBM constants?
+Although proponents claim that apparently fundamental inefficiencies in the approach,
+such as the need for explicit time advance, may be overcome, the ideas needed have
+invariably been already explored in the finite volume or finite element context,
+so as LBM approaches the efficiency of say FEM, it increasingly resembles it algorithmically.
+
+Smoothed particle hydrodynamics~(SPH) may be eliminated as a general approach to
+plasma modelling on purely mathematical grounds, namely that for small dimensionality
+problems it is provably more accurate to use a mesh-based approximation to reconstruct a function
+than a set of point samples, see for example Niederreiter's textbook~\cite{niederreiter}.
+Exactly where the bound lies depends on details of the problem, but it seems in
+practice to be around $D=4$, so that particle methods may become attractive for
+treating kinetic effects in $5-D$~or~$6-D$ position-plus-velocity phase spaces.
+Notice that SPH `particles' are really just markers for mass, momentum and energy,
+which furnishes a physics-based argument against their use, since 
+if additional (kinetic) effects are to be introduced into a problem such
+markers are not the best starting-point for inclusion.
+
+Both SPH and LBM may have niches when mesh production is difficult, such as strong
+surface deformation cracks, however these niches do not seem presently to need
+occupation in order to design a fusion reactor. Gentler deformations due to thermal
+expansion and melt may be handled by moving finite element methods which have been
+introduced into existing FEM packages as required. Moreover, if indeed rapid
+boundary changes are concerned, the envisaged combined particle and mesh \nep\ 
+software would anyway seem to offer an excellent foundation for handling the whole
+range of shape variation.
+
+Lastly, `particle shaping' has been mentioned in the context of particle methods
+(regarded as methods directly capturing some aspect of velocity space, ie.\ not SPH).
+To most mathematicians and physicists, giving a particle a `shape' would seem unnatural,
+and the only benefit that it seems to offer, namely a reduced level of noise,
+is more efficiently handled by filtering in physical space alone,
+in the \nep\ context by smoothing any related mesh-based quantities.
+
+
+
