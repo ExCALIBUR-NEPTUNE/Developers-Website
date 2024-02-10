@@ -1004,9 +1004,11 @@ FEM, it increasingly resembles it algorithmically.
 
 <p>
 Smoothed particle hydrodynamics&nbsp;(SPH) may be eliminated as a general approach to plasma modelling on purely mathematical grounds, namely that for small dimensionality problems it is provably more accurate to use a mesh-based approximation to
-reconstruct a function than a set of point samples, see for example Niederreiter’s textbook&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@niederreiter">48</a>]. Exactly where the bound lies depends on details of the problem, but it seems in practice
-to be around \(D=4\), so that particle methods may become attractive for treating kinetic effects in \(5-D\)&nbsp;or&nbsp;\(6-D\) position-plus-velocity phase spaces. Notice that SPH ‘particles’ are really just markers for mass, momentum and energy, which
-furnishes a physics-based argument against their use, since if additional (kinetic) effects are to be introduced into a problem such markers are not the best starting-point for inclusion.
+reconstruct a function than a set of point samples, see for example Niederreiter’s textbook&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@niederreiter">48</a>]. For supposing \(N_S\) samples are taken, then Monte-Carlo sampling has an
+error\(\propto N_S^{-1/2}\), ie. an error exponent of&nbsp;\(1/2\) and never as large as unity even for Quasi-Monte-Carlo sampling, whereas it might be assumed that the spacing of samples on a regular \(d-\)dimensional lattice is&nbsp;\(h\propto
+N_S^{-1/d}\), so a \(p-\)th order scheme has error exponent&nbsp;\(p/d\), thus taking \(p&gt;d\) ensures that a mesh-based approximation is always more accurate than one with more randomised sampling. In practice the situation is not as clear cut as this
+argument indicates, since spectral schemes may exhibit gross error if \(h\)&nbsp;exceeds the smallest scale of the function whereas Monte-Carlo errors increase more gradually with decreasing&nbsp;\(N_S\). Exactly where equality of error bound occurs depends
+on details of the problem, but it seems in practice to be at least for \(d&gt;4\), so that particle methods may become attractive for treating kinetic effects in \(5-D\)&nbsp;or&nbsp;\(6-D\) position-plus-velocity phase spaces.
 </p>
 
 <p>

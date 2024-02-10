@@ -25,13 +25,17 @@ Smoothed particle hydrodynamics~(SPH) may be eliminated as a general approach to
 plasma modelling on purely mathematical grounds, namely that for small dimensionality
 problems it is provably more accurate to use a mesh-based approximation to reconstruct a function
 than a set of point samples, see for example Niederreiter's textbook~\cite{niederreiter}.
-Exactly where the bound lies depends on details of the problem, but it seems in
-practice to be around $D=4$, so that particle methods may become attractive for
+For supposing $N_S$ samples are taken, then Monte-Carlo sampling has an error$\propto N_S^{-1/2}$,
+ie.\ an error exponent of~$1/2$ and  never as large as unity even for Quasi-Monte-Carlo sampling,
+whereas it might be assumed that the spacing of samples on a regular $d-$dimensional lattice
+is~$h\propto N_S^{-1/d}$, so a $p-$th order scheme has error exponent~$p/d$, thus taking $p>d$
+ensures that a mesh-based approximation is always more accurate than one with more
+randomised sampling. In practice the situation is not as clear cut as this argument indicates, since
+spectral schemes may exhibit gross error if $h$~exceeds the smallest scale of the
+function whereas Monte-Carlo errors increase more gradually with decreasing~$N_S$.
+Exactly where equality of error bound occurs depends on details of the problem, but it seems in
+practice to be at least for $d>4$, so that particle methods may become attractive for
 treating kinetic effects in $5-D$~or~$6-D$ position-plus-velocity phase spaces.
-Notice that SPH `particles' are really just markers for mass, momentum and energy,
-which furnishes a physics-based argument against their use, since 
-if additional (kinetic) effects are to be introduced into a problem such
-markers are not the best starting-point for inclusion.
 
 Both SPH and LBM may have niches when mesh production is difficult, such as strong
 surface deformation cracks, however these niches do not seem presently to need
