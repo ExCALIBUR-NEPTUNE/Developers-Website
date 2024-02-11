@@ -79,8 +79,9 @@ diff -b  ~/excalibur-wa/tex/bib/t33rp3.bib ~/devweb/bib/t33rp3.bib
 echo "++++diff -b  ~/excalibur-wa/tex/bib/warv.bib ~/devweb/bib/warv.bib"
 diff -b  ~/excalibur-wa/tex/bib/warv.bib ~/devweb/bib/warv.bib
 echo "++++diff -b  ~/excalibur-wa/tex/bib/waynes.bib ~/devweb/bib/waynes.bib"
-diff -b  ~/excalibur-wa/tex/bib/mc.bib ~/devweb/bib/warv.bib
-echo "++++diff -b  ~/excalibur-wa/tex/bib/waynes.bib ~/devweb/bib/waynes.bib"
+diff -b  ~/excalibur-wa/tex/bib/waynes.bib ~/devweb/bib/waynes.bib
+echo "++++diff -b  ~/excalibur-wa/tex/bib/mc.bib ~/devweb/bib/mc.bib"
+diff -b  ~/excalibur-wa/tex/bib/mc.bib ~/devweb/bib/mc.bib
 #tidy up
 rm -f ~/excalibur-wa/tex/d31/approboxw.tex.sav
 rm -f ~/excalibur-wa/tex/index/conv.tex.sav
