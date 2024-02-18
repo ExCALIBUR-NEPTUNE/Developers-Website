@@ -2,7 +2,7 @@
 The following scrape-off layer (SOL) parameters (including decay lengths) are for the
 L-mode scrape off layer in MAST~\cite{Mi13Expe}.
 For MAST,  with the standard notation,
-$R=1.6$\,m, $B_T \approx 0.6$\,T, $I_\phi \approx 400$\,kA and
+$R_0=1.6$\,m, $B_T \approx 0.6$\,T, $I_\phi \approx 400$\,kA and
 $a=0.6$\,m, values which imply that the poloidal field at the
 plasma edge $B_p \approx 0.1$\,T.
 The main result of the paper~\cite{Mi13Expe} is that the decay length of the power
@@ -12,10 +12,11 @@ and $P_{tot} \approx 350$\,kW.
 Unless stated otherwise, the derived length, timescales and speeds are derived from
 formulae and graphs in Wesson's book~\cite[Chap 10]{wesson}.
 The derived quantities have been checked against SI formulae
-in ref~\cite[Table 2.2]{miyamoto}, and also compared with those
+in~\cite[Table 2.2]{miyamoto}, and also compared with those
 listed in~\cite[Appendix]{Xu10Inte}. It is worth noting that although
 the latter table describes the SOL of JET (and in addition its separatrix and pedestal),
-JET values are typically within a factor of~$2$ of those for MAST.
+JET values are typically within a factor of~$2$ of those for MAST, hence similar
+numbers could be inferred for reactor designs.
 
 \subsection{Typical discharge}
 
@@ -76,8 +77,8 @@ Hazeltine and Meiss~\cite {hazeltinemeiss} on the subject. (The point is that
 although MHD treats a faster timescale, it is valid on longer timescales, provided
 relevant smaller/slower terms are retained.)
 Moreover, SOL timescales involving filaments are fast, witnessed by the fact that
-the ion gyro-frequency is used as normalisation for electrostatic models in
-ref~\cite{Mi12Simu}, which from \Sec{props} is a not too dissimilar timescale~$10^{-7}\,s$
+the ion gyro-frequency is used as normalisation for electrostatic models in~\cite{Mi12Simu},
+which from \Sec{props} is a not too dissimilar timescale~$10^{-7}\,s$
 to the Alfven timescale based on the poloidal field~($1$\,cm/$10^6 \approx 10^{-8}$\,s).
 Later, Freidberg~\cite{freidberg}
 showed that, at least in directions perpendicular to~${\bf B}$, the dynamical MHD equation
@@ -97,9 +98,9 @@ could well be significant, see next \Sec{neuts}.
 However neutrals are mainly expected to act as a sink of momentum and energy.
 
 \subsection{Effect of Neutrals}\label{sec:neuts}
-Formulae for a weakly ionised plasma are given in the Plasma Formulary\cite{NRLpf07}.
-The collision cross-sections for electrons and ions respectively from
-ref~\cite{Ha91hydr} are $\sigma_s^{e|0}= 10^{-19}$\,$m^2$ and
+Formulae for a weakly ionised plasma are given in the Plasma Formulary~\cite{NRLpf07}.
+The collision cross-sections for electrons and ions respectively from~\cite{Ha91hydr}
+are $\sigma_s^{e|0}= 10^{-19}$\,$m^2$ and
 $\sigma_s^{i|0}= 4 \times 10^{-19}$\,$m^2$.
 Hence, the collision frequencies for electrons and ions respectively are
 \begin{equation}
@@ -126,7 +127,7 @@ for electrons and ions respectively these are
 \eta_{e {\sf n}\parallel} =4 \frac{{\sf n}}{n},\;\;\;
 \eta_{i {\sf n}\parallel} =0.5 \frac{{\sf n}}{n}
 \end{equation}
-The implication from the formulae in ref~\cite{Le06emer} is that 
+The implication from the formulae in~\cite{Le06emer} is that 
 the value for $\eta_{e \parallel}$ combines additively with the usual
 Spitzer value in a more
 highly ionised plasma. Assuming ${\sf n} \approx n$, however the correction

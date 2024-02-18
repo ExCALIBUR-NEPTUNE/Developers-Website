@@ -5,6 +5,7 @@ To build the website locally it should be sufficient to first clone this repo, t
 
 ```
 sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
+(Note pre-existing linux package installations may be checked using *sudo apt list --installed* which takes multiple arguments.)
 mkdir public
 bash buildwebsite-local.sh
 ```
@@ -17,6 +18,7 @@ If you want to generate just the pdf version of the website then you perform the
 ```
 bash buildwebsite-local.sh PDF
 ```
+and the PDF appears as ./public/main.pdf
 
 ##  Partial PDF and HTML generation
 If you want to generate just the HTML and PDF of some tex, and not the whole website, then you perform the following command (where proxyapps/proxyapps is replaced with the relative path to the tex file you want to convert to PDF and HTML)
@@ -25,7 +27,7 @@ If you want to generate just the HTML and PDF of some tex, and not the whole web
 bash singlepage.sh '\input{proxyapps/proxyapps}'
 ```
 
-## Non-stanard LaTeX commands
+## Non-standard LaTeX commands
 When adding a new chapter or section to the latex documentation the following command should be used instead of \section and \chapter
 
 ```
