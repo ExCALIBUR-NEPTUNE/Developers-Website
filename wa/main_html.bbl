@@ -201,9 +201,18 @@
       \field{title}{{ExCALIBUR-NEPTUNE Bid Documents, Calls, Reports and Notes}}
       \field{year}{2021}
     \endentry
-    \entry{xpntexwebsite}{misc}{}
+    \entry{neptunesearchwebsite}{misc}{}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://excalibur-neptune.github.io/Documents}}
+      \field{note}{Accessed: November 2023}
+      \field{title}{{ExCALIBUR-NEPTUNE Reports in Searchable Repo}}
+      \field{year}{2023}
+    \endentry
+    \entry{xpntexwebsite}{misc}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/tree/main/tex}}
       \field{note}{Accessed: January 2022}
@@ -211,8 +220,8 @@
       \field{year}{2022}
     \endentry
     \entry{rfc2119}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ietf.org/rfc/rfc2119.txt}}
       \field{note}{Accessed: March 2021}
@@ -238,16 +247,16 @@
       \strng{authorbibnamehash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
       \strng{authornamehash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
       \strng{authorfullhash}{60b8d494ae4eeaf2897fa3ca41c3e0ca}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Managing Successful Projects with PRINCE2, 6th Edition}}
       \field{year}{2017}
     \endentry
     \entry{prince2wiki}{misc}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://en.wikipedia.org/wiki/PRINCE2}}
       \field{note}{Accessed: January 2022}
@@ -501,8 +510,8 @@
       \strng{authorbibnamehash}{8245ec49e200af89a2119903b3e871de}
       \strng{authornamehash}{8245ec49e200af89a2119903b3e871de}
       \strng{authorfullhash}{8245ec49e200af89a2119903b3e871de}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Plasma Confinement}
@@ -704,8 +713,8 @@
       \strng{authornamehash}{bda833f3d19a05e21d8d928d371c0b58}
       \strng{authorfullhash}{bda833f3d19a05e21d8d928d371c0b58}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{5}
@@ -1072,8 +1081,8 @@
       \strng{editorbibnamehash}{c39908f2f4422cca6524aa8e9a1ee921}
       \strng{editornamehash}{c39908f2f4422cca6524aa8e9a1ee921}
       \strng{editorfullhash}{c39908f2f4422cca6524aa8e9a1ee921}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines}}
@@ -1222,8 +1231,8 @@
       \field{year}{2022}
     \endentry
     \entry{recollwebsite}{misc}{}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.lesbonscomptes.com/recoll}}
       \field{note}{Accessed: January 2022}
@@ -1704,8 +1713,8 @@
       \strng{authorbibnamehash}{2bfd581e0d876a97b6e416eae23edd55}
       \strng{authornamehash}{2bfd581e0d876a97b6e416eae23edd55}
       \strng{authorfullhash}{2bfd581e0d876a97b6e416eae23edd55}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{9}
@@ -1988,8 +1997,8 @@
       \strng{authornamehash}{77b418ea1fc668a6740997a949824d84}
       \strng{authorfullhash}{77b418ea1fc668a6740997a949824d84}
       \field{extraname}{8}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{6}
@@ -2332,8 +2341,8 @@
       \strng{authornamehash}{04ce31d50079c96e1e6dcab4900fe96d}
       \strng{authorfullhash}{04ce31d50079c96e1e6dcab4900fe96d}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{9}

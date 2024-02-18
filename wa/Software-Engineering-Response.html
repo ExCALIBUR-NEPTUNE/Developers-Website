@@ -971,7 +971,7 @@ perhaps less obviously, its scientific <em>complexity</em> due to the need to tr
 <p>
 The last makes <span class="textsc">NEPTUNE</span> a significantly harder development than the BOUT++ code discussed in Section&nbsp;<a href="Technical-Specification.html#sec:response_physics">4.1</a>. The difficulty motivated
 studies of software engineering practices outside as well as in the scientific context. The studies of scientific work are summarised in reports concerning frameworks, scientific UQ etc. Ideas from these studies are combined with non-technical works such as
-Hewitt&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@hewitt">27</a>] and Sommerville&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@sommerville">28</a>] and summarised in the report&nbsp;ref. [<a
+Hewitt&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@hewitt">28</a>] and Sommerville&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@sommerville">29</a>] and summarised in the report&nbsp;ref. [<a
 href="Index-0.html#LWR-ht-cite.0@y2d34">2</a>].
 </p>
 
@@ -979,12 +979,12 @@ href="Index-0.html#LWR-ht-cite.0@y2d34">2</a>].
 The outcome is the present report and website, which augment the procedures of Dudson and BOUT++ collaborators&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y3re314">3</a>] to govern the development of <span
 class="textsc">NEPTUNE</span>. Management aspects of the development are treated in Section&nbsp;<a href="Introduction.html#sec:MGT_intro">7.1</a> and operational aspects in Section&nbsp;<a
 href="Operational-Documentation.html#sec:OP_MGT">9.1</a>. The remainder of this section focusses on the generic details of a software implementation, the so-called non-functional aspects, with BOUT++ instructions augmented to allow for the greater
-complexity of <span class="textsc">NEPTUNE</span>, following the D3.3 reports&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d33">29</a>], here with&nbsp;Section&nbsp;<a
+complexity of <span class="textsc">NEPTUNE</span>, following the D3.3 reports&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d33">30</a>], here with&nbsp;Section&nbsp;<a
 href="Generating-Names-Variables.html#sec:TS_varnames">4.3</a> adding a way to handle a multitude of variable names to accommodate the much increased number of physical variables.
 </p>
 
 <p>
-Following D3.3&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d33">29</a>], Section&nbsp;<a href="Software-Engineering-Response.html#sec:TS_considers">4.2</a> discusses high-level constraints on the structure of software. where the
+Following D3.3&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2d33">30</a>], Section&nbsp;<a href="Software-Engineering-Response.html#sec:TS_considers">4.2</a> discusses high-level constraints on the structure of software. where the
 concept of division into packages and modules (which may represent libraries) is promoted. Section&nbsp;<a href="Software-Engineering-Response.html#sec:TS_scistruct">4.2</a> explores the implications of these constraints for <span
 class="textsc">NEPTUNE</span>. At the opposite extreme to Section&nbsp;<a href="Software-Engineering-Response.html#sec:TS_considers">4.2</a> and Section&nbsp;<a
 href="Software-Engineering-Response.html#sec:TS_scistruct">4.2</a>, Section&nbsp;<a href="Software-Engineering-Response.html#sec:TS_lowlevel">4.2</a> describes the desirable contents for a single module, and Section&nbsp;<a
@@ -1009,8 +1009,8 @@ excessively large number of methods. Many small software libraries also fall int
 well-designed module file is \(30\times 60 = 1\,800\)&nbsp;lines which is a manageable size of file given editing software that remembers on restart, the last line accessed (so that it possible to return immediately to a particular subroutine). The magnitude of
 the D3.3 exercise follows from the fact that comparable software packages probably of somewhat lesser complexity than <span class="textsc">NEPTUNE</span> written in high level languages such as C++ range in size up to&nbsp;\(1\,000\,000\)
 lines. Clearly \(400\)&nbsp;separate modules is too unwieldy, and there is a need to organise further into packages which might contain in turn \(10\)-\(50\) modules. As a way of providing further indication to developers, it is helpful to talk of packages as
-being arranged into layers, as discussed in ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>, §§&#x202f;2.4, 3.2], see Figure&nbsp;<a href="Software-Engineering-Response.html#fig:hierarchygroup">4.4</a>. Then, as
-prefigured in ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>, Annex&nbsp;A], it should be possible to encapsulate the necessary complexity in one, albeit large diagram.
+being arranged into layers, as discussed in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">31</a>, §§&#x202f;2.4, 3.2], see Figure&nbsp;<a href="Software-Engineering-Response.html#fig:hierarchygroup">4.4</a>. Then, as
+prefigured in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">31</a>, Annex&nbsp;A], it should be possible to encapsulate the necessary complexity in one, albeit large diagram.
 </p>
 <figure id="autoid-5" class="figure ">
 <div class="center">
@@ -1049,14 +1049,13 @@ Figure 4.4:&nbsp;Sketch of relationship between units of large code. <a id="fig:
 <a id="sec:TS_structure"></a>
 
 <p>
-In both refs&nbsp;refs. [<a href="Index-0.html#LWR-ht-cite.0@y1re331">31</a>, <a href="Index-0.html#LWR-ht-cite.0@y2re332">32</a>], a figure from Dubey&nbsp;et&nbsp;al&nbsp;ref. [<a
-href="Index-0.html#LWR-ht-cite.0@Du16Idea">33</a>] is reproduced that illustrates how scientific software may be developed by beginning with an “infrastructure" capability into which initially exploratory scientific software is integrated as its worth is
-established. Unfortunately for <span class="textsc">NEPTUNE</span>, it is not clear initially what aspects of the infrastructure will be durable and stable, although once the software is more mature, Dubey&nbsp;et&nbsp;al’s methodology appears
-attractive.
+In both&nbsp;refs. [<a href="Index-0.html#LWR-ht-cite.0@y1re331">32</a>, <a href="Index-0.html#LWR-ht-cite.0@y2re332">33</a>], a figure from Dubey&nbsp;et&nbsp;al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@Du16Idea">34</a>]
+is reproduced that illustrates how scientific software may be developed by beginning with an “infrastructure" capability into which initially exploratory scientific software is integrated as its worth is established. Unfortunately for <span
+class="textsc">NEPTUNE</span>, it is not clear initially what aspects of the infrastructure will be durable and stable, although once the software is more mature, Dubey&nbsp;et&nbsp;al’s methodology appears attractive.
 </p>
 
 <p>
-The literature referenced in ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>] indicates that scientific software should be produced by aggregation, but is less helpful as to what is to be aggregated, ie. the modular decomposition as to
+The literature referenced in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">31</a>] indicates that scientific software should be produced by aggregation, but is less helpful as to what is to be aggregated, ie. the modular decomposition as to
 what should constitute a single module etc.
 </p>
 
@@ -1078,7 +1077,7 @@ arranged into a relatively small number of packages according to, eg. whether th
 
 <p>
 Concerning logical interconnections between modules, the use of a directed, acyclic graph&nbsp;(DAG) structure might be thought mandatory, particularly to process the input data in order to specify coherently the construction of the elements of the solution
-matrix. However, as prefigured in ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>] for the gyrokinetics code <span class="textsc">GS2</span>, the tightly coupled nature of the central edge physics problem means that input is
+matrix. However, as prefigured in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">31</a>] for the gyrokinetics code <span class="textsc">GS2</span>, the tightly coupled nature of the central edge physics problem means that input is
 more about gathering <em>all</em> the data, for only at that point can fields be computed and only after that may matrix coefficients be computed.
 </p>
 
@@ -1324,8 +1323,8 @@ Function overloading
 </table>
 
 <p>
-Further insight into UML terminology may be gained from the description of the patterns in refs&nbsp;<a id="main-autopage-108"></a>refs. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">30</a>, <a
-href="Index-0.html#LWR-ht-cite.0@y2re332">32</a>].
+Further insight into UML terminology may be gained from the description of the patterns in&nbsp;<a id="main-autopage-108"></a>refs. [<a href="Index-0.html#LWR-ht-cite.0@y2re333">31</a>, <a
+href="Index-0.html#LWR-ht-cite.0@y2re332">33</a>].
 </p>
 </div>
 
@@ -1336,8 +1335,8 @@ href="Index-0.html#LWR-ht-cite.0@y2re332">32</a>].
 
 
 <p>
-The focus herein is the structure within a module. Specifically, the module describes a single class or object (strictly speaking in UML terms, objects are instances of a class), which is fundamental in that it is defined without use of aggregation. Tthe software -
-consistent with Clerman and Spector&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@clermanspector">34</a>, §&#x202f;11] - that is promoted by Arter et al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@fprog">35</a>] for an
+The focus herein is the structure within a module. Specifically, the module describes a single class or object (strictly speaking in UML terms, objects are instances of a class), which is fundamental in that it is defined without use of aggregation. The software -
+consistent with Clerman and Spector&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@clermanspector">35</a>, §&#x202f;11] - that is promoted by Arter et al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@fprog">36</a>] for an
 object-oriented language, recognises two sizes of fundamental class and it is easier to start by considering the smaller, denoted smallobj_m.
 </p>
 
@@ -1393,7 +1392,7 @@ Module smallobj_m does not have a separate attributes file, but will typically s
 In outline, the methods or operations associated with smallobj allow data to be read from a named file, used in the construction of an object, and output to disc file. The file is given a numeric identifier&nbsp;ninso (file&nbsp;unit) when it is opened. Data
 used to construct the object forms a single namelist block, viz. a list of arbitrary code variables that may (or not) be assigned values in the input file using a attribute-value notation. Namelist variables should have long names that promote a good user
 interface, and be given default values in case they are not input. The style encourages checking that inputs have acceptable values, for example lie in expected ranges, but there is no equivalent of eg. the Cerberus Python data validation package&nbsp;ref. [<a
-href="Index-0.html#LWR-ht-cite.0@cerberuswebsite">36</a>], users must explicitly code checks and calls to log_m if the values are questionable or erroneous. (It is hoped that this can be automated based on a <span class="latexlogofont"><span
+href="Index-0.html#LWR-ht-cite.0@cerberuswebsite">37</a>], users must explicitly code checks and calls to log_m if the values are questionable or erroneous. (It is hoped that this can be automated based on a <span class="latexlogofont"><span
 class="latexlogo">L<span class="latexlogosup">a</span>T<span class="latexlogosub">e</span>X</span></span> table describing input symbols. After successful checks, the values in the namelist are copied into the data type sonumerics_t,
 whence it is supposed that a single subroutine then instantiates the smallobj_t object. Another routine performs output of this object, either to a directly specified file unit, or to the standard output by default, in the simple text format of a variable name
 followed by its value on the following line. As might be expected, there are also routines to ‘delete’ the object, ie. to deallocate any constituent arrays, and to close the input file. The precise list of member functions (or methods in the UML nomenclature) is
@@ -1643,10 +1642,10 @@ Charter, see&nbsp;Section&nbsp;<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#s
 
 <p>
 There are many different code styles, each of which have their proponents, and can be debated at length. While everyone has their own favourite style, it seems likely that the choice of style makes little difference to objective quality or productivity. Anecdotal
-experience and experience from the gaming world in developing large, complicated packages (eg. Gregory&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@gregory">37</a>, §&#x202f;3]), indicate however that it is very important that there is a
+experience and experience from the gaming world in developing large, complicated packages (eg. Gregory&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@gregory">38</a>, §&#x202f;3]), indicate however that it is very important that there is a
 well-defined code style and that developers stick to it, since a mixture of styles in a code base adds unnecessary mental load and overhead. The ultimate choice is down to the project Lead, under advice from major code contributors, leading websites and
-textbooks, eg. in the case of the C++ language, the C++ core guidelines&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@cppguidelines">38</a>] and more compactly Stroustrop’s “Tour of of C++"&nbsp;ref. [<a
-href="Index-0.html#LWR-ht-cite.0@stroustroptour">39</a>].
+textbooks, eg. in the case of the C++ language, the C++ core guidelines&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@cppguidelines">39</a>] and more compactly Stroustrop’s “Tour of of C++"&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@stroustroptour">40</a>].
 </p>
 
 <p>
@@ -1662,8 +1661,8 @@ The following style choices have been made and efforts will be made to enforce t
 
 <li>
 <p>
-• Developer tools: Code formatting tools should be used to automatically format code. For C++ clang-tidy&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@clang-tidywebsite">40</a>] should be used while, and for Python Black&nbsp;ref.
-[<a href="Index-0.html#LWR-ht-cite.0@blackwebsite">41</a>] is recommended. Similar tools should be chosen for any other languages adopted by the project.
+• Developer tools: Code formatting tools should be used to automatically format code. For C++ clang-tidy&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@clang-tidywebsite">41</a>] should be used while, and for Python Black&nbsp;ref.
+[<a href="Index-0.html#LWR-ht-cite.0@blackwebsite">42</a>] is recommended. Similar tools should be chosen for any other languages adopted by the project.
 </p>
 </li>
 <li>
@@ -1763,17 +1762,17 @@ class="latexlogosup">a</span>T<span class="latexlogosub">e</span>X</span></span>
 Given a need to mix with Object Fortran, which is not case-sensitive, the ‘pot-hole’ convention for naming C++ variables, ie. separating name elements by underscores, is recommended.
 </p>
 <p>
-Occasionally a convention is used where the name includes a part which indicates the type of the variable. For example, the JSF style for C++&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@pittwhitely">42</a>, §&#x202f;6.6] recommends that
+Occasionally a convention is used where the name includes a part which indicates the type of the variable. For example, the JSF style for C++&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@pittwhitely">43</a>, §&#x202f;6.6] recommends that
 pointer names begin&nbsp;‘p_’ and that private or protected (‘member’) variables should have names beginning with&nbsp;‘m’. In general naming conventions are probably not essential, since the type can be read in the code, and modern IDEs will easily provide
 this information to the developer. Nonetheless, there is no objection to employing a convention, and <span class="textsc">NEPTUNE</span> recommend the following one for coders who wish to do so.
 </p>
 <p>
-For C++, based on the recommendations of the book “Professional C++" (eg. ref&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@solterkleper">43</a>, §&#x202f;7], the following prefix strings should be employed: ‘m_’ for member (particularly
-useful for indicating scope), ‘p_’ for pointer, ‘s_’ for static, ‘k_’ for constant, ‘f_’ for flag (Boolean value), ‘d_’ for buffers/pointers on an accelerator device, and aggregations thereof, eg. ‘ms_variable’. Use of global variables is deprecated, so the ‘g_’ prefix
-should not be used.
+For C++, based on the recommendations of the book “Professional C++" (eg. ref. [<a href="Index-0.html#LWR-ht-cite.0@solterkleper">44</a>, §&#x202f;7], the following prefix strings should be employed: ‘m_’ for member (particularly useful for
+indicating scope), ‘p_’ for pointer, ‘s_’ for static, ‘k_’ for constant, ‘f_’ for flag (Boolean value), ‘d_’ for buffers/pointers on an accelerator device, and aggregations thereof, eg. ‘ms_variable’. Use of global variables is deprecated, so the ‘g_’ prefix should not be
+used.
 </p>
 <p>
-For Object Fortran naming conventions, Arter&nbsp;et&nbsp;al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@fprog">35</a>] codifies best practice. It may also be useful to reserve the single letters&nbsp;‘i’, ‘j’, ‘k’ etc. for the names of loop-count
+For Object Fortran naming conventions, Arter&nbsp;et&nbsp;al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@fprog">36</a>] codifies best practice. It may also be useful to reserve the single letters&nbsp;‘i’, ‘j’, ‘k’ etc. for the names of loop-count
 variables. Loop counting should start at unity, consistent with everyday practice, unless there are good reasons for starting at zero or using offset values.
 </p>
 </li>

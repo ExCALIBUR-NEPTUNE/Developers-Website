@@ -61,7 +61,7 @@
 \contentsline {subsubsection}{Interactions between Modules}{40}{section*.49}%
 \contentsline {subsection}{Design of a Module}{40}{section*.50}%
 \contentsline {subsubsection}{Notation}{40}{section*.51}%
-\contentsline {subsubsection}{Module design}{40}{section*.52}%
+\contentsline {subsubsection}{Module design}{41}{section*.52}%
 \contentsline {subsection}{Processing Module Output}{43}{section*.53}%
 \contentsline {subsection}{Code licence and availability}{44}{section*.54}%
 \contentsline {subsection}{Code style}{44}{section*.55}%
