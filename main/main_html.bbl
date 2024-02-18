@@ -19,6 +19,41 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{y3re181}{report}{}
+      \name{author}{2}{}{%
+        {{hash=cfcb0395817bae3ca4433d414a89c885}{%
+           family={Threlfall},
+           familyi={T\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
+           family={Arter},
+           familyi={A\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {UKAEA}%
+      }
+      \strng{namehash}{77b418ea1fc668a6740997a949824d84}
+      \strng{fullhash}{77b418ea1fc668a6740997a949824d84}
+      \strng{bibnamehash}{77b418ea1fc668a6740997a949824d84}
+      \strng{authorbibnamehash}{77b418ea1fc668a6740997a949824d84}
+      \strng{authornamehash}{77b418ea1fc668a6740997a949824d84}
+      \strng{authorfullhash}{77b418ea1fc668a6740997a949824d84}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0055-M1.8.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0055-M1.8.1}}
+      \field{title}{{Report of NEPTUNE Workshop 7 October 2021}}
+      \field{type}{techreport}
+      \field{year}{2021}
+      \field{dateera}{ce}
+    \endentry
     \entry{y2d34}{report}{}
       \name{author}{3}{}{%
         {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
@@ -47,50 +82,17 @@
       \strng{authornamehash}{0e28bdccd079ad1411c15e0badcec962}
       \strng{authorfullhash}{0e28bdccd079ad1411c15e0badcec962}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{10}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0033-1.10-D3.4.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0033-D3.4}}
       \field{title}{{Development Plan}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2d34' (./bib/exc.bib): Invalid format '25/10/21' of date field 'date' - ignoring}
-    \endentry
-    \entry{y3re181}{report}{}
-      \name{author}{2}{}{%
-        {{hash=cfcb0395817bae3ca4433d414a89c885}{%
-           family={Threlfall},
-           familyi={T\bibinitperiod},
-           given={E.},
-           giveni={E\bibinitperiod}}}%
-        {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
-           family={Arter},
-           familyi={A\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {UKAEA}%
-      }
-      \strng{namehash}{77b418ea1fc668a6740997a949824d84}
-      \strng{fullhash}{77b418ea1fc668a6740997a949824d84}
-      \strng{bibnamehash}{77b418ea1fc668a6740997a949824d84}
-      \strng{authorbibnamehash}{77b418ea1fc668a6740997a949824d84}
-      \strng{authornamehash}{77b418ea1fc668a6740997a949824d84}
-      \strng{authorfullhash}{77b418ea1fc668a6740997a949824d84}
-      \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0055-M1.8.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0055-M1.8.1}}
-      \field{title}{{Report of NEPTUNE Workshop 7 October 2021}}
-      \field{type}{techreport}
-      \field{year}{2021}
-      \warn{\item Entry 'y3re181' (./bib/exc.bib): Invalid format '21/10/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re314}{report}{}
       \name{author}{2}{}{%
@@ -115,16 +117,17 @@
       \strng{authornamehash}{77b418ea1fc668a6740997a949824d84}
       \strng{authorfullhash}{77b418ea1fc668a6740997a949824d84}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{10}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0042-M3.1.4.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0042-M3.1.4}}
       \field{title}{{Specification and Integration of Scientific Software}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re314' (./bib/exc.bib): Invalid format '31/10/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{sciplan}{report}{}
       \name{author}{4}{}{%
@@ -159,20 +162,21 @@
       \strng{authornamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
       \strng{authorfullhash}{9a65604a77c27903541b0a5d6762207d}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{11}
       \field{note}{\url{https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/spf/ukaea-excalibur-fms-scienceplan.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0001}}
       \field{title}{{ExCALIBUR Fusion Modelling System Science Plan}}
       \field{type}{techreport}
       \field{year}{2019}
-      \warn{\item Entry 'sciplan' (./bib/exc.bib): Invalid format '29/11/19, WA 21/10/19, RA 22/10/19 and 27/11/19, AV 14/11/19, MOB 1/12/19' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{exch+eswebsite}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://excalibur.ac.uk/excalibur}}
       \field{note}{Accessed: May 2021}
@@ -180,8 +184,8 @@
       \field{year}{2021}
     \endentry
     \entry{MITlicense}{misc}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://en.wikipedia.org/wiki/MIT_License}}
       \field{note}{Accessed: January 2022}
@@ -189,17 +193,26 @@
       \field{year}{2022}
     \endentry
     \entry{xpndocswebsite}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents}}
       \field{note}{Accessed: March 2021}
       \field{title}{{ExCALIBUR-NEPTUNE Bid Documents, Calls, Reports and Notes}}
       \field{year}{2021}
     \endentry
+    \entry{neptunesearchwebsite}{misc}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://excalibur-neptune.github.io/Documents}}
+      \field{note}{Accessed: November 2023}
+      \field{title}{{ExCALIBUR-NEPTUNE Reports in Searchable Repo}}
+      \field{year}{2023}
+    \endentry
     \entry{xpntexwebsite}{misc}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/tree/main/tex}}
       \field{note}{Accessed: January 2022}
@@ -207,8 +220,8 @@
       \field{year}{2022}
     \endentry
     \entry{rfc2119}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ietf.org/rfc/rfc2119.txt}}
       \field{note}{Accessed: March 2021}
@@ -465,8 +478,8 @@
       \strng{authorbibnamehash}{8ed73b229cc7de736325eca565d01603}
       \strng{authornamehash}{8ed73b229cc7de736325eca565d01603}
       \strng{authorfullhash}{8ed73b229cc7de736325eca565d01603}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Magnetic Reconnection: MHD theory and applications}}
@@ -704,12 +717,13 @@
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{5}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.01-M1.2.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0021-1.01-M1.2.1}}
       \field{title}{{Equations for EXCALIBUR/NEPTUNE Proxyapps}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'pappeqs2' (./bib/exc.bib): Invalid format '6/5/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{hewitt}{book}{}
       \name{author}{1}{}{%
@@ -791,12 +805,13 @@
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0032-D3.3.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0032-D3.3}}
       \field{title}{{Module Guide}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2d33' (./bib/exc.bib): Invalid format '15/3/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re333}{report}{}
       \name{author}{3}{}{%
@@ -825,16 +840,17 @@
       \strng{authorbibnamehash}{63bd1fffc934b67b18629e5ccc3ee6cf}
       \strng{authornamehash}{63bd1fffc934b67b18629e5ccc3ee6cf}
       \strng{authorfullhash}{63bd1fffc934b67b18629e5ccc3ee6cf}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{12}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0026-M3.3.3.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0026-M3.3.3}}
       \field{title}{{Design patterns evaluation report}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y2re333' (./bib/exc.bib): Invalid format '11/12/20, RA 18/12/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re331}{report}{}
       \name{author}{1}{}{%
@@ -858,12 +874,13 @@
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0015-1.00-M3.3.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0015-1.00-M3.3.1}}
       \field{title}{{NEPTUNE: Background information and user requirements for design patterns}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re331' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 12/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re332}{report}{}
       \name{author}{4}{}{%
@@ -902,12 +919,13 @@
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{8}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0023-M3.3.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0023-M3.3.2}}
       \field{title}{{Report on design patterns specifications and prototypes}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y2re332' (./bib/exc.bib): Invalid format '12/8/20, RA 16/8/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{Du16Idea}{report}{}
       \name{author}{2}{}{%
@@ -1037,8 +1055,8 @@
       \strng{authorbibnamehash}{3eb711a0783c4f9d5bf35b5f657919cf}
       \strng{authornamehash}{3eb711a0783c4f9d5bf35b5f657919cf}
       \strng{authorfullhash}{3eb711a0783c4f9d5bf35b5f657919cf}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Game engine architecture 3rd Ed.}}
@@ -1195,16 +1213,17 @@
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.01-M1.2.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0021-1.20-M1.2.1}}
+      \field{month}{10}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.23-M1.2.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0021-1.23-M1.2.1}}
       \field{title}{{Equations for EXCALIBUR/NEPTUNE Proxyapps}}
       \field{type}{techreport}
-      \field{year}{2021}
-      \warn{\item Entry 'pappeqs3' (./bib/exc.bib): Invalid format '23/12/21' of date field 'date' - ignoring}
+      \field{year}{2022}
+      \field{dateera}{ce}
     \endentry
     \entry{docfetcherwebsite}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://docfetcher.sourceforge.net/en/index.html}}
       \field{note}{Accessed: January 2022}
@@ -1219,6 +1238,70 @@
       \field{note}{Accessed: January 2022}
       \field{title}{{Recoll finds documents based on their contents as well as their file names}}
       \field{year}{2022}
+    \endentry
+    \entry{y1re211}{report}{}
+      \name{author}{3}{}{%
+        {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
+           family={Arter},
+           familyi={A\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1f82f95cb83a20252543497bcb941ac1}{%
+           family={Anton},
+           familyi={A\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=4ee222c065b9e737ed244eb314cdf9b8}{%
+           family={Samaddar},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {UKAEA}%
+      }
+      \strng{namehash}{775c9b1096c9094c7fc8a407febd1465}
+      \strng{fullhash}{775c9b1096c9094c7fc8a407febd1465}
+      \strng{bibnamehash}{775c9b1096c9094c7fc8a407febd1465}
+      \strng{authorbibnamehash}{775c9b1096c9094c7fc8a407febd1465}
+      \strng{authornamehash}{775c9b1096c9094c7fc8a407febd1465}
+      \strng{authorfullhash}{775c9b1096c9094c7fc8a407febd1465}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0012-1.00-M2.1.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0012-1.00-M2.1.1}}
+      \field{title}{{Options for Geometry Representation}}
+      \field{type}{techreport}
+      \field{year}{2020}
+      \field{dateera}{ce}
+    \endentry
+    \entry{niederreiter}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6c2c86289792881ce9f9a36f0026aeee}{%
+           family={Niederreiter},
+           familyi={N\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Society for Industrial Mathematics}%
+      }
+      \strng{namehash}{6c2c86289792881ce9f9a36f0026aeee}
+      \strng{fullhash}{6c2c86289792881ce9f9a36f0026aeee}
+      \strng{bibnamehash}{6c2c86289792881ce9f9a36f0026aeee}
+      \strng{authorbibnamehash}{6c2c86289792881ce9f9a36f0026aeee}
+      \strng{authornamehash}{6c2c86289792881ce9f9a36f0026aeee}
+      \strng{authorfullhash}{6c2c86289792881ce9f9a36f0026aeee}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Random Number Generation and Quasi-Monte Carlo Methods}}
+      \field{year}{1992}
     \endentry
     \entry{y12acts}{report}{}
       \name{author}{4}{}{%
@@ -1257,12 +1340,13 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0004.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0004}}
       \field{title}{{ExCALIBUR Fusion Modelling System Activities Y1-2}}
       \field{type}{techreport}
       \field{year}{2019}
-      \warn{\item Entry 'y12acts' (./bib/exc.bib): Invalid format '29/9/19, WA 28/11/19, MOB 1/12/19' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re111b}{report}{}
       \name{author}{1}{}{%
@@ -1286,53 +1370,15 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0010-M1.1.1b.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0010-M1.1.1b}}
       \field{title}{{NEPTUNE: Report on Y1 2020 External Workshop (REPORT1)}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re111b' (./bib/exc.bib): Invalid format '10/3/20, RA 12/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re121}{report}{}
-      \name{author}{3}{}{%
-        {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
-           family={Arter},
-           familyi={A\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-        {{hash=1f82f95cb83a20252543497bcb941ac1}{%
-           family={Anton},
-           familyi={A\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-        {{hash=4ee222c065b9e737ed244eb314cdf9b8}{%
-           family={Samaddar},
-           familyi={S\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {UKAEA}%
-      }
-      \strng{namehash}{775c9b1096c9094c7fc8a407febd1465}
-      \strng{fullhash}{775c9b1096c9094c7fc8a407febd1465}
-      \strng{bibnamehash}{775c9b1096c9094c7fc8a407febd1465}
-      \strng{authorbibnamehash}{775c9b1096c9094c7fc8a407febd1465}
-      \strng{authornamehash}{775c9b1096c9094c7fc8a407febd1465}
-      \strng{authorfullhash}{775c9b1096c9094c7fc8a407febd1465}
-      \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0011-1.00-M1.2.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0011-1.00-M1.2.1}}
-      \field{title}{{Year One Summary Report}}
-      \field{type}{techreport}
-      \field{year}{2020}
-      \warn{\item Entry 'y1re121' (./bib/exc.bib): Invalid format '10/3/20' of date field 'date' - ignoring}
-    \endentry
-    \entry{y1re211}{report}{}
       \name{author}{3}{}{%
         {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
            family={Arter},
@@ -1364,12 +1410,13 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0012-1.00-M2.1.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0012-1.00-M2.1.1}}
-      \field{title}{{Options for Geometry Representation}}
+      \field{month}{3}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0011-1.00-M1.2.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0011-1.00-M1.2.1}}
+      \field{title}{{Year One Summary Report}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re211' (./bib/exc.bib): Invalid format '10/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re231}{report}{}
       \name{author}{3}{}{%
@@ -1403,12 +1450,13 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0013-1.01-M2.3.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0013-1.01-M2.3.1}}
       \field{title}{{Options for Particle Algorithms}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re231' (./bib/exc.bib): Invalid format '5/9/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re311}{report}{}
       \name{author}{1}{}{%
@@ -1432,12 +1480,13 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0014-1.00-M3.1.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0014-1.00-M3.1.1}}
       \field{title}{{NEPTUNE: Report on system requirements}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re311' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 11/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re351}{report}{}
       \name{author}{1}{}{%
@@ -1461,12 +1510,13 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0016-1.00-M3.5.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0016-1.00-M3.5.1}}
       \field{title}{{Benchmarking requirements for NEPTUNE and available tools}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re351' (./bib/exc.bib): Invalid format '10/3/20, LA and RA 12/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y1re111a}{report}{}
       \name{author}{1}{}{%
@@ -1490,12 +1540,13 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0018-M1.1.1a.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0018-M1.1.1a}}
       \field{title}{{NEPTUNE: Report on Y1 2019 Internal Workshop}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y1re111a' (./bib/exc.bib): Invalid format '10/3/20, RA 12/3/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{charter}{report}{}
       \name{author}{1}{}{%
@@ -1519,12 +1570,13 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{6}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0020.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0020}}
       \field{title}{{EXCALIBUR NEPTUNE Charter}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'charter' (./bib/exc.bib): Invalid format '30/6/20, for procurement 7/9/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re312}{report}{}
       \name{author}{4}{}{%
@@ -1563,12 +1615,13 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{6}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0022-M3.1.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0022-M3.1.2}}
       \field{title}{{Report on user frameworks for tokamak multiphysics}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y2re312' (./bib/exc.bib): Invalid format '30/6/20, RA 10/8/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re313}{report}{}
       \name{author}{3}{}{%
@@ -1601,12 +1654,13 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{10}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0024-M3.1.3.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0024-M3.1.3}}
       \field{title}{{Report on user layer design for Uncertainty Quantification}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y2re313' (./bib/exc.bib): Invalid format '14/10/20' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2grant}{report}{}
       \name{author}{1}{}{%
@@ -1630,11 +1684,12 @@
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{11}
       \field{number}{{CD/EXCALIBUR-FMS/0025-M1.3.1}}
       \field{title}{{ExCALIBUR Fusion Modelling use case: contract award recommendation report}}
       \field{type}{techreport}
       \field{year}{2020}
-      \warn{\item Entry 'y2grant' (./bib/exc.bib): Invalid format '16/11/2020' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3act}{report}{}
       \name{author}{2}{}{%
@@ -1658,16 +1713,17 @@
       \strng{authorbibnamehash}{2bfd581e0d876a97b6e416eae23edd55}
       \strng{authornamehash}{2bfd581e0d876a97b6e416eae23edd55}
       \strng{authorfullhash}{2bfd581e0d876a97b6e416eae23edd55}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{{undated and untitled}}
       \field{number}{{CD/EXCALIBUR-FMS/0027-M1.5.1}}
       \field{title}{{ExCALIBUR Fusion Model SPF Research Plan Y3}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3act' (./bib/exc.bib): Invalid format '27/9/2021' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re141}{report}{}
       \name{author}{4}{}{%
@@ -1706,12 +1762,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0030-M1.4.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0030-M1.4.1}}
       \field{title}{{Winter 2020-21 Workshop}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re141' (./bib/exc.bib): Invalid format '18/3/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2close}{report}{}
       \name{author}{1}{}{%
@@ -1735,11 +1792,12 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{number}{{CD/EXCALIBUR-FMS/0030a-M1.6.1}}
       \field{title}{{ExCALIBUR NEPTUNE Project analysis to date: close out Y2}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2close' (./bib/exc.bib): Invalid format '20/3/2021' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re251}{report}{}
       \name{author}{2}{}{%
@@ -1768,12 +1826,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0031-M2.5.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0031-M2.5.1}}
       \field{title}{{Select techniques for MOR (Model Order Reduction)}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re251' (./bib/exc.bib): Invalid format '15/3/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re221}{report}{}
       \name{author}{2}{}{%
@@ -1802,12 +1861,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{4}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0034-M2.2.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0034-M2.2.1}}
       \field{title}{{Performance of spectral-hp element methods for the referent plasma models}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re221' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re241}{report}{}
       \name{author}{2}{}{%
@@ -1836,12 +1896,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{4}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0035-M2.4.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0035-M2.4.1}}
       \field{title}{{Assessment of which UQ methods are required to make \nep{} software actionable}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re241' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re271}{report}{}
       \name{author}{2}{}{%
@@ -1870,12 +1931,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{4}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0036-M2.7.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0036-M2.7.1}}
       \field{title}{{Identification of suitable preconditioner techniques}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re271' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re281}{report}{}
       \name{author}{2}{}{%
@@ -1904,12 +1966,13 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{4}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0037-M2.8.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0037-M2.8.1}}
       \field{title}{{Selection of the physics models}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re281' (./bib/exc.bib): Invalid format '27/4/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2re261}{report}{}
       \name{author}{2}{}{%
@@ -1934,16 +1997,17 @@
       \strng{authornamehash}{77b418ea1fc668a6740997a949824d84}
       \strng{authorfullhash}{77b418ea1fc668a6740997a949824d84}
       \field{extraname}{8}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{6}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0038-M2.6.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0038-M2.6.1}}
       \field{title}{{Identification of a preferred overall numerical scheme}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2re261' (./bib/exc.bib): Invalid format 'DY/6/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re321}{report}{}
       \name{author}{2}{}{%
@@ -1972,12 +2036,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{6}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0039-M3.2.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0039-M3.2.1}}
       \field{title}{{Survey of code generators and their suitability for \nep}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re321' (./bib/exc.bib): Invalid format '28/6/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re51}{report}{}
       \name{author}{2}{}{%
@@ -2006,12 +2071,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{8}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0040-M5.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0040-M5.1}}
       \field{title}{{Management of external research. Supports UQ Procurement}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re51' (./bib/exc.bib): Invalid format '27/8/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re322}{report}{}
       \name{author}{4}{}{%
@@ -2050,12 +2116,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{7}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0041-M3.2.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0041-M3.2.2}}
       \field{title}{{Survey of Domain Specific Languages}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re322' (./bib/exc.bib): Invalid format '30/7/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re242}{report}{}
       \name{author}{4}{}{%
@@ -2094,12 +2161,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0043-M2.4.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0043-M2.4.2}}
       \field{title}{{Selection of techniques for Uncertainty Quantification}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re242' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re252}{report}{}
       \name{author}{4}{}{%
@@ -2138,12 +2206,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0044-M2.5.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0044-M2.5.2}}
       \field{title}{{Selection of techniques for Model Order Reduction}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re252' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re272}{report}{}
       \name{author}{2}{}{%
@@ -2172,12 +2241,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{8}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0045-M2.7.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0045-M2.7.2}}
       \field{title}{{Identification of suitable preconditioner techniques}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re272' (./bib/exc.bib): Invalid format '27/8/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re212}{report}{}
       \name{author}{2}{}{%
@@ -2206,12 +2276,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0046-M2.1.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0046-M2.1.2}}
       \field{title}{{Surface mesh generation}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re212' (./bib/exc.bib): Invalid format '12/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re222}{report}{}
       \name{author}{2}{}{%
@@ -2239,12 +2310,13 @@
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0047-M2.2.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0047-M2.2.2}}
       \field{title}{{Finite Element Models: Performance}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re222' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re232}{report}{}
       \name{author}{2}{}{%
@@ -2269,16 +2341,17 @@
       \strng{authornamehash}{04ce31d50079c96e1e6dcab4900fe96d}
       \strng{authorfullhash}{04ce31d50079c96e1e6dcab4900fe96d}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0048-M2.3.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0048-M2.3.2}}
       \field{title}{{Options for Particle Algorithms}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re232' (./bib/exc.bib): Invalid format '15/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3d32}{report}{}
       \name{author}{2}{}{%
@@ -2307,12 +2380,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0049-D3.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0049-D3.2}}
       \field{title}{{Domain-Specific Language (DSL) and Performance Portability Assessment}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3d32' (./bib/exc.bib): Invalid format '23/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3d35}{report}{}
       \name{author}{1}{}{%
@@ -2336,12 +2410,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0050-D3.5.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0050-D3.5}}
       \field{title}{{Verification and Benchmarks Methodology}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3d35' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re61}{report}{}
       \name{author}{2}{}{%
@@ -2370,12 +2445,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0051-M6.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0051-M6.1}}
       \field{title}{{Finite Element Models: Complementary Activities I}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re61' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re71}{report}{}
       \name{author}{2}{}{%
@@ -2404,12 +2480,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0052-M7.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0052-M7.1}}
       \field{title}{{Literature review for Call T/AW086/21: Mathematical Support for Software Implementation}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re71' (./bib/exc.bib): Invalid format '30/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re72}{report}{}
       \name{author}{4}{}{%
@@ -2447,12 +2524,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{9}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0053-M7.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0053-M7.2}}
       \field{title}{{Code coupling and benchmarking}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re72' (./bib/exc.bib): Invalid format '28/9/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y2d31}{report}{}
       \name{author}{4}{}{%
@@ -2491,12 +2569,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{10}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0054-D3.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0054-D3.1}}
       \field{title}{{Software Specification Web-site}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y2d31' (./bib/exc.bib): Invalid format '31/10/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3grant}{report}{}
       \name{author}{1}{}{%
@@ -2520,11 +2599,12 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{8}
       \field{number}{{CD/EXCALIBUR-FMS/0056-M1.7.1}}
       \field{title}{{ExCALIBUR Fusion Modelling use case: contract award recommendation report}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3grant' (./bib/exc.bib): Invalid format '9/8/2021' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re262}{report}{}
       \name{author}{2}{}{%
@@ -2553,12 +2633,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{11}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0055-M2.6.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0055-M2.6.2}}
       \field{title}{{Fluid Referent Models}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re262' (./bib/exc.bib): Invalid format '23/11/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re282}{report}{}
       \name{author}{2}{}{%
@@ -2587,12 +2668,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{12}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0058-M2.8.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0058-M2.8.2}}
       \field{title}{{Technical report on Physics model selection}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re282' (./bib/exc.bib): Invalid format '09/12/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y45act}{report}{}
       \name{author}{1}{}{%
@@ -2616,11 +2698,12 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{number}{{CD/EXCALIBUR-FMS/0059-M1.9.1}}
       \field{title}{{ExCALIBUR-Fusion Modelling System Y4-Y6}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y45act' (./bib/exc.bib): Invalid format '3/3/2022' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3close}{report}{}
       \name{author}{1}{}{%
@@ -2644,12 +2727,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0060-M1.10.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0060-M1.10}}
       \field{title}{{Analysis to Date: Close out Y3}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3close' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re42}{report}{}
       \name{author}{3}{}{%
@@ -2683,12 +2767,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{12}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0061-M4.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0061-M4.2}}
       \field{title}{{2-D Model of Neutral Gas and Impurities}}
       \field{type}{techreport}
       \field{year}{2021}
-      \warn{\item Entry 'y3re42' (./bib/exc.bib): Invalid format '17/12/21' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re43}{report}{}
       \name{author}{3}{}{%
@@ -2722,12 +2807,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0062-M4.3.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0062-M4.3}}
       \field{title}{{High-dimensional Models Complementary Actions 2}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3re43' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re52}{report}{}
       \name{author}{2}{}{%
@@ -2755,12 +2841,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0063-M5.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0063-M5.2}}
       \field{title}{{Selection of techniques for Uncertainty Quantification}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3re52' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re62}{report}{}
       \name{author}{1}{}{%
@@ -2783,12 +2870,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0064-M6.2.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0064-M6.2}}
       \field{title}{{Finite Element Models Complementary Actions 2}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3re62' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re73}{report}{}
       \name{author}{2}{}{%
@@ -2817,12 +2905,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0065-M7.3.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0065-M7.3}}
       \field{title}{{Software Support Complementary Actions 2}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3re73' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{y3re41}{report}{}
       \name{author}{2}{}{%
@@ -2850,12 +2939,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{month}{3}
       \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0066-M4.1.pdf}}
       \field{number}{{CD/EXCALIBUR-FMS/0066-M4.1}}
       \field{title}{{Support High-dimensional Procurement}}
       \field{type}{techreport}
       \field{year}{2022}
-      \warn{\item Entry 'y3re41' (./bib/exc.bib): Invalid format '18/3/22' of date field 'date' - ignoring}
+      \field{dateera}{ce}
     \endentry
     \entry{rousonxiaxu}{book}{}
       \name{author}{3}{}{%
@@ -2921,6 +3011,12 @@
       \field{year}{2013}
       \field{pages}{015010 (18 pages)}
       \range{pages}{-1}
+      \verb{urlraw}
+      \verb \url{https://doi.org/10.1088/1749-4699/6/1/015010}
+      \endverb
+      \verb{url}
+      \verb %5Curl%7Bhttps://doi.org/10.1088/1749-4699/6/1/015010%7D
+      \endverb
     \endentry
     \entry{La18Cros}{article}{}
       \true{moreauthor}
@@ -3211,7 +3307,9 @@
       \field{title}{Data-driven science and engineering: Machine learning, dynamical systems, and control}
       \field{year}{2019}
     \endentry
-    \entry{pappeqs}{report}{}
+    \entry{pappeqs8}{report}{}
+      \true{moreauthor}
+      \true{morelabelname}
       \name{author}{1}{}{%
         {{hash=bda833f3d19a05e21d8d928d371c0b58}{%
            family={Arter},
@@ -3222,24 +3320,23 @@
       \list{institution}{1}{%
         {UKAEA}%
       }
-      \strng{namehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{fullhash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{bibnamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authorbibnamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authornamehash}{bda833f3d19a05e21d8d928d371c0b58}
-      \strng{authorfullhash}{bda833f3d19a05e21d8d928d371c0b58}
-      \field{extraname}{8}
+      \strng{namehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{fullhash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{bibnamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authorbibnamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authornamehash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \strng{authorfullhash}{a6fd27cd7b0f9f2840e8a8dc44d36ac9}
+      \field{extraname}{7}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{day}{10}
-      \field{month}{3}
-      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.00-M1.2.1.pdf}}
-      \field{number}{{CD/EXCALIBUR-FMS/0021-1.00-M1.2.1}}
+      \field{month}{10}
+      \field{note}{\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.30-M1.2.1.pdf}}
+      \field{number}{{CD/EXCALIBUR-FMS/0021-1.31-M1.2.1}}
       \field{title}{{Equations for EXCALIBUR/NEPTUNE Proxyapps}}
       \field{type}{techreport}
-      \field{year}{2020}
+      \field{year}{2023}
       \field{dateera}{ce}
     \endentry
     \entry{karniadakissherwin}{book}{}

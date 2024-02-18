@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.28)  28 NOV 2022 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.2.18)  18 FEB 2024 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1523,7 +1523,7 @@ Package lwarp Info: Using the lwarp HTML version of package `nameref',
 (lwarp)              on input line 25.
 )
    defining Unicode char U+0301 (decimal 769)
-Package biblatex Info: Redefining '\cite' on input line 59.
+Package biblatex Info: Redefining '\cite' on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lwarp/lwarp-fancyhdr.sty
 Package lwarp Info: Replacing package `fancyhdr' with the lwarp version,
@@ -1621,33 +1621,33 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotelevel=\count475
 \@quotereset=\count476
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-73.
+68.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./main_html.aux)
 \openout1 = `main_html.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Info: Redefining \microtypecontext on input line 173.
-Package microtype Info: Applying patch `item' on input line 173.
-Package microtype Info: Applying patch `toc' on input line 173.
-Package microtype Info: Applying patch `eqnum' on input line 173.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Info: Redefining \microtypecontext on input line 168.
+Package microtype Info: Applying patch `item' on input line 168.
+Package microtype Info: Applying patch `toc' on input line 168.
+Package microtype Info: Applying patch `eqnum' on input line 168.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 173.
+Package microtype Warning: Unable to apply patch `footnote' on input line 168.
 
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
@@ -1748,367 +1748,22 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main_html.bbl' found.
 
-(./main_html.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2d34':
-(biblatex)                - Entry 'y2d34' (./bib/exc.bib): Invalid format '25/1
-0/21' of date field 'date' - ignoring.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(./main_html.bbl (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-)
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re181':
-(biblatex)                - Entry 'y3re181' (./bib/exc.bib): Invalid format '21
-/10/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re314':
-(biblatex)                - Entry 'y3re314' (./bib/exc.bib): Invalid format '31
-/10/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'sciplan':
-(biblatex)                - Entry 'sciplan' (./bib/exc.bib): Invalid format '29
-/11/19, WA 21/10/19, RA 22/10/19 and 27/11/19, AV 14/11/19, MOB 1/12/19' of dat
-e field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'pappeqs2':
-(biblatex)                - Entry 'pappeqs2' (./bib/exc.bib): Invalid format '6
-/5/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2d33':
-(biblatex)                - Entry 'y2d33' (./bib/exc.bib): Invalid format '15/3
-/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re333':
-(biblatex)                - Entry 'y2re333' (./bib/exc.bib): Invalid format '11
-/12/20, RA 18/12/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re331':
-(biblatex)                - Entry 'y1re331' (./bib/exc.bib): Invalid format '10
-/3/20, LA and RA 12/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re332':
-(biblatex)                - Entry 'y2re332' (./bib/exc.bib): Invalid format '12
-/8/20, RA 16/8/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'pappeqs3':
-(biblatex)                - Entry 'pappeqs3' (./bib/exc.bib): Invalid format '2
-3/12/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y12acts':
-(biblatex)                - Entry 'y12acts' (./bib/exc.bib): Invalid format '29
-/9/19, WA 28/11/19, MOB 1/12/19' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re111b':
-(biblatex)                - Entry 'y1re111b' (./bib/exc.bib): Invalid format '1
-0/3/20, RA 12/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re121':
-(biblatex)                - Entry 'y1re121' (./bib/exc.bib): Invalid format '10
-/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re211':
-(biblatex)                - Entry 'y1re211' (./bib/exc.bib): Invalid format '10
-/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re231':
-(biblatex)                - Entry 'y1re231' (./bib/exc.bib): Invalid format '5/
-9/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re311':
-(biblatex)                - Entry 'y1re311' (./bib/exc.bib): Invalid format '10
-/3/20, LA and RA 11/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re351':
-(biblatex)                - Entry 'y1re351' (./bib/exc.bib): Invalid format '10
-/3/20, LA and RA 12/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y1re111a':
-(biblatex)                - Entry 'y1re111a' (./bib/exc.bib): Invalid format '1
-0/3/20, RA 12/3/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'charter':
-(biblatex)                - Entry 'charter' (./bib/exc.bib): Invalid format '30
-/6/20, for procurement 7/9/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re312':
-(biblatex)                - Entry 'y2re312' (./bib/exc.bib): Invalid format '30
-/6/20, RA 10/8/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re313':
-(biblatex)                - Entry 'y2re313' (./bib/exc.bib): Invalid format '14
-/10/20' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2grant':
-(biblatex)                - Entry 'y2grant' (./bib/exc.bib): Invalid format '16
-/11/2020' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3act':
-(biblatex)                - Entry 'y3act' (./bib/exc.bib): Invalid format '27/9
-/2021' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re141':
-(biblatex)                - Entry 'y2re141' (./bib/exc.bib): Invalid format '18
-/3/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2close':
-(biblatex)                - Entry 'y2close' (./bib/exc.bib): Invalid format '20
-/3/2021' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re251':
-(biblatex)                - Entry 'y2re251' (./bib/exc.bib): Invalid format '15
-/3/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re221':
-(biblatex)                - Entry 'y2re221' (./bib/exc.bib): Invalid format '27
-/4/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re241':
-(biblatex)                - Entry 'y2re241' (./bib/exc.bib): Invalid format '27
-/4/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re271':
-(biblatex)                - Entry 'y2re271' (./bib/exc.bib): Invalid format '27
-/4/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re281':
-(biblatex)                - Entry 'y2re281' (./bib/exc.bib): Invalid format '27
-/4/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2re261':
-(biblatex)                - Entry 'y2re261' (./bib/exc.bib): Invalid format 'DY
-/6/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re321':
-(biblatex)                - Entry 'y3re321' (./bib/exc.bib): Invalid format '28
-/6/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re51':
-(biblatex)                - Entry 'y3re51' (./bib/exc.bib): Invalid format '27/
-8/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re322':
-(biblatex)                - Entry 'y3re322' (./bib/exc.bib): Invalid format '30
-/7/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re242':
-(biblatex)                - Entry 'y3re242' (./bib/exc.bib): Invalid format '30
-/9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re252':
-(biblatex)                - Entry 'y3re252' (./bib/exc.bib): Invalid format '30
-/9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re272':
-(biblatex)                - Entry 'y3re272' (./bib/exc.bib): Invalid format '27
-/8/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re212':
-(biblatex)                - Entry 'y3re212' (./bib/exc.bib): Invalid format '12
-/9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re222':
-(biblatex)                - Entry 'y3re222' (./bib/exc.bib): Invalid format '30
-/9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re232':
-(biblatex)                - Entry 'y3re232' (./bib/exc.bib): Invalid format '15
-/9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3d32':
-(biblatex)                - Entry 'y3d32' (./bib/exc.bib): Invalid format '23/9
-/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3d35':
-(biblatex)                - Entry 'y3d35' (./bib/exc.bib): Invalid format '30/9
-/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re61':
-(biblatex)                - Entry 'y3re61' (./bib/exc.bib): Invalid format '30/
-9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re71':
-(biblatex)                - Entry 'y3re71' (./bib/exc.bib): Invalid format '30/
-9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re72':
-(biblatex)                - Entry 'y3re72' (./bib/exc.bib): Invalid format '28/
-9/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y2d31':
-(biblatex)                - Entry 'y2d31' (./bib/exc.bib): Invalid format '31/1
-0/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3grant':
-(biblatex)                - Entry 'y3grant' (./bib/exc.bib): Invalid format '9/
-8/2021' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re262':
-(biblatex)                - Entry 'y3re262' (./bib/exc.bib): Invalid format '23
-/11/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re282':
-(biblatex)                - Entry 'y3re282' (./bib/exc.bib): Invalid format '09
-/12/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y45act':
-(biblatex)                - Entry 'y45act' (./bib/exc.bib): Invalid format '3/3
-/2022' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3close':
-(biblatex)                - Entry 'y3close' (./bib/exc.bib): Invalid format '18
-/3/22' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re42':
-(biblatex)                - Entry 'y3re42' (./bib/exc.bib): Invalid format '17/
-12/21' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re43':
-(biblatex)                - Entry 'y3re43' (./bib/exc.bib): Invalid format '18/
-3/22' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re52':
-(biblatex)                - Entry 'y3re52' (./bib/exc.bib): Invalid format '18/
-3/22' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re62':
-(biblatex)                - Entry 'y3re62' (./bib/exc.bib): Invalid format '18/
-3/22' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re73':
-(biblatex)                - Entry 'y3re73' (./bib/exc.bib): Invalid format '18/
-3/22' of date field 'date' - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'y3re41':
-(biblatex)                - Entry 'y3re41' (./bib/exc.bib): Invalid format '18/
-3/22' of date field 'date' - ignoring.
-
-)
-Package biblatex Info: Reference section=0 on input line 173.
-Package biblatex Info: Reference segment=0 on input line 173.
+))
+Package biblatex Info: Reference section=0 on input line 168.
+Package biblatex Info: Reference segment=0 on input line 168.
 \openout5 = `main-images.txt'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-73.
+68.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: "lwarp_mathjax.txt"  (verbatim)
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-173.
+168.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2120,17 +1775,18 @@ Later HTML pages will take the same amount of time.
 If this takes too long, see the Lwarp manual regarding customizing MathJax.
 Done.
 ---
+
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 176.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 180.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 \openout6 = `main_html.sidetoc'.
 
- [3] (./main_html.toc
-
-LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 103.
-
-)
+ [3] (./main_html.toc)
 \tf@toc=\write9
 \openout9 = `main_html.toc'.
 
@@ -2142,10 +1798,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 6.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [11]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 62.
-) (./approboxw.tex
+) [11]) (./approboxw.tex
 [12] [13] [14]) [15]
 File: "lwarp_mathjax.txt"  (verbatim)
  [16] (./main_html.sidetoc) [17] (./BD/BD.tex) [18]
@@ -2156,36 +1809,36 @@ File: "lwarp_mathjax.txt"  (verbatim)
  [22] (./main_html.sidetoc)
 [23] (./RB/edgeprop.tex [24] [25] [26] [27] [28] [29]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-07.
+08.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-07.
+08.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-107.
+108.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-107.
+108.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 107.
+(Font)              <9> on input line 108.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 107.
+(Font)              <6> on input line 108.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 107.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 107
+(Font)              <5> on input line 108.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 108
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -2194,7 +1847,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 107
+LaTeX Font Info:    Trying to load font information for U+msb on input line 108
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -2204,13 +1857,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 10
-7.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-107.
+108.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2253,7 +1906,8 @@ File: "lwarp_mathjax.txt"  (verbatim)
 [115] (./TS/naming.tex [116] [117])) [118]
 File: "lwarp_mathjax.txt"  (verbatim)
  [119] (./main_html.sidetoc) [120]
-(./DJF/DJF.tex [121] [122] (./DJF/tabtit.tex [123]
+(./DJF/DJF.tex [121] [122] (./DJF/general.tex) [123] [124] (./DJF/tabtit.tex
+[125]
 
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 (Font)              using `T1/lmss/bx/n' instead on input line 6.
@@ -2261,70 +1915,70 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [124])
-[125] (./DJF/report_summary1.tex) [126] (./DJF/report_summary2.tex) [127]
-(./DJF/parabstr.tex [128])) [129]
+ [126])
+[127] (./DJF/report_summary1.tex) [128] (./DJF/report_summary2.tex) [129]
+(./DJF/parabstr.tex [130])) [131]
 File: "lwarp_mathjax.txt"  (verbatim)
- [130] (./main_html.sidetoc) [131]
-(./DDF/DDF.tex [132] [133] [134]
+ [132] (./main_html.sidetoc) [133]
+(./DDF/DDF.tex [134] [135] [136]
 File: "lwarp_mathjax.txt"  (verbatim)
- [135] (./main_html.sidetoc) [136]
-(./DDF/basic_objects.tex [137] [138] [139] [140] [141] [142] [143] [144])
-[145]
+ [137] (./main_html.sidetoc) [138]
+(./DDF/basic_objects.tex [139] [140] [141] [142] [143] [144] [145] [146])
+[147]
 File: "lwarp_mathjax.txt"  (verbatim)
- [146] (./main_html.sidetoc) [147] (./DDF/functions.tex [148] [149]
-[150] [151] [152] [153] [154]) [155]
+ [148] (./main_html.sidetoc) [149] (./DDF/functions.tex [150] [151]
+[152] [153] [154] [155] [156]) [157]
 File: "lwarp_mathjax.txt"  (verbatim)
- [156] (./main_html.sidetoc) [157]
-(./DDF/desipatt.tex [158])) [159]
+ [158] (./main_html.sidetoc) [159]
+(./DDF/desipatt.tex [160])) [161]
 File: "lwarp_mathjax.txt"  (verbatim)
- [160] (./main_html.sidetoc) [161]
-(./MGT/MGT.tex (./MGT/MGT_intro.tex [162]
+ [162] (./main_html.sidetoc) [163]
+(./MGT/MGT.tex (./MGT/MGT_intro.tex [164]
 File: "lwarp_mathjax.txt"  (verbatim)
- [163] (./main_html.sidetoc) [164])
-(./MGT/dudson.tex [165]
+ [165] (./main_html.sidetoc) [166])
+(./MGT/dudson.tex [167]
 File: "lwarp_mathjax.txt"  (verbatim)
- [166] (./main_html.sidetoc) [167] [168] [169] [170]
-[171] [172] [173]) [174]
+ [168] (./main_html.sidetoc) [169] [170] [171] [172]
+[173] [174] [175]) [176]
 File: "lwarp_mathjax.txt"  (verbatim)
- [175] (./main_html.sidetoc) [176] (./MGT/charter.tex)) [177]
+ [177] (./main_html.sidetoc) [178] (./MGT/charter.tex)) [179]
 File: "lwarp_mathjax.txt"  (verbatim)
- [178] (./main_html.sidetoc) [179] (./MF/MF.tex) [180]
+ [180] (./main_html.sidetoc) [181] (./MF/MF.tex) [182]
 File: "lwarp_mathjax.txt"  (verbatim)
- [181]
-(./main_html.sidetoc) [182] (./OP/OP.tex [183] [184] (./OP/mgt.tex [185])
-[186]
+ [183]
+(./main_html.sidetoc) [184] (./OP/OP.tex [185] [186] (./OP/opmgt.tex [187])
+[188]
 File: "lwarp_mathjax.txt"  (verbatim)
- [187] (./main_html.sidetoc) [188] (./OP/testing.tex [189] [190] [191])
-[192] (./OP/objdisc.tex [193] [194]) [195]
+ [189] (./main_html.sidetoc) [190] (./OP/testing.tex [191] [192] [193])
+[194] (./OP/objdisc.tex [195] [196]) [197]
 File: "lwarp_mathjax.txt"  (verbatim)
- [196] (./main_html.sidetoc) [197]
-(./OP/UMan.tex [198] [199])) [200]
+ [198] (./main_html.sidetoc) [199]
+(./OP/UMan.tex [200] [201])) [202]
 File: "lwarp_mathjax.txt"  (verbatim)
- [201] (./main_html.sidetoc) [202]
-(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex [203]
+ [203] (./main_html.sidetoc) [204]
+(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex [205]
 File: "lwarp_mathjax.txt"  (verbatim)
- [204]
-(./main_html.sidetoc) [205]) (./proxyapps/nektar-diffusion.tex [206]
+ [206]
+(./main_html.sidetoc) [207]) (./proxyapps/nektar-diffusion.tex [208]
 File: "lwarp_mathjax.txt"  (verbatim)
- [207]
-(./main_html.sidetoc) [208]) (./proxyapps/nektar-1d-sol.tex [209]
+ [209]
+(./main_html.sidetoc) [210]) (./proxyapps/nektar-1d-sol.tex [211]
 File: "lwarp_mathjax.txt"  (verbatim)
- [210]
-(./main_html.sidetoc) [211]) (./proxyapps/fabneptune.tex [212]
+ [212]
+(./main_html.sidetoc) [213]) (./proxyapps/fabneptune.tex [214]
 File: "lwarp_mathjax.txt"  (verbatim)
- [213]
-(./main_html.sidetoc) [214]) (./proxyapps/moment_kinetics.tex [215]
+ [215]
+(./main_html.sidetoc) [216]) (./proxyapps/moment-kinetics.tex [217]
 File: "lwarp_mathjax.txt"  (verbatim)
- [216]
-(./main_html.sidetoc) [217]) (./proxyapps/NESO.tex [218]
+ [218]
+(./main_html.sidetoc) [219]) (./proxyapps/NESO.tex [220]
 File: "lwarp_mathjax.txt"  (verbatim)
- [219]
-(./main_html.sidetoc) [220])) [221]
+ [221]
+(./main_html.sidetoc) [222])) [223]
 File: "lwarp_mathjax.txt"  (verbatim)
- [222] (./main_html.sidetoc) [223]
-(./REF/REF.tex [224] [225] [226] [227] [228] (./REF/conv.tex
-(./REF/naming_map.tex [229]
+ [224] (./main_html.sidetoc) [225]
+(./REF/REF.tex [226] [227] [228] [229] [230] (./REF/conv.tex
+(./REF/naming_map.tex [231]
 Overfull \hbox (44.40192pt too wide) in paragraph at lines 3--3
 []\T1/lmss/m/n/9 Table 11.1:&nbsp;\T1/lmtt/m/n/9 <b><span class="textsf">\T1/lm
 ss/bx/n/9 TWO CHAR-AC-TER EQUIV-A-LENTS\T1/lmtt/m/n/9 </span></b> \T1/lmss/m/n/
@@ -2334,34 +1988,28 @@ s/m/n/9 L\T1/lmtt/m/n/9 <span class="latexlogosup">\T1/lmss/m/n/9 a\T1/lmtt/m/n
 n/9 e\T1/lmtt/m/n/9 </span>\T1/lmss/m/n/9 X\T1/lmtt/m/n/9 </span></span>
  []
 
-[230]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [231]))
 [232]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [233]))
+[234]
 File: "lwarp_mathjax.txt"  (verbatim)
- [233] (./main_html.sidetoc) [234] (./REF/acro.tex [235]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [236]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [237]
+ [235] (./main_html.sidetoc) [236] (./REF/acro.tex [237]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [238]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [239])
-[240]
+ [239]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [240]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [241])
+[242]
 File: "lwarp_mathjax.txt"  (verbatim)
- [241] (./main_html.sidetoc) [242] (./REF/symb.tex [243]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [244]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [245]
+ [243] (./main_html.sidetoc) [244] (./REF/symb.tex [245]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [246]
@@ -2376,30 +2024,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [249]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [250]))
+ [250]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [251]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [252]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [253]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [254]))
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(./comment_html.cut [251]
+(./comment_html.cut [255]
 File: "lwarp_mathjax.txt"  (verbatim)
- [252] (./main_html.sidetoc) [253]) [254]
+ [256] (./main_html.sidetoc) [257]) [258]
 File: "lwarp_mathjax.txt"  (verbatim)
- [255]
-(./main_html.sidetoc) [256] (./IND/IND.tex)) [257] (./metackn.tex) [258]
+ [259]
+(./main_html.sidetoc) [260] (./IND/IND.tex)) [261] (./metackn.tex) [262]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 200.
+(Font)              using `T1/lmr/m/scsl' instead on input line 201.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 200.
+(Font)              using `T1/lmr/m/scsl' instead on input line 201.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [259]
-[260] (./main_html.aux)
+ [263]
+[264] (./main_html.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2408,13 +2068,13 @@ Package logreq Info: Writing requests to 'main_html.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25733 strings out of 479727
- 504858 string characters out of 5884997
- 1352198 words of memory out of 5000000
- 42792 multiletter control sequences out of 15000+600000
+ 25771 strings out of 479727
+ 505887 string characters out of 5884998
+ 1354312 words of memory out of 5000000
+ 42826 multiletter control sequences out of 15000+600000
  539286 words of font info for 72 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 93i,8n,108p,1250b,2449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,8n,108p,1251b,2449s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
@@ -2431,10 +2091,10 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (260 pages, 959802 bytes).
+Output written on main_html.pdf (264 pages, 972518 bytes).
 PDF statistics:
- 956 PDF objects out of 1000 (max. 8388607)
- 646 compressed objects within 7 object streams
+ 968 PDF objects out of 1000 (max. 8388607)
+ 654 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

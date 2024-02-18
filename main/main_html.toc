@@ -1,9 +1,9 @@
 \babel@toc {british}{}\relax 
-\contentsline {chapter}{[1] Program Name}{7}{}%
+\contentsline {chapter}{[1] Program Identity}{7}{}%
 \contentsline {section}{[1.1] Executive summary}{9}{}%
 \contentsline {subsection}{Further information}{10}{}%
 \contentsline {subsection}{Benefits of community membership}{11}{}%
-\contentsline {subsection}{Convention on use of IETF Keywords}{12}{}%
+\contentsline {subsection}{Convention on use of IETF Keywords (not yet enforced)}{12}{}%
 \contentsline {chapter}{[2] Business Design}{18}{}%
 \contentsline {chapter}{[3] Requirements Baseline}{21}{}%
 \contentsline {section}{[3.1] Physical properties of the edge plasma}{24}{}%
@@ -70,61 +70,62 @@
 \contentsline {subsubsection}{Two character variables}{117}{}%
 \contentsline {subsubsection}{Escape sequences}{118}{}%
 \contentsline {chapter}{[5] Design Justification File}{121}{}%
-\contentsline {section}{[5.1] UKAEA (Internal) Reports}{123}{}%
-\contentsline {subsection}{Brief Survey of Reports to end FY 2020/21}{126}{}%
-\contentsline {subsection}{Brief Survey of Reports FY 2021/22}{127}{}%
-\contentsline {subsection}{Parallelism Abstraction}{128}{}%
-\contentsline {chapter}{[6] Design Definition File}{132}{}%
-\contentsline {section}{[6.1] Design specification}{134}{}%
-\contentsline {section}{[6.2] Objects/classes}{137}{}%
-\contentsline {subsection}{Base classes}{138}{}%
-\contentsline {subsection}{Aggregates}{140}{}%
-\contentsline {subsection}{Simple inherits}{142}{}%
-\contentsline {subsection}{Solution of Differential Equations}{143}{}%
-\contentsline {subsection}{Diagnostic Processing}{144}{}%
-\contentsline {subsection}{Orchestration}{145}{}%
-\contentsline {section}{[6.3] Execution sequence}{148}{}%
-\contentsline {subsection}{Preprocessing and components}{149}{}%
-\contentsline {subsection}{Initialise}{150}{}%
-\contentsline {subsection}{Solution}{151}{}%
-\contentsline {subsection}{Assortment}{152}{}%
-\contentsline {subsection}{Diagnostics}{153}{}%
-\contentsline {subsection}{Utilities}{154}{}%
-\contentsline {subsection}{Mathematical library operations}{155}{}%
-\contentsline {section}{[6.4] Design patterns}{158}{}%
-\contentsline {chapter}{[7] Management File}{162}{}%
-\contentsline {section}{[7.1] Introduction}{165}{}%
-\contentsline {section}{[7.2] Management}{168}{}%
-\contentsline {subsection}{Meetings and Workshops}{169}{}%
-\contentsline {subsection}{Version control}{170}{}%
-\contentsline {subsection}{Code repositories}{171}{}%
-\contentsline {subsection}{Development workflow}{172}{}%
-\contentsline {subsection}{Code release}{173}{}%
-\contentsline {section}{[7.3] \textsc {E}x\textsc {CALIBUR}\ Project \textsc {NEPTUNE}\ Charter}{177}{}%
-\contentsline {chapter}{[8] Maintenance File}{180}{}%
-\contentsline {chapter}{[9] Operational Documentation}{183}{}%
-\contentsline {section}{[9.1] Documentation Generally}{185}{}%
-\contentsline {subsection}{Documentation}{186}{}%
-\contentsline {section}{[9.2] Developer Manual}{189}{}%
-\contentsline {subsection}{Testing}{190}{}%
-\contentsline {subsubsection}{Source code testing}{191}{}%
-\contentsline {subsubsection}{Performance testing}{192}{}%
-\contentsline {subsection}{Object Identification}{193}{}%
-\contentsline {section}{[9.3] User Manual}{198}{}%
-\contentsline {section}{[9.4] Feedback and Communication}{200}{}%
-\contentsline {chapter}{[10] Proxyapps}{203}{}%
-\contentsline {section}{[10.1] Nektar-Driftwave}{206}{}%
-\contentsline {section}{[10.2] Nektar-Diffusion}{209}{}%
-\contentsline {section}{[10.3] Nektar-1D-SOL}{212}{}%
-\contentsline {section}{[10.4] FabNEPTUNE}{215}{}%
-\contentsline {section}{[10.5] Moment\_Kinetics}{218}{}%
-\contentsline {section}{[10.6] NESO}{221}{}%
-\contentsline {chapter}{[11] Reference Material}{224}{}%
-\contentsline {section}{[11.1] Conventions for Report Writing}{226}{}%
-\contentsline {subsection}{General textual issues}{227}{}%
-\contentsline {subsection}{Citations}{228}{}%
-\contentsline {subsection}{Software Compatibility}{229}{}%
-\contentsline {section}{[11.2] Acronyms}{235}{}%
-\contentsline {section}{[11.3] Symbols}{243}{}%
-\contentsline {chapter}{[12] Videos}{254}{}%
-\contentsline {chapter}{[13] Index}{257}{}%
+\contentsline {section}{[5.1] Deprecated Approaches}{123}{}%
+\contentsline {section}{[5.2] UKAEA (Internal) Reports}{125}{}%
+\contentsline {subsection}{Brief Survey of Reports to end FY 2020/21}{128}{}%
+\contentsline {subsection}{Brief Survey of Reports FY 2021/22}{129}{}%
+\contentsline {subsection}{Parallelism Abstraction}{130}{}%
+\contentsline {chapter}{[6] Design Definition File}{134}{}%
+\contentsline {section}{[6.1] Design specification}{136}{}%
+\contentsline {section}{[6.2] Objects/classes}{139}{}%
+\contentsline {subsection}{Base classes}{140}{}%
+\contentsline {subsection}{Aggregates}{142}{}%
+\contentsline {subsection}{Simple inherits}{144}{}%
+\contentsline {subsection}{Solution of Differential Equations}{145}{}%
+\contentsline {subsection}{Diagnostic Processing}{146}{}%
+\contentsline {subsection}{Orchestration}{147}{}%
+\contentsline {section}{[6.3] Execution sequence}{150}{}%
+\contentsline {subsection}{Preprocessing and components}{151}{}%
+\contentsline {subsection}{Initialise}{152}{}%
+\contentsline {subsection}{Solution}{153}{}%
+\contentsline {subsection}{Assortment}{154}{}%
+\contentsline {subsection}{Diagnostics}{155}{}%
+\contentsline {subsection}{Utilities}{156}{}%
+\contentsline {subsection}{Mathematical library operations}{157}{}%
+\contentsline {section}{[6.4] Design patterns}{160}{}%
+\contentsline {chapter}{[7] Management File}{164}{}%
+\contentsline {section}{[7.1] Introduction}{167}{}%
+\contentsline {section}{[7.2] Management}{170}{}%
+\contentsline {subsection}{Meetings and Workshops}{171}{}%
+\contentsline {subsection}{Version control}{172}{}%
+\contentsline {subsection}{Code repositories}{173}{}%
+\contentsline {subsection}{Development workflow}{174}{}%
+\contentsline {subsection}{Code release}{175}{}%
+\contentsline {section}{[7.3] \textsc {E}x\textsc {CALIBUR}\ Project \textsc {NEPTUNE}\ Charter}{179}{}%
+\contentsline {chapter}{[8] Maintenance File}{182}{}%
+\contentsline {chapter}{[9] Operational Documentation}{185}{}%
+\contentsline {section}{[9.1] Documentation Generally}{187}{}%
+\contentsline {subsection}{Documentation}{188}{}%
+\contentsline {section}{[9.2] Developer Manual}{191}{}%
+\contentsline {subsection}{Testing}{192}{}%
+\contentsline {subsubsection}{Source code testing}{193}{}%
+\contentsline {subsubsection}{Performance testing}{194}{}%
+\contentsline {subsection}{Object Identification}{195}{}%
+\contentsline {section}{[9.3] User Manual}{200}{}%
+\contentsline {section}{[9.4] Feedback and Communication}{202}{}%
+\contentsline {chapter}{[10] Proxyapps}{205}{}%
+\contentsline {section}{[10.1] Nektar-Driftwave}{208}{}%
+\contentsline {section}{[10.2] Nektar-Diffusion}{211}{}%
+\contentsline {section}{[10.3] Nektar-1D-SOL}{214}{}%
+\contentsline {section}{[10.4] FabNEPTUNE}{217}{}%
+\contentsline {section}{[10.5] Moment\_Kinetics}{220}{}%
+\contentsline {section}{[10.6] NESO}{223}{}%
+\contentsline {chapter}{[11] Reference Material}{226}{}%
+\contentsline {section}{[11.1] Conventions for Report Writing}{228}{}%
+\contentsline {subsection}{General textual issues}{229}{}%
+\contentsline {subsection}{Citations}{230}{}%
+\contentsline {subsection}{Software Compatibility}{231}{}%
+\contentsline {section}{[11.2] Acronyms}{237}{}%
+\contentsline {section}{[11.3] Symbols}{245}{}%
+\contentsline {chapter}{[12] Videos}{258}{}%
+\contentsline {chapter}{[13] Index}{261}{}%
