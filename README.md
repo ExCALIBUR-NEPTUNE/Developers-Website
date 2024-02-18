@@ -18,6 +18,7 @@ If you want to generate just the pdf version of the website then you perform the
 ```
 bash buildwebsite-local.sh PDF
 ```
+and the PDF appears as ./public/main.pdf
 
 ##  Partial PDF and HTML generation
 If you want to generate just the HTML and PDF of some tex, and not the whole website, then you perform the following command (where proxyapps/proxyapps is replaced with the relative path to the tex file you want to convert to PDF and HTML)

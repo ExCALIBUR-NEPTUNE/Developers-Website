@@ -24,8 +24,8 @@ Clearly $400$~separate modules is too unwieldy, and there is a need to organise
 further into packages which might contain in turn $10$-$50$ modules. 
 As a way of providing further indication to developers,
 it is helpful to talk of packages as being arranged into layers, as discussed
-in ref~\cite[\S\S\,2.4,3.2]{y2re333}, see \Fig{hierarchygroup}.
-Then, as prefigured in ref~\cite[Annex~A]{y2re333}, it should be  possible to encapsulate
+in~\cite[\S\S\,2.4,3.2]{y2re333}, see \Fig{hierarchygroup}.
+Then, as prefigured in~\cite[Annex~A]{y2re333}, it should be  possible to encapsulate
 the necessary complexity in one, albeit large diagram.
 \begin{figure}
 \centerline{\includegraphics[width=0.7\textwidth]{./png/hierarchygroup.png}}
@@ -36,14 +36,14 @@ Sketch of relationship between units of large code.
 
 \subsection{Considerations for Scientific Software}\label{sec:TS_scistruct}
 \subsubsection{Structural Considerations}\label{sec:TS_structure}
-In both refs~\cite{y1re331,y2re332}, a figure from Dubey~et~al~\cite{Du16Idea} is reproduced
+In both~\cite{y1re331,y2re332}, a figure from Dubey~et~al~\cite{Du16Idea} is reproduced
 that illustrates how scientific software may be developed by beginning with an ``infrastructure"
 capability into which initially exploratory scientific software is integrated as its worth
 is established. Unfortunately for \nep, it is not clear initially what  aspects  of the infrastructure
 will be durable and stable, although once the software is more mature, Dubey~et~al's methodology
 appears attractive.
 
-The literature referenced in ref~\cite{y2re333}
+The literature referenced in~\cite{y2re333}
 indicates that scientific software should be produced by aggregation, but is less
 helpful as to what is to be aggregated, ie.\  the modular decomposition as to what should
 constitute a single module etc.
@@ -73,7 +73,7 @@ Concerning logical interconnections between modules, the
 use of  a directed, acyclic graph~(DAG) structure might be thought mandatory,
 particularly to  process the input
 data in order to specify coherently the construction of the elements of the solution matrix.
-However, as prefigured in ref~\cite{y2re333} for the gyrokinetics code \F{GS2},
+However, as prefigured in~\cite{y2re333} for the gyrokinetics code \F{GS2},
 the tightly coupled nature of the central edge
 physics problem  means that input is more about gathering \emph{all} the data, for only at that point
 can fields be computed and only after that may matrix coefficients be computed.
@@ -103,7 +103,7 @@ Such modularity  enables work to be efficiently  assigned to a programmer or gro
 %requires only one copy of a class's attributes to be compiled, whereas only the very latest versions of C++
 %avoid recompilation of namespaces when a .cpp file is changed.
 UML nomenclature is preferred herein, for which \Tab{TS_umltrans} provides a limited 
-translation into C++ and Object Fortran. % is reproduced as Table~1 in ref~\cite{y2re332}.
+translation into C++ and Object Fortran. % is reproduced as Table~1 in~\cite{y2re332}.
 
 \begin{table}[tbph]
 \begin{center}
@@ -123,7 +123,7 @@ Generalisation & Generic interface & Function overloading \\
 \hline
 \end{tabular}
 Further insight into UML terminology may be gained from the description
-of the patterns in refs~\cite{y2re332,y2re333}.
+of the patterns in~\cite{y2re332,y2re333}.
 \end{center}
 \end{table}
 
@@ -133,7 +133,7 @@ of the patterns in refs~\cite{y2re332,y2re333}.
 The focus herein is the structure within a module. Specifically, the module describes a single class or object
 (strictly speaking in UML terms, objects are instances of a class), which is
 fundamental in that it is defined without use of aggregation.
-Tthe software  - consistent with Clerman and Spector~\cite[\S\,11]{clermanspector} -
+The software  - consistent with Clerman and Spector~\cite[\S\,11]{clermanspector} -
 that is promoted by Arter et al~\cite{fprog} for an object-oriented language, recognises two sizes of fundamental class
 and it is easier to start by considering the smaller, denoted smallobj\_m.
 
@@ -219,7 +219,7 @@ It will be noticed that other variables in bigobj\_m such as unit number are hid
 other modules. In fact a common addition to the default modules is a method function \T{getunit} that returns \T{ninbo},
 illustrating the approved way of accessing such data.
 
-%The source as mentioned in ref~\cite{y2re333} may be obtained by download of
+%The source as mentioned in~\cite{y2re333} may be obtained by download of
 %program~\I{smardda-qprog}~\cite{qprogwebsite}.
 The reason for the emphasis on input and output from and to disc (I/O)
 is to facilitate the construction of a test harness
