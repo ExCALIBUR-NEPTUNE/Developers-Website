@@ -1,0 +1,98 @@
+% Hewitt  - Application Design  - Standards and policies
+% Hewitt  - Application Design  - Guidelines and conventions
+% Smith  - Requirements  - Specific System Description  - Problem Description  - Goal Statements
+% ICD Interface Control Document
+% Smith  - Requirements  - General System Description  - System Constraints
+
+%\newcommand{\red}{\color{red}}
+%\newcommand{\blue}{\color{blue}}
+%\newcommand{\green}{\color{green}}
+\newcommand{\red}{\itshape}
+\newcommand{\blue}{\itshape}
+\newcommand{\green}{\itshape}
+
+%\clearpage
+
+%This section provides a response to Tokamak Science's exhaust code
+%requirements document.
+\newsectionnobreak{Response to Tokamak Science Division}{sec:response_physics}
+\input{TS/introduction}
+\input{TS/overall_capabilities}
+\clearpage
+\input{TS/physics_model}
+\clearpage
+\input{TS/physics_capabilities}
+\clearpage
+\input{TS/geometry}
+\begin{subappendices}
+\input{TS/estimates}
+\end{subappendices}
+
+\newsection{Software Engineering Response}{sec:TS_sw_response}
+The above scientific response~\Sec{response_physics}  indicates that the \nep \ suite
+will have the capability to describe the tokamak edge in a 
+comprehensive set of levels of detail using a large range of possibly 
+heterogeneous computer hardware, will be straightforwardly modifiable to 
+include additional physical effects, and will aim to include under all 
+circumstances, the level of error in computed results.
+Evidently, eveloping the suite represents a major challenge to current software engineering
+practices thanks to its scientific difficulty as indicated in \Sec{cg},
+and perhaps less obviously, its scientific \emph{complexity} due to the need to treat
+large numbers of atomic and molecular species, descending to the level of isotopes
+with a range of charge states and electronic excitations.
+
+The last  makes \nep \ a  significantly harder development than the BOUT++ code
+discussed in \Sec{response_physics}. The difficulty motivated studies of software
+engineering practices outside as well as in the scientific context.
+The studies of scientific work are summarised in reports  concerning frameworks,
+scientific UQ etc. Ideas from these studies are combined with non-technical works
+such as Hewitt~\cite{hewitt} and Sommerville~\cite{sommerville} and
+summarised in the report~\cite{y2d34}. 
+
+The outcome is the present report and website, which augment the procedures of
+Dudson and BOUT++ collaborators~\cite{y3re314}  to govern the development of \nep.
+Management aspects of the development are treated in \Sec{MGT_intro} and
+operational aspects in \Sec{OP_MGT}. The remainder of this section focusses
+on the generic details of a software implementation, the so-called
+non-functional aspects,  with BOUT++ instructions
+augmented to allow for the greater complexity of \nep, following the D3.3
+reports~\cite{y2d33}, here with~\Sec{TS_varnames} adding a way to handle a multitude of variable
+names to accommodate the much increased number of physical variables.
+%Conventions
+%Latest C++, C++20 if/when possible including modules (like Fortran-95 only import instead of use), and
+%concepts - generalised types of single variable.
+%Follow Stroustrop~\cite{stroustroptour}, also
+%C++ Core Guidelines (Bjarne Stroustrup, Herb Sutter)
+%\url{https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md}
+%Philosophy section can be condensed to
+%\begin{itemize}
+%\item Know, and use, available libraries, particularly the Standard Library and the Guideline Support Library.
+%\item Also, know, and use, available language features.
+%\item Use language to ensure that the purpose of code is unambiguous.
+%\item Consider writing a library if none is already available (and presumably making it available to others).
+%\end{itemize}
+
+%Use of clang\_tidy, on source code, enforce pot-hole convention.
+
+%Reject unapproved packages
+
+%Two options maintained
+
+%Prepare documents so easy to generate 5-15 slide presentations
+
+%Functionality, expected performance/accuracy, external interface %Smith
+
+Following D3.3~\cite{y2d33}, \Sec{TS_considers} discusses high-level constraints on the structure of software.
+where the concept of division into packages and modules (which may represent libraries)  is promoted.
+\Sec{TS_scistruct} explores the implications of these constraints for \nep.
+At the opposite extreme to \Sec{TS_considers} and \Sec{TS_scistruct},
+\Sec{TS_lowlevel} describes the desirable contents for a single module,
+and \Sec{TS_procio} discusses the question of what best to output when developing 
+software for the Exascale.
+
+\input{TS/nonfunc}
+
+\input{TS/mgt}
+
+\newsection{Generating Names for Variables}{sec:TS_varnames}
+\input{TS/naming}

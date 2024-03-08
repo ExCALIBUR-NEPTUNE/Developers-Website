@@ -1,0 +1,87 @@
+
+For Deliverable 4, UKAEA produced three milestone reports, namely 
+\begin{itemize}
+\item CD/EXCALIBUR-FMS/0066-M4.1   Support High-dimensional Procurement
+\item CD/EXCALIBUR-FMS/0061-M4.2   2-D Model of Neutral Gas and Impurities 
+\item CD/EXCALIBUR-FMS/0062-M4.3   High-dimensional Models Complementary Actions 2 
+\end{itemize}
+The first (Report~66)  supports the usefulness of the call for development
+of higher dimensional elements, suitable for solution of a continuum
+kinetic model of plasma, by demonstrating Nektar++ solution of a~$1d1v$
+model. The second (Report~61)  considers the use of the Julia language as
+a means to coding  particle models of plasma and neutral gas at HPC,
+with broadly favourable conclusions. The third and final (Report~62) 
+outlines critical physics expected to require treatment using
+particle-based and/or Monte-Carlo methods.  Its principal content
+examines how best to treat inter-processor communication of
+particle-based information at the Exascale.
+There is also a brief description of a \papp \ for the exploration
+of $1d1v$~solution by particles.
+
+For Deliverable 5, UKAEA produced two milestone reports, namely 
+\begin{itemize}
+\item CD/EXCALIBUR-FMS/0040-M5.1   Management of external research. Supports UQ Procurement 
+\item CD/EXCALIBUR-FMS/0063-M5.2   Selection of techniques for Uncertainty Quantification 
+\end{itemize}
+The first (Report~40)  begins with a reminder of the high
+level of ``noise" in tokamak data, and the kind of comparisons
+with simulation required.  It is pointed out that although
+spline interpolants are provably optimal, they may perform
+poorly for classes of functions relevant to the tokamak edge.
+The main content is the use of the VECMA toolkit for UQ of
+BOUT++ and Nektar++ for two 2-D fluid dynamical models.
+There is also derivation of simplified model by dimension
+reduction, by integration in one coordinate and/or
+by use of the Lie derivative.
+The report finishes with a summary of
+UQ-related PhD projects sponsored by \nep.
+
+The second (Report~63)  pursues
+the use of splines for \nep, indicating utility in the case of noisy data,
+and explores the use of Gaussian processes, including derivation
+of key formulae, and highlighting their strengths relative to splines.
+There is a brief comparison with neural network surrogates in an annex.
+
+For Deliverable 6, UKAEA produced two milestone reports, namely 
+\begin{itemize}
+\item CD/EXCALIBUR-FMS/0051-M6.1   Finite Element Models: Complementary Activities I 
+\item CD/EXCALIBUR-FMS/0064-M6.2   Finite Element Models Complementary Actions 2 
+\end{itemize}
+The first (Report~51)  details the application of the Nektar++ spectral / hp finite-element software to the classic problem 
+of two-dimensional vertical natural convection - physically a model for the heat transfer that takes place within the 
+cavity of a double-glazing unit and also relevant to heat transport in a plasma.  A brief survey of results from the 
+literature is followed by a numerical investigation showing transitions between conducting, laminar convective, and 
+turbulent regimes.  Small extensions to the existing Nektar++ framework, aimed at extracting engineering-relevant 
+quantities such as the maximum near-wall temperature, are given.  The second (Report~64)  builds on these results with a 
+quantitative comparison to the well-established MIT numerical convection benchmark and also the reproduction of some 
+detailed flow-fields from a recent publication; excellent agreement between results from Nektar++ and those from the 
+literature is obtained in both cases.  Also included in this report is a preliminary study of a numerical 
+implementation of discrete exterior calculus with a demonstration of spectral convergence for a simple test problem, 
+work motivated by the favourable properties of such schemes when coupled to particle kinetic codes.
+
+For Deliverable 7, UKAEA produced three milestone reports, namely 
+\begin{itemize}
+\item CD/EXCALIBUR-FMS/0052-M7.1   Literature review for Call T/AW086/21: Mathematical Support for Software Implementation 
+\item CD/EXCALIBUR-FMS/0053-M7.2   Code coupling and benchmarking 
+\item CD/EXCALIBUR-FMS/0065-M7.3   Software Support Complementary Actions 2 
+\end{itemize}
+The first of these (Report~52)  is a literature review performed to support the Call T/AW086/21: Mathematical Support for 
+Software Implementation. It describes recent advances in algorithm development for hyperbolic and elliptic equations.  
+In particular, the report describes developments in IMEX schemes, Deferred Correction methods, Asymptotic Preserving 
+(AP) methods, and Variable Stepsize, Variable Order (VSVO) timestepping for hyperbolic problems, and AP methods and 
+nested solvers for elliptic problems.
+
+The second (Report~53)  provides a commentary on the present state of Exascale hardware and software, and discusses the 
+available tools and technologies available for benchmarking and code coupling. The hardware and software landscape of 
+HPC systems is becoming increasing diverse, with a proliferation of vendors and different technologies. To perform well 
+at Exascale, software will likely need be able to target multiple heterogeneous systems. In such an environment, it is 
+crucial for developers to have access to benchmarking infrastructure to measure performance and highlight regressions. 
+This environment  and the separation of concerns approach taken to navigate it  necessitates the development of 
+discrete \papp s which will need to be drawn together into a single software suite. Thus the issue of code coupling 
+will also be important at Exascale.
+
+The final (Report~65)  describes aspects of coordination within the \nep \   project not covered in previous reports, namely, 
+the development of a GitHub repository for infrastructure code and project planning; the development of a project 
+website for knowledge transfer within \nep \  ; and a description of collaborations arising from \nep \  -related 
+interactions, including the Fusion Modelling Use Case working group established create a connection between Project 
+\nep \   and the wider \exc \   programme.

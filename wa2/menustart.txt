@@ -1,0 +1,5 @@
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Menu</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">

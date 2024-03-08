@@ -1,0 +1,65 @@
+\subsection{Use Cases: Particle Specialists}\label{sec:use-cases-particle-specialists}
+
+\emph{As a particle specialist I:}
+
+\begin{itemize}
+\item am very familiar with particle based methods.
+\item may not be familiar with FEM implementation details but have a working
+  understanding of the approach.
+\item may not be familiar with low level languages.
+\item may not be familiar with HPC hardware and architectures.
+\item understand how to describe complex physical processes such as
+  radiation, recombination, ionisation, charge exchange using both
+  particle and FEM data.
+\item may not have applied UQ techniques before but may have an
+  understanding of distributions/ensembles from statistical mechanics.
+\end{itemize}
+
+\emph{I want to:}
+
+\begin{itemize}
+\item describe particle based operations both collectively and per particle,
+  eg.\ :
+\begin{itemize}
+\item creation and deletion of particles potentially from complex
+  distributions.
+\item computation with particle data - per particle and collectively.
+\item identification of groups of particles.
+\item representation of arbitrary per particle data.
+\end{itemize}
+\item visualise particle and FEM data - snapshots and trajectories.
+\item create new finite element functions on appropriate function spaces.
+\item add source/sink terms to governing equations (solved with FEM).
+\item define particle source and sink regions using the simulation domain
+  geometry.
+\item define regions of interest, eg.\ surfaces, as part of diagnostics.
+\item identify particles near surfaces/points/volumes of interest.
+\item create and use global data structures for computation,
+  eg.\ diagnostics.
+\item represent particle data as FE functions:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item through pointwise projection.
+  \item line integration over particle trajectory.
+  \end{enumerate}
+\item use non-trivial functions in my loops, eg.\ erfc, gamma.
+\item define functions using expansion coefficients, eg.\ ionisation rate
+  function approximated by an exponential expansion.
+\item evaluate these functions using both particle and FEM data.
+\item describe pairwise operations that implement physical processes.
+\item describe and sample from non-trivial statistical distributions.
+\item perform simulations in a reproducible manner.
+\end{itemize}
+
+\emph{So that I can:}
+
+\begin{itemize}
+\item use particles as a kinetic description for plasma and neutrals.
+\item represent highly-collisional regimes by fluid approximations.
+\item describe plasma-neutral and plasma-plasma interactions.
+\item use abstractions/DSLs to write once, run anywhere as much as possible.
+\item experiment with models quickly and efficiently.
+\item perform ensemble computations and averages.
+\item perform UQ and verification.
+\end{itemize}
