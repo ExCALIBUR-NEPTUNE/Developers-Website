@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.8)  8 MAR 2024 08:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  1 JUN 2024 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2444,17 +2444,17 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 1--217
  [] [] [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 239
+LaTeX Font Info:    Trying to load font information for U+euf on input line 240
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 []|$\OML/lmm/m/it/10.95 ^^W[] \OT1/lmr/m/n/10.95 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
 []|$\OML/lmm/m/it/10.95 ^^Z[] \OT1/lmr/m/n/10.95 =
  []
 
@@ -2466,7 +2466,7 @@ Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
 [102
 
 ] [103] [104] [105] [106]
-Overfull \hbox (131.24408pt too wide) in alignment at lines 417--500
+Overfull \hbox (131.24408pt too wide) in alignment at lines 417--502
  [] [] [] 
  []
 
@@ -2788,7 +2788,7 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (127 pages, 2213001 bytes).
+Output written on main.pdf (127 pages, 2213294 bytes).
 PDF statistics:
  1845 PDF objects out of 2073 (max. 8388607)
  1623 compressed objects within 17 object streams
