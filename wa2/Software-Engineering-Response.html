@@ -1717,7 +1717,7 @@ modelled. Widely applicable good practices to be adopted are as follows:
 
 <li>
 <p>
-– Variable names, used only on input, might consist of \(3-4\) words primarily describing the variable, using ‘pot-hole’ convention
+– Variable names, used only on input, might consist of \(3-4\) words primarily describing the variable, using ‘snake case’, more graphically referred to as ‘pot-hole’ convention
 </p>
 
 
@@ -1769,7 +1769,103 @@ this information to the developer. Nonetheless, there is no objection to employi
 <p>
 For C++, based on the recommendations of the book “Professional C++" (eg. ref. [<a href="Index-0.html#LWR-ht-cite.0@solterkleper">44</a>, §&#x202f;7], the following prefix strings should be employed: ‘m_’ for member (particularly useful for
 indicating scope), ‘p_’ for pointer, ‘s_’ for static, ‘k_’ for constant, ‘f_’ for flag (Boolean value), ‘d_’ for buffers/pointers on an accelerator device, and aggregations thereof, eg. ‘ms_variable’. Use of global variables is deprecated, so the ‘g_’ prefix should not be
-used.
+used. <span class="textsc">NESO-Particles</span>, see NESOParticlesdev uses a different set of conventions, some of which clash, giving the alphabetical list
+</p>
+<dl>
+
+<dt>‘a_’</dt>
+<dd>
+<p>
+variable is a SYCL accessor,
+</p>
+
+</dd>
+<dt>‘b_’</dt>
+<dd>
+<p>
+variable is a SYCL buffer,
+</p>
+
+</dd>
+<dt>‘d_’</dt>
+<dd>
+<p>
+for buffers/pointers on an accelerator device,
+</p>
+
+</dd>
+<dt>‘d_’</dt>
+<dd>
+<p>
+variable exists on the device. In the case of a pointer the memory region is device allocated,
+</p>
+
+</dd>
+<dt>‘f_’</dt>
+<dd>
+<p>
+for flag (Boolean value),
+</p>
+
+</dd>
+<dt>‘h_’</dt>
+<dd>
+<p>
+variable exists on the host. In the case of a pointer the memory region is host allocated,
+</p>
+
+</dd>
+<dt>‘k_’</dt>
+<dd>
+<p>
+for constant,
+</p>
+
+</dd>
+<dt>‘k_’</dt>
+<dd>
+<p>
+variable is a local copy of a variable to pass into a kernel by copy,
+</p>
+
+</dd>
+<dt>‘m_’</dt>
+<dd>
+<p>
+for member (particularly useful for indicating scope),
+</p>
+
+</dd>
+<dt>‘p_’</dt>
+<dd>
+<p>
+for pointer variable. <span class="textsc">NESO-Particles</span> prefers to add ‘SharedPtr’ to <em>end</em> of name.
+</p>
+
+</dd>
+<dt>‘s_’</dt>
+<dd>
+<p>
+for static variable,
+</p>
+
+</dd>
+<dt>‘s_’</dt>
+<dd>
+<p>
+variable exists on the host and device. In the case of a pointer the memory region is allocated as shared,
+</p>
+
+</dd>
+<dt>‘v_’</dt>
+<dd>
+<p>
+variable overrides a parent class function, <span class="textsc">Nektar++</span> convention nektar++dev.
+</p>
+</dd>
+</dl>
+<p>
+Where there is the possibility of confusion as to which convention is used, the suggestion is that the initial prefix or prefixes are followed by ‘-P’ for those of ‘Professional C++", and ‘-N’ for <span class="textsc">NESO-Particles</span>.
 </p>
 <p>
 For Object Fortran naming conventions, Arter&nbsp;et&nbsp;al&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@fprog">36</a>] codifies best practice. It may also be useful to reserve the single letters&nbsp;‘i’, ‘j’, ‘k’ etc. for the names of loop-count

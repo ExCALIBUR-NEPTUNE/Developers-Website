@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  1 JUN 2024 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.29)  29 JAN 2025 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1354,7 +1354,22 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                NESOParticlesdev
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                nektar++dev
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 168.
 Package biblatex Info: Reference segment=0 on input line 168.
 <./corpics/cofaplus.png, id=176, 74.2775pt x 74.2775pt>
@@ -1594,8 +1609,15 @@ Overfull \hbox (102.79134pt too wide) in paragraph at lines 111--127
  [] 
  []
 
-[40] [41] [42] [43]) (./TS/mgt.tex [44] [45] [46]) (./TS/naming.tex [47]
-[48] [49])) [50]
+[40] [41] [42] [43]) (./TS/mgt.tex [44] [45]
+
+LaTeX Warning: Citation 'NESOParticlesdev' on page 46 undefined on input line 1
+10.
+
+
+LaTeX Warning: Citation 'nektar++dev' on page 46 undefined on input line 125.
+
+[46]) (./TS/naming.tex [47] [48] [49])) [50]
 Chapter 5.
 (./DJF/DJF.tex (./DJF/general.tex [51
 
@@ -2760,10 +2782,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25106 strings out of 479727
- 451652 string characters out of 5884999
- 1347895 words of memory out of 5000000
- 41942 multiletter control sequences out of 15000+600000
+ 25107 strings out of 479727
+ 451662 string characters out of 5884998
+ 1347953 words of memory out of 5000000
+ 41943 multiletter control sequences out of 15000+600000
  571487 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  74i,15n,87p,1219b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2788,7 +2810,7 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (127 pages, 2213294 bytes).
+Output written on main.pdf (127 pages, 2214749 bytes).
 PDF statistics:
  1845 PDF objects out of 2073 (max. 8388607)
  1623 compressed objects within 17 object streams
