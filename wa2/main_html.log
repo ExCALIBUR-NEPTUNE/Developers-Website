@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.29)  29 JAN 2025 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.22)  22 NOV 2025 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1746,34 +1746,16 @@ Package biblatex Info: Automatic encoding selection.
 \openout8 = `main_html.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main_html.bbl' found.
+Package biblatex Info: ... file 'main_html.bbl' not found.
 
-(./main_html.bbl (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
-)
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                NESOParticlesdev
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                nektar++dev
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+No file main_html.bbl.
 Package biblatex Info: Reference section=0 on input line 168.
 Package biblatex Info: Reference segment=0 on input line 168.
 \openout5 = `main-images.txt'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 68.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: "lwarp_mathjax.txt"  (verbatim)
@@ -1794,38 +1776,152 @@ Done.
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
 (Font)              Font shape `T1/lmr/m/sc' tried instead on input line 176.
 
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 180.
-[1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 \openout6 = `main_html.sidetoc'.
 
- [3] (./main_html.toc)
+ [3]
+No file main_html.toc.
 \tf@toc=\write9
 \openout9 = `main_html.toc'.
 
- (./mainbody.tex [4]
+(./mainbody.tex [4]
 File: "lwarp_mathjax.txt"  (verbatim)
  [5] (./main_html.sidetoc) [6] (./PN/PN.tex [7] [8]
-[9] [10]
+
+LaTeX Warning: Citation 'y3re181' on page 9 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'y2d34' on page 9 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'y3re314' on page 9 undefined on input line 14.
+
+[9]
+
+LaTeX Warning: Citation 'sciplan' on page 10 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'exch+eswebsite' on page 10 undefined on input line 22.
+
+
+
+LaTeX Warning: Citation 'MITlicense' on page 10 undefined on input line 24.
+
+[10]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 6.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [11]) (./approboxw.tex
-[12] [13] [14]) [15]
-File: "lwarp_mathjax.txt"  (verbatim)
- [16] (./main_html.sidetoc) [17] (./BD/BD.tex) [18]
-File: "lwarp_mathjax.txt"  (verbatim)
+)
 
-[19] (./main_html.sidetoc) [20] (./RB/RB.tex [21]
+LaTeX Warning: Citation 'xpndocswebsite' on page 11 undefined on input line 36.
+
+
+
+LaTeX Warning: Citation 'neptunesearchwebsite' on page 11 undefined on input li
+ne 37.
+
+
+LaTeX Warning: Citation 'xpntexwebsite' on page 11 undefined on input line 50.
+
+[11]
+
+LaTeX Warning: Citation 'rfc2119' on page 12 undefined on input line 60.
+
+) (./approboxw.tex [12] [13] [14]) [15]
 File: "lwarp_mathjax.txt"  (verbatim)
- [22] (./main_html.sidetoc)
-[23] (./RB/edgeprop.tex [24] [25] [26] [27] [28] [29]
+ [16] (./main_html.sidetoc) [17]
+(./BD/BD.tex
+
+LaTeX Warning: Citation 'prince2' on page 18 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'prince2wiki' on page 18 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'sciplan' on page 18 undefined on input line 85.
+
+
+LaTeX Warning: Citation 'SPF' on page 18 undefined on input line 88.
+
+) [18]
+File: "lwarp_mathjax.txt"  (verbatim)
+ [19] (./main_html.sidetoc) [20] (./RB/RB.tex
+
+LaTeX Warning: Reference `sec:TS' on page 21 undefined on input line 9.
+
+
+LaTeX Warning: Reference `sec:props' on page 21 undefined on input line 11.
+
+
+LaTeX Warning: Reference `sec:RB2' on page 21 undefined on input line 15.
+
+
+LaTeX Warning: Reference `sec:use_case' on page 21 undefined on input line 19.
+
+
+LaTeX Warning: Reference `sec:general-remarks' on page 21 undefined on input li
+ne 19.
+
+[21]
+File: "lwarp_mathjax.txt"  (verbatim)
+ [22] (./main_html.sidetoc) [23] (./RB/edgeprop.tex
+
+LaTeX Warning: Citation 'Mi13Expe' on page 24 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'Mi13Expe' on page 24 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'wesson' on page 24 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'miyamoto' on page 24 undefined on input line 15.
+
+
+LaTeX Warning: Citation 'Xu10Inte' on page 24 undefined on input line 16.
+
+[24] [25] [26]
+
+LaTeX Warning: Citation 'NRLpf07' on page 27 undefined on input line 41.
+
+[27] [28]
+
+LaTeX Warning: Citation 'priestforbes' on page 29 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'hazeltinemeiss' on page 29 undefined on input line 76.
+
+
+
+LaTeX Warning: Citation 'Mi12Simu' on page 29 undefined on input line 80.
+
+
+LaTeX Warning: Reference `sec:props' on page 29 undefined on input line 81.
+
+
+LaTeX Warning: Citation 'freidberg' on page 29 undefined on input line 83.
+
+
+LaTeX Warning: Reference `sec:neuts' on page 29 undefined on input line 97.
+
+[29]
+
+LaTeX Warning: Citation 'NRLpf07' on page 30 undefined on input line 101.
+
+
+LaTeX Warning: Citation 'Ha91hydr' on page 30 undefined on input line 102.
+
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 08.
-
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1882,39 +1978,275 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [30]
+)
+
+LaTeX Warning: Citation 'Le06emer' on page 30 undefined on input line 130.
+
+
+LaTeX Warning: Citation 'Le06emer' on page 30 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'Ar07Emer' on page 30 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'NRLpf07' on page 30 undefined on input line 137.
+
+) [30]
 File: "lwarp_mathjax.txt"  (verbatim)
- [31] (./main_html.sidetoc)
-[32] (./RB/engineers_requirements.tex [33] [34] [35] [36] [37]) [38]
+ [31] (./main_html.sidetoc) [32] (./RB/engineers_requirements.tex
+[33] [34]
+
+LaTeX Warning: Reference `sec:RB2_physmod' on page 35 undefined on input line 4
+7.
+
+[35] [36] [37]
+
+LaTeX Warning: Reference `sec:RB2_physmod' on page 38 undefined on input line 1
+11.
+
+) [38]
 File: "lwarp_mathjax.txt"  (verbatim)
- [39]
-(./main_html.sidetoc) [40] (./RB/use_case_physicist.tex [41])
+ [39] (./main_html.sidetoc) [40] (./RB/use_case_physicist.tex [41])
 (./RB/use_case_engineer.tex [42]) (./RB/use_case_particle_specialist.tex
 [43]) (./RB/use_case_FEM_background.tex [44]) [45]
 File: "lwarp_mathjax.txt"  (verbatim)
  [46] (./main_html.sidetoc)
-[47]) [48]
+[47]
+
+LaTeX Warning: Reference `sec:TS' on page 48 undefined on input line 35.
+
+
+LaTeX Warning: Citation 'omfitwebsite' on page 48 undefined on input line 43.
+
+) [48]
 File: "lwarp_mathjax.txt"  (verbatim)
  [49] (./main_html.sidetoc) [50] (./TS/TS.tex [51] [52]
-(./TS/introduction.tex [53] [54] [55] [56] [57] [58])
-(./TS/overall_capabilities.tex [59] [60] [61] [62] [63] [64] [65] [66] [67]
-[68] [69]) (./TS/physics_model.tex [70] [71] [72] [73] [74] [75] [76] [77]
-[78] [79] [80]
+(./TS/introduction.tex [53]
+
+LaTeX Warning: Reference `sec:TS_sw_response' on page 54 undefined on input lin
+e 12.
+
+[54] [55]
+
+LaTeX Warning: Citation 'sciplan' on page 56 undefined on input line 38.
+
+[56] [57] [58]) (./TS/overall_capabilities.tex [59] [60]
+
+LaTeX Warning: Reference `fig:proxyflow2' on page 61 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `sec:physics_model' on page 61 undefined on input line
+ 22.
+
+[61] [62]
+
+LaTeX Warning: Reference `sec:cg' on page 63 undefined on input line 42.
+
+[63] [64]
+
+LaTeX Warning: Reference `sec:physics_model' on page 65 undefined on input line
+ 91.
+
+[65] [66] [67] [68] [69]) (./TS/physics_model.tex [70] [71] [72] [73] [74]
+
+LaTeX Warning: Citation 'pappeqs2' on page 75 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'sciplan' on page 75 undefined on input line 30.
+
+[75] [76] [77] [78]
+
+LaTeX Warning: Reference `sec:geometry' on page 79 undefined on input line 57.
+
+[79] [80]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 75.
 
-[81] [82] [83] [84] [85] [86]) (./TS/physics_capabilities.tex [87] [88]
-[89] [90]) (./TS/geometry.tex [91] [92]) (./TS/estimates.tex [93]
+
+LaTeX Warning: Reference `fig:colpri' on page 81 undefined on input line 79.
+
+[81]
+
+LaTeX Warning: Citation 'pappeqs2' on page 82 undefined on input line 108.
+
+[82] [83] [84] [85] [86]) (./TS/physics_capabilities.tex [87] [88] [89]
+
+LaTeX Warning: Reference `fig:dimensions2' on page 90 undefined on input line 7
+8.
+
+[90]) (./TS/geometry.tex [91] [92]) (./TS/estimates.tex [93]
 File: "lwarp_mathjax.txt"  (verbatim)
  [94]
 (./main_html.sidetoc) [95]) [96]
 File: "lwarp_mathjax.txt"  (verbatim)
  [97] (./main_html.sidetoc) [98]
-(./TS/nonfunc.tex [99] [100] [101] [102] [103] [104] [105] [106] [107] [108]
-[109]) (./TS/mgt.tex [110] [111]
+
+LaTeX Warning: Reference `sec:response_physics' on page 99 undefined on input l
+ine 32.
+
+
+LaTeX Warning: Reference `sec:cg' on page 99 undefined on input line 39.
+
+
+LaTeX Warning: Reference `sec:response_physics' on page 99 undefined on input l
+ine 45.
+
+
+LaTeX Warning: Citation 'hewitt' on page 99 undefined on input line 49.
+
+
+LaTeX Warning: Citation 'sommerville' on page 99 undefined on input line 49.
+
+
+LaTeX Warning: Citation 'y2d34' on page 99 undefined on input line 50.
+
+
+LaTeX Warning: Citation 'y3re314' on page 99 undefined on input line 53.
+
+
+LaTeX Warning: Reference `sec:MGT_intro' on page 99 undefined on input line 54.
+
+
+
+LaTeX Warning: Reference `sec:OP_MGT' on page 99 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'y2d33' on page 99 undefined on input line 59.
+
+
+LaTeX Warning: Reference `sec:TS_varnames' on page 99 undefined on input line 5
+9.
+
+
+LaTeX Warning: Citation 'y2d33' on page 99 undefined on input line 85.
+
+
+LaTeX Warning: Reference `sec:TS_considers' on page 99 undefined on input line 
+85.
+
+
+LaTeX Warning: Reference `sec:TS_scistruct' on page 99 undefined on input line 
+87.
+
+
+LaTeX Warning: Reference `sec:TS_considers' on page 99 undefined on input line 
+88.
+
+
+LaTeX Warning: Reference `sec:TS_scistruct' on page 99 undefined on input line 
+88.
+
+
+LaTeX Warning: Reference `sec:TS_lowlevel' on page 99 undefined on input line 8
+9.
+
+
+LaTeX Warning: Reference `sec:TS_procio' on page 99 undefined on input line 90.
+
+
+(./TS/nonfunc.tex [99]
+
+LaTeX Warning: Reference `sec:TS_lowlevel' on page 100 undefined on input line 
+10.
+
+
+LaTeX Warning: Reference `tab:TS_umltrans' on page 100 undefined on input line 
+10.
+
+
+LaTeX Warning: Citation 'y2re333' on page 100 undefined on input line 27.
+
+
+LaTeX Warning: Reference `fig:hierarchygroup' on page 100 undefined on input li
+ne 27.
+
+
+LaTeX Warning: Citation 'y2re333' on page 100 undefined on input line 28.
+
+[100] [101] [102]
+
+LaTeX Warning: Citation 'y1re331' on page 103 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'y2re332' on page 103 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'Du16Idea' on page 103 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'y2re333' on page 103 undefined on input line 46.
+
+[103]
+
+LaTeX Warning: Citation 'y2re333' on page 104 undefined on input line 76.
+
+[104] [105]
+
+LaTeX Warning: Reference `tab:TS_umltrans' on page 106 undefined on input line 
+105.
+
+[106] [107]
+
+LaTeX Warning: Citation 'y2re332' on page 108 undefined on input line 126.
+
+
+LaTeX Warning: Citation 'y2re333' on page 108 undefined on input line 126.
+
+[108]
+
+LaTeX Warning: Citation 'clermanspector' on page 109 undefined on input line 13
+6.
+
+
+LaTeX Warning: Citation 'fprog' on page 109 undefined on input line 137.
+
+
+LaTeX Warning: Citation 'cerberuswebsite' on page 109 undefined on input line 1
+57.
+
+
+LaTeX Warning: Reference `sec:TS_procio' on page 109 undefined on input line 22
+9.
+
+[109]) (./TS/mgt.tex [110]
+
+LaTeX Warning: Reference `sec:charter' on page 111 undefined on input line 11.
+
+[111]
+
+LaTeX Warning: Citation 'gregory' on page 112 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'cppguidelines' on page 112 undefined on input line 32.
+
+
+
+LaTeX Warning: Citation 'stroustroptour' on page 112 undefined on input line 33
+.
+
+
+LaTeX Warning: Citation 'clang-tidywebsite' on page 112 undefined on input line
+ 41.
+
+
+LaTeX Warning: Citation 'blackwebsite' on page 112 undefined on input line 42.
+
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 73.
+
+LaTeX Warning: Reference `sec:symbol' on page 112 undefined on input line 76.
+
+
+LaTeX Warning: Reference `sec:conv' on page 112 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'pittwhitely' on page 112 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'solterkleper' on page 112 undefined on input line 103.
+
 
 
 LaTeX Warning: Citation 'NESOParticlesdev' on page 112 undefined on input line 
@@ -1923,200 +2255,45 @@ LaTeX Warning: Citation 'NESOParticlesdev' on page 112 undefined on input line
 
 LaTeX Warning: Citation 'nektar++dev' on page 112 undefined on input line 125.
 
-[112]) [113]
+
+LaTeX Warning: Citation 'fprog' on page 112 undefined on input line 130.
+
+[112]
+
+LaTeX Warning: Reference `sec:MGT_intro' on page 113 undefined on input line 14
+5.
+
+) [113]
 File: "lwarp_mathjax.txt"  (verbatim)
- [114] (./main_html.sidetoc) [115] (./TS/naming.tex [116] [117]))
-[118]
-File: "lwarp_mathjax.txt"  (verbatim)
- [119] (./main_html.sidetoc) [120] (./DJF/DJF.tex [121] [122]
-(./DJF/general.tex) [123] [124] (./DJF/tabtit.tex [125]
+ [114] (./main_html.sidetoc) [115] (./TS/naming.tex
 
-LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
-(Font)              using `T1/lmss/bx/n' instead on input line 6.
+LaTeX Warning: Citation 'pappeqs3' on page 116 undefined on input line 4.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `tab:twoclatex' on page 116 undefined on input line 27
+.
 
- [126])
-[127] (./DJF/report_summary1.tex) [128] (./DJF/report_summary2.tex) [129]
-(./DJF/parabstr.tex [130])) [131]
-File: "lwarp_mathjax.txt"  (verbatim)
- [132] (./main_html.sidetoc) [133]
-(./DDF/DDF.tex [134] [135] [136]
-File: "lwarp_mathjax.txt"  (verbatim)
- [137] (./main_html.sidetoc) [138]
-(./DDF/basic_objects.tex [139] [140] [141] [142] [143] [144] [145] [146])
-[147]
-File: "lwarp_mathjax.txt"  (verbatim)
- [148] (./main_html.sidetoc) [149] (./DDF/functions.tex [150] [151]
-[152] [153] [154] [155] [156]) [157]
-File: "lwarp_mathjax.txt"  (verbatim)
- [158] (./main_html.sidetoc) [159]
-(./DDF/desipatt.tex [160])) [161]
-File: "lwarp_mathjax.txt"  (verbatim)
- [162] (./main_html.sidetoc) [163]
-(./MGT/MGT.tex (./MGT/MGT_intro.tex [164]
-File: "lwarp_mathjax.txt"  (verbatim)
- [165] (./main_html.sidetoc) [166])
-(./MGT/dudson.tex [167]
-File: "lwarp_mathjax.txt"  (verbatim)
- [168] (./main_html.sidetoc) [169] [170] [171] [172]
-[173] [174] [175]) [176]
-File: "lwarp_mathjax.txt"  (verbatim)
- [177] (./main_html.sidetoc) [178] (./MGT/charter.tex)) [179]
-File: "lwarp_mathjax.txt"  (verbatim)
- [180] (./main_html.sidetoc) [181] (./MF/MF.tex) [182]
-File: "lwarp_mathjax.txt"  (verbatim)
- [183]
-(./main_html.sidetoc) [184] (./OP/OP.tex [185] [186] (./OP/opmgt.tex [187])
-[188]
-File: "lwarp_mathjax.txt"  (verbatim)
- [189] (./main_html.sidetoc) [190] (./OP/testing.tex [191] [192] [193])
-[194] (./OP/objdisc.tex [195] [196]) [197]
-File: "lwarp_mathjax.txt"  (verbatim)
- [198] (./main_html.sidetoc) [199]
-(./OP/UMan.tex [200] [201])) [202]
-File: "lwarp_mathjax.txt"  (verbatim)
- [203] (./main_html.sidetoc) [204]
-(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex [205]
-File: "lwarp_mathjax.txt"  (verbatim)
- [206]
-(./main_html.sidetoc) [207]) (./proxyapps/nektar-diffusion.tex [208]
-File: "lwarp_mathjax.txt"  (verbatim)
- [209]
-(./main_html.sidetoc) [210]) (./proxyapps/nektar-1d-sol.tex [211]
-File: "lwarp_mathjax.txt"  (verbatim)
- [212]
-(./main_html.sidetoc) [213]) (./proxyapps/fabneptune.tex [214]
-File: "lwarp_mathjax.txt"  (verbatim)
- [215]
-(./main_html.sidetoc) [216]) (./proxyapps/moment-kinetics.tex [217]
-File: "lwarp_mathjax.txt"  (verbatim)
- [218]
-(./main_html.sidetoc) [219]) (./proxyapps/NESO.tex [220]
-File: "lwarp_mathjax.txt"  (verbatim)
- [221]
-(./main_html.sidetoc) [222])) [223]
-File: "lwarp_mathjax.txt"  (verbatim)
- [224] (./main_html.sidetoc) [225]
-(./REF/REF.tex [226] [227] [228] [229] [230] (./REF/conv.tex
-(./REF/naming_map.tex [231]
-Overfull \hbox (44.40192pt too wide) in paragraph at lines 3--3
-[]\T1/lmss/m/n/9 Table 11.1:&nbsp;\T1/lmtt/m/n/9 <b><span class="textsf">\T1/lm
-ss/bx/n/9 TWO CHAR-AC-TER EQUIV-A-LENTS\T1/lmtt/m/n/9 </span></b> \T1/lmss/m/n/
-9 of \T1/lmtt/m/n/9 <span class="latexlogofont"><span class="latexlogo">\T1/lms
-s/m/n/9 L\T1/lmtt/m/n/9 <span class="latexlogosup">\T1/lmss/m/n/9 a\T1/lmtt/m/n
-/9 </span>\T1/lmss/m/n/9 T\T1/lmtt/m/n/9 <span class="latexlogosub">\T1/lmss/m/
-n/9 e\T1/lmtt/m/n/9 </span>\T1/lmss/m/n/9 X\T1/lmtt/m/n/9 </span></span>
- []
+[116]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.36 \item `a_
+              ' will represent `a' (as will '_a')
+? 
+! Emergency stop.
+<inserted text> 
+                $
+l.36 \item `a_
+              ' will represent `a' (as will '_a')
+End of file on the terminal!
 
-[232]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [233]))
-[234]
-File: "lwarp_mathjax.txt"  (verbatim)
- [235] (./main_html.sidetoc) [236] (./REF/acro.tex [237]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [238]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [239]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [240]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [241])
-[242]
-File: "lwarp_mathjax.txt"  (verbatim)
- [243] (./main_html.sidetoc) [244] (./REF/symb.tex [245]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [246]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [247]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [248]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [249]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [250]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [251]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [252]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [253]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [254]))
-Including 'warpHTML' comment.
-\openout3 = `comment_html.cut'.
-
- Straight input of comment_html.cut.
-(./comment_html.cut [255]
-File: "lwarp_mathjax.txt"  (verbatim)
- [256] (./main_html.sidetoc) [257]) [258]
-File: "lwarp_mathjax.txt"  (verbatim)
- [259]
-(./main_html.sidetoc) [260] (./IND/IND.tex)) [261] (./metackn.tex) [262]
-
-LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 201.
-
-
-LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 201.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [263]
-[264] (./main_html.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package logreq Info: Writing requests to 'main_html.run.xml'.
-\openout1 = `main_html.run.xml'.
-
- ) ) 
+ 
 Here is how much of TeX's memory you used:
- 25773 strings out of 479727
- 505910 string characters out of 5884998
- 1354370 words of memory out of 5000000
- 42828 multiletter control sequences out of 15000+600000
- 539286 words of font info for 72 fonts, out of 8000000 for 9000
+ 23613 strings out of 479727
+ 451184 string characters out of 5884997
+ 1273380 words of memory out of 5000000
+ 40844 multiletter control sequences out of 15000+600000
+ 529187 words of font info for 69 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 93i,8n,108p,1251b,2449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf
-/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsco10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (264 pages, 973993 bytes).
-PDF statistics:
- 968 PDF objects out of 1000 (max. 8388607)
- 654 compressed objects within 7 object streams
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 93i,6n,108p,1024b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

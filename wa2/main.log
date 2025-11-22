@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.29)  29 JAN 2025 20:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.22)  22 NOV 2025 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1353,31 +1353,16 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
+Package biblatex Info: ... file 'main.bbl' not found.
 
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                NESOParticlesdev
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                nektar++dev
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 168.
 Package biblatex Info: Reference segment=0 on input line 168.
-<./corpics/cofaplus.png, id=176, 74.2775pt x 74.2775pt>
+<./corpics/cofaplus.png, id=52, 74.2775pt x 74.2775pt>
 File: ./corpics/cofaplus.png Graphic file (type png)
 <use ./corpics/cofaplus.png>
 Package pdftex.def Info: ./corpics/cofaplus.png  used on input line 172.
 (pdftex.def)             Requested size: 71.13188pt x 71.13557pt.
-
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
 (Font)              Font shape `T1/lmr/m/sc' tried instead on input line 176.
@@ -1389,12 +1374,12 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./png/neptune.png, id=178, 601.24625pt x 822.07124pt>
+<./png/neptune.png, id=54, 601.24625pt x 822.07124pt>
 File: ./png/neptune.png Graphic file (type png)
 <use ./png/neptune.png>
 Package pdftex.def Info: ./png/neptune.png  used on input line 189.
 (pdftex.def)             Requested size: 227.62204pt x 311.22374pt.
-<./png/trident.png, id=179, 488.82625pt x 450.68375pt>
+<./png/trident.png, id=55, 488.82625pt x 450.68375pt>
 File: ./png/trident.png Graphic file (type png)
 <use ./png/trident.png>
 Package pdftex.def Info: ./png/trident.png  used on input line 190.
@@ -1405,90 +1390,123 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./corpics/cofaplus.png>] [
-2 <./png/neptune.png> <./png/trident.png>] (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-3.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-3.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [3
-
-])
+2 <./png/neptune.png> <./png/trident.png>] (./main.toc)
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [4]
-(./mainbody.tex
+ [3
+
+] (./mainbody.tex
 Chapter 1.
 (./PN/PN.tex
+
+LaTeX Warning: Citation 'y3re181' on page 4 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'y2d34' on page 4 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'y3re314' on page 4 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'sciplan' on page 4 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'exch+eswebsite' on page 4 undefined on input line 22.
+
+
+LaTeX Warning: Citation 'MITlicense' on page 4 undefined on input line 24.
+
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
 36.
- (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+
+LaTeX Warning: Citation 'xpndocswebsite' on page 4 undefined on input line 36.
+
+
+LaTeX Warning: Citation 'neptunesearchwebsite' on page 4 undefined on input lin
+e 37.
+
+
 Overfull \hbox (3.23634pt too wide) in paragraph at lines 36--40
 []\T1/lmss/m/n/10.95 Access to re-ports as the com-mu-nity pro-duces them, in t
 he access-controlled
  []
 
 
-Overfull \hbox (1.83902pt too wide) in paragraph at lines 36--40
-\T1/lmss/m/n/10.95 github site ref. [[]7[]], sub-di-rec-to-ries \T1/lmtt/m/n/10
-.95 reports \T1/lmss/m/n/10.95 and \T1/lmtt/m/n/10.95 reports/ukaea_reports\T1/
-lmss/m/n/10.95 .
+Overfull \hbox (49.83614pt too wide) in paragraph at lines 36--40
+\T1/lmss/m/n/10.95 github site [], sub-di-rec-to-ries \T1/lmtt/m/n/10.95 report
+s \T1/lmss/m/n/10.95 and \T1/lmtt/m/n/10.95 reports/ukaea_reports\T1/lmss/m/n/1
+0.95 .
  []
 
-[5
+[4
 
 
 ]
-Overfull \hbox (0.99811pt too wide) in paragraph at lines 60--65
+
+LaTeX Warning: Citation 'xpntexwebsite' on page 5 undefined on input line 50.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+4.
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+4.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+54.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+54.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 54.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 54.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 54
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+
+LaTeX Warning: Citation 'rfc2119' on page 5 undefined on input line 60.
+
+
+Overfull \hbox (23.20229pt too wide) in paragraph at lines 60--65
 \T1/lmss/m/n/10.95 The RFC2119 sub-set of the In-ter-net En-gi-neer-ing Task Fo
-rce (IETF) key-words ref.
+rce (IETF) key-words []
  []
 
 ) (./approboxw.tex
-<./corpics/blanksign.png, id=276, 135.50626pt x 57.21375pt>
+<./corpics/blanksign.png, id=87, 135.50626pt x 57.21375pt>
 File: ./corpics/blanksign.png Graphic file (type png)
 <use ./corpics/blanksign.png>
 Package pdftex.def Info: ./corpics/blanksign.png  used on input line 34.
@@ -1511,7 +1529,7 @@ Overfull \hbox (118.79175pt too wide) in paragraph at lines 4--44
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] [7 <./corpics/blanksign.png (PNG copy)>]
+[5] [6 <./corpics/blanksign.png (PNG copy)>]
 Chapter 2.
 (./BD/BD.tex
 Overfull \hbox (3.65936pt too wide) in paragraph at lines 28--34
@@ -1519,32 +1537,108 @@ Overfull \hbox (3.65936pt too wide) in paragraph at lines 28--34
 e-quently the DESNZ
  []
 
-[8
+[7
 
-] [9]) [10]
+] [8]
+
+LaTeX Warning: Citation 'prince2' on page 9 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'prince2wiki' on page 9 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'sciplan' on page 9 undefined on input line 85.
+
+
+LaTeX Warning: Citation 'SPF' on page 9 undefined on input line 88.
+
+) [9]
 Chapter 3.
-(./RB/RB.tex (./RB/edgeprop.tex [11
+(./RB/RB.tex (./RB/edgeprop.tex
+
+LaTeX Warning: Citation 'Mi13Expe' on page 10 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'Mi13Expe' on page 10 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'wesson' on page 10 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'miyamoto' on page 10 undefined on input line 15.
+
+
+LaTeX Warning: Citation 'Xu10Inte' on page 10 undefined on input line 16.
+
+[10
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
 28.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [12] [13]) (./RB/engineers_requirements.tex [14] [15] [16] [17
+)
+
+LaTeX Warning: Citation 'NRLpf07' on page 11 undefined on input line 41.
+
+[11]
+
+LaTeX Warning: Citation 'priestforbes' on page 12 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'hazeltinemeiss' on page 12 undefined on input line 76.
+
+
+
+LaTeX Warning: Citation 'Mi12Simu' on page 12 undefined on input line 80.
+
+
+LaTeX Warning: Citation 'freidberg' on page 12 undefined on input line 83.
+
+
+LaTeX Warning: Citation 'NRLpf07' on page 12 undefined on input line 101.
+
+
+LaTeX Warning: Citation 'Ha91hydr' on page 12 undefined on input line 102.
+
+
+Overfull \hbox (8.01125pt too wide) in paragraph at lines 101--106
+\T1/lmss/m/n/10.95 Formulae for a weakly ionised plasma are given in the Plasma
+ For-mu-lary [].
+ []
+
+[12]
+
+LaTeX Warning: Citation 'Le06emer' on page 13 undefined on input line 130.
+
+
+LaTeX Warning: Citation 'Le06emer' on page 13 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'Ar07Emer' on page 13 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'NRLpf07' on page 13 undefined on input line 137.
+
+) (./RB/engineers_requirements.tex [13] [14] [15] [16
 
 ])
-(./RB/use_case_physicist.tex [18
+(./RB/use_case_physicist.tex [17
 
-]) (./RB/use_case_engineer.tex [19]
+]) (./RB/use_case_engineer.tex [18]
 Overfull \hbox (8.4967pt too wide) in paragraph at lines 44--46
 []\T1/lmss/m/n/10.95 have re-pro-ducible work-flows to save and share with col-
 leagues (eg. databases
  []
 
-) (./RB/use_case_particle_specialist.tex [20] [21])
-(./RB/use_case_FEM_background.tex [22])) [23]
+) (./RB/use_case_particle_specialist.tex [19] [20])
+(./RB/use_case_FEM_background.tex [21])
+
+LaTeX Warning: Citation 'omfitwebsite' on page 22 undefined on input line 43.
+
+) [22]
 Chapter 4.
-(./TS/TS.tex (./TS/introduction.tex [24
+(./TS/TS.tex (./TS/introduction.tex [23
 
 ]
 
@@ -1552,1268 +1646,269 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 (Font)              using `T1/lmss/bx/n' instead on input line 36.
 
 
+LaTeX Warning: Citation 'sciplan' on page 24 undefined on input line 38.
+
+
 Overfull \hbox (6.35172pt too wide) in paragraph at lines 67--74
  []\T1/lmss/bx/n/10.95 Theory de-vel-op-ment.[] \T1/lmss/m/n/10.95 The above fr
 ame-work ap-proach notwith-stand-ing, \T1/lmr/m/sc/10.95 NEP-
  []
 
-[25]) (./TS/overall_capabilities.tex
-<./pics/proxyflow2.png, id=499, 1587.9325pt x 870.25125pt>
+[24]) (./TS/overall_capabilities.tex
+<./pics/proxyflow2.png, id=267, 1587.9325pt x 870.25125pt>
 File: ./pics/proxyflow2.png Graphic file (type png)
 <use ./pics/proxyflow2.png>
 Package pdftex.def Info: ./pics/proxyflow2.png  used on input line 28.
 (pdftex.def)             Requested size: 341.9989pt x 187.41907pt.
- [26] [27 <./pics/proxyflow2.png (PNG copy)>] [28]) [29] (./TS/physics_model.te
-x [30
+ [25] [26 <./pics/proxyflow2.png (PNG copy)>] [27]) [28] (./TS/physics_model.te
+x
+
+LaTeX Warning: Citation 'pappeqs2' on page 29 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'sciplan' on page 29 undefined on input line 30.
+
+
+Overfull \hbox (10.67694pt too wide) in paragraph at lines 26--31
+[]\T1/lmss/m/n/10.95 The treat-ment of ef-fects due to ra-di-a-tion are dis-cus
+sed in An-nex A of []
+ []
+
+[29
 
 ]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
 (Font)              using `T1/lmss/m/sc' instead on input line 75.
 
-<./png/colpri.png, id=542, 534.99875pt x 252.945pt>
+<./png/colpri.png, id=309, 534.99875pt x 252.945pt>
 File: ./png/colpri.png Graphic file (type png)
 <use ./png/colpri.png>
 Package pdftex.def Info: ./png/colpri.png  used on input line 82.
 (pdftex.def)             Requested size: 251.9989pt x 119.14662pt.
-[31 <./png/colpri.png>]) [32] [33] (./TS/physics_capabilities.tex
+
+LaTeX Warning: Citation 'pappeqs2' on page 30 undefined on input line 108.
+
+[30 <./png/colpri.png>]) [31] [32] (./TS/physics_capabilities.tex
 Overfull \hbox (0.93913pt too wide) in paragraph at lines 8--10
 []\T1/lmss/m/n/10.95 Reliable cal-cu-la-tion of up-stream par-ti-cle and heat f
 lux pro-files: proper
  []
 
-[34
+[33
 
 ]
-<./pics/dimensions2.png, id=571, 1001.7425pt x 470.75874pt>
+<./pics/dimensions2.png, id=337, 1001.7425pt x 470.75874pt>
 File: ./pics/dimensions2.png Graphic file (type png)
 <use ./pics/dimensions2.png>
 Package pdftex.def Info: ./pics/dimensions2.png  used on input line 80.
 (pdftex.def)             Requested size: 251.9989pt x 118.42207pt.
-) [35 <./pics/dimensions2.png (PNG copy)>] (./TS/geometry.tex)
-(./TS/estimates.tex [36
+) [34 <./pics/dimensions2.png (PNG copy)>] (./TS/geometry.tex)
+(./TS/estimates.tex [35
 
-]) [37] (./TS/nonfunc.tex
-<./png/hierarchygroup.png, id=613, 828.09375pt x 388.45125pt>
+]) [36]
+
+LaTeX Warning: Citation 'hewitt' on page 37 undefined on input line 49.
+
+
+LaTeX Warning: Citation 'sommerville' on page 37 undefined on input line 49.
+
+
+LaTeX Warning: Citation 'y2d34' on page 37 undefined on input line 50.
+
+
+LaTeX Warning: Citation 'y3re314' on page 37 undefined on input line 53.
+
+
+LaTeX Warning: Hyper reference `sec:MGT_intro' on page 37 undefined on input li
+ne 54.
+
+
+LaTeX Warning: Reference `sec:MGT_intro' on page 37 undefined on input line 54.
+
+
+
+LaTeX Warning: Hyper reference `sec:OP_MGT' on page 37 undefined on input line 
+55.
+
+
+LaTeX Warning: Reference `sec:OP_MGT' on page 37 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'y2d33' on page 37 undefined on input line 59.
+
+
+LaTeX Warning: Hyper reference `sec:TS_varnames' on page 37 undefined on input 
+line 59.
+
+
+LaTeX Warning: Reference `sec:TS_varnames' on page 37 undefined on input line 5
+9.
+
+
+LaTeX Warning: Citation 'y2d33' on page 37 undefined on input line 85.
+
+(./TS/nonfunc.tex
+
+LaTeX Warning: Citation 'y2re333' on page 37 undefined on input line 27.
+
+
+LaTeX Warning: Citation 'y2re333' on page 37 undefined on input line 28.
+
+<./png/hierarchygroup.png, id=366, 828.09375pt x 388.45125pt>
 File: ./png/hierarchygroup.png Graphic file (type png)
 <use ./png/hierarchygroup.png>
 Package pdftex.def Info: ./png/hierarchygroup.png  used on input line 31.
 (pdftex.def)             Requested size: 251.9989pt x 118.20776pt.
- [38] [39 <./png/hierarchygroup.png (PNG copy)>]
+[37]
+
+LaTeX Warning: Citation 'y1re331' on page 38 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'y2re332' on page 38 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'Du16Idea' on page 38 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'y2re333' on page 38 undefined on input line 46.
+
+[38 <./png/hierarchygroup.png (PNG copy)>]
+
+LaTeX Warning: Citation 'y2re333' on page 39 undefined on input line 76.
+
+
 Underfull \hbox (badness 2856) in paragraph at lines 119--119
 []\T1/lmss/m/n/10.95 Component and Type-bound
  []
+
+
+LaTeX Warning: Citation 'y2re332' on page 39 undefined on input line 126.
+
+
+LaTeX Warning: Citation 'y2re333' on page 39 undefined on input line 126.
 
 
 Overfull \hbox (102.79134pt too wide) in paragraph at lines 111--127
  [] 
  []
 
-[40] [41] [42] [43]) (./TS/mgt.tex [44] [45]
 
-LaTeX Warning: Citation 'NESOParticlesdev' on page 46 undefined on input line 1
+LaTeX Warning: Citation 'clermanspector' on page 39 undefined on input line 136
+.
+
+
+LaTeX Warning: Citation 'fprog' on page 39 undefined on input line 137.
+
+[39]
+
+LaTeX Warning: Citation 'cerberuswebsite' on page 40 undefined on input line 15
+7.
+
+[40] [41] [42]) (./TS/mgt.tex
+
+LaTeX Warning: Hyper reference `sec:charter' on page 43 undefined on input line
+ 11.
+
+
+LaTeX Warning: Reference `sec:charter' on page 43 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'gregory' on page 43 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'cppguidelines' on page 43 undefined on input line 32.
+
+
+LaTeX Warning: Citation 'stroustroptour' on page 43 undefined on input line 33.
+
+
+
+LaTeX Warning: Citation 'clang-tidywebsite' on page 43 undefined on input line 
+41.
+
+
+LaTeX Warning: Citation 'blackwebsite' on page 43 undefined on input line 42.
+
+[43]
+
+LaTeX Warning: Hyper reference `sec:symbol' on page 44 undefined on input line 
+76.
+
+
+LaTeX Warning: Reference `sec:symbol' on page 44 undefined on input line 76.
+
+
+LaTeX Warning: Hyper reference `sec:conv' on page 44 undefined on input line 77
+.
+
+
+LaTeX Warning: Reference `sec:conv' on page 44 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'pittwhitely' on page 44 undefined on input line 93.
+
+
+Overfull \hbox (24.19583pt too wide) in paragraph at lines 92--101
+\T1/lmss/m/n/10.95 di-cates the type of the vari-able. For ex-am-ple, the JSF s
+tyle for C++ []
+ []
+
+[44]
+
+LaTeX Warning: Citation 'solterkleper' on page 45 undefined on input line 103.
+
+
+LaTeX Warning: Citation 'NESOParticlesdev' on page 45 undefined on input line 1
 10.
 
 
-LaTeX Warning: Citation 'nektar++dev' on page 46 undefined on input line 125.
+LaTeX Warning: Citation 'nektar++dev' on page 45 undefined on input line 125.
 
-[46]) (./TS/naming.tex [47] [48] [49])) [50]
-Chapter 5.
-(./DJF/DJF.tex (./DJF/general.tex [51
 
-]
-Underfull \vbox (badness 1748) has occurred while \output is active []
+LaTeX Warning: Citation 'fprog' on page 45 undefined on input line 130.
 
- [52])
-(./DJF/tabtit.tex
-Overfull \hbox (6.03484pt too wide) in paragraph at lines 11--11
-[]|\T1/lmss/m/n/10.95 sciplanref.
- []
 
+LaTeX Warning: Hyper reference `sec:MGT_intro' on page 45 undefined on input li
+ne 145.
 
-Overfull \hbox (17.07864pt too wide) in paragraph at lines 11--12
-[]|\T1/lmss/m/n/10.95 sciplan/rp1| 
- []
 
-
-Overfull \hbox (9.44096pt too wide) in paragraph at lines 12--12
-[]|\T1/lmss/m/n/10.95 y12actsref.
- []
-
-
-Overfull \hbox (16.37616pt too wide) in paragraph at lines 13--13
-[]|\T1/lmss/m/n/10.95 y1re111bref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-[]|\T1/lmss/m/n/10.95 0010-
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 14--14
-[]|\T1/lmss/m/n/10.95 y1re121ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
-[]|\T1/lmss/m/n/10.95 0011-1.00-
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 14--15
-[]|\T1/lmss/m/n/10.95 t12/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 15--15
-[]|\T1/lmss/m/n/10.95 y1re211ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]|\T1/lmss/m/n/10.95 0012-1.00-
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 15--16
-[]|\T1/lmss/m/n/10.95 t21/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 16--16
-[]|\T1/lmss/m/n/10.95 y1re231ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\T1/lmss/m/n/10.95 0013-1.01-
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 16--17
-[]|\T1/lmss/m/n/10.95 t23/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 17--17
-[]|\T1/lmss/m/n/10.95 y1re311ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--17
-[]|\T1/lmss/m/n/10.95 0014-1.00-
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 18--18
-[]|\T1/lmss/m/n/10.95 y1re331ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--18
-[]|\T1/lmss/m/n/10.95 0015-1.00-
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 19--19
-[]|\T1/lmss/m/n/10.95 y1re351ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmss/m/n/10.95 0016-1.00-
- []
-
-
-Overfull \hbox (15.98067pt too wide) in paragraph at lines 20--20
-[]|\T1/lmss/m/n/10.95 y1re111aref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
-[]|\T1/lmss/m/n/10.95 0018-
- []
-
-
-Overfull \hbox (6.94699pt too wide) in paragraph at lines 21--21
-[]|\T1/lmss/m/n/10.95 charterref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\T1/lmss/m/n/10.95 [[]57[]]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\T1/lmss/m/n/10.95 EX-CAL-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\T1/lmss/m/n/10.95 IBUR
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\T1/lmr/m/sc/10.95 NEP-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\T1/lmr/m/sc/10.95 TUNE
- []
-
-
-Overfull \hbox (17.8971pt too wide) in paragraph at lines 22--22
-[]|\T1/lmss/m/n/10.95 pappeqs3ref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-\T1/lmss/m/n/10.95 [[]45[]]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-\T1/lmss/m/n/10.95 Equa-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-\T1/lmss/m/n/10.95 EX-CAL-
- []
-
-
-Overfull \hbox (50.29219pt too wide) in paragraph at lines 22--22
-\T1/lmss/m/n/10.95 IBUR/\T1/lmr/m/sc/10.95 NEPTUNE
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-\T1/lmss/m/n/10.95 Prox-
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 23--23
-[]|\T1/lmss/m/n/10.95 y2re312ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 23--24
-[]|\T1/lmss/m/n/10.95 t31/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 24--24
-[]|\T1/lmss/m/n/10.95 y2re332ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 24--25
-[]|\T1/lmss/m/n/10.95 t33/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 25--25
-[]|\T1/lmss/m/n/10.95 y2re313ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 25--26
-[]|\T1/lmss/m/n/10.95 t31/rp3| 
- []
-
-
-Overfull \hbox (9.77548pt too wide) in paragraph at lines 26--26
-[]|\T1/lmss/m/n/10.95 y2grantref.
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 27--27
-[]|\T1/lmss/m/n/10.95 y2re333ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 27--28
-[]|\T1/lmss/m/n/10.95 t33/rp3| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]|\T1/lmss/m/n/10.95 y3actref.
- []
-
-
-Overfull \hbox (26.90271pt too wide) in paragraph at lines 28--29
-[]|\T1/lmss/m/n/10.95 y3act/genpdf| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 29--29
-[]|\T1/lmss/m/n/10.95 y2re141ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 29--30
-[]|\T1/lmss/m/n/10.95 t14/rp1| 
- []
-
-
-Overfull \hbox (4.39969pt too wide) in paragraph at lines 30--30
-[]|\T1/lmss/m/n/10.95 0030a| 
- []
-
-
-Overfull \hbox (7.70761pt too wide) in paragraph at lines 30--30
-[]|\T1/lmss/m/n/10.95 y2closeref.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]|\T1/lmss/m/n/10.95 0030a-
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 31--31
-[]|\T1/lmss/m/n/10.95 y2re251ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 31--32
-[]|\T1/lmss/m/n/10.95 t25/rp1| 
- []
-
-
-Overfull \hbox (2.2932pt too wide) in paragraph at lines 32--32
-[]|\T1/lmss/m/n/10.95 y2d33ref.
- []
-
-
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 32--33
-[]|\T1/lmss/m/n/10.95 d33/rpc| 
- []
-
-
-Overfull \hbox (2.2932pt too wide) in paragraph at lines 33--33
-[]|\T1/lmss/m/n/10.95 y2d34ref.
- []
-
-
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 33--34
-[]|\T1/lmss/m/n/10.95 d34/rpc| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 34--34
-[]|\T1/lmss/m/n/10.95 y2re221ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 34--35
-[]|\T1/lmss/m/n/10.95 t22/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 35--35
-[]|\T1/lmss/m/n/10.95 y2re241ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 35--36
-[]|\T1/lmss/m/n/10.95 t24/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 36--36
-[]|\T1/lmss/m/n/10.95 y2re271ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 36--37
-[]|\T1/lmss/m/n/10.95 t27/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 37--37
-[]|\T1/lmss/m/n/10.95 y2re281ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 37--38
-[]|\T1/lmss/m/n/10.95 t28/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 38--38
-[]|\T1/lmss/m/n/10.95 y2re261ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 38--39
-[]|\T1/lmss/m/n/10.95 t26/rp1| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 39--39
-[]|\T1/lmss/m/n/10.95 y3re321ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 39--40
-[]|\T1/lmss/m/n/10.95 t32/rp1| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 40--40
-[]|\T1/lmss/m/n/10.95 y3re51ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 40--41
-[]|\T1/lmss/m/n/10.95 t51/rpc| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 41--41
-[]|\T1/lmss/m/n/10.95 y3re322ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 41--42
-[]|\T1/lmss/m/n/10.95 t32/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 42--42
-[]|\T1/lmss/m/n/10.95 y3re314ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 42--43
-[]|\T1/lmss/m/n/10.95 t31/rp4| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 43--43
-[]|\T1/lmss/m/n/10.95 y3re242ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 43--44
-[]|\T1/lmss/m/n/10.95 t24/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 44--44
-[]|\T1/lmss/m/n/10.95 y3re252ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 44--45
-[]|\T1/lmss/m/n/10.95 t25/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 45--45
-[]|\T1/lmss/m/n/10.95 y3re272ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 45--46
-[]|\T1/lmss/m/n/10.95 t27/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 46--46
-[]|\T1/lmss/m/n/10.95 y3re212ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 46--47
-[]|\T1/lmss/m/n/10.95 t21/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 47--47
-[]|\T1/lmss/m/n/10.95 y3re222ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 47--48
-[]|\T1/lmss/m/n/10.95 t22/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 48--48
-[]|\T1/lmss/m/n/10.95 y3re232ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 48--49
-[]|\T1/lmss/m/n/10.95 t23/rp2| 
- []
-
-
-Overfull \hbox (2.2932pt too wide) in paragraph at lines 49--49
-[]|\T1/lmss/m/n/10.95 y3d32ref.
- []
-
-
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 49--50
-[]|\T1/lmss/m/n/10.95 d32/rpc| 
- []
-
-
-Overfull \hbox (2.2932pt too wide) in paragraph at lines 50--50
-[]|\T1/lmss/m/n/10.95 y3d35ref.
- []
-
-
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 50--51
-[]|\T1/lmss/m/n/10.95 d35/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 51--51
-[]|\T1/lmss/m/n/10.95 y3re61ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 51--52
-[]|\T1/lmss/m/n/10.95 t61/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 52--52
-[]|\T1/lmss/m/n/10.95 y3re71ref.
- []
-
-
-Overfull \hbox (13.6715pt too wide) in paragraph at lines 52--53
-[]|\T1/lmss/m/n/10.95 t71/report| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 53--53
-[]|\T1/lmss/m/n/10.95 y3re72ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 53--54
-[]|\T1/lmss/m/n/10.95 t72/rpc| 
- []
-
-
-Overfull \hbox (2.2932pt too wide) in paragraph at lines 54--54
-[]|\T1/lmss/m/n/10.95 y2d31ref.
- []
-
-
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 54--55
-[]|\T1/lmss/m/n/10.95 d31/rpc| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 55--55
-[]|\T1/lmss/m/n/10.95 y3re181ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 55--56
-[]|\T1/lmss/m/n/10.95 t18/rp1| 
- []
-
-
-Overfull \hbox (9.77548pt too wide) in paragraph at lines 56--56
-[]|\T1/lmss/m/n/10.95 y3grantref.
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 57--57
-[]|\T1/lmss/m/n/10.95 y3re262ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 57--58
-[]|\T1/lmss/m/n/10.95 t26/rp2| 
- []
-
-
-Overfull \hbox (10.71866pt too wide) in paragraph at lines 58--58
-[]|\T1/lmss/m/n/10.95 y3re282ref.
- []
-
-
-Overfull \hbox (1.10951pt too wide) in paragraph at lines 58--59
-[]|\T1/lmss/m/n/10.95 t28/rp2| 
- []
-
-
-Overfull \hbox (5.24347pt too wide) in paragraph at lines 59--59
-[]|\T1/lmss/m/n/10.95 y45actref.
- []
-
-
-Overfull \hbox (32.3777pt too wide) in paragraph at lines 59--60
-[]|\T1/lmss/m/n/10.95 y45act/genpdf| 
- []
-
-
-Overfull \hbox (7.70761pt too wide) in paragraph at lines 60--60
-[]|\T1/lmss/m/n/10.95 y3closeref.
- []
-
-
-Overfull \hbox (6.28041pt too wide) in paragraph at lines 60--61
-[]|\T1/lmss/m/n/10.95 t110/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 61--61
-[]|\T1/lmss/m/n/10.95 y3re42ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 61--62
-[]|\T1/lmss/m/n/10.95 t42/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 62--62
-[]|\T1/lmss/m/n/10.95 y3re43ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 62--63
-[]|\T1/lmss/m/n/10.95 t43/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 63--63
-[]|\T1/lmss/m/n/10.95 y3re52ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 63--64
-[]|\T1/lmss/m/n/10.95 t52/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 64--64
-[]|\T1/lmss/m/n/10.95 y3re62ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 64--65
-[]|\T1/lmss/m/n/10.95 t62/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 65--65
-[]|\T1/lmss/m/n/10.95 y3re73ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 65--66
-[]|\T1/lmss/m/n/10.95 t73/rpc| 
- []
-
-
-Overfull \hbox (5.24367pt too wide) in paragraph at lines 66--66
-[]|\T1/lmss/m/n/10.95 y3re41ref.
- []
-
-
-Overfull \hbox (0.80542pt too wide) in paragraph at lines 66--67
-[]|\T1/lmss/m/n/10.95 t41/rpc| 
- []
-
-
-Overfull \hbox (143.8627pt too wide) in alignment at lines 2--68
- [] [] [] [] [] 
- []
-
-[53] [54] [55]) (./DJF/report_summary1.tex
-Overfull \hbox (35.86792pt too wide) in paragraph at lines 7--9
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.00-M1.2.1 - Equa-tions for \T1/lmr/m
-/sc/10.95 NEP-TUNE\T1/lmss/m/n/10.95 /\T1/lmr/m/sc/10.95 E\T1/lmss/m/n/10.95 x\
-T1/lmr/m/sc/10.95 CALIBUR
- []
-
-[56]
-Overfull \hbox (16.00418pt too wide) in paragraph at lines 42--43
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0016-M3.5.1 - Bench-mark-ing re-quire-men
-ts for \T1/lmr/m/sc/10.95 NEP-
- []
-
-) (./DJF/report_summary2.tex
-Overfull \hbox (7.43373pt too wide) in paragraph at lines 4--5
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0066-M4.1 Sup-port High-dimensional Pro-c
-ure-ment 
- []
-
-
-Overfull \hbox (2.26357pt too wide) in paragraph at lines 6--7
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0062-M4.3 High-dimensional Mod-els Com-pl
-e-men-
- []
-
-[57]
-Overfull \hbox (5.90233pt too wide) in paragraph at lines 23--24
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0040-M5.1 Man-age-ment of ex-ter-nal re-s
-earch. Sup-
- []
-
-
-Overfull \hbox (1.70003pt too wide) in paragraph at lines 24--25
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0063-M5.2 Se-lec-tion of tech-niques for 
-Un-cer-tainty
- []
-
-[58]
-Overfull \hbox (6.97687pt too wide) in paragraph at lines 64--65
-[]\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0052-M7.1 Lit-er-a-ture re-view for Call 
-T/AW086/21:
- []
-
-) [59] (./DJF/parabstr.tex
-Overfull \hbox (30.91388pt too wide) in paragraph at lines 32--32
-[]\T1/lmtt/m/n/10.95 (L,I,J,K,...) Set INC(0)=1, INC(1)=N3, INC(2)=N0*N3, INC(3
-)=N0*N1*N3[] 
- []
-
-[60])) [61]
-Chapter 6.
-(./DDF/DDF.tex [62
-
-] [63] (./DDF/basic_objects.tex
-<./pics/baseclasses.png, id=916, 1084.05pt x 476.78125pt>
-File: ./pics/baseclasses.png Graphic file (type png)
-<use ./pics/baseclasses.png>
-Package pdftex.def Info: ./pics/baseclasses.png  used on input line 8.
-(pdftex.def)             Requested size: 251.9989pt x 110.82866pt.
- [64
-
- <./pics/baseclasses.png>]
-<./pics/aggregates.png, id=925, 1625.07124pt x 989.6975pt>
-File: ./pics/aggregates.png Graphic file (type png)
-<use ./pics/aggregates.png>
-Package pdftex.def Info: ./pics/aggregates.png  used on input line 69.
-(pdftex.def)             Requested size: 251.9989pt x 153.46193pt.
-[65 <./pics/aggregates.png (PNG copy)>] [66]) [67] (./DDF/functions.tex
-[68
-
-] [69]) (./DDF/desipatt.tex
-<./pics/puppeteer_wab.png, id=979, 496.85625pt x 167.62625pt>
-File: ./pics/puppeteer_wab.png Graphic file (type png)
-<use ./pics/puppeteer_wab.png>
-Package pdftex.def Info: ./pics/puppeteer_wab.png  used on input line 12.
-(pdftex.def)             Requested size: 341.9989pt x 115.38342pt.
-)) [70] [71 <./pics/puppeteer_wab.png (PNG copy)>]
-Chapter 7.
-(./MGT/MGT.tex (./MGT/MGT_intro.tex [72
-
-]) [73] (./MGT/dudson.tex [74
-
-]
-Overfull \hbox (3.17455pt too wide) in paragraph at lines 66--68
-[]\T1/lmss/m/n/10.95 Since the soft-ware is widely used, er-ror mes-sages can i
-n-vari-ably be `googled'
- []
-
-[75]
-Overfull \hbox (4.15955pt too wide) in paragraph at lines 111--118
-[]\T1/lmss/m/n/10.95 A \T1/lmtt/m/n/10.95 github \T1/lmss/m/n/10.95 `or-gan-i-s
-a-tion' []$\T1/lmtt/m/n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE$[]
- \T1/lmss/m/n/10.95 was
- []
-
-[76] [77]
-Overfull \hbox (15.44586pt too wide) in paragraph at lines 204--205
-[]\T1/lmss/m/n/10.95 Release num-ber-ing should fol-low (a mod-i-fied) Se-man-t
-ic Ver-sion-ing ap-proach ref.
- []
-
-) [78] (./MGT/charter.tex [79
-
-])) [80]
-Chapter 8.
-(./MF/MF.tex) [81
-
-]
-Chapter 9.
-(./OP/OP.tex (./OP/opmgt.tex) (./OP/testing.tex [82
-
-] [83]) (./OP/objdisc.tex
-Underfull \hbox (badness 1436) in paragraph at lines 23--23
-[]\T1/lmss/m/n/10.95 Messages and in-for-
- []
-
-
-Overfull \hbox (105.0177pt too wide) in paragraph at lines 7--64
- [] 
- []
-
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./OP/UMan.tex
-Overfull \hbox (0.48389pt too wide) in paragraph at lines 3--6
-[]\T1/lmss/m/n/10.95 With video tu-to-rial, quick start, in-stal-la-tion, ex-am
--ples. Ex-am-ples use Jupyter
- []
-
-)) [84] [85]
-Chapter 10.
-(./proxyapps/proxyapps.tex (./proxyapps/nektar-driftwave.tex)
-Overfull \hbox (50.23827pt too wide) in paragraph at lines 25--2
-[]\T1/lmss/m/n/10.95 Nektar-Driftwave is pub-licly avail-able at []$\T1/lmtt/m/
-n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
- []
-
-(./proxyapps/nektar-diffusion.tex [86
-
-])
-Overfull \hbox (47.13628pt too wide) in paragraph at lines 24--4
-[]\T1/lmss/m/n/10.95 Nektar-Diffusion is pub-licly avail-able at []$\T1/lmtt/m/
-n/10.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
- []
-
-(./proxyapps/nektar-1d-sol.tex
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
- [87])
-Overfull \hbox (43.72832pt too wide) in paragraph at lines 31--6
-[]\T1/lmss/m/n/10.95 Nektar-1D-SOL is pub-licly avail-able at []$\T1/lmtt/m/n/1
-0.95 https : / / github . com / ExCALIBUR-[]NEPTUNE /
- []
-
-(./proxyapps/fabneptune.tex)
-Overfull \hbox (42.8003pt too wide) in paragraph at lines 18--8
-[]\T1/lmss/m/n/10.95 FabNEPTUNE is pub-licly avail-able at []$\T1/lmtt/m/n/10.9
-5 https : / / github . com / UCL-[]CCS / FabNEPTUNE$[]\T1/lmss/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--8
-
- []
-
-[88] (./proxyapps/moment-kinetics.tex)
-Overfull \hbox (2.0166pt too wide) in paragraph at lines 28--10
-[]\T1/lmss/m/n/10.95 Moment_Kinetics is pub-licly avail-able at []$\T1/lmtt/m/n
-/10.95 https : / / github . com / mabarnes /
- []
-
-(./proxyapps/NESO.tex))
-Overfull \hbox (29.4936pt too wide) in paragraph at lines 11--108
-[]\T1/lmss/m/n/10.95 NESO is pub-licly avail-able at https://github.com/ExCALIB
-UR-NEPTUNE/NESO.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--108
-
- []
-
-[89]
-Chapter 11.
-(./REF/REF.tex [90
-
-] (./REF/conv.tex [91] (./REF/naming_map.tex
-Overfull \hbox (189.47043pt too wide) in paragraph at lines 4--48
- [] 
- []
-
-)) [92] [93] (./REF/acro.tex
-Underfull \hbox (badness 1466) in paragraph at lines 25--26
-[]|\T1/lmss/m/n/10.95 Tokamak edge plasma mod-elling frame-work []$\T1/lmtt/m/n
-/10.95 https : / / boutproject .
- []
-
-
-Underfull \hbox (badness 1968) in paragraph at lines 29--30
-[]|\T1/lmss/m/n/10.95 Computer-Aided De-sign, ge-om-e-try in-clud-ing NURBS, us
-u-ally ``CAD
- []
-
-
-Overfull \hbox (119.24408pt too wide) in alignment at lines 1--207
- [] [] 
- []
-
-
-Overfull \hbox (119.24408pt too wide) in alignment at lines 207--316
- [] [] 
- []
-
-[94
-
-] [95] [96] [97] [98] [99] [100]) [101] (./REF/symb.tex
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]|$\OT1/lmr/bx/n/10.95 x \OT1/lmr/m/n/10.95 =
- []
-
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 62.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 62.
-
-Overfull \hbox (131.24408pt too wide) in alignment at lines 1--217
- [] [] [] 
- []
-
-LaTeX Font Info:    Trying to load font information for U+euf on input line 240
+LaTeX Warning: Reference `sec:MGT_intro' on page 45 undefined on input line 145
 .
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
-[]|$\OML/lmm/m/it/10.95 ^^W[] \OT1/lmr/m/n/10.95 =
- []
 
+[45]) (./TS/naming.tex
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--360
-[]|$\OML/lmm/m/it/10.95 ^^Z[] \OT1/lmr/m/n/10.95 =
- []
+LaTeX Warning: Citation 'pappeqs3' on page 46 undefined on input line 4.
 
+[46]
 
-Overfull \hbox (131.24408pt too wide) in alignment at lines 217--417
- [] [] [] 
- []
+LaTeX Warning: Hyper reference `tab:twoclatex' on page 47 undefined on input li
+ne 27.
 
-[102
 
-] [103] [104] [105] [106]
-Overfull \hbox (131.24408pt too wide) in alignment at lines 417--502
- [] [] [] 
- []
+LaTeX Warning: Reference `tab:twoclatex' on page 47 undefined on input line 27.
 
-[107] [108] [109] [110] [111] [112] [113])) Excluding 'warpHTML' comment.
-[114]
-Chapter 12.
-(./IND/IND.tex)) [115
 
-] (./metackn.tex) [116
+! Missing $ inserted.
+<inserted text> 
+                $
+l.36 \item `a_
+              ' will represent `a' (as will '_a')
+? 
+! Emergency stop.
+<inserted text> 
+                $
+l.36 \item `a_
+              ' will represent `a' (as will '_a')
+End of file on the terminal!
 
-
-]
-Overfull \hbox (1.8797pt too wide) in paragraph at lines 202--202
-\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
-in / reports /
- []
-
-
-Overfull \hbox (3.95576pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0033-D3.4. []$\T1/lmtt/m/n/10.95 https : / 
-/ github . com / ExCALIBUR -[]
- []
-
-
-Overfull \hbox (1.8797pt too wide) in paragraph at lines 202--202
-\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
-in / reports /
- []
-
-
-Overfull \hbox (12.87717pt too wide) in paragraph at lines 202--202
-\T1/lmtt/m/n/10.95 gov . uk / binaries / content / assets / metofficegovuk / pd
-f / research /
- []
-
-
-Overfull \hbox (11.97841pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/sl/10.95 ExCALIBUR-NEPTUNE Bid Doc-u-ments, Calls, Re-ports and No
-tes\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https :
- []
-
-
-Overfull \hbox (19.05605pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/sl/10.95 ExCALIBUR-NEPTUNE Re-ports in Search-able Repo\T1/lmss/m/
-n/10.95 . []$\T1/lmtt/m/n/10.95 https : / / excalibur -[]
- []
-
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
-[117
-
-] [118]
-Overfull \hbox (37.26216pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.01-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
-ps : / / github . com / ExCALIBUR -[]
- []
-
-
-Overfull \hbox (33.47076pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter, J. Parker and E. Threlfall. \T1/lmss/m/sl/10.95 
-Mod-ule Guide\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (24.69922pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0032-D3.3. []$\T1/lmtt/m/n/10.95 https : / / github . co
-m / ExCALIBUR -[] NEPTUNE / Documents /
- []
-
-[119]
-Overfull \hbox (37.26216pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0021-1.23-M1.2.1. []$\T1/lmtt/m/n/10.95 htt
-ps : / / github . com / ExCALIBUR -[]
- []
-
-
-Overfull \hbox (1.8797pt too wide) in paragraph at lines 202--202
-\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
-in / reports /
- []
-
-[120]
-Overfull \hbox (3.43066pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 Tech. rep. CD/EXCALIBUR-FMS/0013-1.01-M2.3.1. []$\T1/lmtt/m/
-n/10.95 https : / / github .
- []
-
-
-Overfull \hbox (48.7358pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 L. An-ton. \T1/lmss/m/sl/10.95 NEP-TUNE: Re-port on sys-te
-m re-quire-ments\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (0.51828pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0014-1.00-M3.1.1. []$\T1/lmtt/m/n/10.95 https : / / gith
-ub . com / ExCALIBUR -[] NEPTUNE /
- []
-
-
-Overfull \hbox (0.27977pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 L. An-ton. \T1/lmss/m/sl/10.95 Bench-mark-ing re-quire-men
-ts for NEP-TUNE and avail-able tools\T1/lmss/m/n/10.95 .
- []
-
-
-Overfull \hbox (3.43066pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 Tech. rep. CD/EXCALIBUR-FMS/0016-1.00-M3.5.1. []$\T1/lmtt/m/
-n/10.95 https : / / github .
- []
-
-
-Overfull \hbox (2.0255pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 EX-CAL-IBUR NEP-TUNE Char-te
-r\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (4.12984pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 cer-tainty Quan-tifi-ca-tion\T1/lmss/m/n/10.95 . Tech. rep.
- CD/EXCALIBUR-FMS/0024-M3.1.3.
- []
-
-[121]
-Overfull \hbox (2.48808pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 rec-om-men-da-tion re-port\T1/lmss/m/n/10.95 . Tech. rep. C
-D/EXCALIBUR-FMS/0025-M1.3.1.
- []
-
-
-Overfull \hbox (4.13934pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 E. Threlfall et al. \T1/lmss/m/sl/10.95 Win-ter 2020-21 Wo
-rk-shop\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (5.67804pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 out Y2\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/0030
-a-M1.6.1. UKAEA, March
- []
-
-
-LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
-(Font)              using `T1/lmss/m/sc' instead on input line 201.
-
-
-Overfull \hbox (14.44897pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 niques\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/0036
--M2.7.1. []$\T1/lmtt/m/n/10.95 https : / / github .
- []
-
-
-Overfull \hbox (14.14555pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0037-M2.8.1. []$\T1/lmtt/m/n/10.95 https : 
-/ / github . com / ExCALIBUR -[]
- []
-
-[122]
-
-LaTeX Font Warning: Font shape `T1/lmss/m/scit' undefined
-(Font)              using `T1/lmss/m/sc' instead on input line 201.
-
-
-Overfull \hbox (2.38882pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 UQ Pro-cure-ment\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBU
-R-FMS/0040-M5.1. []$\T1/lmtt/m/n/10.95 https :
- []
-
-
-Overfull \hbox (14.14555pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0041-M3.2.2. []$\T1/lmtt/m/n/10.95 https : 
-/ / github . com / ExCALIBUR -[]
- []
-
-
-Overfull \hbox (1.8797pt too wide) in paragraph at lines 202--202
-\T1/lmtt/m/n/10.95 github . com / ExCALIBUR -[] NEPTUNE / Documents / blob / ma
-in / reports /
- []
-
-
-Overfull \hbox (35.28912pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter and E. Threlfall. \T1/lmss/m/sl/10.95 Sur-face me
-sh gen-er-a-tion\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-[123]
-Overfull \hbox (14.14555pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0048-M2.3.2. []$\T1/lmtt/m/n/10.95 https : 
-/ / github . com / ExCALIBUR -[]
- []
-
-
-Overfull \hbox (44.65582pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 Ver-i-fi-ca-tion and Bench-m
-arks Method-ol-ogy\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (24.69922pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0050-D3.5. []$\T1/lmtt/m/n/10.95 https : / / github . co
-m / ExCALIBUR -[] NEPTUNE / Documents /
- []
-
-
-Overfull \hbox (15.74904pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 e-mat-i-cal Sup-port for Soft-ware Im-ple-men-ta-tion\T1/lm
-ss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (26.37238pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0052-M7.1. []$\T1/lmtt/m/n/10.95 https : / / github . co
-m / ExCALIBUR -[] NEPTUNE / Documents /
- []
-
-
-Overfull \hbox (35.0138pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 J.T. Parker et al. \T1/lmss/m/sl/10.95 Code cou-pling and 
-bench-mark-ing\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (26.37238pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0053-M7.2. []$\T1/lmtt/m/n/10.95 https : / / github . co
-m / ExCALIBUR -[] NEPTUNE / Documents /
- []
-
-
-Overfull \hbox (17.64394pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter et al. \T1/lmss/m/sl/10.95 Soft-ware Spec-i-fi-ca
--tion Web-site\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (24.69922pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 FMS/0054-D3.1. []$\T1/lmtt/m/n/10.95 https : / / github . co
-m / ExCALIBUR -[] NEPTUNE / Documents /
- []
-
-
-Overfull \hbox (2.48808pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 rec-om-men-da-tion re-port\T1/lmss/m/n/10.95 . Tech. rep. C
-D/EXCALIBUR-FMS/0056-M1.7.1.
- []
-
-
-Overfull \hbox (24.32396pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 E. Threlfall and W. Arter. \T1/lmss/m/sl/10.95 Fluid Ref-e
-r-ent Mod-els\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-[124]
-Overfull \hbox (58.13078pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/n/10.95 W. Arter. \T1/lmss/m/sl/10.95 ExCALIBUR-Fusion Mod-elling 
-Sys-tem Y4-Y6\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-
- []
-
-
-Overfull \hbox (5.11087pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/sl/10.95 ca-tion\T1/lmss/m/n/10.95 . Tech. rep. CD/EXCALIBUR-FMS/006
-3-M5.2. []$\T1/lmtt/m/n/10.95 https : / / github .
- []
-
-
-Overfull \hbox (5.62892pt too wide) in paragraph at lines 202--202
-\T1/lmss/m/n/10.95 CD/EXCALIBUR-FMS/0064-M6.2. []$\T1/lmtt/m/n/10.95 https : / 
-/ github . com / ExCALIBUR -[]
- []
-
-[125]
-Overfull \hbox (18.1242pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/sl/10.95 A fast, flex-i-ble, physi-cist's toolkit for gy-roki-net-
-ics\T1/lmss/m/n/10.95 . []$\T1/lmtt/m/n/10.95 https : / / gyrokinetics .
- []
-
-
-Overfull \hbox (5.03795pt too wide) in paragraph at lines 202--202
-[]\T1/lmss/m/sl/10.95 Government open source guid-ance\T1/lmss/m/n/10.95 . []$\
-T1/lmtt/m/n/10.95 https : / / www . gov . uk / government /
- []
-
-[126] [127] (./main.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F082320E606E2DD3D51801FC94E2B63B;6620.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 25107 strings out of 479727
- 451662 string characters out of 5884998
- 1347953 words of memory out of 5000000
- 41943 multiletter control sequences out of 15000+600000
- 571487 words of font info for 89 fonts, out of 8000000 for 9000
+ 23965 strings out of 479727
+ 425362 string characters out of 5884997
+ 1147834 words of memory out of 5000000
+ 41244 multiletter control sequences out of 15000+600000
+ 557144 words of font info for 75 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 74i,15n,87p,1219b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf/font
-s/type1/public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (127 pages, 2214749 bytes).
-PDF statistics:
- 1845 PDF objects out of 2073 (max. 8388607)
- 1623 compressed objects within 17 object streams
- 486 named destinations out of 1000 (max. 500000)
- 400 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 74i,15n,87p,737b,2376s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
