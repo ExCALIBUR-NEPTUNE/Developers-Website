@@ -1,7 +1,9 @@
 \begin{longtable}{|p{3.0cm}|p{10.0cm}|p{3.0cm}|}
 \caption{\textbf{\textsf{TABLE OF MATHEMATICAL SYMBOLS}}
 If no units are given, then quantity is dimensionless, or if the units are given as~$?$,
-then the dimensions depend on context.
+then the dimensions depend on context. To emphasise that a quantity is scaled/dimensionless,
+place a tilde `\~' above the main part of the name, to express $X$ as a dimensioned quantity, enclose
+in parenthesis with optionally units employed, thus $(X \mbox{ in SI})$ or simply $X$
 Generally, the usage of symbols tries to follow that from the Plasma Formulary~\cite{NRLpf07},
 in SI units, with temperatures specified as~$kT$ which returns~$J$. The Formulary also
 give the fundamental dimensions of the SI units, which should enable checking of dimensional consistency of
@@ -103,6 +105,8 @@ $\delta(x)$ & Dirac delta function of continuous real variable $x$  & \\
 $D$ & spatial dimensionality of problem &   \\
 $D_A$ & diffusion coefficient for plasma charges in a background of neutrals  &  $m^2 s^{-1}$ \\
 $D_e$ & diffusion coefficient for electrons, eg.\  in a background of neutrals  &  $m^2 s^{-1}$ \\
+$D_\alpha$ & (anomalous) diffusion coefficient for particles of species~$\alpha$  &  $m^2 s^{-1}$ \\
+$D_{\kappa\alpha}$ & (anomalous) diffusion coefficient for energy of species~$\alpha$  &  $m^2 s^{-1}$ \\
 $D_{fv\alpha}$ & scale dissipation in  equation for evolution of species velocity ${\bf v}_\alpha$ & \\
 $D_n$ & neutral diffusion coefficient  &  $m^2 s^{-1}$ \\
 $D_{fp\alpha}$ & scale dissipation in  equation for evolution of species pressure/energy $p_\alpha$ & \\
@@ -110,8 +114,9 @@ $D_i$ & diffusion coefficient for ions, eg.\ in a background of neutrals  &  $m^
 $|e|$ & absolute value of the charge on the electron & $C$ \\
 $e$ &  (K+S) Finite element number $1 \leq e \leq N_{el}$ & \\
 $e_{ijk}$ & weighted integral of triple products of $\Psi_i$ of the ion species & \\
+$e_s=w_{ref}|e|$ & unit of electric charge  & $C$ \\
 $\emptyset$ &  (Sets) Empty set & \\
-$\epsilon_0$ & permittivity of free space  &  $F m^{-1}$ \\
+$\epsilon_0$ & permittivity of free space  &  $F m^{-1}$, $C^2 s^2 m^{-1}s^{-3}$ \\
 $\epsilon_r=t_s/t_0$ & scale factor for transient term  & \\
 $\eta_1, \eta_2, \eta_3$ &  (FE Basis) Local collapsed Cartesian coordinates & \\
 $\eta_B$ & plasma resistivity after Braginskii  &  $\Omega m$ \\
@@ -164,9 +169,11 @@ $\in$ &  (Sets) Is a member of; belongs to & \\
 $I(\psi)=B_T/R$ & function giving the toroidal field as a function of~$\psi$  & $T m^{-1}$ \\
 $I^Z$ & power per atom released in dielectronic recombination  & $W$ \\
 $j$ & as suffix is generic label & \\
+${\bf j}$ & current density & $A m^{-2}$ \\
 $j_{ext}(R,Z)$ & electric current density induced in plasma by external coils  & $A m^{-2}$ \\
 $j_\phi$ & $\phi-$ or toroidal component of plasma current density  & $A m^{-2}$ \\
 $j_{\|}$ &  component of plasma current density parallel to fieldline & $A m^{-2}$ \\
+$j_s=\frac{N_{ref} |e|}{t_s L_s^2}$ & characteristic current density  & $A m^{-2}$ \\
 ${\bf j}_{sh}$ & sheath plasma current density  & $A m^{-2}$ \\
 $k$ & as suffix is generic label & \\
 $k$ & chosen to scale so that $kT_0$, $kT_d$ is an energy & $?$ \\
@@ -247,12 +254,14 @@ $m_e$ & mass of electron & $kg$ \\
 $m_i$ & mass of ion species particle $m_i= A m_u$ & $kg$ \\
 $m_n$ & neutral species particle mass & $kg$ \\
 $m_p$ & mass of proton & $kg$ \\
+$m_s=w_ref m_u$ & unit of mass & $kg$ \\
 $m_u$ & atomic mass unit & $1.6605 \times 10^{-27}\,kg$ \\
 $M_s$ & Mach number, allowed to take either sign & \\
 $M_S$ & number of energy states of an atom & \\
 $\mu, \nu$ &  (K+S) Dynamic, kinematic viscosities & \\
 $\mu_{cx}=\omega_c/\nu_{cx}$ & measures strength of magnetization with respect to charge exchange reaction & \\
 $\mu_m$ & reduced mass of two particles & $kg$ \\
+$\mu_0$ & permeability of free space & $H m^{-1}$, $kg m C^{-2}$ \\
 $M_Z$ & number of metastable states for species~$\alpha$ (which includes the ground state) & \\
 $n$ & number density & $m^{-3}$ \\
 $n_{ref}$ & reference number density of the plasma ions & $m^{-3}$ \\
@@ -321,6 +330,7 @@ $P_C$ & number of modes in basis for polynomial chaos & \\
 $p_e$ & pressure of the electrons  & $N m^{-2}$ \\
 $\phi$ & angle in toroidal direction & radians $^c$ \\
 $\Phi$ & electr(ostat)ic potential  & $V$ \\
+$\Phi_s=\frac{m_s L_s^2}{e_st_s^2}$ & scaling for electr(ostat)ic potential  & $V$ \\
 $\phi_{pq}, \phi_{pqr}$ &  (FE Basis) Expansion basis & \\
 $\phi_{e,\xi}$ & (FE Basis) expansion basis as a function of global position~${\bf x}$ & \\
 $p$ & (K+S) pressure  & $N m^{-2}$ \\
@@ -356,6 +366,7 @@ $r_0$ & radius used in initial condition, such as blob size & $m$ \\
 $R$ & cylindrical coordinate  & $m$ \\
 $R_0$ & major radius of torus & $m$ \\
 $R_p$ & recycling coefficient for particles & \\
+$R_u$ & Electron heating term (Braginskii) & $W m^{-3}$\\
 $R_E$ & recycling coefficient for particle energy & \\
 $\rho$ & as suffix is label of metastable state & \\
 $\rho$ &  (K+S) Density & \\
