@@ -5,14 +5,23 @@ in Annex B to \cite{pappeqs3}. Coding must be done as automatically, reliably
 and unambiguously as possible, starting with source expressions that are
 presumed to be in the \LaTeX \ markup language. Unfortunately, the
 character set for names of C++ variables is restricted to letters of
-upper and lower case plus underscore '\_`. Underscore will be reserved
-to separate words, ie. to enable use of 'pothole' convention. There is
+upper and lower case plus underscore '\_`. How best to use underscore has
+been carefully considered as it is also needed 
+to enable use of 'pothole' convention. There is
 thus a challenge as to how to represent the names of variables as set
 out using \LaTeX \ conventions, which involve heavy use of the escape
 character backslash. To enable conversion, to produce C++ equivalents,
 reserve `o' as the escape character, demanding that no mathematical
 variable is allowed to use the letter, or its Greek equivalent omicron,
 even as a suffix or superfix.
+
+Given a rule that all mathematical symbols occupy at least two
+letters, one use for underscore is as padding for lower-case letters
+used as mathematical symbols.  The underscore may precede or follow
+the letter, and there is the additional rule that an underscore at the
+end of a transliterated variable may be dropped. Another short-cut which
+should be helpful is that when two~two-letter symbols are adjacent,
+the second will be presumed to be a suffix of the first. 
 
 A list in alphabetical order of the conventions as two character codes
 is provided by \Tab{twoclatex}.
@@ -24,7 +33,7 @@ letters, normally those which form the first two letters of its name,
 omitting `o', thus :
 
 \begin{itemize}
-\item `a' will represent `a'
+\item `a\_' will represent `a' (as will '\_a')
 \item `aa' will represent `A'
 \item `as' will represent '*' (for asterisk)
 \item `bl' will represent bracket on left {[}
@@ -81,6 +90,12 @@ thus:
 \item `pt' denotes $\partial$
 \item `ml' denotes multiplication
 \item `dv' denotes division
+\end{itemize}
+
+A single letter by itself will represent a single character symbol,thus:
+
+\begin{itemize}
+\item `a' will denote $a$
 \end{itemize}
 
 A single letter followed by a digit will have that as a suffix, thus:
