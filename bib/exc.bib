@@ -1,3 +1,12 @@
+@article{Gu17Beat,
+  title={Beating floating point at its own game: {P}osit arithmetic},
+  author={Gustafson, J.L. and Yonemoto, I.T.},
+  journal={Supercomputing frontiers and innovations},
+  volume={4},
+  number={2},
+  pages={71--86},
+  year={2017}
+}
 @misc{neptunesearchwebsite,
   title={{ExCALIBUR-NEPTUNE Reports in Searchable Repo}},
   HOWPUBLISHED={\url{https://excalibur-neptune.github.io/Documents}},
@@ -64,6 +73,12 @@
   HOWPUBLISHED={\url{https://www.nektar.info/nektar-strong-scaling-performance-on-mira/}},
   YEAR=2017
 }
+@misc{nektar++dev,
+  author={Kirby, M. and Sherwin, S.J. and Cantwell, C.D. and Moxey, D.},
+  title={{A Programmer’s Guide to \F{Nektar++}}},
+  HOWPUBLISHED={\url{https://www.nektar.info/src/developer-guide-5.6.0.pdf}},
+  YEAR=2017
+}
 @misc{neptuneorganisation,
   title={ExCALIBUR Project NEPTUNE Organisation},
   HOWPUBLISHED={\url{https://github.com/ExCALIBUR-NEPTUNE}},
@@ -77,25 +92,36 @@
   year={2023},
   note={Accessed: January 2023}
 }
-@TECHREPORT{pappeqs7,
-  AUTHOR = {Arter, W. and others},
+@TECHREPORT{pappeqs9,
+  AUTHOR = {Arter, W.},
   TITLE = "{Equations for EXCALIBUR/NEPTUNE Proxyapps}",
-  NUMBER = "{CD/EXCALIBUR-FMS/0021-1.30-M1.2.1}",
-  NOTE = {TO APPEAR \url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.30-M1.2.1.pdf}},
-  DATE={2023},
-  DAY={12},
-  MONTH={6},
+  NUMBER = "{CD/EXCALIBUR-FMS/0021-1.32-M1.2.1}",
+  NOTE = {\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.32-M1.2.1.pdf}},
+  DATE={2025},
+  DAY={15},
+  MONTH={3},
   INSTITUTION={UKAEA},
-  YEAR = 2023
+  YEAR = 2025
 }
 @TECHREPORT{pappeqs8,
   AUTHOR = {Arter, W. and others},
   TITLE = "{Equations for EXCALIBUR/NEPTUNE Proxyapps}",
   NUMBER = "{CD/EXCALIBUR-FMS/0021-1.31-M1.2.1}",
-  NOTE = {\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.30-M1.2.1.pdf}},
+  NOTE = {\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.31-M1.2.1.pdf}},
   DATE={2023},
   DAY={10},
   MONTH={10},
+  INSTITUTION={UKAEA},
+  YEAR = 2023
+}
+@TECHREPORT{pappeqs7,
+  AUTHOR = {Arter, W. and others},
+  TITLE = "{Equations for EXCALIBUR/NEPTUNE Proxyapps}",
+  NUMBER = "{CD/EXCALIBUR-FMS/0021-1.30-M1.2.1}",
+  NOTE = {\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0021-1.30-M1.2.1.pdf}},
+  DATE={2023},
+  DAY={12},
+  MONTH={6},
   INSTITUTION={UKAEA},
   YEAR = 2023
 }
@@ -381,7 +407,7 @@ publisher = {CRC Press}
    journal = "Annual Review of Fluid Mechanics",
    volume = "20",
    pages = "225-256",
-   year = 1988 }   
+   year = 1988 }
 @TECHREPORT{2047357-TN-10,
   NUMBER = "{2047357-TN-10}",
   TITLE = "{Numerical study of 1+1D drift kinetic models for parallel dynamics in the plasma edge}",
@@ -1023,8 +1049,7 @@ year = 2022
 @TECHREPORT{y3re323,
   NUMBER = "{CD/EXCALIBUR-FMS/0049-M3.2.3}",
   NOTE = {\url{https://github.com/ExCALIBUR-NEPTUNE/Documents/blob/main/reports/ukaea_reports/CD-EXCALIBUR-FMS0049-M3.2.3.pdf}},
-  TITLE = "{Domain-Specific Language (DSL) and Performance Portability Assessment
-D3.2}",
+  TITLE = "{Domain-Specific Language (DSL) and Performance Portability Assessment D3.2}",
   AUTHOR = {Parker, J. T. and Arter, W. and Saunders, W. and Cook, J.},
   DATE={2021},
   DAY={27},
@@ -2653,7 +2678,7 @@ Int{\'e}gration dans OpenPALM}},
 }
 @article{Mo20Nektexc,
   title={Nektar++: Enhancing the capability and application of high-fidelity spectral/hp element methods},
-  author={Moxey, D. and Cantwell, C.D. and Bao, Y. and Cassinelli, A. and Castiglioni, G. and Chun, S. and Juda, E. and Kazemi, E. and Lackhove, K. and Marcon, J. and 
+  author={Moxey, D. and Cantwell, C.D. and Bao, Y. and Cassinelli, A. and Castiglioni, G. and Chun, S. and Juda, E. and Kazemi, E. and Lackhove, K. and Marcon, J. and
 Mengaldo, G. and Serson, D. and Turner, M. and Xu, H. and Peiro, J. and Kirby, R.M. and Sherwin, S.J.},
   journal={Computer Physics Communications},
   volume={249},
@@ -3559,7 +3584,7 @@ Mengaldo, G. and Serson, D. and Turner, M. and Xu, H. and Peiro, J. and Kirby, R
   HAL_VERSION = {v2},
 }
 @misc{Spillane21Preconditioner,
-      title={Toward a new fully algebraic preconditioner for symmetric positive definite problems}, 
+      title={Toward a new fully algebraic preconditioner for symmetric positive definite problems},
       author={N. Spillane},
       year={2021},
       eprint={2106.11574},
@@ -3622,7 +3647,7 @@ Mengaldo, G. and Serson, D. and Turner, M. and Xu, H. and Peiro, J. and Kirby, R
 }
 
 @misc{oneAPISamplesLibrary,
-  title={{oneAPI Samples Repository}}, 
+  title={{oneAPI Samples Repository}},
   HOWPUBLISHED={\url{https://github.com/oneapi-src/oneAPI-samples}},
   year={2022},
   note={Accessed: March 2022}
@@ -3771,10 +3796,25 @@ eprint = {https://doi.org/10.1137/20M1381526}
   year={2022},
   publisher={SIAM}
 }
+@misc{NESOParticles,
+  title = {{NESO-Particles code repository}},
+  howpublished = {\url{https://github.com/ExCALIBUR-NEPTUNE/NESO-Particles}},
+  note = {Accessed: January 2025}
+}
 
+@misc{NESOParticlesdev,
+  title = {{NESO-Particles Developer's Manual}},
+  howpublished = {\url{https://excalibur-neptune.github.io/NESO-Particles/main/sphinx/html/guide-developer.html}},
+  note = {Accessed: January 2025}
+}
+@misc{NESOParticlesuser,
+  title = {{NESO-Particles User's Manual}},
+  howpublished = {\url{https://excalibur-neptune.github.io/NESO-Particles/main/sphinx/html/guide-user.html}},
+  note = {Accessed: January 2025}
+}
 @misc{nesorepo,
   title={Neptune {E}xploratory {SO}ftware ({NESO}) repository},
-  author={Cook, J. W. and Parker, J. T. and Saunders, W. R.},
+  author={Cook, J. W. and Parker, J. T. and Saunders, W. R. and Parry O.},
   HOWPUBLISHED={\url{https://github.com/ExCALIBUR-NEPTUNE/NESO}},
   year={2023},
   note={Accessed: January 2023}
