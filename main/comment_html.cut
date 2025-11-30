@@ -1,2 +1,0 @@
-\ForceHTMLPage \refstepcounter{chapter} \chapter*{Videos} \label{sec:videos} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] Videos}
-videoinsert
