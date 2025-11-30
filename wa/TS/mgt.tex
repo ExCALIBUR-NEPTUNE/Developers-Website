@@ -71,7 +71,7 @@ not be very short, although brevity consistent with frequency of usage
 is recommended.
 \begin{itemize}
 \item Variable names, used only on input, might consist of $3-4$ words primarily describing
-the variable, using `pot-hole' convention
+the variable, using `snake case', more graphically referred to as `pot-hole' convention
 \item Loop or indexing variables, might consist of single characters, eg.\ \T{i}, \T{j}, \T{k}
 \item Mathematical symbols, eg.\ those defined in \Sec{symbol}, should be converted 
 from \LaTeX \ into variable names using the conventions of \Sec{conv}.
@@ -107,6 +107,25 @@ For C++, based on the recommendations of the book ``Professional C++" (eg.\
 `d\_' for buffers/pointers on an accelerator device,
 and aggregations thereof, eg.\ `ms\_variable'.
 Use of global variables is deprecated, so the `g\_' prefix should not be used.
+\F{NESO-Particles}, see \cite{NESOParticlesdev} uses a different set of conventions,
+some of which clash, giving the alphabetical list
+\begin{description}
+\item[`a\_'] variable is a SYCL accessor,
+\item[`b\_'] variable is a SYCL buffer,
+\item[`d\_'] for buffers/pointers on an accelerator device,
+\item[`d\_'] variable exists on the device. In the case of a pointer the memory region is device allocated,
+\item[`f\_'] for flag (Boolean value),
+\item[`h\_'] variable exists on the host. In the case of a pointer the memory region is host allocated,
+\item[`k\_'] for constant,
+\item[`k\_'] variable is a local copy of a variable to pass into a kernel by copy,
+\item[`m\_'] for  member (particularly useful for indicating scope),
+\item[`p\_'] for pointer variable. \F{NESO-Particles} prefers to add `SharedPtr' to \emph{end} of name.
+\item[`s\_'] for static variable,
+\item[`s\_'] variable exists on the host and device. In the case of a pointer the memory region is allocated as shared,
+\item[`v\_'] variable overrides a parent class function, \F{Nektar++} convention \cite[\S\,3.4.7]{nektar++dev}.
+\end{description}
+Where there is the possibility of confusion as to which convention is used, the suggestion is that the initial
+prefix or prefixes are followed by `-P' for  those of `Professional C++", and `-N' for \F{NESO-Particles}.
 
 For Object Fortran naming conventions, Arter~et~al~\cite{fprog} codifies best practice.
 %More useful is a
