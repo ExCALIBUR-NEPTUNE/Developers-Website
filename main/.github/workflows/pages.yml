@@ -32,6 +32,7 @@ jobs:
         with:
           ref: Github-Pages
           fetch-depth: 0
+          overwrite: true
       - name: Generate html
         run: | 
           git fetch --no-tags origin ${GITHUB_REF##*/}
@@ -44,13 +45,15 @@ jobs:
         with:
           commit_message: Automated Change  
           branch: Github-Pages
+          overwrite: true
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload contents of public only
           path: ./
+          overwrite: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
