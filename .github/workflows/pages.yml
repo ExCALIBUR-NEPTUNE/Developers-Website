@@ -45,7 +45,7 @@ jobs:
           commit_message: Automated Change  
           branch: Github-Pages
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
