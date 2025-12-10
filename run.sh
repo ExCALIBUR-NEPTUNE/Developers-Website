@@ -19,6 +19,8 @@ then
   sudo apt-get update
   sudo apt install -y latexmk inet-superserver
   sudo apt-get update
+  sudo apt install -y lwarp
+  sudo apt-get update
   rm -rf ./$1/
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
@@ -41,6 +43,8 @@ else
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
   sudo apt-get update
   sudo apt install -y latexmk inet-superserver
+  sudo apt-get update
+  sudo apt install -y lwarp
   sudo apt-get update
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
