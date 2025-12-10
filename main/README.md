@@ -1,6 +1,6 @@
 # Neptune-Website
 
-## Installation on Ubuntu 22.04, working on 24.04
+## Installation on Ubuntu 22.04, more working on deploy
 To build the website locally it should be sufficient to first clone this repo, then perform the following commands
 
 ```

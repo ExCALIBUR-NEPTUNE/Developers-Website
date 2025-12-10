@@ -72,59 +72,59 @@
 \contentsline {chapter}{\numberline {5}Design Justification File}{52}{appendix.5}%
 \contentsline {section}{\numberline {5.1}Deprecated Approaches}{52}{section.5.1}%
 \contentsline {section}{\numberline {5.2}UKAEA (Internal) Reports}{54}{section.5.2}%
-\contentsline {subsection}{Brief Survey of Reports to end FY 2020/21}{56}{section*.59}%
-\contentsline {subsection}{Brief Survey of Reports FY 2021/22}{57}{section*.60}%
-\contentsline {subsection}{Parallelism Abstraction}{60}{section*.61}%
-\contentsline {chapter}{\numberline {6}Design Definition File}{62}{appendix.6}%
-\contentsline {section}{\numberline {6.1}Design specification}{62}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Objects/classes}{64}{section.6.2}%
-\contentsline {subsection}{Base classes}{64}{section*.62}%
-\contentsline {subsection}{Aggregates}{65}{section*.63}%
-\contentsline {subsection}{Simple inherits}{66}{section*.64}%
-\contentsline {subsection}{Solution of Differential Equations}{66}{section*.65}%
-\contentsline {subsection}{Diagnostic Processing}{66}{section*.66}%
-\contentsline {subsection}{Orchestration}{67}{section*.67}%
-\contentsline {section}{\numberline {6.3}Execution sequence}{68}{section.6.3}%
-\contentsline {subsection}{Preprocessing and components}{68}{section*.68}%
-\contentsline {subsection}{Initialise}{68}{section*.69}%
-\contentsline {subsection}{Solution}{68}{section*.70}%
-\contentsline {subsection}{Assortment}{69}{section*.71}%
-\contentsline {subsection}{Diagnostics}{70}{section*.72}%
-\contentsline {subsection}{Utilities}{70}{section*.73}%
-\contentsline {subsection}{Mathematical library operations}{70}{section*.74}%
-\contentsline {section}{\numberline {6.4}Design patterns}{70}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Management File}{72}{appendix.7}%
-\contentsline {section}{\numberline {7.1}Introduction}{72}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Management}{74}{section.7.2}%
-\contentsline {subsection}{Meetings and Workshops}{74}{section*.75}%
-\contentsline {subsection}{Version control}{74}{section*.76}%
-\contentsline {subsection}{Code repositories}{75}{section*.77}%
-\contentsline {subsection}{Development workflow}{76}{section*.78}%
-\contentsline {subsection}{Code release}{77}{section*.79}%
-\contentsline {section}{\numberline {7.3}\textsc {E}x\textsc {CALIBUR}\ Project \textsc {NEPTUNE}\ Charter}{79}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Maintenance File}{81}{appendix.8}%
-\contentsline {chapter}{\numberline {9}Operational Documentation}{82}{appendix.9}%
-\contentsline {section}{\numberline {9.1}Documentation Generally}{82}{section.9.1}%
-\contentsline {subsection}{Documentation}{82}{section*.80}%
-\contentsline {section}{\numberline {9.2}Developer Manual}{83}{section.9.2}%
-\contentsline {subsection}{Testing}{83}{section*.81}%
-\contentsline {subsubsection}{Source code testing}{83}{section*.82}%
-\contentsline {subsubsection}{Performance testing}{83}{section*.83}%
-\contentsline {subsection}{Object Identification}{84}{section*.84}%
-\contentsline {section}{\numberline {9.3}User Manual}{84}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Feedback and Communication}{84}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Proxyapps}{86}{appendix.10}%
-\contentsline {section}{\numberline {10.1}Nektar-Driftwave}{86}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Nektar-Diffusion}{87}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Nektar-1D-SOL}{87}{section.10.3}%
-\contentsline {section}{\numberline {10.4}FabNEPTUNE}{88}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Moment\_Kinetics}{89}{section.10.5}%
-\contentsline {section}{\numberline {10.6}NESO}{89}{section.10.6}%
-\contentsline {chapter}{\numberline {11}Reference Material}{90}{appendix.11}%
-\contentsline {section}{\numberline {11.1}Conventions for Report Writing}{90}{section.11.1}%
-\contentsline {subsection}{General textual issues}{90}{section*.85}%
-\contentsline {subsection}{Citations}{91}{section*.86}%
+\contentsline {subsection}{Brief Survey of Reports to end FY 2020/21}{57}{section*.59}%
+\contentsline {subsection}{Brief Survey of Reports FY 2021/22}{58}{section*.60}%
+\contentsline {subsection}{Parallelism Abstraction}{61}{section*.61}%
+\contentsline {chapter}{\numberline {6}Design Definition File}{63}{appendix.6}%
+\contentsline {section}{\numberline {6.1}Design specification}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objects/classes}{65}{section.6.2}%
+\contentsline {subsection}{Base classes}{65}{section*.62}%
+\contentsline {subsection}{Aggregates}{66}{section*.63}%
+\contentsline {subsection}{Simple inherits}{67}{section*.64}%
+\contentsline {subsection}{Solution of Differential Equations}{67}{section*.65}%
+\contentsline {subsection}{Diagnostic Processing}{67}{section*.66}%
+\contentsline {subsection}{Orchestration}{68}{section*.67}%
+\contentsline {section}{\numberline {6.3}Execution sequence}{69}{section.6.3}%
+\contentsline {subsection}{Preprocessing and components}{69}{section*.68}%
+\contentsline {subsection}{Initialise}{69}{section*.69}%
+\contentsline {subsection}{Solution}{69}{section*.70}%
+\contentsline {subsection}{Assortment}{70}{section*.71}%
+\contentsline {subsection}{Diagnostics}{71}{section*.72}%
+\contentsline {subsection}{Utilities}{71}{section*.73}%
+\contentsline {subsection}{Mathematical library operations}{71}{section*.74}%
+\contentsline {section}{\numberline {6.4}Design patterns}{71}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Management File}{73}{appendix.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{73}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Management}{75}{section.7.2}%
+\contentsline {subsection}{Meetings and Workshops}{75}{section*.75}%
+\contentsline {subsection}{Version control}{75}{section*.76}%
+\contentsline {subsection}{Code repositories}{76}{section*.77}%
+\contentsline {subsection}{Development workflow}{77}{section*.78}%
+\contentsline {subsection}{Code release}{78}{section*.79}%
+\contentsline {section}{\numberline {7.3}\textsc {E}x\textsc {CALIBUR}\ Project \textsc {NEPTUNE}\ Charter}{80}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Maintenance File}{82}{appendix.8}%
+\contentsline {chapter}{\numberline {9}Operational Documentation}{83}{appendix.9}%
+\contentsline {section}{\numberline {9.1}Documentation Generally}{83}{section.9.1}%
+\contentsline {subsection}{Documentation}{83}{section*.80}%
+\contentsline {section}{\numberline {9.2}Developer Manual}{84}{section.9.2}%
+\contentsline {subsection}{Testing}{84}{section*.81}%
+\contentsline {subsubsection}{Source code testing}{84}{section*.82}%
+\contentsline {subsubsection}{Performance testing}{84}{section*.83}%
+\contentsline {subsection}{Object Identification}{85}{section*.84}%
+\contentsline {section}{\numberline {9.3}User Manual}{85}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Feedback and Communication}{85}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Proxyapps}{87}{appendix.10}%
+\contentsline {section}{\numberline {10.1}Nektar-Driftwave}{87}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Nektar-Diffusion}{88}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Nektar-1D-SOL}{88}{section.10.3}%
+\contentsline {section}{\numberline {10.4}FabNEPTUNE}{89}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Moment\_Kinetics}{90}{section.10.5}%
+\contentsline {section}{\numberline {10.6}NESO}{90}{section.10.6}%
+\contentsline {chapter}{\numberline {11}Reference Material}{91}{appendix.11}%
+\contentsline {section}{\numberline {11.1}Conventions for Report Writing}{91}{section.11.1}%
+\contentsline {subsection}{General textual issues}{91}{section*.85}%
+\contentsline {subsection}{Citations}{92}{section*.86}%
 \contentsline {subsection}{Software Compatibility}{92}{section*.87}%
-\contentsline {section}{\numberline {11.2}Acronyms}{94}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Symbols}{102}{section.11.3}%
-\contentsline {chapter}{\numberline {12}Index}{116}{appendix.12}%
+\contentsline {section}{\numberline {11.2}Acronyms}{95}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Symbols}{103}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Index}{117}{appendix.12}%
