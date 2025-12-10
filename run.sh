@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 if [ -d "./$1/" ] 
 then
   #Determine if hash has changed for branch
@@ -16,8 +16,9 @@ then
   sudo add-apt-repository multiverse
   sudo add-apt-repository restricted
   sudo apt update
-  sudo apt install -y perl texlive-latex-base
-  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  #sudo apt install -y perl gfortran
+  sudo apt install -y texlive-latex-base
+  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
   sudo apt update
   sudo apt install -y latexmk inetutils-inetd
@@ -42,8 +43,9 @@ else
   sudo add-apt-repository multiverse
   sudo add-apt-repository restricted
   sudo apt update
-  sudo apt install -y perl texlive-latex-base
-  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  #sudo apt install -y perl gfortran
+  sudo apt install -y texlive-latex-base
+  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
   sudo apt update
   sudo apt install -y latexmk inetutils-inetd
