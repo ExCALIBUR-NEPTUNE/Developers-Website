@@ -29,6 +29,9 @@ get checkout Github-Pages
 git commit -a -m "join the campaign for better designed software"
 git push github
 
+git will annoy you by rejecting your first pushes because of a logically spurious clash,
+remember that obscenities are not good practice in push comments.
+
 The workflow should be automatically invoked by the push of main, assuming
 changes were made to branch main (or possibly a user branch).
 
