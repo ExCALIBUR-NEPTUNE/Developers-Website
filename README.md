@@ -29,7 +29,7 @@ get checkout Github-Pages
 git commit -a -m "join the campaign for better designed software"
 git push github
 
-The workflow should be automatically invoked by the push, assuming
+The workflow should be automatically invoked by the push of main, assuming
 changes were made to branch main (or possibly a user branch).
 
 ## Debugging Workflow Actions
