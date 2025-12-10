@@ -1,5 +1,6 @@
 #Produces pdf version of website contents, alongside lwarp files needed
 #to create the website
+set -x
 #Compiles website using lwarp package
 function buildwebsite() {
   pdflatex  main.tex
