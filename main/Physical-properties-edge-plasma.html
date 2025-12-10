@@ -1,0 +1,1241 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>main — Physical properties of the edge plasma</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+    subequations: "0",
+    section: "",
+    loader: {
+        load: ['[tex]/tagformat', '[tex]/textmacros'],
+    },
+    startup: {
+        ready() {
+            //      These would be replaced by import commands if you wanted to make
+            //      a proper extension.
+            const Configuration = MathJax._.input.tex.Configuration.Configuration;
+            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const Macro = MathJax._.input.tex.Symbol.Macro;
+            const TexError = MathJax._.input.tex.TexError.default;
+            const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+            const expandable = MathJax._.util.Options.expandable;
+
+
+            //      Insert the replacement string into the TeX string, and check
+            //      that there haven't been too many maxro substitutions (prevents
+            //      infinite loops).
+            const useArgument = (parser, text) => {
+                parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                parser.i = 0;
+                if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                    throw new TexError('MaxMacroSub1',
+                    'MathJax maximum macro substitution count exceeded; ' +
+                    'is there a recursive macro call?');
+                }
+            }
+
+
+            //      Create the command map for:
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
+            new CommandMap('Lwarp-macros', {
+                ifstar: 'IfstarFunction',
+                ifnextchar: 'IfnextcharFunction',
+                ifblank: 'IfblankFunction',
+                ifstrequal: 'IfstrequalFunction',
+                seteqnumber: 'SeteqnumberFunction'
+            }, {
+                //      This function implements an ifstar macro.
+                IfstarFunction(parser, name) {
+                    const resultstar = parser.GetArgument(name);
+                    const resultnostar = parser.GetArgument(name);
+                    const star = parser.GetStar();                      // true if there is a *
+                    useArgument(parser, star ? resultstar : resultnostar);
+                },
+
+
+                //      This function implements an ifnextchar macro.
+                IfnextcharFunction(parser, name) {
+                    let whichchar = parser.GetArgument(name);
+                    if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                        // $ syntax highlighting
+                        whichchar = String.fromCodePoint(parseInt(whichchar));
+                    }
+                    const resultnextchar = parser.GetArgument(name);
+                    const resultnotnextchar = parser.GetArgument(name);
+                    const gotchar = (parser.GetNext() === whichchar);
+                    useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                },
+
+
+                // This function implements an ifblank macro.
+                IfblankFunction(parser, name) {
+                    const blankarg = parser.GetArgument(name);
+                    const resultblank = parser.GetArgument(name);
+                    const resultnotblank = parser.GetArgument(name);
+                    const isblank = (blankarg.trim() == "");
+                    useArgument(parser, isblank ? resultblank : resultnotblank);
+                },
+
+
+                // This function implements an ifstrequal macro.
+                IfstrequalFunction(parser, name) {
+                    const strequalfirst = parser.GetArgument(name);
+                    const strequalsecond = parser.GetArgument(name);
+                    const resultequal = parser.GetArgument(name);
+                    const resultnotequal = parser.GetArgument(name);
+                    const isequal = (strequalfirst == strequalsecond);
+                    useArgument(parser, isequal ? resultequal : resultnotequal);
+                },
+
+
+                //      This function modifies the equation numbers.
+                SeteqnumberFunction(parser, name) {
+                        //   Get the macro parameters
+                        const star = parser.GetStar();                    // true if there is a *
+                        const optBrackets = parser.GetBrackets(name);     // contents of optional brackets
+                        const newsubequations = parser.GetArgument(name);    // the subequations argument
+                        const neweqsection = parser.GetArgument(name);    // the eq section argument
+                        const neweqnumber = parser.GetArgument(name);     // the eq number argument
+                        MathJax.config.subequations=newsubequations ;     // a string with boolean meaning
+                        MathJax.config.section=neweqsection ;             // a string with numeric meaning
+                        parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                }
+
+
+            });
+
+
+            //      Create the Lwarp-macros package
+            Configuration.create('Lwarp-macros', {
+                handler: {macro: ['Lwarp-macros']}
+            });
+
+
+            MathJax.startup.defaultReady();
+
+
+            // For forward references:
+            MathJax.startup.input[0].preFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        MathJax.config.subequations = math.inputData.recompile.subequations;
+                        MathJax.config.section = math.inputData.recompile.section;
+                }
+            });
+            MathJax.startup.input[0].postFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        math.inputData.recompile.subequations = MathJax.config.subequations;
+                        math.inputData.recompile.section = MathJax.config.section;
+                }
+            });
+
+
+                // For \left, \right with unicode-math:
+                const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+                const {Symbol} = MathJax._.input.tex.Symbol;
+                const {MapHandler} = MathJax._.input.tex.MapHandler;
+                const delimiter = MapHandler.getMap('delimiter');
+                delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+                delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+                delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+                delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+                delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+                delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+                delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+                delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+                delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+                delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+                delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+                delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+                delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+                delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+                delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+                delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+                delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+                delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+                delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+                delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+                delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+                delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+                delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+                delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+                delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+                delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+                delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+                delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+                delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+                delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+                delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+                delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+                delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+                delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+                delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+                delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+                delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+                delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+                delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+        }        // ready
+    },           // startup
+
+
+    tex: {
+        packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+        tags: "ams",
+                tagformat: {
+                        number: function (n) {
+                             if(MathJax.config.subequations==0)
+                                 return(MathJax.config.section + n);
+                             else
+                                 return(MathJax.config.section + String.fromCharCode(96+n));
+                        },
+                },
+    }
+}
+</script>
+
+
+<script
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="main-autopage-22"></a>
+
+
+<div class="bodyandsidetoc2">
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Physical properties edge plasma</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+<div class="sidetoccontainer2">
+
+
+<nav class="sidetoc2">
+
+
+
+
+<div class="sidetoccontents2">
+
+<p class="text">
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p class="text">
+<a href="Program-Identity.html#autosec-7" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p class="text">
+<a href="Program-Identity.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p class="text">
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p class="text">
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p class="text">
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p class="text">
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p class="text">
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p class="text">
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p class="text">
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] Deprecated Approaches</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-125" class="tocsection" >
+[5.2] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-134" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-136" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p class="text">
+<a href="Objects-classes.html#autosec-139" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p class="text">
+<a href="Execution-sequence.html#autosec-150" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p class="text">
+<a href="Design-patterns.html#autosec-160" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p class="text">
+<a href="Management-File.html#autosec-164" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p class="text">
+<a href="Introduction.html#autosec-167" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p class="text">
+<a href="Management.html#autosec-170" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p class="text">
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-179" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p class="text">
+<a href="Maintenance-File.html#autosec-182" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-185" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-187" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p class="text">
+<a href="Developer-Manual.html#autosec-191" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-202" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p class="text">
+<a href="Proxyapps.html#autosec-205" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Driftwave.html#autosec-208" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Diffusion.html#autosec-211" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-1D-SOL.html#autosec-214" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p class="text">
+<a href="FabNEPTUNE.html#autosec-217" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p class="text">
+<a href="Moment-Kinetics.html#autosec-220" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p class="text">
+<a href="NESO.html#autosec-223" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-226" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-228" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p class="text">
+<a href="Acronyms.html#autosec-237" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p class="text">
+<a href="Symbols.html#autosec-245" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p class="text">
+<a href="Videos.html#autosec-258" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p class="text">
+<a href="Index-0.html#autosec-261" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+<div class="bodyandsidetoc"><div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">main</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Program-Identity.html#autosec-7" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p>
+<a href="Program-Identity.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p>
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p>
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p>
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p>
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p>
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p>
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p>
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] Deprecated Approaches</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-125" class="tocsection" >
+[5.2] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-134" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-136" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p>
+<a href="Objects-classes.html#autosec-139" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p>
+<a href="Execution-sequence.html#autosec-150" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p>
+<a href="Design-patterns.html#autosec-160" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p>
+<a href="Management-File.html#autosec-164" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p>
+<a href="Introduction.html#autosec-167" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p>
+<a href="Management.html#autosec-170" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p>
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-179" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p>
+<a href="Maintenance-File.html#autosec-182" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-185" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-187" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p>
+<a href="Developer-Manual.html#autosec-191" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-202" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p>
+<a href="Proxyapps.html#autosec-205" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p>
+<a href="Nektar-Driftwave.html#autosec-208" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p>
+<a href="Nektar-Diffusion.html#autosec-211" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p>
+<a href="Nektar-1D-SOL.html#autosec-214" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p>
+<a href="FabNEPTUNE.html#autosec-217" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p>
+<a href="Moment-Kinetics.html#autosec-220" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p>
+<a href="NESO.html#autosec-223" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-226" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-228" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p>
+<a href="Acronyms.html#autosec-237" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p>
+<a href="Symbols.html#autosec-245" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p>
+<a href="Videos.html#autosec-258" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p>
+<a href="Index-0.html#autosec-261" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+ 
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<p>
+<!--................................-->
+<h4 id="autosec-23">Physical properties of the edge plasma</h4>
+<a id="main-autopage-23"></a>
+<a id="main-autofile-4"></a> <a id="sec:props"></a>
+<!--................................-->
+<h4 id="autosec-24"></h4>
+<a id="main-autopage-24"></a>
+
+
+<p>
+The following scrape-off layer (SOL) parameters (including decay lengths) are for the L-mode scrape off layer in MAST&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@Mi13Expe">14</a>]. For MAST, with the standard notation, \(R_0=1.6\)&#x202f;m,
+\(B_T \approx 0.6\)&#x202f;T, \(I_\phi \approx 400\)&#x202f;kA and \(a=0.6\)&#x202f;m, values which imply that the poloidal field at the plasma edge \(B_p \approx 0.1\)&#x202f;T. The main result of the paper&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@Mi13Expe">14</a>] is that the decay length of the power deposition at midplane is \(\lambda _q \approx 2\)&#x202f;cm (range \(1-3\)&#x202f;cm) and \(P_{tot} \approx 350\)&#x202f;kW.
+</p>
+
+<p>
+Unless stated otherwise, the derived length, timescales and speeds are derived from formulae and graphs in Wesson’s book&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@wesson">15</a>, Chap 10]. The derived quantities have been checked against SI
+formulae in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@miyamoto">16</a>, Table 2.2], and also compared with those listed in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@Xu10Inte">17</a>, Appendix]. It is worth noting that although the
+latter table describes the SOL of JET (and in addition its separatrix and pedestal), JET values are typically within a factor of&nbsp;\(2\) of those for MAST, hence similar numbers could be inferred for reactor designs.
+</p>
+<!--................................-->
+<h5 id="autosec-25">Typical discharge</h5>
+<a id="main-autopage-25"></a>
+
+
+<p>
+The edge values found experimentally are \(T_e \approx 10\)&#x202f;eV, \(T_i \approx 20\)&#x202f;eV, \(n \approx 3 \times 10^{18}\)&#x202f;m\(^{-3}\). These imply that the Coulomb logarithm \(\Lambda \approx 12.5\), and the flow
+speed&nbsp;\(U_d \approx 10^5\)&#x202f;ms\(^{-1}\) may be estimated using \(P_{tot}= 2 \pi R \lambda _q n (T_e+T_i) U_d\). Sadly there appears to be no reliable determination of the neutral density&nbsp;\(\sf n\). (Note use of different font
+to distinguish neutral density from plasma density.)
+</p>
+<!--................................-->
+<h5 id="autosec-26">Length scales</h5>
+<a id="main-autopage-26"></a>
+
+
+<p>
+Debye length \(\lambda _D \approx 10^{-5}\)&#x202f;m.<br />
+Electron Larmor radius \(\rho _{te} \approx 7 \times 10^{-5}\)&#x202f;m.<br />
+\(\rho _{ti} \approx 40 \rho _{te} \approx 4\)&#x202f;mm.<br />
+Mean free path for electrons \(\lambda _{emfp} \approx 1\)&#x202f;m (parallel to field).
+</p>
+<!--................................-->
+<h5 id="autosec-27">Time scales</h5>
+<a id="main-autopage-27"></a>
+
+
+<p>
+Collision frequency (electrons with ions) \(\nu _e \approx 3\)&#x202f;MHz, \(\tau _e \approx 3 \times 10^{-7}\)&#x202f;s&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@NRLpf07">18</a>].<br />
+Plasma frequency \(f_{pe} \approx 15\)&#x202f;GHz, \(\tau _{pe} \approx 7 \times 10^{-11}\)&#x202f;s.<br />
+\(f_{pi} \approx 0.4\)&#x202f;GHz, \(\tau _{pi} \approx 3 \times 10^{-9}\)&#x202f;s.<br />
+Cyclotron frequency based on \(B_p=0.1\)&#x202f;T, \(f_{ce} \approx 2.8\)&#x202f;GHz, \(\tau _{ce} \approx 4 \times 10^{-10}\)&#x202f;s.<br />
+\(f_{ci} \approx 1.4\)&#x202f;MHz, \(\tau _{ci}\approx 7\times 10^{-7}\)&#x202f;s.
+</p>
+<!--................................-->
+<h5 id="autosec-28">Speeds</h5>
+<a id="main-autopage-28"></a>
+
+
+<p>
+Electron thermal \(c_{se} \approx 1.2 \times 10^6\)&#x202f;m\(s^{-1}\).<br />
+\(c_{si} \approx 4 \times 10^4\)&#x202f;m\(s^{-1}\).<br />
+Alfven speed using \(B_T\) is \(U_A \approx 10^7\)&#x202f;m\(s^{-1}\).
+</p>
+
+<p>
+Collisionality parameter \(\nu ^{*}_c = \frac {q_e^4}{3 m_p^2\epsilon _0^2} L_0 n_0 /C_0^4\)<br />
+(note that \(\frac {m_p^2\epsilon _0^2}{e^4}=\frac {1}{3}\;s^4 m^{-6}\).)<br />
+Taking \(L_0 \approx 10\)&#x202f;m, \(n_0=n\). Squared sound speed \(C_0^2= T_i (|e|/m_e) (m_e/m_i)\), \(C_0 \approx 3 \times 10^4\)&#x202f;m\(s^{-1}\), implies<br />
+Collisionality parameter \(\nu ^{*}_c \approx 30\).<br />
+Peclet number \(\approx 0.4 \nu ^{*}_c \approx 10\), but turbulent coefficients\(\approx 1\)&#x202f;m\(^2\)s\(^{-1}\) will generally give a smaller value.
+</p>
+
+<p>
+Resistive diffusion \(\eta _d=15\)&#x202f;\(m^2 s^{-1} \propto T_e^{-3/2}\).<br />
+(Note that there is a notational clash with&nbsp;\(\eta \); fusion physics and astrophysics differ by a factor&nbsp;\(\mu _0\), so that \(\eta _d=\eta (\mbox {fusion})/\mu _0\).)
+</p>
+<!--................................-->
+<h5 id="autosec-29">Applicability of Fluid Models</h5>
+<a id="main-autopage-29"></a>
+
+
+<a id="sec:applmhd"></a>
+
+<p>
+A key requirement for fluid models is that collision times should be much less than the timescale of interest, which as the preceding subsections show is true, except in the case of \(\tau _e\), the electron-ion collision time, and for the electrons more generally
+for dynamics along the field-lines. The ion gyroradius is also uncomfortably large compared to quantities of interest. Note that \(\tau _e\) is the longest timescale in the classical picture of approach to a single fluid picture of plasma, other timescales, including
+the timescale for momentum to equilibrate, are shorter.
+</p>
+
+<p>
+Single fluid MHD is widely used in astrophysics consistent with the eloquent advocacy by Priest and Forbes&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@priestforbes">19</a>, §&#x202f;1.7]. They point out that ideal MHD is consistent with the
+drift ordering, despite confusion caused by the easy possibility to misinterpret Hazeltine and Meiss&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@hazeltinemeiss">20</a>] on the subject. (The point is that although MHD treats a faster timescale, it is
+valid on longer timescales, provided relevant smaller/slower terms are retained.) Moreover, SOL timescales involving filaments are fast, witnessed by the fact that the ion gyro-frequency is used as normalisation for electrostatic models in&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@Mi12Simu">21</a>], which from Section&nbsp;<a href="Physical-properties-edge-plasma.html#sec:props">3.1</a> is a not too dissimilar timescale&nbsp;\(10^{-7}\,s\) to the Alfven timescale based on the
+poloidal field&nbsp;(\(1\)&#x202f;cm/\(10^6 \approx 10^{-8}\)&#x202f;s). Later, Freidberg&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@freidberg">22</a>] showed that, at least in directions perpendicular to&nbsp;\(\bf B\), the dynamical
+MHD equation applies to a more general ‘guiding centre’ plasma. The situation may be summarised by saying that complexity lies mostly in the transport (diffusive) terms as these attempt to account for low collisionality, finite Larmor radius (FLR) etc.
+</p>
+
+<p>
+Perhaps fortunately, the terms predicted by kinetic theory will usually be small (except for the electrical conductivity) compared to the turbulent transport expected on the basis of both observation and theory of the SOL plasma. The simplest way to account for
+turbulence is to assume ad-hoc isotropic, uniform ‘eddy’ diffusivities in addition to the usual fluid advection terms. Lastly, in a simple extension of MHD, large&nbsp;\(\tau _e\) is accounted for by allowing the electrons and ions to have different temperatures,
+consistent with observation. Effects due to the presence of a large neutral population in the SOL could well be significant, see next Section&nbsp;<a href="Physical-properties-edge-plasma.html#sec:neuts">3.1</a>. However neutrals are mainly
+expected to act as a sink of momentum and energy.
+</p>
+<!--................................-->
+<h5 id="autosec-30">Effect of Neutrals</h5>
+<a id="main-autopage-30"></a>
+
+
+<a id="sec:neuts"></a>
+
+<p>
+Formulae for a weakly ionised plasma are given in the Plasma Formulary&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@NRLpf07">18</a>]. The collision cross-sections for electrons and ions respectively from&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@Ha91hydr">23</a>] are \(\sigma _s^{e|0}= 10^{-19}\)&#x202f;\(m^2\) and \(\sigma _s^{i|0}= 4 \times 10^{-19}\)&#x202f;\(m^2\). Hence, the collision frequencies for electrons and ions respectively are
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{0}\)</span>
+
+<!--
+
+
+                                                                                                               νen = 1.2 × 10−13 n,    νin = 2 × 10−14 n                                                                                                  (3.1)
+
+-->
+
+<p>
+
+\begin{equation}
+\nu _{e{\sf n}}= 1.2 \times 10^{-13} {\sf n},\;\;\; \nu _{i{\sf n}}= 2 \times 10^{-14} {\sf n}
+\end{equation}
+
+</p>
+
+<p>
+where \(\sf n\) is the neutral density. (Note use of different font to distinguish neutral density from plasma density.) If \({\sf n}=n\) is assumed, then the corresponding SOL collision times are
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{1}\)</span>
+
+<!--
+
+
+                                                                                                                  τen = 3 × 10−6 s,   τin = 2 × 10−5 s                                                                                                    (3.2)
+
+-->
+
+<p>
+
+\begin{equation}
+\tau _{e{\sf n}}= 3 \times 10^{-6} s,\;\;\; \tau _{i{\sf n}}= 2 \times 10^{-5} s
+\end{equation}
+
+</p>
+
+<p>
+so that the number of collisions experienced by a typical SOL ion before it hits a PFC is small. Nonetheless, since \(1/m_e \gg 1/m_i\), \(D_e \gg D_i\) and the diffusion coefficient for both electrons and ions is numerically large
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{2}\)</span>
+
+<!--
+
+
+                                                                                                                                   Te       1023
+                                                                                                                      DA ≈ (1 +       )Di ≈                                                                                                               (3.3)
+                                                                                                                                   Ti        n
+
+-->
+
+<p>
+
+\begin{equation}
+D_A \approx (1+\frac {T_e}{T_i}) D_i \approx \frac {10^{23}}{{\sf n}}
+\end{equation}
+
+</p>
+
+<p>
+The parallel electrical diffusivities are different, for electrons and ions respectively these are
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{3}\)</span>
+
+<!--
+
+                                                                                                                              n                    n
+                                                                                                                      ηen∥ = 4 ,      ηin∥ = 0.5                                                                                                          (3.4)
+                                                                                                                              n                    n
+
+-->
+
+<p>
+
+\begin{equation}
+\eta _{e {\sf n}\parallel } =4 \frac {{\sf n}}{n},\;\;\; \eta _{i {\sf n}\parallel } =0.5 \frac {{\sf n}}{n}
+\end{equation}
+
+</p>
+
+<p>
+The implication from the formulae in&nbsp;ref. [<a href="Index-0.html#LWR-ht-cite.0@Le06emer">24</a>] is that the value for \(\eta _{e \parallel }\) combines additively with the usual Spitzer value in a more highly ionised plasma. Assuming
+\({\sf n} \approx n\), however the correction is seen to be an increase of \(4\) in \(15\)&#x202f;\(m^2s^{-1}\), i.e. only about&nbsp;\(25\)&#x202f;%.
+</p>
+
+<p>
+Arber&nbsp;refs. [<a href="Index-0.html#LWR-ht-cite.0@Le06emer">24</a>, <a href="Index-0.html#LWR-ht-cite.0@Ar07Emer">25</a>] further points out that according to the Formulary&nbsp;ref. [<a
+href="Index-0.html#LWR-ht-cite.0@NRLpf07">18</a>], in a weakly ionised plasma the conductivity is greatly reduced (and the magnetic diffusivity correspondingly enhanced) in directions normal to a strong magnetic field. Typically for Braginskii theory, the
+factor is \(x_e^2\) for the perpendicular direction and \(x_e\) for the other direction, where
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{4}\)</span>
+
+<!--
+
+
+                                                                                                                              2πfce   8 × 1023
+                                                                                                                       xe =         ≈                                                                                                                     (3.5)
+                                                                                                                               νen       n
+
+-->
+
+<p>
+
+\begin{equation}
+x_e=\frac {2\pi f_{ce}}{\nu _{e{\sf n}}} \approx \frac {8 \times 10^{23}}{{\sf n}}
+\end{equation}
+
+</p>
+
+<p>
+For \({\sf n}=n=3 \times 10^{18}\), these are huge increases. However it is worth noting that if the electromagnetic potential representation is invoked, so that
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{5}\)</span>
+
+<!--
+
+                                                                                                                                          ∂A
+                                                                                                                          E = −∇Φ +                                                                                              (3.6)--><a id="eq:E"></a><!--
+                                                                                                                                          ∂t
+
+-->
+
+<p>
+
+\begin{equation}
+\label {eq:E} {\bf E} = -\nabla \Phi + \frac {\partial {\bf A}}{\partial t}
+\end{equation}
+
+</p>
+
+<p>
+then, in the direction parallel to&nbsp;\(\bf B\), neglecting the gradient of electric potential&nbsp;\(\Phi \)
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{3.}{6}\)</span>
+
+<!--
+
+                                                                                                                              ∂A∥
+                                                                                                                                  = ηen∥ J∥                                                                                      (3.7)--><a id="eq:A"></a><!--
+                                                                                                                               ∂t
+
+-->
+
+<p>
+
+\begin{equation}
+\label {eq:A} \frac {\partial A_{\parallel }}{\partial t}=\eta _{e {\sf n}\parallel } J_{\parallel }
+\end{equation}
+
+</p>
+
+<p>
+Thus the enhanced diffusivities need not signify if this equation is used for magnetic field evolution, although applying a gauge condition on the potentials may become difficult in complicated 3-D topologies.
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+</body>
+</html>

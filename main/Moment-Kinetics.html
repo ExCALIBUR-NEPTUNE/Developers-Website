@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>main — Moment-Kinetics</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+    subequations: "0",
+    section: "",
+    loader: {
+        load: ['[tex]/tagformat', '[tex]/textmacros'],
+    },
+    startup: {
+        ready() {
+            //      These would be replaced by import commands if you wanted to make
+            //      a proper extension.
+            const Configuration = MathJax._.input.tex.Configuration.Configuration;
+            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const Macro = MathJax._.input.tex.Symbol.Macro;
+            const TexError = MathJax._.input.tex.TexError.default;
+            const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+            const expandable = MathJax._.util.Options.expandable;
+
+
+            //      Insert the replacement string into the TeX string, and check
+            //      that there haven't been too many maxro substitutions (prevents
+            //      infinite loops).
+            const useArgument = (parser, text) => {
+                parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                parser.i = 0;
+                if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                    throw new TexError('MaxMacroSub1',
+                    'MathJax maximum macro substitution count exceeded; ' +
+                    'is there a recursive macro call?');
+                }
+            }
+
+
+            //      Create the command map for:
+            //          \ifstar, \ifnextchar, \ifblank, \ifstrequal, \seteqnumber
+            new CommandMap('Lwarp-macros', {
+                ifstar: 'IfstarFunction',
+                ifnextchar: 'IfnextcharFunction',
+                ifblank: 'IfblankFunction',
+                ifstrequal: 'IfstrequalFunction',
+                seteqnumber: 'SeteqnumberFunction'
+            }, {
+                //      This function implements an ifstar macro.
+                IfstarFunction(parser, name) {
+                    const resultstar = parser.GetArgument(name);
+                    const resultnostar = parser.GetArgument(name);
+                    const star = parser.GetStar();                      // true if there is a *
+                    useArgument(parser, star ? resultstar : resultnostar);
+                },
+
+
+                //      This function implements an ifnextchar macro.
+                IfnextcharFunction(parser, name) {
+                    let whichchar = parser.GetArgument(name);
+                    if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                        // $ syntax highlighting
+                        whichchar = String.fromCodePoint(parseInt(whichchar));
+                    }
+                    const resultnextchar = parser.GetArgument(name);
+                    const resultnotnextchar = parser.GetArgument(name);
+                    const gotchar = (parser.GetNext() === whichchar);
+                    useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                },
+
+
+                // This function implements an ifblank macro.
+                IfblankFunction(parser, name) {
+                    const blankarg = parser.GetArgument(name);
+                    const resultblank = parser.GetArgument(name);
+                    const resultnotblank = parser.GetArgument(name);
+                    const isblank = (blankarg.trim() == "");
+                    useArgument(parser, isblank ? resultblank : resultnotblank);
+                },
+
+
+                // This function implements an ifstrequal macro.
+                IfstrequalFunction(parser, name) {
+                    const strequalfirst = parser.GetArgument(name);
+                    const strequalsecond = parser.GetArgument(name);
+                    const resultequal = parser.GetArgument(name);
+                    const resultnotequal = parser.GetArgument(name);
+                    const isequal = (strequalfirst == strequalsecond);
+                    useArgument(parser, isequal ? resultequal : resultnotequal);
+                },
+
+
+                //      This function modifies the equation numbers.
+                SeteqnumberFunction(parser, name) {
+                        //   Get the macro parameters
+                        const star = parser.GetStar();                    // true if there is a *
+                        const optBrackets = parser.GetBrackets(name);     // contents of optional brackets
+                        const newsubequations = parser.GetArgument(name);    // the subequations argument
+                        const neweqsection = parser.GetArgument(name);    // the eq section argument
+                        const neweqnumber = parser.GetArgument(name);     // the eq number argument
+                        MathJax.config.subequations=newsubequations ;     // a string with boolean meaning
+                        MathJax.config.section=neweqsection ;             // a string with numeric meaning
+                        parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                }
+
+
+            });
+
+
+            //      Create the Lwarp-macros package
+            Configuration.create('Lwarp-macros', {
+                handler: {macro: ['Lwarp-macros']}
+            });
+
+
+            MathJax.startup.defaultReady();
+
+
+            // For forward references:
+            MathJax.startup.input[0].preFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        MathJax.config.subequations = math.inputData.recompile.subequations;
+                        MathJax.config.section = math.inputData.recompile.section;
+                }
+            });
+            MathJax.startup.input[0].postFilters.add(({math}) => {
+                if (math.inputData.recompile){
+                        math.inputData.recompile.subequations = MathJax.config.subequations;
+                        math.inputData.recompile.section = MathJax.config.section;
+                }
+            });
+
+
+                // For \left, \right with unicode-math:
+                const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+                const {Symbol} = MathJax._.input.tex.Symbol;
+                const {MapHandler} = MathJax._.input.tex.MapHandler;
+                const delimiter = MapHandler.getMap('delimiter');
+                delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+                delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+                delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+                delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+                delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+                delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+                delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+                delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+                delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+                delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+                delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+                delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+                delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+                delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+                delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+                delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+                delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+                delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+                delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+                delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+                delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+                delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+                delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+                delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+                delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+                delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+                delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+                delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+                delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+                delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+                delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+                delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+                delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+                delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+                delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+                delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+                delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+                delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+                delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+        }        // ready
+    },           // startup
+
+
+    tex: {
+        packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+        tags: "ams",
+                tagformat: {
+                        number: function (n) {
+                             if(MathJax.config.subequations==0)
+                                 return(MathJax.config.section + n);
+                             else
+                                 return(MathJax.config.section + String.fromCharCode(96+n));
+                        },
+                },
+    }
+}
+</script>
+
+
+<script
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="main-autopage-218"></a>
+
+
+<div class="bodyandsidetoc2">
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" style="opacity:0;">
+  <label for="collapsible" class="lbl-toggle"><p class="text">Moment Kinetics</p></label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+<div class="sidetoccontainer2">
+
+
+<nav class="sidetoc2">
+
+
+
+
+<div class="sidetoccontents2">
+
+<p class="text">
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p class="text">
+<a href="Program-Identity.html#autosec-7" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p class="text">
+<a href="Program-Identity.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p class="text">
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p class="text">
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p class="text">
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p class="text">
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p class="text">
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p class="text">
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p class="text">
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p class="text">
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p class="text">
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] Deprecated Approaches</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Justification-File.html#autosec-125" class="tocsection" >
+[5.2] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-134" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p class="text">
+<a href="Design-Definition-File.html#autosec-136" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p class="text">
+<a href="Objects-classes.html#autosec-139" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p class="text">
+<a href="Execution-sequence.html#autosec-150" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p class="text">
+<a href="Design-patterns.html#autosec-160" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p class="text">
+<a href="Management-File.html#autosec-164" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p class="text">
+<a href="Introduction.html#autosec-167" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p class="text">
+<a href="Management.html#autosec-170" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p class="text">
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-179" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p class="text">
+<a href="Maintenance-File.html#autosec-182" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-185" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p class="text">
+<a href="Operational-Documentation.html#autosec-187" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p class="text">
+<a href="Developer-Manual.html#autosec-191" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p class="text">
+<a href="User-Manual.html#autosec-202" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p class="text">
+<a href="Proxyapps.html#autosec-205" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Driftwave.html#autosec-208" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-Diffusion.html#autosec-211" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p class="text">
+<a href="Nektar-1D-SOL.html#autosec-214" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p class="text">
+<a href="FabNEPTUNE.html#autosec-217" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p class="text">
+<a href="Moment-Kinetics.html#autosec-220" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p class="text">
+<a href="NESO.html#autosec-223" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-226" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p class="text">
+<a href="Reference-Material.html#autosec-228" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p class="text">
+<a href="Acronyms.html#autosec-237" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p class="text">
+<a href="Symbols.html#autosec-245" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p class="text">
+<a href="Videos.html#autosec-258" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p class="text">
+<a href="Index-0.html#autosec-261" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+<div class="bodyandsidetoc"><div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">main</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="main.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Program-Identity.html#autosec-7" class="tocchapter" >
+[1] Program Identity</a>
+</p>
+
+
+<p>
+<a href="Program-Identity.html#autosec-9" class="tocsection" >
+[1.1] Executive summary</a>
+</p>
+
+
+<p>
+<a href="Business-Design.html#autosec-18" class="tocchapter" >
+[2] Business Design</a>
+</p>
+
+
+<p>
+<a href="Requirements-Baseline.html#autosec-21" class="tocchapter" >
+[3] Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Physical-properties-edge-plasma.html#autosec-24" class="tocsection" >
+[3.1] Physical properties of the edge plasma</a>
+</p>
+
+
+<p>
+<a href="Engineering-Requirements-Baseline.html#autosec-33" class="tocsection" >
+[3.2] Engineering Requirements Baseline</a>
+</p>
+
+
+<p>
+<a href="Use-Cases.html#autosec-41" class="tocsection" >
+[3.3] Use Cases</a>
+</p>
+
+
+<p>
+<a href="General-Remarks.html#autosec-48" class="tocsection" >
+[3.4] General Remarks</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-51" class="tocchapter" >
+[4] Technical Specification</a>
+</p>
+
+
+<p>
+<a href="Technical-Specification.html#autosec-53" class="tocsection" >
+[4.1] Response to Tokamak Science Division</a>
+</p>
+
+
+<p>
+<a href="Order-magnitude-estimates-tokamak-edge-modelling.html#autosec-96" class="tocsection" >
+[4.A] Order-of-magnitude estimates for tokamak edge modelling</a>
+</p>
+
+
+<p>
+<a href="Software-Engineering-Response.html#autosec-99" class="tocsection" >
+[4.2] Software Engineering Response</a>
+</p>
+
+
+<p>
+<a href="Generating-Names-Variables.html#autosec-116" class="tocsection" >
+[4.3] Generating Names for Variables</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-121" class="tocchapter" >
+[5] Design Justification File</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-123" class="tocsection" >
+[5.1] Deprecated Approaches</a>
+</p>
+
+
+<p>
+<a href="Design-Justification-File.html#autosec-125" class="tocsection" >
+[5.2] UKAEA (Internal) Reports</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-134" class="tocchapter" >
+[6] Design Definition File</a>
+</p>
+
+
+<p>
+<a href="Design-Definition-File.html#autosec-136" class="tocsection" >
+[6.1] Design specification</a>
+</p>
+
+
+<p>
+<a href="Objects-classes.html#autosec-139" class="tocsection" >
+[6.2] Objects/classes</a>
+</p>
+
+
+<p>
+<a href="Execution-sequence.html#autosec-150" class="tocsection" >
+[6.3] Execution sequence</a>
+</p>
+
+
+<p>
+<a href="Design-patterns.html#autosec-160" class="tocsection" >
+[6.4] Design patterns</a>
+</p>
+
+
+<p>
+<a href="Management-File.html#autosec-164" class="tocchapter" >
+[7] Management File</a>
+</p>
+
+
+<p>
+<a href="Introduction.html#autosec-167" class="tocsection" >
+[7.1] Introduction</a>
+</p>
+
+
+<p>
+<a href="Management.html#autosec-170" class="tocsection" >
+[7.2] Management</a>
+</p>
+
+
+<p>
+<a href="ExCALIBUR-Project-NEPTUNE-Charter.html#autosec-179" class="tocsection" >
+[7.3] <span class="textsc">E</span>x<span class="textsc">CALIBUR</span> Project <span class="textsc">NEPTUNE</span> Charter</a>
+</p>
+
+
+<p>
+<a href="Maintenance-File.html#autosec-182" class="tocchapter" >
+[8] Maintenance File</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-185" class="tocchapter" >
+[9] Operational Documentation</a>
+</p>
+
+
+<p>
+<a href="Operational-Documentation.html#autosec-187" class="tocsection" >
+[9.1] Documentation Generally</a>
+</p>
+
+
+<p>
+<a href="Developer-Manual.html#autosec-191" class="tocsection" >
+[9.2] Developer Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-200" class="tocsection" >
+[9.3] User Manual</a>
+</p>
+
+
+<p>
+<a href="User-Manual.html#autosec-202" class="tocsection" >
+[9.4] Feedback and Communication</a>
+</p>
+
+
+<p>
+<a href="Proxyapps.html#autosec-205" class="tocchapter" >
+[10] Proxyapps</a>
+</p>
+
+
+<p>
+<a href="Nektar-Driftwave.html#autosec-208" class="tocsection" >
+[10.1] Nektar-Driftwave</a>
+</p>
+
+
+<p>
+<a href="Nektar-Diffusion.html#autosec-211" class="tocsection" >
+[10.2] Nektar-Diffusion</a>
+</p>
+
+
+<p>
+<a href="Nektar-1D-SOL.html#autosec-214" class="tocsection" >
+[10.3] Nektar-1D-SOL</a>
+</p>
+
+
+<p>
+<a href="FabNEPTUNE.html#autosec-217" class="tocsection" >
+[10.4] FabNEPTUNE</a>
+</p>
+
+
+<p>
+<a href="Moment-Kinetics.html#autosec-220" class="tocsection" >
+[10.5] Moment_Kinetics</a>
+</p>
+
+
+<p>
+<a href="NESO.html#autosec-223" class="tocsection" >
+[10.6] NESO</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-226" class="tocchapter" >
+[11] Reference Material</a>
+</p>
+
+
+<p>
+<a href="Reference-Material.html#autosec-228" class="tocsection" >
+[11.1] Conventions for Report Writing</a>
+</p>
+
+
+<p>
+<a href="Acronyms.html#autosec-237" class="tocsection" >
+[11.2] Acronyms</a>
+</p>
+
+
+<p>
+<a href="Symbols.html#autosec-245" class="tocsection" >
+[11.3] Symbols</a>
+</p>
+
+
+<p>
+<a href="Videos.html#autosec-258" class="tocchapter" >
+[12] Videos</a>
+</p>
+
+
+<p>
+<a href="Index-0.html#autosec-261" class="tocchapter" >
+[13] Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+ 
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<p>
+<!--................................-->
+<h4 id="autosec-219">Moment_Kinetics</h4>
+<a id="main-autopage-219"></a>
+<a id="main-autofile-30"></a> <a id="sec:MomentKinetics"></a>
+<!--................................-->
+<h4 id="autosec-220"></h4>
+<a id="main-autopage-220"></a>
+
+
+<p>
+The moment kinetics proxyapp solves the kinetic-type equations derived in the Oxford project (Parra et al.). The proxyapp prototypes three features:
+</p>
+
+<p>
+The code implements a “moment kinetics" approach to kinetic equations, where the particle distribution function is modified to remove the density, parallel bulk velocity and/or temperature. These fluid moments are then evolved separately from the distribution
+function. This approach allows a simulation to dynamically switch between a kinetic and a fluid model.
+</p>
+
+<p>
+The code is implemented using a Chebychev spectral element approach in both physical space and velocity space. This gives spectral convergence with grid resolution while still allowing the flexibility to model complicated physical domains. For comparison, the
+code is also implemented using a standard finite difference approach.
+</p>
+
+<p>
+The code is implemented in the Julia language. Thus by leveraging Julia community packages, the code can execute on CPUs and GPUs with minimal input from the developer (e.g. no explicit domain decomposition between MPI ranks). This may provide an
+alternative approach to performance portability, as opposed to the current expected approach of using C++ with code generation and domain-specific languages (DSLs).
+</p>
+
+<p>
+dynamics.
+</p>
+
+<p>
+Moment_Kinetics is publicly available at <a href="https://github.com/mabarnes/moment_kinetics" target="_blank" >https://github.com/mabarnes/moment_kinetics</a>.
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+</body>
+</html>
