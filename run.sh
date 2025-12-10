@@ -11,7 +11,10 @@ then
   then 
   #Compile new documentation if needed
   rm index.html
-  sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  sudo apt-get update
+  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  sudo apt install -y biber latexmk cups inetutils-inetd inet-superserver update-inetd smbclient fonts-noto fonts-freefont-otf 
+  sudo apt-get update
   rm -rf ./$1/
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
