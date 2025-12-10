@@ -54,8 +54,10 @@ echo "++++diff ~/excalibur-wa/tex/pics/dimensions2.png ~/devweb/pics/dimensions2
 diff  ~/excalibur-wa/tex/pics/dimensions2.png ~/devweb/pics/dimensions2.png
 echo "++++diff ~/excalibur-wa/tex/png/hierarchygroup.png ~/devweb/png/hierarchygroup.png"
 diff  ~/excalibur-wa/tex/png/hierarchygroup.png ~/devweb/png/hierarchygroup.png
+# now allow different NEPTUNE picture, but still check
 echo "++++diff ~/excalibur-wa/tex/png/neptune.png ~/devweb/png/neptune.png"
 diff  ~/excalibur-wa/tex/png/neptune.png ~/devweb/png/neptune.png
+#
 echo "++++diff ~/excalibur-wa/tex/pics/proxyflow2.png ~/devweb/pics/proxyflow2.png"
 diff  ~/excalibur-wa/tex/pics/proxyflow2.png ~/devweb/pics/proxyflow2.png
 echo "++++diff ~/excalibur-wa/tex/png/trident.png ~/devweb/png/trident.png"

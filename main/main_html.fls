@@ -1914,12 +1914,12 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr9.tfm
 OUTPUT main_html.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT ./pics/nneptune.jpg
+INPUT ./pics/nneptune.jpg
+INPUT ./pics/nneptune.jpg
 INPUT ./png/neptune.png
 INPUT ./png/neptune.png
 INPUT ./png/neptune.png
-INPUT ./png/trident.png
-INPUT ./png/trident.png
-INPUT ./png/trident.png
 OUTPUT main_html.sidetoc
 INPUT main_html.toc
 INPUT ./main_html.toc

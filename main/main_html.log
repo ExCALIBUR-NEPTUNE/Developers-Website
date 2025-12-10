@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.12.10)  10 DEC 2025 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.12.10)  10 DEC 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2049,15 +2049,15 @@ File: "lwarp_mathjax.txt"  (verbatim)
 (./main_html.sidetoc) [260] (./IND/IND.tex)) [261] (./metackn.tex) [262]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 201.
+(Font)              using `T1/lmr/m/scsl' instead on input line 202.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 201.
+(Font)              using `T1/lmr/m/scsl' instead on input line 202.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 201.
+(Font)              using `T1/lmr/m/scsl' instead on input line 202.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2072,8 +2072,8 @@ Package logreq Info: Writing requests to 'main_html.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25778 strings out of 479727
- 506171 string characters out of 5884997
+ 25779 strings out of 479727
+ 506180 string characters out of 5884997
  1355696 words of memory out of 5000000
  42833 multiletter control sequences out of 15000+600000
  539286 words of font info for 72 fonts, out of 8000000 for 9000
@@ -2095,7 +2095,7 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (264 pages, 976803 bytes).
+Output written on main_html.pdf (264 pages, 976809 bytes).
 PDF statistics:
  968 PDF objects out of 1000 (max. 8388607)
  654 compressed objects within 7 object streams
