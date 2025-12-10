@@ -1,6 +1,6 @@
 #Produces pdf version of website contents, alongside lwarp files needed
 #to create the website
-set -x
+#set -x
 #Compiles website using lwarp package
 function buildwebsite() {
   pdflatex  main.tex
@@ -10,7 +10,7 @@ function buildwebsite() {
   if [ "$1" != "PDF" ]
   then
   lwarpmk html
-  /usr/bin/lwarpmk html
+  #/usr/bin/lwarpmk html
   rm main_html.html    
   #Add in download link for pdf version of webpage
   sed -i -e '/<div class="center">/r link.txt' main.html
