@@ -12,15 +12,16 @@ then
   then 
   #Compile new documentation if needed
   rm index.html
-  sudo apt-get update
+  sudo add-apt-repository universe
+  sudo add-apt-repository multiverse
+  sudo add-apt-repository restricted
+  sudo apt update
   sudo apt install -y perl texlive-latex-base
   sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
-  sudo apt-get update
-  sudo apt install -y latexmk inet-superserver
-  sudo apt-get update
-  sudo apt install -y lwarp
-  sudo apt-get update
+  sudo apt update
+  sudo apt install -y latexmk inetutils-inetd
+  sudo apt update
   rm -rf ./$1/
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
@@ -37,15 +38,16 @@ else
   #Compile new documentation 
   rm index.html
   #sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
-  sudo apt-get update
+  sudo add-apt-repository universe
+  sudo add-apt-repository multiverse
+  sudo add-apt-repository restricted
+  sudo apt update
   sudo apt install -y perl texlive-latex-base
   sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
-  sudo apt-get update
-  sudo apt install -y latexmk inet-superserver
-  sudo apt-get update
-  sudo apt install -y lwarp
-  sudo apt-get update
+  sudo apt update
+  sudo apt install -y latexmk inetutils-inetd
+  sudo apt update
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
   cd ./$1
