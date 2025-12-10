@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 if [ -d "./$1/" ] 
 then
   #Determine if hash has changed for branch
@@ -12,6 +13,7 @@ then
   #Compile new documentation if needed
   rm index.html
   sudo apt-get update
+  sudo apt install -y perl texlive-latex-base
   sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
   sudo apt-get update
@@ -34,6 +36,7 @@ else
   rm index.html
   #sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
   sudo apt-get update
+  sudo apt install -y perl texlive-latex-base
   sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
   sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
   sudo apt-get update
