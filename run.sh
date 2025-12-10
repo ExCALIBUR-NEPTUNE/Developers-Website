@@ -13,7 +13,9 @@ then
   rm index.html
   sudo apt-get update
   sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
-  sudo apt install -y biber latexmk cups inetutils-inetd inet-superserver update-inetd smbclient fonts-noto fonts-freefont-otf 
+  sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
+  sudo apt-get update
+  sudo apt install -y latexmk inet-superserver
   sudo apt-get update
   rm -rf ./$1/
   mkdir $1
@@ -30,7 +32,13 @@ then
 else
   #Compile new documentation 
   rm index.html
-  sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  #sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  sudo apt-get update
+  sudo apt install -y texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+  sudo apt install -y biber cups inetutils-inetd update-inetd smbclient fonts-noto fonts-freefont-otf 
+  sudo apt-get update
+  sudo apt install -y latexmk inet-superserver
+  sudo apt-get update
   mkdir $1
   git --work-tree=./$1/ checkout remotes/origin/$1 -- ./
   cd ./$1
